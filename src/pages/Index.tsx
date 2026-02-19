@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import PhoneFrame from "@/components/moneybox/PhoneFrame";
 import MoneyboxApp from "@/components/moneybox/MoneyboxApp";
-import { ChevronDown, ChevronUp } from "lucide-react";
+import { ChevronDown, ChevronUp, ArrowRight, Briefcase, TrendingUp, Layers } from "lucide-react";
 
 const caseStudySections = [
   {
@@ -45,6 +44,23 @@ const caseStudySections = [
   },
 ];
 
+const caseStudies = [
+  {
+    id: "01",
+    title: "Moneybox Redesigned",
+    description: "Reimagining the savings & investment journey for clarity and confidence.",
+    tags: ["UX Strategy", "Fintech", "Navigation"],
+    status: "live",
+  },
+  {
+    id: "02",
+    title: "Coming Soon",
+    description: "Next case study in progress.",
+    tags: [],
+    status: "wip",
+  },
+];
+
 const Index = () => {
   const [expanded, setExpanded] = useState<number | null>(0);
 
@@ -53,20 +69,119 @@ const Index = () => {
       className="min-h-screen"
       style={{ background: "linear-gradient(135deg, hsl(210 35% 5%) 0%, hsl(210 28% 8%) 50%, hsl(210 35% 5%) 100%)" }}
     >
-      {/* Hero title bar */}
-      <div className="text-center pt-10 pb-4 px-6">
+      {/* ── HERO / BIO ─────────────────────────────────────────── */}
+      <section className="max-w-2xl mx-auto px-6 pt-16 pb-10">
+        {/* Badge */}
+        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-6" style={{ background: "hsl(174 80% 60% / 0.1)", border: "1px solid hsl(174 80% 60% / 0.25)" }}>
+          <Briefcase size={11} style={{ color: "hsl(174 80% 60%)" }} />
+          <span className="text-[10px] font-bold uppercase tracking-widest" style={{ color: "hsl(174 80% 60%)" }}>PM Portfolio</span>
+        </div>
+
+        {/* Name & headline */}
+        <h1 className="text-4xl font-black tracking-tight mb-3 leading-tight" style={{ color: "hsl(210 40% 98%)" }}>
+          Lucas Daneluz
+        </h1>
+        <p className="text-lg font-semibold mb-5" style={{ color: "hsl(174 80% 60%)" }}>
+          Strategic Procurement → Product Management
+        </p>
+
+        {/* Bio */}
+        <p className="text-sm leading-relaxed mb-3" style={{ color: "hsl(210 20% 62%)" }}>
+          With a background in <strong style={{ color: "hsl(210 40% 88%)" }}>Strategic Procurement</strong>, I've spent years working across vendor negotiations, cost optimisation, and cross-functional stakeholder management — skills that map directly onto the PM toolkit: prioritisation, trade-off analysis, and driving alignment.
+        </p>
+        <p className="text-sm leading-relaxed mb-8" style={{ color: "hsl(210 20% 62%)" }}>
+          I'm now channelling that commercial lens into <strong style={{ color: "hsl(210 40% 88%)" }}>Fintech Product Management</strong>, building a portfolio of concrete product ideas grounded in real user pain points. Each case study below is something I'd genuinely use — and think would make a measurable difference.
+        </p>
+
+        {/* Skill pills */}
+        <div className="flex flex-wrap gap-3">
+          {[
+            { icon: <TrendingUp size={12} />, label: "Fintech Focus" },
+            { icon: <Layers size={12} />, label: "UX & Strategy" },
+            { icon: <Briefcase size={12} />, label: "Procurement Background" },
+          ].map(({ icon, label }) => (
+            <div
+              key={label}
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[11px] font-semibold"
+              style={{ background: "hsl(210 28% 12%)", border: "1px solid hsl(210 20% 20%)", color: "hsl(210 20% 65%)" }}
+            >
+              <span style={{ color: "hsl(174 80% 60%)" }}>{icon}</span>
+              {label}
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ── CASE STUDIES LIST ──────────────────────────────────── */}
+      <section className="max-w-2xl mx-auto px-6 pb-12">
+        <h2 className="text-[10px] font-bold uppercase tracking-widest mb-4" style={{ color: "hsl(210 15% 38%)" }}>
+          Case Studies
+        </h2>
+        <div className="space-y-3">
+          {caseStudies.map(({ id, title, description, tags, status }) => (
+            <div
+              key={id}
+              className="rounded-2xl p-5 flex items-center justify-between gap-4"
+              style={{
+                background: status === "live" ? "hsl(210 28% 11%)" : "hsl(210 28% 8%)",
+                border: `1px solid ${status === "live" ? "hsl(210 20% 20%)" : "hsl(210 20% 13%)"}`,
+                opacity: status === "wip" ? 0.45 : 1,
+              }}
+            >
+              <div className="flex items-start gap-4">
+                <span
+                  className="text-xs font-black tabular-nums mt-0.5 flex-shrink-0"
+                  style={{ color: status === "live" ? "hsl(174 80% 60%)" : "hsl(210 15% 35%)" }}
+                >
+                  {id}
+                </span>
+                <div>
+                  <p className="text-sm font-bold mb-1" style={{ color: "hsl(210 40% 92%)" }}>{title}</p>
+                  <p className="text-xs mb-2.5" style={{ color: "hsl(210 15% 52%)" }}>{description}</p>
+                  <div className="flex flex-wrap gap-1.5">
+                    {tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="text-[10px] font-semibold px-2 py-0.5 rounded-full"
+                        style={{ background: "hsl(174 80% 60% / 0.1)", color: "hsl(174 80% 60%)", border: "1px solid hsl(174 80% 60% / 0.2)" }}
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+              {status === "live" && (
+                <ArrowRight size={16} className="flex-shrink-0" style={{ color: "hsl(174 80% 60%)" }} />
+              )}
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ── SECTION DIVIDER ────────────────────────────────────── */}
+      <div className="max-w-2xl mx-auto px-6 mb-10">
+        <div className="flex items-center gap-4">
+          <div className="flex-1 h-px" style={{ background: "hsl(210 20% 14%)" }} />
+          <span className="text-[10px] font-bold uppercase tracking-widest text-center" style={{ color: "hsl(210 15% 32%)" }}>Case Study 01 — Interactive Prototype</span>
+          <div className="flex-1 h-px" style={{ background: "hsl(210 20% 14%)" }} />
+        </div>
+      </div>
+
+      {/* ── CASE STUDY TITLE ───────────────────────────────────── */}
+      <div className="text-center pb-4 px-6">
         <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-3" style={{ background: "hsl(174 80% 60% / 0.12)", border: "1px solid hsl(174 80% 60% / 0.25)" }}>
           <span className="text-[10px] font-bold uppercase tracking-widest" style={{ color: "hsl(174 80% 60%)" }}>PM Portfolio · Case Study 01</span>
         </div>
-        <h1 className="text-3xl font-black tracking-tight mb-2" style={{ color: "hsl(210 40% 98%)" }}>
+        <h2 className="text-3xl font-black tracking-tight mb-2" style={{ color: "hsl(210 40% 98%)" }}>
           Moneybox <span style={{ color: "hsl(174 80% 60%)" }}>Redesigned</span>
-        </h1>
+        </h2>
         <p className="text-sm max-w-sm mx-auto" style={{ color: "hsl(210 15% 55%)" }}>
           A clearer, more confident savings & investment experience
         </p>
       </div>
 
-      {/* Phone prototype */}
+      {/* ── PHONE PROTOTYPE ────────────────────────────────────── */}
       <div className="flex justify-center px-4 mb-8">
         <div
           className="relative w-[375px] rounded-[44px] overflow-hidden"
@@ -101,7 +216,7 @@ const Index = () => {
         </div>
       </div>
 
-      {/* Case study accordion */}
+      {/* ── DESIGN RATIONALE ACCORDION ─────────────────────────── */}
       <div className="max-w-sm mx-auto px-5 pb-16">
         <h2 className="text-sm font-bold uppercase tracking-widest mb-4 text-center" style={{ color: "hsl(210 15% 40%)" }}>
           Design rationale
