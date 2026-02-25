@@ -1,73 +1,79 @@
-# Welcome to your Lovable project
+## Lucas Daneluz – Portfolio
 
-## Project info
+This repository contains the source code for the personal portfolio of **Lucas Daneluz**, built as a modern single-page application using Vite, React, and TypeScript.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+---
 
-## How can I edit this code?
+## Tech stack
 
-There are several ways of editing your application.
+- **Vite** (bundler & dev server)
+- **React** + **TypeScript**
+- **Tailwind CSS** + **tailwindcss-animate**
+- **shadcn/ui** components
+- **Radix UI** primitives
+- **Vitest** + Testing Library
 
-**Use Lovable**
+---
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+## Getting started (local development)
 
-Changes made via Lovable will be committed automatically to this repo.
+### Prerequisites
 
-**Use your preferred IDE**
+- **Node.js** (active LTS recommended)
+- **npm** (installed with Node)
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Installation
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
+Clone the repository and install dependencies:
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
 git clone <YOUR_GIT_URL>
+cd lucas-portfolio
+npm install
+```
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+### Running the dev server
 
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+```sh
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+Then open `http://localhost:8080` in your browser.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Building for production
 
-**Use GitHub Codespaces**
+```sh
+npm run build
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+To preview the production build:
 
-## What technologies are used for this project?
+```sh
+npm run preview
+```
 
-This project is built with:
+### Linting and tests
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+- Lint:
 
-## How can I deploy this project?
+  ```sh
+  npm run lint
+  ```
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+- Tests:
 
-## Can I connect a custom domain to my Lovable project?
+  ```sh
+  npm run test
+  # or
+  npm run test:watch
+  ```
 
-Yes, you can!
+---
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## Project structure (high level)
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+- `src/` – React components, routes, and application logic
+- `index.html` – HTML entry point
+- `vite.config.ts` – Vite configuration
+- `tailwind.config.ts` / `postcss.config.js` – styling configuration
+- `cursor-migration-md` – notes on migrating from the original Lovable.dev scaffold to a neutral setup

@@ -1,0 +1,229 @@
+### Overview
+
+This project is a **Vite + React + TypeScript** single-page application, styled with **Tailwind CSS**, **shadcn/ui**, and **Radix UI**. It was originally scaffolded by **Lovable.dev**, but structurally it is a standard Vite React app that can run completely independently of Lovable.
+
+- **Entry HTML**: `index.html` → loads `src/main.tsx`
+- **React entry**: `src/main.tsx` → renders `App` into `#root`
+- **Bundler/dev server**: Vite, configured in `vite.config.ts`
+- **Package manager**: npm (indicated by `package-lock.json`)
+- **Styling**: Tailwind (`tailwind.config.ts`, `postcss.config.js`) + shadcn/ui + Radix UI
+
+There is **no backend** in this repo and **no required environment variables** (no `.env` files, and no `import.meta.env` or `process.env` usage was found). You should be able to run it locally with just Node/npm installed.
+
+---
+
+### Loveable.dev dependencies and touchpoints
+
+The Lovable integration shows up in three main places:
+
+- **1. Vite plugin: `lovable-tagger`**
+  - **File**: `vite.config.ts`
+  - **What it does**: Adds a dev-only Vite plugin that tags components for Lovable’s UI.
+  - **Current config** (simplified):
+
+    ```ts
+    import { defineConfig } from "vite";
+    import react from "@vitejs/plugin-react-swc";
+    import path from "path";
+    import { componentTagger } from "lovable-tagger";
+
+    export default defineConfig(({ mode }) => ({
+      server: {
+        host: "::",
+        port: 8080,
+        hmr: { overlay: false },
+      },
+      plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
+      resolve: {
+        alias: { "@": path.resolve(__dirname, "./src") },
+      },
+    }));
+    ```
+
+  - **Dependency**:
+    - In `package.json`, `lovable-tagger` appears in `devDependencies`.
+
+- **2. Lovable branding in HTML**
+  - **File**: `index.html`
+  - Lovable-branded meta tags and OG/Twitter images, e.g.:
+    - `<title>Lovable App</title>`
+    - `content="Lovable Generated Project"`
+    - `author="Lovable"`
+    - `og:image` and `twitter:image` pointing to a `lovable.dev` URL
+
+- **3. Lovable-oriented README**
+  - **File**: `README.md`
+  - Contains Lovable project links and instructions, but this is **docs only** and does not affect runtime.
+
+There are **no `.lovable` or `loveable.*` config files**, and no Lovable-specific runtime code in `src/`—only the dev plugin and branding.
+
+---
+
+### Step-by-step: Disconnect Lovable.dev dependencies
+
+You can disconnect from Lovable in two passes: first make the dev tooling neutral, then clean up branding/docs.
+
+#### 1. Remove the Lovable Vite plugin (`lovable-tagger`)
+
+**Goal**: Make the Vite config independent of any Lovable-specific plugins.
+
+1. Open `vite.config.ts`.
+2. Remove the import of `componentTagger`:
+
+   - Delete this line:
+
+     ```ts
+     import { componentTagger } from "lovable-tagger";
+     ```
+
+3. Update the `plugins` array to use only the React plugin:
+
+   - Before (conceptually):
+
+     ```ts
+     plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
+     ```
+
+   - After:
+
+     ```ts
+     plugins: [react()],
+     ```
+
+4. Open `package.json` and remove the `lovable-tagger` entry from `devDependencies`.
+5. (Optional but recommended) Clean up your lockfile:
+   - Run:
+
+     ```bash
+     npm install
+     ```
+
+   - This will update `package-lock.json` to drop `lovable-tagger`.
+
+At this point, the build and dev server are completely independent of Lovable tooling.
+
+#### 2. Rebrand `index.html` away from Lovable
+
+**Goal**: Remove visual/SEO references to Lovable in the document head, without changing app behavior.
+
+1. Open `index.html`.
+2. Update the `<title>` tag to your portfolio name, e.g.:
+
+   ```html
+   <title>Lucas Daneluz – Portfolio</title>
+   ```
+
+3. Update or remove the Lovable-specific meta tags:
+   - Replace `Lovable Generated Project` and `Lovable App` content with your own descriptions.
+   - Swap out the `og:image` and `twitter:image` URLs for your own preview image, or remove those tags if you don’t need them.
+   - Remove or update `meta name="author" content="Lovable"` to reflect your name.
+
+These changes only affect SEO and sharing previews; they do not impact local development or builds.
+
+#### 3. (Optional) Rewrite `README.md`
+
+**Goal**: Replace Lovable-focused docs with a simple project README.
+
+1. Open `README.md`.
+2. Replace the Lovable introduction and project URL with:
+   - A brief description of your portfolio.
+   - Basic commands:
+
+     ```bash
+     npm install
+     npm run dev
+     npm run build
+     npm run preview
+     npm run lint
+     npm run test
+     ```
+
+3. Optionally document:
+   - Tech stack (Vite, React, TypeScript, Tailwind, shadcn/ui, Radix).
+   - Any custom scripts or patterns you adopt as you evolve the project.
+
+This step is purely documentation but helps future-you understand the project without Lovable context.
+
+---
+
+### Step-by-step: Running the project locally (post-migration or as-is)
+
+You can follow these steps **right now**, even before removing Lovable-specific pieces. The project already runs fine as a standard Vite app.
+
+#### 1. Prerequisites
+
+- **Node.js**: Install an active LTS version from `https://nodejs.org/`.
+- **npm**: Installed with Node.js (no extra steps usually required).
+
+#### 2. Install dependencies
+
+From the project root (`lucas-portfolio`):
+
+```bash
+cd "path/to/lucas-portfolio"
+npm install
+```
+
+This reads `package.json` and `package-lock.json` and installs all dependencies (including `lovable-tagger` if you haven’t removed it yet).
+
+#### 3. Start the Vite dev server
+
+From the same directory:
+
+```bash
+npm run dev
+```
+
+- This runs Vite using `vite.config.ts`.
+- The dev server is configured to listen on **port 8080**.
+- Open your browser to:
+  - `http://localhost:8080`
+
+#### 4. Build and preview (optional)
+
+To create a production build:
+
+```bash
+npm run build
+```
+
+To preview the built app with Vite’s preview server:
+
+```bash
+npm run preview
+```
+
+Then open the URL printed in the terminal (typically `http://localhost:4173` unless configured otherwise).
+
+#### 5. Lint and test (optional)
+
+- Run linting:
+
+  ```bash
+  npm run lint
+  ```
+
+- Run tests once:
+
+  ```bash
+  npm run test
+  ```
+
+- Run tests in watch mode:
+
+  ```bash
+  npm run test:watch
+  ```
+
+---
+
+### Quick checklist for a clean Cursor-based workflow
+
+- [ ] Remove `lovable-tagger` import and plugin usage from `vite.config.ts`.
+- [ ] Remove `lovable-tagger` from `devDependencies` in `package.json` and re-run `npm install`.
+- [ ] Update `index.html` title, meta description, author, and social preview tags to reflect your personal portfolio.
+- [ ] Rewrite `README.md` to describe the project in neutral terms (no Lovable references).
+- [ ] Confirm `npm run dev` works and serves the app at `http://localhost:8080`.
+- [ ] Optionally run `npm run build` and `npm run preview` to confirm production builds work as expected.
+
+Once the above are done, this project is fully “de-Lovable’d” and behaves exactly like a standard Vite + React + TypeScript app managed directly in Cursor.
