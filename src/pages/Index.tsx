@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import MoneyboxApp from "@/components/moneybox/MoneyboxApp";
-import { ChevronDown, ChevronUp, ArrowRight, Briefcase, TrendingUp, Layers } from "lucide-react";
+import { ChevronDown, ChevronUp, ArrowRight, Briefcase, TrendingUp, Layers, PiggyBank, DollarSign } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 const caseStudySections = [
@@ -124,23 +124,24 @@ const Index = () => {
           Lucas Daneluz
         </h1>
         <p className="text-lg font-semibold mb-5" style={{ color: "hsl(174 80% 60%)" }}>
-          Strategic Procurement → Product Management
+          Product Manager
         </p>
 
         {/* Bio */}
         <p className="text-sm leading-relaxed mb-3" style={{ color: "hsl(210 20% 62%)" }}>
-          With a background in <strong style={{ color: "hsl(210 40% 88%)" }}>Strategic Procurement</strong>, I've spent years working across vendor negotiations, cost optimisation, and cross-functional stakeholder management — skills that map directly onto the PM toolkit: prioritisation, trade-off analysis, and driving alignment.
+        <strong style={{ color: "hsl(210 40% 88%)" }}>Product Manager</strong> with over 10+ years of experience in commercial and product-adjacent roles across B2B SaaS, FMCG, and supply-chain environments. Currently driving end-to-end product discovery and early delivery for an early-stage SaaS platform, translating user needs into prioritised features and measurable outcomes. Brings strong expertise in stakeholder alignment, cross-functional collaboration, cost optimisation, and data-informed decision-making, with a solid foundation in commercial execution.
         </p>
         <p className="text-sm leading-relaxed mb-8" style={{ color: "hsl(210 20% 62%)" }}>
-          I'm now channelling that commercial lens into <strong style={{ color: "hsl(210 40% 88%)" }}>Fintech Product Management</strong>, building a portfolio of concrete product ideas grounded in real user pain points. Each case study below is something I'd genuinely use — and think would make a measurable difference.
+          I'm now channelling that commercial lens into <strong style={{ color: "hsl(210 40% 88%)" }}>Product Management</strong>, building a portfolio of concrete product ideas grounded in real user pain points. Each case study below is something I'd genuinely use, and think would make a measurable difference in the real world.
         </p>
 
         {/* Skill pills */}
         <div className="flex flex-wrap gap-3">
           {[
-            { icon: <TrendingUp size={12} />, label: "Fintech Focus" },
+            { icon: <Briefcase size={12} />, label: "Product" },
+            { icon: <TrendingUp size={12} />, label: "Fintech" },
             { icon: <Layers size={12} />, label: "UX & Strategy" },
-            { icon: <Briefcase size={12} />, label: "Procurement Background" },
+            { icon: <DollarSign size={12} />, label: "Cost Efficiency" },
           ].map(({ icon, label }) => (
             <div
               key={label}
