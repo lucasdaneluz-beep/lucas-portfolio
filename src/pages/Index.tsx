@@ -27,7 +27,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-[hsl(210_35%_5%)] text-white px-6 py-16">
       {/* Hero / Bio */}
-      <section className="max-w-2xl mx-auto px-6 pt-16 pb-10">
+      <section className="max-w-full sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-6 pt-16 pb-10">
         {/* Badge */}
         <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-6" style={{ background: "hsl(174 80% 60% / 0.1)", border: "1px solid hsl(174 80% 60% / 0.25)" }}>
           <Briefcase size={11} style={{ color: "hsl(174 80% 60%)" }} />
