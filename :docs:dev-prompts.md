@@ -1,7 +1,7 @@
 DEVELOPER MODE: npm run dev
-ADD to GITHUB: git push
-Push your local branch to GitHub (if your main branch is main): git push -u origin main
-COMMIT: git commit -m
+git push
+git commit -m
+git push origin main
 check if it’s already connected to GitHub: git remote -v
 git status
 cd "/Users/lucasdaneluz/Documents/Portfolio via Cursor/lucas-portfolio"
