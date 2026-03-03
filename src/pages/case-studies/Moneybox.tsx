@@ -28,7 +28,7 @@ const CaseStudyMoneybox = () => {
           Moneybox <span style={{ color: "hsl(174 80% 60%)" }}>Redesigned</span>
         </h1>
         <p className="text-sm md:text-base max-w-xl mb-8" style={{ color: "hsl(210 20% 65%)" }}>
-          Reimagining the savings & investment journey to make core products easier to find, compare, and act on — while staying true to Moneybox&apos;s visual identity.
+          Reimagining the savings & investment journey to make core products easier to find, compare, and act on — while staying true to Moneybox&apos;s visual identity. After using the Moneybox app, I found the experience somewhat clunky and saw an opportunity to streamline the interface to boost user confidence. I explored alternative design approaches and developed ideas to enhance the overall user experience.
         </p>
 
         <div className="grid md:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)] gap-10 mb-12 items-start">
