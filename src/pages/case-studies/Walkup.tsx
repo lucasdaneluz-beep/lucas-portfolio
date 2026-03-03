@@ -25,7 +25,7 @@ const CaseStudyWalkup = () => {
         <h1 className="text-3xl md:text-4xl font-black tracking-tight mb-3" style={{ color: "hsl(210 40% 98%)" }}>
           WalkUp <span style={{ color: "hsl(174 80% 60%)" }}>Smarter Queues</span>
         </h1>
-        <p className="text-sm md:text-base max-w-xl mb-8" style={{ color: "hsl(210 20% 65%)" }}>
+        <p className="text-sm md:text-base max-w-4xl mb-8" style={{ color: "hsl(210 20% 65%)" }}>
           Improving queue transparency, loyalty, and app performance for a UK restaurant waitlist marketplace used by 400K+ diners.
         </p>
 

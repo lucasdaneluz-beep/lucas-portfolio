@@ -5,19 +5,32 @@ import { Briefcase, TrendingUp, Layers, DollarSign, ArrowRight } from "lucide-re
 const caseStudies = [
   {
     id: "01",
+    slug: "walkup",
     title: "WalkUp – Smarter Queues",
-    description: "Improving queue transparency, loyalty, and app performance for a UK restaurant waitlist marketplace.",
+    description:
+      "Improving queue transparency, loyalty, and app performance for a UK restaurant waitlist marketplace.",
     tags: ["Marketplace", "Waitlist UX", "Loyalty", "Product Strategy"],
     status: "live",
     href: "/case-studies/walkup",
   },
   {
     id: "02",
+    slug: "moneybox",
     title: "Moneybox Redesigned",
-    description: "Reimagining the savings & investment journey for clarity and confidence.",
+    description:
+      "Reimagining the savings & investment journey for clarity and confidence.",
     tags: ["UX Strategy", "Fintech", "Navigation"],
     status: "live",
     href: "/case-studies/moneybox",
+  },
+  {
+    id: "03",
+    slug: "Coming Soon",
+    title: "Coming Soon",
+    description: "Coming soon",
+    tags: ["AI", "Music", "Discovery"],
+    status: "coming-soon", // note we use this status to disable click
+    href: "/case-studies/spotify",
   },
 ];
 
