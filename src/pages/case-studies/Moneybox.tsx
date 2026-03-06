@@ -163,11 +163,11 @@ const CaseStudyMoneybox = () => {
               <p className="text-[11px] font-semibold uppercase tracking-widest mb-2" style={{ color: "hsl(210 15% 55%)" }}>
                 Current Moneybox app
               </p>
-              <div className="flex justify-center mb-3 overflow-y-auto rounded-2xl" style={{ maxHeight: "360px" }}>
+              <div className="flex justify-center mb-3">
                 <img
                   src="/moneybox-current.png"
                   alt="Current Moneybox Cash ISA home screen"
-                  className="w-full rounded-2xl border border-[hsl(210_20%_18%)]"
+                  className="w-full h-auto rounded-2xl border border-[hsl(210_20%_18%)]"
                 />
               </div>
               <p className="mb-3" style={{ color: "hsl(210 20% 70%)" }}>
@@ -188,11 +188,11 @@ const CaseStudyMoneybox = () => {
               <p className="text-[11px] font-semibold uppercase tracking-widest mb-2" style={{ color: "hsl(174 80% 60%)" }}>
                 Redesigned experience
               </p>
-              <div className="flex justify-center mb-3 overflow-y-auto rounded-2xl" style={{ maxHeight: "360px" }}>
+              <div className="flex justify-center mb-3">
                 <img
                   src="/moneybox-redesign-comparison.png"
                   alt="Redesigned Moneybox concept with separate Cash ISA and Simple Saver cards"
-                  className="w-full rounded-2xl border border-[hsl(210_20%_18%)]"
+                  className="w-full h-auto rounded-2xl border border-[hsl(210_20%_18%)]"
                 />
               </div>
               <p className="mb-3" style={{ color: "hsl(210 20% 70%)" }}>
