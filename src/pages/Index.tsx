@@ -15,6 +15,16 @@ const caseStudies = [
   },
   {
     id: "02",
+    slug: "hipen-media",
+    title: "Hipen Media – User Onboarding",
+    description:
+      "Bringing structure to a complex, multi-segment onboarding flow through qualitative research and a lean MVP approach.",
+    tags: ["Discovery", "Onboarding", "MVP", "Research"],
+    status: "live",
+    href: "/case-studies/hipen-media",
+  },
+  {
+    id: "03",
     slug: "moneybox",
     title: "Moneybox Redesigned",
     description:
@@ -24,7 +34,7 @@ const caseStudies = [
     href: "/case-studies/moneybox",
   },
   {
-    id: "03",
+    id: "04",
     slug: "Coming Soon",
     title: "Next Case Study",
     description: "Something new is in the works. A product concept exploring AI-driven discovery — details coming soon.",
