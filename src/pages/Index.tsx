@@ -26,10 +26,10 @@ const caseStudies = [
   {
     id: "03",
     slug: "Coming Soon",
-    title: "Coming Soon",
-    description: "Coming soon",
+    title: "Next Case Study",
+    description: "Something new is in the works. A product concept exploring AI-driven discovery — details coming soon.",
     tags: ["AI", "Music", "Discovery"],
-    status: "coming-soon", // note we use this status to disable click
+    status: "coming-soon",
     href: "/case-studies/spotify",
   },
 ];
@@ -78,7 +78,7 @@ const Index = () => {
         </div>
 
         {/* Contact links */}
-        <div className="flex flex-wrap gap-3 mt-4">
+        <div className="flex flex-wrap gap-3 mt-6">
           {[
             { icon: <Linkedin size={12} />, label: "LinkedIn", href: "https://www.linkedin.com/in/lucasdaneluz" },
             { icon: <Mail size={12} />, label: "Email", href: "mailto:lucas.daneluz@gmail.com" },
@@ -110,17 +110,25 @@ const Index = () => {
               key={id}
               type="button"
               onClick={() => status === "live" && navigate(href)}
-              className="w-full text-left rounded-2xl p-5 flex items-center justify-between gap-4 transition-transform hover:scale-[1.01] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
+              className={`w-full text-left rounded-2xl p-5 flex items-center justify-between gap-4 transition-transform focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${status === "live" ? "hover:scale-[1.01]" : ""}`}
               style={{
                 background: "hsl(210 28% 11%)",
-                border: "1px solid hsl(210 20% 20%)",
+                border: `1px solid ${status === "coming-soon" ? "hsl(210 20% 16%)" : "hsl(210 20% 20%)"}`,
                 cursor: status === "live" ? "pointer" : "default",
+                opacity: status === "coming-soon" ? 0.55 : 1,
               }}
             >
               <div className="flex items-start gap-4">
-                <span className="text-xs font-black tabular-nums mt-0.5 flex-shrink-0" style={{ color: "hsl(174 80% 60%)" }}>{id}</span>
+                <span className="text-xs font-black tabular-nums mt-0.5 flex-shrink-0" style={{ color: status === "coming-soon" ? "hsl(210 15% 40%)" : "hsl(174 80% 60%)" }}>{id}</span>
                 <div>
-                  <p className="text-sm font-bold mb-1">{title}</p>
+                  <div className="flex items-center gap-2 mb-1">
+                    <p className="text-sm font-bold">{title}</p>
+                    {status === "coming-soon" && (
+                      <span className="text-[9px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-full" style={{ background: "hsl(42 90% 58% / 0.1)", color: "hsl(42 90% 58%)", border: "1px solid hsl(42 90% 58% / 0.25)" }}>
+                        In Progress
+                      </span>
+                    )}
+                  </div>
                   <p className="text-xs mb-2.5 text-gray-400">{description}</p>
                   <div className="flex flex-wrap gap-1.5">
                     {tags.map(tag => (
