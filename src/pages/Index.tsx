@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { Briefcase, TrendingUp, Layers, DollarSign, ArrowRight } from "lucide-react";
+import { Briefcase, TrendingUp, Layers, DollarSign, ArrowRight, Linkedin, Mail } from "lucide-react";
 
 const caseStudies = [
   {
@@ -79,6 +79,26 @@ const Index = () => {
             </div>
           ))}
         </div>
+
+        {/* Contact links */}
+        <div className="flex flex-wrap gap-3 mt-4">
+          {[
+            { icon: <Linkedin size={12} />, label: "LinkedIn", href: "https://www.linkedin.com/in/lucasdaneluz" },
+            { icon: <Mail size={12} />, label: "Email", href: "mailto:lucas.daneluz@gmail.com" },
+          ].map(({ icon, label, href }) => (
+            <a
+              key={label}
+              href={href}
+              target={href.startsWith("http") ? "_blank" : undefined}
+              rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[11px] font-semibold transition-colors hover:border-[hsl(174_80%_60%)] hover:text-[hsl(174_80%_60%)]"
+              style={{ background: "hsl(210 28% 12%)", border: "1px solid hsl(210 20% 20%)", color: "hsl(210 20% 65%)" }}
+            >
+              <span style={{ color: "hsl(174 80% 60%)" }}>{icon}</span>
+              {label}
+            </a>
+          ))}
+        </div>
       </section>
 
       {/* Case Studies List */}
@@ -123,6 +143,19 @@ const Index = () => {
           ))}
         </div>
       </section>
+
+      {/* Footer */}
+      <footer className="max-w-2xl mx-auto mt-16 pt-6 flex items-center justify-between" style={{ borderTop: "1px solid hsl(210 20% 14%)" }}>
+        <span className="text-[11px]" style={{ color: "hsl(210 15% 40%)" }}>© {new Date().getFullYear()} Lucas Daneluz</span>
+        <div className="flex items-center gap-4">
+          <a href="https://www.linkedin.com/in/lucasdaneluz" target="_blank" rel="noopener noreferrer" style={{ color: "hsl(210 15% 40%)" }} className="hover:text-[hsl(174_80%_60%)] transition-colors">
+            <Linkedin size={14} />
+          </a>
+          <a href="mailto:lucas.daneluz@gmail.com" style={{ color: "hsl(210 15% 40%)" }} className="hover:text-[hsl(174_80%_60%)] transition-colors">
+            <Mail size={14} />
+          </a>
+        </div>
+      </footer>
     </div>
   );
 };
