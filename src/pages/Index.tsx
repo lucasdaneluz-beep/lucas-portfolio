@@ -56,8 +56,8 @@ const Index = () => {
         </p>
 
         {/* Bio */}
-        <p className="text-sm leading-relaxed mb-8" style={{ color: "hsl(210 20% 62%)" }}>
-          <strong style={{ color: "hsl(210 40% 88%)" }}>PM</strong> with 10+ years in commercial and product-adjacent roles across B2B SaaS, FMCG, and supply chain. I've spent my career close to users, data, and business outcomes — and I'm now channelling that into building a product portfolio grounded in real pain points, clear thinking, and measurable impact.
+        <p className="text-base leading-relaxed mb-8" style={{ color: "hsl(210 20% 62%)" }}>
+          <strong style={{ color: "hsl(210 40% 88%)" }}>PM</strong> with 10+ years in commercial and product-adjacent roles across B2B SaaS, FMCG, and supply chain. I've spent my career close to users, data, and looking to own business outcomes. I'm now channelling that into building a product portfolio grounded in real pain points, clear thinking, and measurable impact.
         </p>
 
         {/* Skill pills */}
