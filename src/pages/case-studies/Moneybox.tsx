@@ -164,12 +164,12 @@ const CaseStudyMoneybox = () => {
                 Current Moneybox app
               </p>
               <div className="flex justify-center mb-3">
-                <img
-                  src="/moneybox-current.png"
-                  alt="Current Moneybox Cash ISA home screen"
-                  className="w-full h-auto rounded-2xl border border-[hsl(210_20%_18%)]"
-                />
-              </div>
+  <img
+    src="/moneybox-current.png"
+    alt="Current Moneybox Cash ISA home screen"
+    className="max-w-[320px] w-full h-auto rounded-2xl border border-[hsl(210_20%_18%)]"
+  />
+</div>
               <p className="mb-3" style={{ color: "hsl(210 20% 70%)" }}>
                 Current public Moneybox home screen:
               </p>
@@ -192,7 +192,7 @@ const CaseStudyMoneybox = () => {
                 <img
                   src="/moneybox-redesign-comparison.png"
                   alt="Redesigned Moneybox concept with separate Cash ISA and Simple Saver cards"
-                  className="w-full h-auto rounded-2xl border border-[hsl(210_20%_18%)]"
+                  className="max-w-[320px] w-full h-auto rounded-2xl border border-[hsl(210_20%_18%)]"
                 />
               </div>
               <p className="mb-3" style={{ color: "hsl(210 20% 70%)" }}>
@@ -207,6 +207,10 @@ const CaseStudyMoneybox = () => {
             </div>
           </div>
         </section>
+
+        <p className="text-[10px] text-center mt-8" style={{ color: "hsl(210 15% 35%)" }}>
+          This is an independent product concept created for portfolio purposes only. Not affiliated with Moneybox.
+        </p>
       </div>
     </div>
   );
