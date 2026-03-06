@@ -56,11 +56,8 @@ const Index = () => {
         </p>
 
         {/* Bio */}
-        <p className="text-sm leading-relaxed mb-3" style={{ color: "hsl(210 20% 62%)" }}>
-        <strong style={{ color: "hsl(210 40% 88%)" }}>Product Manager</strong> with over 10+ years of experience in commercial and product-adjacent roles across B2B SaaS, FMCG, and supply-chain environments. Currently driving end-to-end product discovery and early delivery for an early-stage SaaS platform, translating user needs into prioritised features and measurable outcomes. Brings strong expertise in stakeholder alignment, cross-functional collaboration, cost optimisation, and data-informed decision-making, with a solid foundation in commercial execution.
-        </p>
         <p className="text-sm leading-relaxed mb-8" style={{ color: "hsl(210 20% 62%)" }}>
-          I'm now channelling that commercial lens into <strong style={{ color: "hsl(210 40% 88%)" }}>Product Management</strong>, building a portfolio of concrete product ideas grounded in real user pain points. Each case study below is something I'd genuinely use, and think would make a measurable difference in the real world.
+          <strong style={{ color: "hsl(210 40% 88%)" }}>PM</strong> with 10+ years in commercial and product-adjacent roles across B2B SaaS, FMCG, and supply chain. I've spent my career close to users, data, and business outcomes — and I'm now channelling that into building a product portfolio grounded in real pain points, clear thinking, and measurable impact.
         </p>
 
         {/* Skill pills */}
@@ -102,7 +99,7 @@ const Index = () => {
       </section>
 
       {/* Case Studies List */}
-      <section className="max-w-2xl mx-auto">
+      <section className="max-w-full sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-6 mt-10">
         <h2 className="text-[10px] font-bold uppercase tracking-widest mb-4 text-gray-500">
           Case Studies
         </h2>
@@ -145,7 +142,7 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="max-w-2xl mx-auto mt-16 pt-6 flex items-center justify-between" style={{ borderTop: "1px solid hsl(210 20% 14%)" }}>
+      <footer className="max-w-full sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-6 mt-16 pt-6 flex items-center justify-between" style={{ borderTop: "1px solid hsl(210 20% 14%)" }}>
         <span className="text-[11px]" style={{ color: "hsl(210 15% 40%)" }}>© {new Date().getFullYear()} Lucas Daneluz</span>
         <div className="flex items-center gap-4">
           <a href="https://www.linkedin.com/in/lucasdaneluz" target="_blank" rel="noopener noreferrer" style={{ color: "hsl(210 15% 40%)" }} className="hover:text-[hsl(174_80%_60%)] transition-colors">
