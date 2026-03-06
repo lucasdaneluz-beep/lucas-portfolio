@@ -29,6 +29,21 @@ const CaseStudyWalkup = () => {
           Improving queue transparency, loyalty, and app performance for a UK restaurant waitlist marketplace used by 400K+ diners.
         </p>
 
+        {/* Metrics strip */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-12">
+          {[
+            { value: "400K+", label: "Diners served" },
+            { value: "800+", label: "Restaurant partners" },
+            { value: "6", label: "Sprints · Q1 roadmap" },
+            { value: "~70%", label: "Modelled first-year ROI" },
+          ].map(({ value, label }) => (
+            <div key={label} className="rounded-2xl p-4 text-center" style={{ background: "hsl(210 28% 10%)", border: "1px solid hsl(210 20% 18%)" }}>
+              <p className="text-2xl font-black mb-1" style={{ color: "hsl(174 80% 60%)" }}>{value}</p>
+              <p className="text-[11px]" style={{ color: "hsl(210 15% 50%)" }}>{label}</p>
+            </div>
+          ))}
+        </div>
+
         {/* Overview / About */}
         <section className="grid md:grid-cols-2 gap-8 mb-12 text-xs md:text-sm" style={{ color: "hsl(210 20% 70%)" }}>
           <div className="space-y-4">
@@ -79,6 +94,40 @@ const CaseStudyWalkup = () => {
             </div>
           </div>
         </section>
+
+        {/* Problem / Solution / Impact */}
+        <div className="grid md:grid-cols-3 gap-4 text-xs md:text-sm mb-12">
+          <div className="rounded-2xl p-4" style={{ background: "hsl(0 72% 51% / 0.08)", border: "1px solid hsl(0 72% 51% / 0.2)" }}>
+            <h2 className="flex items-center gap-2 text-sm font-bold mb-2" style={{ color: "hsl(0 72% 60%)" }}>
+              <span>🎯</span> Problem
+            </h2>
+            <ul className="space-y-1.5" style={{ color: "hsl(210 20% 70%)" }}>
+              <li>Unreliable wait times eroded trust and drove users to abandon queues mid-wait.</li>
+              <li>No loyalty mechanic meant little reason to return over competitors.</li>
+              <li>App crashes and battery drain were directly hurting retention and reviews.</li>
+            </ul>
+          </div>
+          <div className="rounded-2xl p-4" style={{ background: "hsl(174 80% 60% / 0.08)", border: "1px solid hsl(174 80% 60% / 0.2)" }}>
+            <h2 className="flex items-center gap-2 text-sm font-bold mb-2" style={{ color: "hsl(174 80% 60%)" }}>
+              <span>💡</span> Solution
+            </h2>
+            <ul className="space-y-1.5" style={{ color: "hsl(210 20% 70%)" }}>
+              <li>Rebuilt wait-time accuracy with SMS alerts and aligned restaurant cut-off rules.</li>
+              <li>Launched a points-based loyalty programme with cash-equivalent rewards.</li>
+              <li>Treated app stability as a prerequisite — fixed crashes and battery drain first.</li>
+            </ul>
+          </div>
+          <div className="rounded-2xl p-4" style={{ background: "hsl(42 90% 58% / 0.08)", border: "1px solid hsl(42 90% 58% / 0.2)" }}>
+            <h2 className="flex items-center gap-2 text-sm font-bold mb-2" style={{ color: "hsl(42 90% 58%)" }}>
+              <span>📊</span> Impact & rationale
+            </h2>
+            <ul className="space-y-1.5" style={{ color: "hsl(210 20% 70%)" }}>
+              <li>Modelled +10% uplift in weekly bookings and returning diners within Q1.</li>
+              <li>Richer restaurant profiles reduce friction in new venue onboarding.</li>
+              <li>~70% first-year ROI on combined product and marketing investment.</li>
+            </ul>
+          </div>
+        </div>
 
         {/* Personas */}
         <section className="mb-12 text-xs md:text-sm">
@@ -183,9 +232,12 @@ const CaseStudyWalkup = () => {
               className="rounded-2xl p-4"
               style={{ background: "hsl(174 80% 60% / 0.08)", border: "1px solid hsl(174 80% 60% / 0.2)" }}
             >
-              <h3 className="flex items-center gap-2 text-sm font-bold mb-2" style={{ color: "hsl(174 80% 60%)" }}>
-                <span>⏱️</span> Improve wait‑time accuracy
-              </h3>
+              <div className="flex items-center justify-between mb-2">
+                <h3 className="flex items-center gap-2 text-sm font-bold" style={{ color: "hsl(174 80% 60%)" }}>
+                  <span>⏱️</span> Improve wait‑time accuracy
+                </h3>
+                <span className="text-[9px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-full" style={{ background: "hsl(0 72% 51% / 0.12)", color: "hsl(0 72% 60%)", border: "1px solid hsl(0 72% 51% / 0.25)" }}>High</span>
+              </div>
               <ul className="space-y-1.5 list-disc pl-4" style={{ color: "hsl(210 20% 70%)" }}>
                 <li>Upgrade restaurant platform with SMS alerts for both app users and walk‑ins.</li>
                 <li>Align queue messaging and cut‑off rules with real operations.</li>
@@ -196,9 +248,12 @@ const CaseStudyWalkup = () => {
               className="rounded-2xl p-4"
               style={{ background: "hsl(174 80% 60% / 0.08)", border: "1px solid hsl(174 80% 60% / 0.2)" }}
             >
-              <h3 className="flex items-center gap-2 text-sm font-bold mb-2" style={{ color: "hsl(174 80% 60%)" }}>
-                <span>⭐</span> Loyalty and profiles
-              </h3>
+              <div className="flex items-center justify-between mb-2">
+                <h3 className="flex items-center gap-2 text-sm font-bold" style={{ color: "hsl(174 80% 60%)" }}>
+                  <span>⭐</span> Loyalty and profiles
+                </h3>
+                <span className="text-[9px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-full" style={{ background: "hsl(0 72% 51% / 0.12)", color: "hsl(0 72% 60%)", border: "1px solid hsl(0 72% 51% / 0.25)" }}>High</span>
+              </div>
               <ul className="space-y-1.5 list-disc pl-4" style={{ color: "hsl(210 20% 70%)" }}>
                 <li>Launch a clear points‑based loyalty programme with cash‑equivalent rewards.</li>
                 <li>Design richer restaurant profiles: photos, menu highlights, pricing, reviews.</li>
@@ -209,9 +264,12 @@ const CaseStudyWalkup = () => {
               className="rounded-2xl p-4"
               style={{ background: "hsl(174 80% 60% / 0.08)", border: "1px solid hsl(174 80% 60% / 0.2)" }}
             >
-              <h3 className="flex items-center gap-2 text-sm font-bold mb-2" style={{ color: "hsl(174 80% 60%)" }}>
-                <span>⚙️</span> Performance & tech debt
-              </h3>
+              <div className="flex items-center justify-between mb-2">
+                <h3 className="flex items-center gap-2 text-sm font-bold" style={{ color: "hsl(174 80% 60%)" }}>
+                  <span>⚙️</span> Performance & tech debt
+                </h3>
+                <span className="text-[9px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-full" style={{ background: "hsl(42 90% 58% / 0.12)", color: "hsl(42 90% 58%)", border: "1px solid hsl(42 90% 58% / 0.25)" }}>Medium</span>
+              </div>
               <ul className="space-y-1.5 list-disc pl-4" style={{ color: "hsl(210 20% 70%)" }}>
                 <li>Stabilise the app to reduce crashes and startup time.</li>
                 <li>Optimise background behaviour to reduce battery drain.</li>
@@ -221,29 +279,23 @@ const CaseStudyWalkup = () => {
           </div>
         </section>
 
-        {/* KPIs */}
         <section className="mb-8 text-xs md:text-sm">
           <h2 className="text-[11px] font-bold uppercase tracking-widest mb-4" style={{ color: "hsl(210 15% 45%)" }}>
             KPIs & expected impact
           </h2>
-          <div
-            className="rounded-2xl p-4 md:p-5"
-            style={{ background: "hsl(210 28% 10%)", border: "1px solid hsl(210 20% 18%)" }}
-          >
-            <ul className="space-y-1.5 list-disc pl-4" style={{ color: "hsl(210 20% 70%)" }}>
-              <li>
-                <strong>Tables booked per week:</strong> target 10% uplift across the network (e.g. from 50k to 55k bookings) as wait‑time accuracy and loyalty improve.
-              </li>
-              <li>
-                <strong>Retention:</strong> increase returning bookings every two weeks by 10% through rewards and clearer expectations.
-              </li>
-              <li>
-                <strong>Restaurant growth:</strong> attract more venues through richer profiles, incentives, and 3‑month free trials.
-              </li>
-              <li>
-                <strong>ROI:</strong> modelled ~70% first‑year return on combined internal and marketing investment.
-              </li>
-            </ul>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4">
+            {[
+              { value: "+10%", label: "Weekly bookings", sub: "Target uplift across network" },
+              { value: "+10%", label: "Retention", sub: "Returning diners every 2 weeks" },
+              { value: "800+", label: "Restaurants", sub: "Via richer profiles & free trials" },
+              { value: "~70%", label: "First-year ROI", sub: "On product & marketing spend" },
+            ].map(({ value, label, sub }) => (
+              <div key={label} className="rounded-2xl p-4" style={{ background: "hsl(210 28% 10%)", border: "1px solid hsl(210 20% 18%)" }}>
+                <p className="text-2xl font-black mb-0.5" style={{ color: "hsl(174 80% 60%)" }}>{value}</p>
+                <p className="text-xs font-bold mb-0.5" style={{ color: "hsl(210 40% 88%)" }}>{label}</p>
+                <p className="text-[10px]" style={{ color: "hsl(210 15% 50%)" }}>{sub}</p>
+              </div>
+            ))}
           </div>
         </section>
 
