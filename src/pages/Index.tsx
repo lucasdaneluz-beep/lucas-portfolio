@@ -60,7 +60,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-[hsl(210_35%_5%)] text-white px-6 py-16">
       {/* Hero / Bio */}
-      <section className="max-w-full sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-6 pt-16 pb-10">
+      <section className="max-w-full sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-6 pt-16 pb-4">
         {/* Badge */}
         <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-6" style={{ background: "hsl(174 80% 60% / 0.1)", border: "1px solid hsl(174 80% 60% / 0.25)" }}>
           <Briefcase size={11} style={{ color: "hsl(174 80% 60%)" }} />
@@ -96,33 +96,16 @@ const Index = () => {
             </div>
           ))}
         </div>
-
-        {/* Contact links */}
-        <div className="flex flex-wrap gap-3 mt-6">
-          {[
-            { icon: <Linkedin size={12} />, label: "LinkedIn", href: "https://www.linkedin.com/in/lucasdaneluz" },
-            { icon: <Mail size={12} />, label: "Email", href: "mailto:lucas.daneluz@gmail.com" },
-          ].map(({ icon, label, href }) => (
-            <a
-              key={label}
-              href={href}
-              target={href.startsWith("http") ? "_blank" : undefined}
-              rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[11px] font-semibold transition-colors hover:border-[hsl(174_80%_60%)] hover:text-[hsl(174_80%_60%)]"
-              style={{ background: "hsl(210 28% 12%)", border: "1px solid hsl(210 20% 20%)", color: "hsl(210 20% 65%)" }}
-            >
-              <span style={{ color: "hsl(174 80% 60%)" }}>{icon}</span>
-              {label}
-            </a>
-          ))}
-        </div>
       </section>
 
       {/* Case Studies List */}
-      <section className="max-w-full sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-6 mt-10">
-        <h2 className="text-xs font-bold uppercase tracking-widest mb-1" style={{ color: "hsl(210 15% 55%)" }}>
+      <section className="max-w-full sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-6 mt-8">
+        <p className="text-[11px] font-bold uppercase tracking-widest mb-1" style={{ color: "hsl(210 15% 45%)" }}>
           Case Studies
-        </h2>
+        </p>
+        <p className="text-sm mb-5" style={{ color: "hsl(210 20% 55%)" }}>
+          Real problems. Structured thinking. Measurable impact.
+        </p>
 
         <div className="space-y-3">
           {caseStudies.map(({ id, title, description, tags, status, href }) => (
