@@ -7,8 +7,9 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import Moneybox from "./pages/case-studies/Moneybox";
 import Walkup from "./pages/case-studies/Walkup";
-import Comingsoon from "./pages/case-studies/Comingsoon";
+import Comingsoon from "./pages/case-studies/Comingsoon"; 
 import HipenMedia from "./pages/case-studies/HipenMedia";
+import Westpak from "./pages/case-studies/Westpak";
 
 const queryClient = new QueryClient();
 
@@ -25,6 +26,7 @@ const App = () => (
           <Route path="/case-studies/moneybox" element={<Moneybox />} />
           <Route path="/case-studies/walkup" element={<Walkup />} />
           <Route path="/case-studies/hipen-media" element={<HipenMedia />} />
+          <Route path="/case-studies/westpak" element={<Westpak />} />
           <Route path="/case-studies/Comingsoon" element={<Comingsoon />} />
           
           <Route path="*" element={<NotFound />} />
