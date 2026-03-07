@@ -15,16 +15,16 @@ const caseStudies = [
   },
   {
     id: "02",
-    slug: "moneybox",
-    title: "Moneybox Redesigned",
+    slug: "hipen-media",
+    title: "Hipen Media – User Onboarding",
     description:
-      "Reimagining the savings & investment journey for clarity and confidence.",
-    tags: ["UX Strategy", "Fintech", "Navigation"],
+      "Bringing structure to a complex, multi-segment onboarding flow through qualitative research and a lean MVP approach.",
+    tags: ["Discovery", "Onboarding", "MVP", "Research"],
     status: "live",
-    href: "/case-studies/moneybox",
+    href: "/case-studies/hipen-media",
   },
   {
-    id: "04",
+    id: "03",
     slug: "westpak",
     title: "Westpak – Cost Optimisation",
     description:
@@ -32,6 +32,16 @@ const caseStudies = [
     tags: ["Stakeholder Management", "Cost Optimisation", "Supply Chain"],
     status: "live",
     href: "/case-studies/westpak",
+  },
+  {
+    id: "04",
+    slug: "moneybox",
+    title: "Moneybox Redesigned",
+    description:
+      "Reimagining the savings & investment journey for clarity and confidence.",
+    tags: ["UX Strategy", "Fintech", "Navigation"],
+    status: "live",
+    href: "/case-studies/moneybox",
   },
   {
     id: "05",
