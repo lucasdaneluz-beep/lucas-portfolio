@@ -77,15 +77,15 @@ const Index = () => {
 
         {/* Bio */}
         <p className="text-base leading-relaxed mb-8" style={{ color: "hsl(210 20% 62%)" }}>
-          <strong style={{ color: "hsl(210 40% 88%)" }}>PM</strong> with 10+ years in commercial and product-adjacent roles across B2B SaaS, FMCG, and supply chain. I've spent my career close to users, data, and looking to own business outcomes. I'm now channelling that into building a product portfolio grounded in real pain points, clear thinking, and measurable impact.
+          A commercially-driven PM with 10+ years in commercial and product-adjacent roles across B2B SaaS, FMCG, and supply chain. I've spent my career close to users, data, and looking to own business outcomes. I'm now channelling that into building a product portfolio grounded in real pain points, clear thinking, and measurable impact.
         </p>
 
         {/* Skill pills */}
         <div className="flex flex-wrap gap-3">
-          {[{ icon: <Briefcase size={12} />, label: "Product" },
-            { icon: <TrendingUp size={12} />, label: "Fintech" },
-            { icon: <Layers size={12} />, label: "UX & Strategy" },
-            { icon: <DollarSign size={12} />, label: "Cost Efficiency" }].map(({ icon, label }) => (
+          {[{ icon: <Layers size={12} />, label: "B2B SaaS" },
+            { icon: <TrendingUp size={12} />, label: "Supply Chain" },
+            { icon: <Briefcase size={12} />, label: "User Research" },
+            { icon: <DollarSign size={12} />, label: "Cost Optimisation" }].map(({ icon, label }) => (
             <div
               key={label}
               className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[11px] font-semibold"
