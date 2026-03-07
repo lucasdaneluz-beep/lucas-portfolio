@@ -15,16 +15,6 @@ const caseStudies = [
   },
   {
     id: "02",
-    slug: "hipen-media",
-    title: "Hipen Media – User Onboarding",
-    description:
-      "Bringing structure to a complex, multi-segment onboarding flow through qualitative research and a lean MVP approach.",
-    tags: ["Discovery", "Onboarding", "MVP", "Research"],
-    status: "live",
-    href: "/case-studies/hipen-media",
-  },
-  {
-    id: "03",
     slug: "moneybox",
     title: "Moneybox Redesigned",
     description:
@@ -35,6 +25,16 @@ const caseStudies = [
   },
   {
     id: "04",
+    slug: "westpak",
+    title: "Westpak – Cost Optimisation",
+    description:
+      "Leading a cross-functional cost project across 3 categories — aligning Finance and Operations to deliver a 25% cost reduction.",
+    tags: ["Stakeholder Management", "Cost Optimisation", "Supply Chain"],
+    status: "live",
+    href: "/case-studies/westpak",
+  },
+  {
+    id: "05",
     slug: "Coming Soon",
     title: "Next Case Study",
     description: "Something new is in the works. A product concept exploring AI-driven discovery — details coming soon.",
