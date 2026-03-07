@@ -77,15 +77,15 @@ const Index = () => {
 
         {/* Bio */}
         <p className="text-base leading-relaxed mb-8" style={{ color: "hsl(210 20% 62%)" }}>
-          A commercially-driven PM with 10+ years in commercial and product-adjacent roles across B2B SaaS, FMCG, and supply chain. I've spent my career close to users, data, and looking to own business outcomes. I'm now channelling that into building a product portfolio grounded in real pain points, clear thinking, and measurable impact.
+          <strong style={{ color: "hsl(210 40% 88%)" }}>PM</strong> with 10+ years in commercial and product-adjacent roles across B2B SaaS, FMCG, and supply chain. I've spent my career close to users, data, and looking to own business outcomes. I'm now channelling that into building a product portfolio grounded in real pain points, clear thinking, and measurable impact.
         </p>
 
         {/* Skill pills */}
         <div className="flex flex-wrap gap-3">
-          {[{ icon: <Layers size={12} />, label: "B2B SaaS" },
-            { icon: <TrendingUp size={12} />, label: "Supply Chain" },
-            { icon: <Briefcase size={12} />, label: "User Research" },
-            { icon: <DollarSign size={12} />, label: "Cost Optimisation" }].map(({ icon, label }) => (
+          {[{ icon: <Briefcase size={12} />, label: "Product" },
+            { icon: <TrendingUp size={12} />, label: "Fintech" },
+            { icon: <Layers size={12} />, label: "UX & Strategy" },
+            { icon: <DollarSign size={12} />, label: "Cost Efficiency" }].map(({ icon, label }) => (
             <div
               key={label}
               className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[11px] font-semibold"
@@ -96,16 +96,33 @@ const Index = () => {
             </div>
           ))}
         </div>
+
+        {/* Contact links */}
+        <div className="flex flex-wrap gap-3 mt-6">
+          {[
+            { icon: <Linkedin size={12} />, label: "LinkedIn", href: "https://www.linkedin.com/in/lucasdaneluz" },
+            { icon: <Mail size={12} />, label: "Email", href: "mailto:lucas.daneluz@gmail.com" },
+          ].map(({ icon, label, href }) => (
+            <a
+              key={label}
+              href={href}
+              target={href.startsWith("http") ? "_blank" : undefined}
+              rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[11px] font-semibold transition-colors hover:border-[hsl(174_80%_60%)] hover:text-[hsl(174_80%_60%)]"
+              style={{ background: "hsl(210 28% 12%)", border: "1px solid hsl(210 20% 20%)", color: "hsl(210 20% 65%)" }}
+            >
+              <span style={{ color: "hsl(174 80% 60%)" }}>{icon}</span>
+              {label}
+            </a>
+          ))}
+        </div>
       </section>
 
       {/* Case Studies List */}
-      <section className="max-w-full sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-6 mt-16">
-        <h2 className="text-[10px] font-bold uppercase tracking-widest mb-1" style={{ color: "hsl(210 15% 45%)" }}>
+      <section className="max-w-full sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-6 mt-10">
+        <h2 className="text-base font-bold uppercase tracking-widest mb-1" style={{ color: "hsl(210 15% 65%)" }}>
           Case Studies
         </h2>
-        <p className="text-sm mb-6" style={{ color: "hsl(210 20% 55%)" }}>
-          Real problems. Structured thinking. Measurable impact.
-        </p>
 
         <div className="space-y-3">
           {caseStudies.map(({ id, title, description, tags, status, href }) => (
