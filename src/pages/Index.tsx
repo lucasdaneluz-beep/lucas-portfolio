@@ -120,7 +120,7 @@ const Index = () => {
 
       {/* Case Studies List */}
       <section className="max-w-full sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-6 mt-10">
-        <h2 className="text-base font-bold uppercase tracking-widest mb-1" style={{ color: "hsl(210 15% 65%)" }}>
+        <h2 className="text-xs font-bold uppercase tracking-widest mb-1" style={{ color: "hsl(210 15% 55%)" }}>
           Case Studies
         </h2>
 
