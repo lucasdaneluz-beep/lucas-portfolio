@@ -96,7 +96,7 @@ const CaseStudyHipenMedia = () => {
                 Challenge
               </h2>
               <p>
-                The onboarding workflow needed to serve radically different user types from a single, unwieldy dataset. Without structure, every new user faced an overwhelming, irrelevant experience that slowed time-to-value.
+                The onboarding workflow needed to serve radically different user types from a single, unstructured dataset, leaving every new user facing an overwhelming, irrelevant experience that slowed time-to-value.
               </p>
             </div>
           </div>
