@@ -87,7 +87,7 @@ const CaseStudyHipenMedia = () => {
                 About Hipen Media
               </h2>
               <p>
-                Hipen Media operates a user onboarding platform serving a diverse range of media clients — from digital websites and physical magazines to newspapers — each with distinct go-to-market channels and product challenges.
+                Hipen Media operates an onboarding platform serving a diverse range of media clients across the Latino community in the USA. These range from digital websites and physical magazines to newspapers — each with distinct go-to-market channels and product challenges.
               </p>
             </div>
             <div>
