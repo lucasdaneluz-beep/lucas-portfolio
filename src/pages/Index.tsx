@@ -97,7 +97,7 @@ const Index = () => {
             src={profilePhoto}
             alt="Lucas Daneluz profile photo"
             className="w-16 h-16 sm:w-20 sm:h-20 rounded-full object-cover ring-2 flex-shrink-0"
-            style={{ ringColor: "hsl(174 80% 60% / 0.3)" }}
+            style={{ boxShadow: "0 0 0 2px hsl(174 80% 60% / 0.3)" }}
           />
           <div>
             <h1 className="text-3xl sm:text-4xl font-black tracking-tight leading-tight" style={{ color: "hsl(210 40% 98%)" }}>
