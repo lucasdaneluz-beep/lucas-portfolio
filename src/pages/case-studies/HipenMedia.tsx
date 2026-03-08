@@ -52,7 +52,7 @@ const CaseStudyHipenMedia = () => {
               <span>🎯</span> Problem
             </h2>
             <ul className="space-y-1.5" style={{ color: "hsl(210 20% 70%)" }}>
-              <li>Onboarding workflow was messy and one-size-fits-all despite vastly different user types.</li>
+              <li>Onboarding workflow for media outlets was messy and one-size-fits-all despite vastly different user types.</li>
               <li>A massive, unfiltered dataset was creating friction and slowing every new user's first experience.</li>
               <li>No clear MVP scope meant risk of over-engineering low-impact features.</li>
             </ul>
@@ -74,6 +74,7 @@ const CaseStudyHipenMedia = () => {
             <ul className="space-y-1.5" style={{ color: "hsl(210 20% 70%)" }}>
               <li>Onboarding time reduced by 20% through a leaner, more relevant flow.</li>
               <li>Avoided over-engineering by anchoring scope to validated pain points, not assumptions.</li>
+              <li>Media outlets could quickly understand their organisational health across finances, sales leads, and engagement levels, with a score highlighting their most challenging areas.</li>
               <li>Established a repeatable research-to-MVP pattern applicable across future product work.</li>
             </ul>
           </div>
