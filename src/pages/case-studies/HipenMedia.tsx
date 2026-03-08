@@ -64,7 +64,7 @@ const CaseStudyHipenMedia = () => {
             <ul className="space-y-1.5" style={{ color: "hsl(210 20% 70%)" }}>
               <li>Conducted qualitative research and mapped workflows to surface common pain points across segments.</li>
               <li>Collaborated with engineering to apply logical dataset filters, removing the core bottleneck.</li>
-              <li>Defined a lean MVP: a streamlined form asking only relevant questions, plus a simple insights dashboard.</li>
+              <li>Defined a lean MVP: a streamlined form asking only relevant questions, plus an insights dashboard.</li>
             </ul>
           </div>
           <div className="rounded-2xl p-4" style={{ background: "hsl(42 90% 58% / 0.08)", border: "1px solid hsl(42 90% 58% / 0.2)" }}>
