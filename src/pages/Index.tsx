@@ -228,17 +228,47 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="max-w-full sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-2 sm:px-6 mt-16 pt-6 flex items-center justify-between" style={{ borderTop: "1px solid hsl(210 20% 14%)" }}>
-        <span className="text-[11px]" style={{ color: "hsl(210 15% 40%)" }}>© {new Date().getFullYear()} Lucas Daneluz</span>
-        <div className="flex items-center gap-4">
-          <a href="https://www.linkedin.com/in/lucasdaneluz" target="_blank" rel="noopener noreferrer" style={{ color: "hsl(210 15% 40%)" }} className="hover:text-[hsl(174_80%_60%)] transition-colors">
-            <Linkedin size={14} />
-          </a>
-          <a href="mailto:lucas.daneluz@gmail.com" style={{ color: "hsl(210 15% 40%)" }} className="hover:text-[hsl(174_80%_60%)] transition-colors">
-            <Mail size={14} />
-          </a>
+      {/* Let's Talk CTA */}
+      <section className="max-w-full sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-2 sm:px-6 mt-16">
+        <div
+          className="rounded-2xl p-8 sm:p-10 text-center"
+          style={{ background: "hsl(210 28% 11%)", border: "1px solid hsl(210 20% 20%)" }}
+        >
+          <p className="text-[11px] font-bold uppercase tracking-widest mb-2" style={{ color: "hsl(174 80% 60%)" }}>
+            Let's Connect
+          </p>
+          <h2 className="text-xl sm:text-2xl font-black mb-3" style={{ color: "hsl(210 40% 98%)" }}>
+            Interested in working together?
+          </h2>
+          <p className="text-sm mb-6 max-w-md mx-auto" style={{ color: "hsl(210 20% 55%)" }}>
+            I'm open to PM roles, contract work, or just a good product conversation.
+          </p>
+          <div className="flex items-center justify-center gap-3 flex-wrap">
+            <a
+              href="mailto:lucas.daneluz@gmail.com"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-bold transition-opacity hover:opacity-90"
+              style={{ background: "hsl(174 80% 60%)", color: "hsl(210 35% 5%)" }}
+            >
+              <Mail size={14} />
+              Get in Touch
+            </a>
+            <a
+              href="https://www.linkedin.com/in/lucasdaneluz"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-bold transition-colors hover:opacity-90"
+              style={{ background: "transparent", border: "1px solid hsl(174 80% 60% / 0.4)", color: "hsl(174 80% 60%)" }}
+            >
+              <Linkedin size={14} />
+              LinkedIn
+            </a>
+          </div>
         </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="max-w-full sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-2 sm:px-6 mt-6 pb-6 text-center">
+        <span className="text-[11px]" style={{ color: "hsl(210 15% 40%)" }}>© {new Date().getFullYear()} Lucas Daneluz</span>
       </footer>
     </div>
   );
