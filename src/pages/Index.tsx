@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { Briefcase, TrendingUp, Layers, DollarSign, ArrowRight, Linkedin, Mail, Search, Compass, Rocket, BarChart2 } from "lucide-react";
+import { Briefcase, TrendingUp, ArrowRight, Linkedin, Mail, Search, Compass, Rocket, BarChart2, ChevronRight } from "lucide-react";
 import profilePhoto from "@/assets/lucas-profile.png";
 
 const caseStudies = [
@@ -8,8 +8,7 @@ const caseStudies = [
     id: "01",
     slug: "walkup",
     title: "WalkUp – Smarter Queues",
-    description:
-      "Improving queue transparency, loyalty, and app performance for a UK restaurant waitlist marketplace.",
+    description: "Queue transparency, loyalty, and growth for a UK restaurant waitlist marketplace.",
     metric: "3x loyalty engagement uplift",
     tags: ["Marketplace", "Waitlist UX", "Loyalty", "Product Strategy"],
     status: "live",
@@ -19,8 +18,7 @@ const caseStudies = [
     id: "02",
     slug: "hipen-media",
     title: "Hipen Media – User Onboarding",
-    description:
-      "Bringing structure to a complex, multi-segment onboarding flow through qualitative research and a lean MVP approach.",
+    description: "Restructuring a multi-segment onboarding flow through research and lean MVP.",
     metric: "40% faster onboarding completion",
     tags: ["Discovery", "Onboarding", "MVP", "Research"],
     status: "live",
@@ -30,8 +28,7 @@ const caseStudies = [
     id: "03",
     slug: "westpak",
     title: "Westpak – Cost Optimisation",
-    description:
-      "Leading a cross-functional cost project across 3 categories — aligning Finance and Operations to deliver measurable savings.",
+    description: "Cost reduction across 3 categories, aligning Finance and Operations.",
     metric: "25% cost reduction delivered",
     tags: ["Stakeholder Management", "Cost Optimisation", "Supply Chain"],
     status: "live",
@@ -125,10 +122,10 @@ const Index = () => {
 
         {/* Skill pills */}
         <div className="flex flex-wrap gap-2 sm:gap-3">
-          {[{ icon: <Layers size={12} />, label: "B2B SaaS" },
-            { icon: <TrendingUp size={12} />, label: "Supply Chain" },
-            { icon: <Briefcase size={12} />, label: "User Research" },
-            { icon: <DollarSign size={12} />, label: "Cost Optimisation" }].map(({ icon, label }) => (
+          {[{ icon: <Rocket size={12} />, label: "0→1 Builds" },
+            { icon: <Briefcase size={12} />, label: "Stakeholder Alignment" },
+            { icon: <Search size={12} />, label: "User Research" },
+            { icon: <TrendingUp size={12} />, label: "Outcome-Led PM" }].map(({ icon, label }) => (
             <div
               key={label}
               className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[11px] font-semibold"
@@ -141,8 +138,13 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Divider */}
+      <div className="max-w-full sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-6 mt-16 sm:mt-20">
+        <hr style={{ borderColor: "hsl(210 20% 15%)" }} />
+      </div>
+
       {/* How I Work */}
-      <section className="max-w-full sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-6 mt-16 sm:mt-20">
+      <section className="max-w-full sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-6 mt-12 sm:mt-16">
         <h2 className="text-xl sm:text-2xl font-bold mb-2" style={{ color: "hsl(210 25% 82%)" }}>
           How I Work
         </h2>
@@ -150,30 +152,36 @@ const Index = () => {
           A structured approach to building the right thing.
         </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:flex lg:flex-row lg:items-stretch gap-3">
           {methodologySteps.map(({ icon, title, description }, i) => (
-            <div
-              key={title}
-              className="rounded-2xl p-6 relative"
-              style={{
-                background: "hsl(210 28% 11%)",
-                border: "1px solid hsl(210 20% 20%)",
-              }}
-            >
-              <div className="flex items-center gap-3 mb-3">
-                <div
-                  className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0"
-                  style={{ background: "hsl(174 80% 60% / 0.1)", color: "hsl(174 80% 60%)" }}
-                >
-                  {icon}
+            <React.Fragment key={title}>
+              <div
+                className="rounded-2xl p-6 relative lg:flex-1"
+                style={{
+                  background: "hsl(210 28% 11%)",
+                  border: "1px solid hsl(210 20% 20%)",
+                }}
+              >
+                <div className="flex items-center gap-3 mb-3">
+                  <div
+                    className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0"
+                    style={{ background: "hsl(174 80% 60% / 0.1)", color: "hsl(174 80% 60%)" }}
+                  >
+                    {icon}
+                  </div>
+                  <span className="text-xs font-black uppercase tracking-widest" style={{ color: "hsl(210 15% 40%)" }}>
+                    0{i + 1}
+                  </span>
                 </div>
-                <span className="text-xs font-black uppercase tracking-widest" style={{ color: "hsl(210 15% 40%)" }}>
-                  0{i + 1}
-                </span>
+                <p className="text-sm font-bold mb-1" style={{ color: "hsl(210 40% 98%)" }}>{title}</p>
+                <p className="text-xs leading-relaxed" style={{ color: "hsl(210 20% 55%)" }}>{description}</p>
               </div>
-              <p className="text-sm font-bold mb-1" style={{ color: "hsl(210 40% 98%)" }}>{title}</p>
-              <p className="text-xs leading-relaxed" style={{ color: "hsl(210 20% 55%)" }}>{description}</p>
-            </div>
+              {i < methodologySteps.length - 1 && (
+                <div className="hidden lg:flex items-center justify-center flex-shrink-0">
+                  <ChevronRight size={14} style={{ color: "hsl(174 80% 60% / 0.35)" }} />
+                </div>
+              )}
+            </React.Fragment>
           ))}
         </div>
       </section>
@@ -243,9 +251,6 @@ const Index = () => {
           className="rounded-2xl p-12 sm:p-14 text-center"
           style={{ background: "hsl(210 28% 11%)", border: "1px solid hsl(210 20% 20%)" }}
         >
-          <p className="text-[11px] font-bold uppercase tracking-widest mb-2" style={{ color: "hsl(174 80% 60%)" }}>
-            Let's Connect
-          </p>
           <h2 className="text-xl sm:text-2xl font-black mb-3" style={{ color: "hsl(210 40% 98%)" }}>
             Interested in working together?
           </h2>
@@ -276,8 +281,20 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="max-w-full sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-6 mt-8 pb-16 text-center">
-        <span className="text-[11px]" style={{ color: "hsl(210 15% 40%)" }}>© {new Date().getFullYear()} Lucas Daneluz</span>
+      <footer className="max-w-full sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-6 mt-8 pb-16">
+        <div className="flex items-center justify-between flex-wrap gap-3">
+          <span className="text-[11px]" style={{ color: "hsl(210 15% 40%)" }}>© {new Date().getFullYear()} Lucas Daneluz</span>
+          <div className="flex items-center gap-4">
+            <a href="mailto:lucas.daneluz@gmail.com" className="text-[11px] flex items-center gap-1.5 transition-opacity hover:opacity-70" style={{ color: "hsl(210 15% 45%)" }}>
+              <Mail size={11} />
+              Email
+            </a>
+            <a href="https://www.linkedin.com/in/lucasdaneluz" target="_blank" rel="noopener noreferrer" className="text-[11px] flex items-center gap-1.5 transition-opacity hover:opacity-70" style={{ color: "hsl(210 15% 45%)" }}>
+              <Linkedin size={11} />
+              LinkedIn
+            </a>
+          </div>
+        </div>
       </footer>
     </div>
   );
