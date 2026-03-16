@@ -4,6 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
+import PageTransition from "./components/PageTransition";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import Moneybox from "./pages/case-studies/Moneybox";
@@ -11,6 +12,8 @@ import Walkup from "./pages/case-studies/Walkup";
 import Comingsoon from "./pages/case-studies/Comingsoon"; 
 import HipenMedia from "./pages/case-studies/HipenMedia";
 import Westpak from "./pages/case-studies/Westpak";
+import PreviewTerracotta from "./pages/PreviewTerracotta";
+import PreviewNewDarkFonts from "./pages/PreviewNewDarkFonts";
 
 const queryClient = new QueryClient();
 
@@ -21,6 +24,7 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <ScrollToTop />
+        <PageTransition>
         <Routes>
           <Route path="/" element={<Index />} />
 
@@ -31,8 +35,11 @@ const App = () => (
           <Route path="/case-studies/westpak" element={<Westpak />} />
           <Route path="/case-studies/Comingsoon" element={<Comingsoon />} />
           
+          <Route path="/preview-terracotta" element={<PreviewTerracotta />} />
+          <Route path="/preview-newdarkfonts" element={<PreviewNewDarkFonts />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
+        </PageTransition>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

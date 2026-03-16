@@ -1,8 +1,14 @@
-import { ArrowLeft } from "lucide-react";
+import { useEffect } from "react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 const CaseStudyWestpak = () => {
   const navigate = useNavigate();
+
+  useEffect(() => {
+    document.title = "Westpak – Cost Optimisation | Lucas Daneluz";
+    return () => { document.title = "Lucas Daneluz – PM Portfolio"; };
+  }, []);
 
   return (
     <div
@@ -38,9 +44,9 @@ const CaseStudyWestpak = () => {
             { value: "6", label: "Vendors in tender exercise" },
             { value: "2", label: "Key stakeholder groups aligned" },
           ].map(({ value, label }) => (
-            <div key={label} className="rounded-2xl p-4 text-center" style={{ background: "hsl(210 28% 10%)", border: "1px solid hsl(210 20% 18%)" }}>
-              <p className="text-2xl font-black mb-1" style={{ color: "hsl(174 80% 60%)" }}>{value}</p>
-              <p className="text-[11px]" style={{ color: "hsl(210 15% 50%)" }}>{label}</p>
+            <div key={label} className="rounded-2xl p-4 text-center" style={{ background: "hsl(210 28% 10%)", border: "1px solid hsl(210 20% 18%)", borderTop: "2px solid hsl(174 80% 60% / 0.4)" }}>
+              <p className="text-2xl font-black mb-1.5" style={{ color: "hsl(174 80% 60%)" }}>{value}</p>
+              <p className="text-xs font-medium" style={{ color: "hsl(210 20% 65%)" }}>{label}</p>
             </div>
           ))}
         </div>
@@ -246,7 +252,16 @@ const CaseStudyWestpak = () => {
           </div>
         </section>
 
-        <p className="text-[10px] text-center mt-8" style={{ color: "hsl(210 15% 35%)" }}>
+        <div className="flex justify-between items-center mt-12 pt-6" style={{ borderTop: "1px solid hsl(210 20% 16%)" }}>
+          <button onClick={() => navigate("/")} className="inline-flex items-center gap-1.5 text-xs font-semibold" style={{ color: "hsl(210 15% 45%)" }}>
+            <ArrowLeft size={13} /> All case studies
+          </button>
+          <button onClick={() => navigate("/case-studies/moneybox")} className="inline-flex items-center gap-1.5 text-xs font-semibold" style={{ color: "hsl(174 80% 60%)" }}>
+            Next: Moneybox Redesigned <ArrowRight size={13} />
+          </button>
+        </div>
+
+        <p className="text-[10px] text-center mt-6" style={{ color: "hsl(210 15% 35%)" }}>
           This is an independent case study created for portfolio purposes only. Not affiliated with Westpak.
         </p>
       </div>
