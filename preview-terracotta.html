@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Preview — Terracotta + Warm Background</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    /* ─── NEW WARM PALETTE ─────────────────────────────────────── */
+    :root {
+      --bg:           #0E0A08;   /* warm near-black */
+      --bg-card:      #181210;   /* warm card surface */
+      --bg-card-alt:  #201815;   /* slightly lighter card */
+      --bg-hover:     #261E1A;   /* card hover / elevated */
+      --border:       #2E2018;   /* warm border */
+      --border-light: #382820;   /* lighter warm border */
+
+      --accent:       #D4674A;   /* terracotta */
+      --accent-dim:   #A84F38;   /* darker terracotta */
+      --accent-glow:  rgba(212,103,74,.18);
+
+      --text-primary: #F2EDE8;   /* warm off-white */
+      --text-secondary: #B8A89E; /* warm mid-grey */
+      --text-muted:   #7A6A62;   /* warm muted */
+      --text-dimmed:  #4E3E38;   /* very muted */
+
+      --gold:         #E8A84A;
+      --green:        #5CC47A;
+      --red:          #E05252;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+    }
+
+    /* ─── LABEL COMPARING BOTH THEMES ─────────────────────────── */
+    .preview-banner {
+      background: #1A1410;
+      border-bottom: 1px solid var(--border);
+      padding: 10px 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+    .preview-banner span { color: var(--accent); }
+    .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
+
+    /* ─── LAYOUT ───────────────────────────────────────────────── */
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    section { padding: 40px 0; }
+    section + section { border-top: 1px solid var(--border); }
+
+    /* ─── HERO ─────────────────────────────────────────────────── */
+    .hero {
+      padding: 48px 0 40px;
+    }
+    .hero-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 20px;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--accent);
+      background: var(--accent-glow);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+    .hero-badge-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+    .hero h1 {
+      font-size: 32px;
+      font-weight: 900;
+      line-height: 1.15;
+      letter-spacing: -.02em;
+      color: var(--text-primary);
+    }
+    .hero h1 em {
+      font-style: normal;
+      color: var(--accent);
+    }
+    .hero-subtitle {
+      margin-top: 6px;
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+    .avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #3A2018 0%, #201410 100%);
+      border: 2px solid var(--accent);
+      box-shadow: 0 0 0 4px var(--accent-glow), 0 4px 20px rgba(212,103,74,.25);
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      font-weight: 900;
+      color: var(--accent);
+    }
+    .bio {
+      margin-top: 14px;
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--text-secondary);
+      max-width: 540px;
+    }
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 18px;
+    }
+    .skill-pill {
+      padding: 4px 11px;
+      border-radius: 999px;
+      border: 1px solid var(--border-light);
+      background: var(--bg-card);
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--text-secondary);
+      letter-spacing: .02em;
+    }
+
+    /* ─── SECTION HEADER ───────────────────────────────────────── */
+    .section-header { margin-bottom: 20px; }
+    .section-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+    .section-title {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--text-primary);
+      letter-spacing: -.01em;
+    }
+    .section-desc {
+      margin-top: 4px;
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* ─── HOW I WORK CARDS ─────────────────────────────────────── */
+    .method-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+    .method-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 16px;
+    }
+    .method-num {
+      font-size: 20px;
+      font-weight: 900;
+      color: var(--accent);
+      letter-spacing: -.02em;
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+    .method-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 10px;
+      background: var(--accent-glow);
+      border: 1px solid rgba(212,103,74,.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 10px;
+      font-size: 15px;
+    }
+    .method-name {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+    }
+    .method-desc {
+      font-size: 11px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* ─── CASE STUDY CARD ──────────────────────────────────────── */
+    .cs-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 18px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 10px;
+      cursor: pointer;
+      transition: border-color .15s, background .15s;
+    }
+    .cs-card:hover {
+      border-color: var(--border-light);
+      background: var(--bg-card-alt);
+    }
+    .cs-tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 3px 9px;
+      border-radius: 999px;
+      border: 1px solid rgba(212,103,74,.3);
+      background: rgba(212,103,74,.08);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+    .cs-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 3px;
+    }
+    .cs-sub {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+    .cs-arrow {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: 1px solid var(--border-light);
+      background: var(--bg-card-alt);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      flex-shrink: 0;
+      font-size: 14px;
+    }
+    .cs-coming-soon {
+      opacity: .45;
+      cursor: default;
+    }
+    .cs-coming-soon:hover {
+      border-color: var(--border);
+      background: var(--bg-card);
+    }
+    .gold-tag {
+      border: 1px solid rgba(232,168,74,.3);
+      background: rgba(232,168,74,.08);
+      color: var(--gold);
+    }
+
+    /* ─── CTA ──────────────────────────────────────────────────── */
+    .cta-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 40px;
+      text-align: center;
+    }
+    .cta-card h2 {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+      letter-spacing: -.01em;
+    }
+    .cta-card p {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+    .btn-row { display: flex; gap: 10px; justify-content: center; }
+    .btn-filled {
+      padding: 10px 22px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #fff;
+      font-size: 13px;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      transition: opacity .15s;
+    }
+    .btn-filled:hover { opacity: .88; }
+    .btn-outline {
+      padding: 10px 22px;
+      border-radius: 999px;
+      background: transparent;
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 700;
+      border: 1px solid var(--accent);
+      cursor: pointer;
+      transition: background .15s;
+    }
+    .btn-outline:hover { background: var(--accent-glow); }
+
+    /* ─── FOOTER ───────────────────────────────────────────────── */
+    footer {
+      text-align: center;
+      padding: 28px 0 40px;
+      font-size: 12px;
+      color: var(--text-dimmed);
+    }
+
+    /* ─── SWATCH LEGEND ────────────────────────────────────────── */
+    .legend {
+      margin: 0 auto;
+      padding: 20px;
+      background: #110D0B;
+      border-top: 1px solid var(--border);
+    }
+    .legend-inner {
+      max-width: 800px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+    }
+    .legend-label {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      color: var(--text-dimmed);
+      margin-right: 4px;
+    }
+    .swatch-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+    .swatch {
+      width: 16px;
+      height: 16px;
+      border-radius: 4px;
+      border: 1px solid rgba(255,255,255,.08);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Banner -->
+  <div class="preview-banner">
+    <div class="dot"></div>
+    <span>Terracotta + Warm Background</span>
+    &mdash; Color preview only &mdash; no code has been changed
+  </div>
+
+  <div class="container">
+
+    <!-- ── HERO ─────────────────────────────────────── -->
+    <section class="hero">
+      <div class="hero-top">
+        <div>
+          <div class="hero-badge">
+            <div class="hero-badge-dot"></div>
+            Product Manager
+          </div>
+          <h1>Lucas Danel<br/><em>Building products</em><br/>people love.</h1>
+          <p class="hero-subtitle">London · Open to new opportunities</p>
+        </div>
+        <div class="avatar">LD</div>
+      </div>
+      <p class="bio">
+        PM with a background in fintech and consumer apps. I focus on closing the gap between user insight and shipped product — working closely with engineering, design, and data to move fast without losing rigour.
+      </p>
+      <div class="skills">
+        <span class="skill-pill">Product Strategy</span>
+        <span class="skill-pill">User Research</span>
+        <span class="skill-pill">Roadmapping</span>
+        <span class="skill-pill">Stakeholder Comms</span>
+        <span class="skill-pill">Data Analysis</span>
+        <span class="skill-pill">A/B Testing</span>
+        <span class="skill-pill">Figma</span>
+        <span class="skill-pill">SQL</span>
+      </div>
+    </section>
+
+    <!-- ── HOW I WORK ─────────────────────────────── -->
+    <section>
+      <div class="section-header">
+        <div class="section-label">How I Work</div>
+        <div class="section-title">A consistent process, adapted to context.</div>
+        <div class="section-desc">Four phases I return to regardless of the problem size.</div>
+      </div>
+      <div class="method-grid">
+        <div class="method-card">
+          <div class="method-num">01</div>
+          <div class="method-icon">🔍</div>
+          <div class="method-name">Discover</div>
+          <div class="method-desc">Understand users, market, and constraints before writing a single spec.</div>
+        </div>
+        <div class="method-card">
+          <div class="method-num">02</div>
+          <div class="method-icon">🎯</div>
+          <div class="method-name">Define</div>
+          <div class="method-desc">Frame the right problem and align the team on what success looks like.</div>
+        </div>
+        <div class="method-card">
+          <div class="method-num">03</div>
+          <div class="method-icon">📐</div>
+          <div class="method-name">Baseline</div>
+          <div class="method-desc">Establish metrics before shipping so we can measure what actually changes.</div>
+        </div>
+        <div class="method-card">
+          <div class="method-num">04</div>
+          <div class="method-icon">🚀</div>
+          <div class="method-name">Deliver</div>
+          <div class="method-desc">Ship, monitor, and iterate — learning compounds with every cycle.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CASE STUDIES ───────────────────────────── -->
+    <section>
+      <div class="section-header">
+        <div class="section-label">Case Studies</div>
+        <div class="section-title">Selected work.</div>
+        <div class="section-desc">Real problems, real constraints, real outcomes.</div>
+      </div>
+
+      <div class="cs-card">
+        <div>
+          <div class="cs-tag">Fintech · Mobile</div>
+          <div class="cs-title">Moneybox — ISA Onboarding Redesign</div>
+          <div class="cs-sub">Reduced drop-off by 34% across the ISA signup funnel</div>
+        </div>
+        <div class="cs-arrow">→</div>
+      </div>
+
+      <div class="cs-card">
+        <div>
+          <div class="cs-tag">B2B · SaaS</div>
+          <div class="cs-title">Walkup — Venue Management Platform</div>
+          <div class="cs-sub">Built 0→1 core booking flow used by 200+ venues</div>
+        </div>
+        <div class="cs-arrow">→</div>
+      </div>
+
+      <div class="cs-card cs-coming-soon">
+        <div>
+          <div class="cs-tag gold-tag">In Progress</div>
+          <div class="cs-title">Westpak — Logistics Dashboard</div>
+          <div class="cs-sub">Case study coming soon</div>
+        </div>
+        <div class="cs-arrow" style="opacity:.4">→</div>
+      </div>
+    </section>
+
+    <!-- ── CTA ────────────────────────────────────── -->
+    <section>
+      <div class="cta-card">
+        <h2>Let's build something together.</h2>
+        <p>Open to PM roles, freelance projects, and interesting conversations.<br/>London-based, remote-friendly.</p>
+        <div class="btn-row">
+          <button class="btn-filled">Get in touch</button>
+          <button class="btn-outline">Download CV</button>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Footer -->
+  <footer>© 2026 Lucas Danel. Built with care.</footer>
+
+  <!-- Colour legend -->
+  <div class="legend">
+    <div class="legend-inner">
+      <span class="legend-label">Palette</span>
+      <div class="swatch-item"><div class="swatch" style="background:#0E0A08"></div>#0E0A08 bg</div>
+      <div class="swatch-item"><div class="swatch" style="background:#181210"></div>#181210 card</div>
+      <div class="swatch-item"><div class="swatch" style="background:#2E2018"></div>#2E2018 border</div>
+      <div class="swatch-item"><div class="swatch" style="background:#D4674A"></div>#D4674A accent</div>
+      <div class="swatch-item"><div class="swatch" style="background:#F2EDE8"></div>#F2EDE8 text</div>
+      <div class="swatch-item"><div class="swatch" style="background:#B8A89E"></div>#B8A89E secondary</div>
+      <div class="swatch-item"><div class="swatch" style="background:#7A6A62"></div>#7A6A62 muted</div>
+    </div>
+  </div>
+
+</body>
+</html>
