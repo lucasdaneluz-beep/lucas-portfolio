@@ -16,14 +16,6 @@ const CaseStudyWalkup = () => {
       style={{ background: "linear-gradient(135deg, hsl(210 35% 5%) 0%, hsl(210 28% 8%) 50%, hsl(210 35% 5%) 100%)" }}
     >
       <div className="max-w-4xl mx-auto px-6 pt-10 pb-20">
-        <button
-          onClick={() => navigate("/")}
-          className="inline-flex items-center gap-2 text-xs font-semibold mb-6 rounded-full px-3 py-1"
-          style={{ background: "hsl(210 28% 12%)", color: "hsl(210 20% 70%)", border: "1px solid hsl(210 20% 20%)" }}
-        >
-          <ArrowLeft size={14} />
-          Back to portfolio
-        </button>
 
         <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-3" style={{ background: "hsl(174 80% 60% / 0.12)", border: "1px solid hsl(174 80% 60% / 0.25)" }}>
           <span className="text-[10px] font-bold uppercase tracking-widest" style={{ color: "hsl(174 80% 60%)" }}>PM Portfolio · Case Study 02</span>
