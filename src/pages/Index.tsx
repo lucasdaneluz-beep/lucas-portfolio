@@ -139,12 +139,12 @@ const Index = () => {
 
       {/* How I Work */}
       <section className="max-w-full sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-2 sm:px-6 mt-12 sm:mt-16">
-        <p className="text-[11px] font-bold uppercase tracking-widest mb-1" style={{ color: "hsl(210 15% 45%)" }}>
+        <p className="text-[11px] font-bold uppercase tracking-widest mb-2" style={{ color: "hsl(210 15% 45%)" }}>
           How I Work
         </p>
-        <p className="text-sm mb-6" style={{ color: "hsl(210 20% 55%)" }}>
+        <h2 className="text-2xl sm:text-3xl font-semibold mb-8 leading-snug" style={{ color: "hsl(210 40% 98%)" }}>
           A structured approach to building the right thing.
-        </p>
+        </h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
           {methodologySteps.map(({ icon, title, description }, i) => (
@@ -176,12 +176,12 @@ const Index = () => {
 
       {/* Case Studies List */}
       <section className="max-w-full sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-2 sm:px-6 mt-12 sm:mt-16">
-        <p className="text-[11px] font-bold uppercase tracking-widest mb-1" style={{ color: "hsl(210 15% 45%)" }}>
+        <p className="text-[11px] font-bold uppercase tracking-widest mb-2" style={{ color: "hsl(210 15% 45%)" }}>
           Case Studies
         </p>
-        <p className="text-sm mb-5" style={{ color: "hsl(210 20% 55%)" }}>
+        <h2 className="text-2xl sm:text-3xl font-semibold mb-8 leading-snug" style={{ color: "hsl(210 40% 98%)" }}>
           Real problems. Structured thinking. Measurable impact.
-        </p>
+        </h2>
 
         <div className="space-y-3">
           {caseStudies.map(({ id, title, description, metric, tags, status, href }) => (
