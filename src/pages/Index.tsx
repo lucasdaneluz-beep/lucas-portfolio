@@ -88,6 +88,10 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-[hsl(210_35%_5%)] text-white">
+      <style>{`
+        .cs-card { transition: border-color 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease; }
+        .cs-card:hover { border-color: hsl(174 80% 60% / 0.5) !important; box-shadow: inset 3px 0 0 hsl(174 80% 60% / 0.45); transform: scale(1.005); }
+      `}</style>
       {/* Hero / Bio */}
       <section className="max-w-full sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-6 pt-16 sm:pt-20 pb-4">
         {/* Badge */}
@@ -189,7 +193,7 @@ const Index = () => {
               key={id}
               type="button"
               onClick={() => status === "live" && navigate(href)}
-              className={`w-full text-left rounded-2xl p-5 sm:p-6 flex items-center justify-between gap-3 sm:gap-4 transition-transform focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${status === "live" ? "hover:scale-[1.01]" : ""}`}
+              className={`${status === "live" ? "cs-card" : ""} w-full text-left rounded-2xl p-5 sm:p-6 flex items-center justify-between gap-3 sm:gap-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2`}
               style={{
                 background: "hsl(210 28% 11%)",
                 border: `1px solid ${status === "coming-soon" ? "hsl(210 20% 16%)" : "hsl(210 20% 20%)"}`,
