@@ -142,9 +142,9 @@ const Index = () => {
         <p className="text-[11px] font-bold uppercase tracking-widest mb-2" style={{ color: "hsl(210 15% 45%)" }}>
           How I Work
         </p>
-        <h2 className="text-2xl sm:text-3xl font-semibold mb-8 leading-snug" style={{ color: "hsl(210 40% 98%)" }}>
+        <p className="text-base sm:text-lg font-medium mb-6" style={{ color: "hsl(210 25% 72%)" }}>
           A structured approach to building the right thing.
-        </h2>
+        </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
           {methodologySteps.map(({ icon, title, description }, i) => (
@@ -179,9 +179,9 @@ const Index = () => {
         <p className="text-[11px] font-bold uppercase tracking-widest mb-2" style={{ color: "hsl(210 15% 45%)" }}>
           Case Studies
         </p>
-        <h2 className="text-2xl sm:text-3xl font-semibold mb-8 leading-snug" style={{ color: "hsl(210 40% 98%)" }}>
+        <p className="text-base sm:text-lg font-medium mb-6" style={{ color: "hsl(210 25% 72%)" }}>
           Real problems. Structured thinking. Measurable impact.
-        </h2>
+        </p>
 
         <div className="space-y-3">
           {caseStudies.map(({ id, title, description, metric, tags, status, href }) => (
