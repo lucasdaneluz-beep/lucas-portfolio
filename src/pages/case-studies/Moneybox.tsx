@@ -1,10 +1,15 @@
-import React from "react";
+import { useEffect } from "react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import MoneyboxApp from "@/components/moneybox/MoneyboxApp";
 
 const CaseStudyMoneybox = () => {
   const navigate = useNavigate();
+
+  useEffect(() => {
+    document.title = "Moneybox Redesigned | Lucas Daneluz";
+    return () => { document.title = "Lucas Daneluz – PM Portfolio"; };
+  }, []);
 
   return (
     <div

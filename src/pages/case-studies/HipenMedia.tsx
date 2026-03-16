@@ -1,8 +1,14 @@
+import { useEffect } from "react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 const CaseStudyHipenMedia = () => {
   const navigate = useNavigate();
+
+  useEffect(() => {
+    document.title = "Hipen Media – User Onboarding | Lucas Daneluz";
+    return () => { document.title = "Lucas Daneluz – PM Portfolio"; };
+  }, []);
 
   return (
     <div
