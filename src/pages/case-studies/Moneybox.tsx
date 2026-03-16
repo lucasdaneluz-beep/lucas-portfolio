@@ -1,5 +1,5 @@
 import React from "react";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import MoneyboxApp from "@/components/moneybox/MoneyboxApp";
 
@@ -208,7 +208,16 @@ const CaseStudyMoneybox = () => {
           </div>
         </section>
 
-        <p className="text-[10px] text-center mt-8" style={{ color: "hsl(210 15% 35%)" }}>
+        <div className="flex justify-between items-center mt-12 pt-6" style={{ borderTop: "1px solid hsl(210 20% 16%)" }}>
+          <button onClick={() => navigate("/")} className="inline-flex items-center gap-1.5 text-xs font-semibold" style={{ color: "hsl(210 15% 45%)" }}>
+            <ArrowLeft size={13} /> All case studies
+          </button>
+          <button onClick={() => navigate("/case-studies/walkup")} className="inline-flex items-center gap-1.5 text-xs font-semibold" style={{ color: "hsl(174 80% 60%)" }}>
+            Next: WalkUp – Smarter Queues <ArrowRight size={13} />
+          </button>
+        </div>
+
+        <p className="text-[10px] text-center mt-6" style={{ color: "hsl(210 15% 35%)" }}>
           This is an independent product concept created for portfolio purposes only. Not affiliated with Moneybox.
         </p>
       </div>
