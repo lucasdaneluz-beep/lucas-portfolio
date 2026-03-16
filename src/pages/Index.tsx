@@ -143,7 +143,7 @@ const Index = () => {
 
       {/* How I Work */}
       <section className="max-w-full sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-6 mt-16 sm:mt-20">
-        <h2 className="text-xl sm:text-2xl font-bold mb-2" style={{ color: "hsl(210 40% 98%)" }}>
+        <h2 className="text-xl sm:text-2xl font-bold mb-2" style={{ color: "hsl(210 25% 82%)" }}>
           How I Work
         </h2>
         <p className="text-base sm:text-lg font-medium italic mb-8" style={{ color: "hsl(210 25% 72%)" }}>
@@ -180,7 +180,7 @@ const Index = () => {
 
       {/* Case Studies List */}
       <section className="max-w-full sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-6 mt-16 sm:mt-20">
-        <h2 className="text-xl sm:text-2xl font-bold mb-2" style={{ color: "hsl(210 40% 98%)" }}>
+        <h2 className="text-xl sm:text-2xl font-bold mb-2" style={{ color: "hsl(210 25% 82%)" }}>
           Case Studies
         </h2>
         <p className="text-base sm:text-lg font-medium italic mb-8" style={{ color: "hsl(210 25% 72%)" }}>
