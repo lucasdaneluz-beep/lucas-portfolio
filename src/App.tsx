@@ -15,6 +15,7 @@ import HipenMedia from "./pages/case-studies/HipenMedia";
 import Westpak from "./pages/case-studies/Westpak";
 import PreviewTerracotta from "./pages/PreviewTerracotta";
 import PreviewNewDarkFonts from "./pages/PreviewNewDarkFonts";
+import PreviewAmber from "./pages/PreviewAmber";
 
 const queryClient = new QueryClient();
 
@@ -40,6 +41,7 @@ const App = () => (
           
           <Route path="/preview-terracotta" element={<PreviewTerracotta />} />
           <Route path="/preview-newdarkfonts" element={<PreviewNewDarkFonts />} />
+          <Route path="/preview-amber" element={<PreviewAmber />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         </PageTransition>
