@@ -18,7 +18,7 @@ const CaseStudyWalkup = () => {
       <div className="max-w-4xl mx-auto px-6 pt-10 pb-20">
 
         <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-3" style={{ background: "hsl(174 80% 60% / 0.12)", border: "1px solid hsl(174 80% 60% / 0.25)" }}>
-          <span className="text-[10px] font-bold uppercase tracking-widest" style={{ color: "hsl(174 80% 60%)" }}>PM Portfolio · Case Study 02</span>
+          <span className="text-[10px] font-bold uppercase tracking-widest" style={{ color: "hsl(174 80% 60%)" }}>Case Study 01 / 04</span>
         </div>
         <h1 className="text-3xl md:text-4xl font-black tracking-tight mb-3" style={{ color: "hsl(210 40% 98%)" }}>
           WalkUp <span style={{ color: "hsl(174 80% 60%)" }}>Smarter Queues</span>
