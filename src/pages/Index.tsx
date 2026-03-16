@@ -143,10 +143,10 @@ const Index = () => {
 
       {/* How I Work */}
       <section className="max-w-full sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-6 mt-16 sm:mt-20">
-        <p className="text-[11px] font-bold uppercase tracking-widest mb-2" style={{ color: "hsl(210 15% 45%)" }}>
+        <h2 className="text-xl sm:text-2xl font-bold mb-2" style={{ color: "hsl(210 40% 98%)" }}>
           How I Work
-        </p>
-        <p className="text-base sm:text-lg font-medium mb-8" style={{ color: "hsl(210 25% 72%)" }}>
+        </h2>
+        <p className="text-base sm:text-lg font-medium italic mb-8" style={{ color: "hsl(210 25% 72%)" }}>
           A structured approach to building the right thing.
         </p>
 
@@ -180,10 +180,10 @@ const Index = () => {
 
       {/* Case Studies List */}
       <section className="max-w-full sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-6 mt-16 sm:mt-20">
-        <p className="text-[11px] font-bold uppercase tracking-widest mb-2" style={{ color: "hsl(210 15% 45%)" }}>
+        <h2 className="text-xl sm:text-2xl font-bold mb-2" style={{ color: "hsl(210 40% 98%)" }}>
           Case Studies
-        </p>
-        <p className="text-base sm:text-lg font-medium mb-8" style={{ color: "hsl(210 25% 72%)" }}>
+        </h2>
+        <p className="text-base sm:text-lg font-medium italic mb-8" style={{ color: "hsl(210 25% 72%)" }}>
           Real problems. Structured thinking. Measurable impact.
         </p>
 
