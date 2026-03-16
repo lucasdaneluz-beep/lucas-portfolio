@@ -3,8 +3,28 @@ import { useNavigate } from "react-router-dom";
 import { Briefcase, TrendingUp, ArrowRight, Linkedin, Mail, Search, Compass, Rocket, BarChart2, ChevronRight, MapPin, ArrowDown } from "lucide-react";
 import profilePhoto from "@/assets/lucas-profile.png";
 
-// Amber accent — replaces cyan hsl(174 80% 60%) throughout
-const A = "hsl(38 90% 58%)";
+const A = "hsl(38 90% 58%)"; // amber accent
+
+// Warm charcoal palette — background shifts from cool navy to dark warm brown
+const bg       = "hsl(30 12% 7%)";
+const bgCard   = "hsl(30 10% 11%)";
+const bgPill   = "hsl(30 10% 12%)";
+const bgBanner = "hsl(30 10% 9%)";
+const border   = "hsl(30 8% 18%)";
+const borderFaint = "hsl(30 8% 14%)";
+const divider  = "hsl(30 8% 13%)";
+const bgTag    = "hsl(30 8% 12%)";
+const borderTag = "hsl(30 8% 20%)";
+
+const tWhite   = "hsl(30 20% 97%)";
+const tHead    = "hsl(30 15% 82%)";
+const tSub     = "hsl(30 12% 72%)";
+const tBio     = "hsl(30 10% 62%)";
+const tPill    = "hsl(30 10% 65%)";
+const tDesc    = "hsl(30 8% 55%)";
+const tTag     = "hsl(30 8% 50%)";
+const tDim     = "hsl(30 8% 40%)";
+const tFooter  = "hsl(30 8% 45%)";
 
 const caseStudies = [
   {
@@ -61,41 +81,47 @@ const methodologySteps = [
   { icon: <Rocket size={20} />,    title: "Deliver",   description: "Ship iteratively, measure outcomes, and refine based on real-world feedback." },
 ];
 
+const a10  = `${A.replace(")", " / 0.10)")}`;
+const a25  = `${A.replace(")", " / 0.25)")}`;
+const a30  = `${A.replace(")", " / 0.30)")}`;
+const a35  = `${A.replace(")", " / 0.35)")}`;
+const a40  = `${A.replace(")", " / 0.40)")}`;
+const a45  = `${A.replace(")", " / 0.45)")}`;
+const a50  = `${A.replace(")", " / 0.50)")}`;
+
 const PreviewAmber = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen bg-[hsl(210_35%_5%)] text-white">
+    <div className="min-h-screen text-white" style={{ background: bg }}>
       <style>{`
         .pa-card { transition: border-color 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease; }
-        .pa-card:hover { border-color: ${A.replace(")", " / 0.5)")} !important; box-shadow: inset 3px 0 0 ${A.replace(")", " / 0.45)")}; transform: scale(1.005); }
+        .pa-card:hover { border-color: ${a50} !important; box-shadow: inset 3px 0 0 ${a45}; transform: scale(1.005); }
       `}</style>
 
       {/* Preview banner */}
-      <div className="flex items-center gap-2.5 px-6 py-2.5 text-[10px] font-bold uppercase tracking-widest" style={{ background: "hsl(210 28% 9%)", borderBottom: "1px solid hsl(210 20% 15%)", color: "hsl(210 15% 45%)" }}>
+      <div className="flex items-center gap-2.5 px-6 py-2.5 text-[10px] font-bold uppercase tracking-widest" style={{ background: bgBanner, borderBottom: `1px solid ${divider}`, color: tDim }}>
         <div className="w-2 h-2 rounded-full" style={{ background: A }} />
-        <span style={{ color: "hsl(210 25% 70%)" }}>Colour preview</span>
-        — Amber accent · {A}
+        <span style={{ color: tSub }}>Colour preview</span>
+        — Amber · warm charcoal bg
       </div>
 
       {/* Hero */}
       <section className="max-w-full sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-6 pt-10 sm:pt-14 pb-4">
-        {/* Location badge */}
-        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-6" style={{ background: `${A.replace(")", " / 0.1)")}`, border: `1px solid ${A.replace(")", " / 0.25)")}` }}>
+        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-6" style={{ background: a10, border: `1px solid ${a25}` }}>
           <MapPin size={11} style={{ color: A }} />
           <span className="text-[10px] font-bold uppercase tracking-widest" style={{ color: A }}>London, UK</span>
         </div>
 
-        {/* Name & Photo */}
         <div className="flex items-center gap-5 mb-3">
           <img
             src={profilePhoto}
             alt="Lucas Daneluz profile photo"
             className="w-16 h-16 sm:w-20 sm:h-20 rounded-full object-cover flex-shrink-0"
-            style={{ boxShadow: `0 0 0 2px ${A.replace(")", " / 0.3)")}` }}
+            style={{ boxShadow: `0 0 0 2px ${a30}` }}
           />
           <div>
-            <h1 className="text-3xl sm:text-4xl font-black tracking-tight leading-tight" style={{ color: "hsl(210 40% 98%)" }}>
+            <h1 className="text-3xl sm:text-4xl font-black tracking-tight leading-tight" style={{ color: tWhite }}>
               Lucas Daneluz
             </h1>
             <p className="text-base sm:text-lg font-semibold" style={{ color: A }}>
@@ -104,12 +130,10 @@ const PreviewAmber = () => {
           </div>
         </div>
 
-        {/* Bio */}
-        <p className="text-sm sm:text-base leading-relaxed mb-8" style={{ color: "hsl(210 20% 62%)" }}>
+        <p className="text-sm sm:text-base leading-relaxed mb-8" style={{ color: tBio }}>
           A commercially-driven PM with 10+ years in commercial and product-adjacent roles across B2B SaaS, FMCG, and supply chain. I've spent my career close to users, data, and looking to own business outcomes. I'm now channelling that into building a product portfolio grounded in real pain points, clear thinking, and measurable impact.
         </p>
 
-        {/* Skill pills */}
         <div className="flex flex-wrap gap-2 sm:gap-3">
           {[{ icon: <Rocket size={12} />, label: "0→1 Builds" },
             { icon: <Briefcase size={12} />, label: "Stakeholder Alignment" },
@@ -118,7 +142,7 @@ const PreviewAmber = () => {
             <div
               key={label}
               className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[11px] font-semibold"
-              style={{ background: "hsl(210 28% 12%)", border: "1px solid hsl(210 20% 20%)", color: "hsl(210 20% 65%)" }}
+              style={{ background: bgPill, border: `1px solid ${border}`, color: tPill }}
             >
               <span style={{ color: A }}>{icon}</span>
               {label}
@@ -126,7 +150,6 @@ const PreviewAmber = () => {
           ))}
         </div>
 
-        {/* CTA */}
         <div className="mt-8">
           <a
             href="#pa-case-studies"
@@ -141,15 +164,15 @@ const PreviewAmber = () => {
 
       {/* Divider */}
       <div className="max-w-full sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-6 mt-16 sm:mt-20">
-        <hr style={{ borderColor: "hsl(210 20% 15%)" }} />
+        <hr style={{ borderColor: divider }} />
       </div>
 
       {/* How I Work */}
       <section className="max-w-full sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-6 mt-12 sm:mt-16">
-        <h2 className="text-xl sm:text-2xl font-bold mb-2" style={{ color: "hsl(210 25% 82%)" }}>
+        <h2 className="text-xl sm:text-2xl font-bold mb-2" style={{ color: tHead }}>
           How I Work
         </h2>
-        <p className="text-base sm:text-lg font-medium italic mb-8" style={{ color: "hsl(210 25% 72%)" }}>
+        <p className="text-base sm:text-lg font-medium italic mb-8" style={{ color: tSub }}>
           A structured approach to building the right thing.
         </p>
 
@@ -158,25 +181,25 @@ const PreviewAmber = () => {
             <React.Fragment key={title}>
               <div
                 className="rounded-2xl p-6 relative lg:flex-1"
-                style={{ background: "hsl(210 28% 11%)", border: "1px solid hsl(210 20% 20%)" }}
+                style={{ background: bgCard, border: `1px solid ${border}` }}
               >
                 <div className="flex items-center gap-3 mb-3">
                   <div
                     className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0"
-                    style={{ background: `${A.replace(")", " / 0.1)")}`, color: A }}
+                    style={{ background: a10, color: A }}
                   >
                     {icon}
                   </div>
-                  <span className="text-xs font-black uppercase tracking-widest" style={{ color: "hsl(210 15% 40%)" }}>
+                  <span className="text-xs font-black uppercase tracking-widest" style={{ color: tDim }}>
                     0{i + 1}
                   </span>
                 </div>
-                <p className="text-sm font-bold mb-1" style={{ color: "hsl(210 25% 82%)" }}>{title}</p>
-                <p className="text-xs leading-relaxed" style={{ color: "hsl(210 20% 55%)" }}>{description}</p>
+                <p className="text-sm font-bold mb-1" style={{ color: tHead }}>{title}</p>
+                <p className="text-xs leading-relaxed" style={{ color: tDesc }}>{description}</p>
               </div>
               {i < methodologySteps.length - 1 && (
                 <div className="hidden lg:flex items-center justify-center flex-shrink-0">
-                  <ChevronRight size={14} style={{ color: `${A.replace(")", " / 0.35)")}` }} />
+                  <ChevronRight size={14} style={{ color: a35 }} />
                 </div>
               )}
             </React.Fragment>
@@ -186,10 +209,10 @@ const PreviewAmber = () => {
 
       {/* Case Studies */}
       <section id="pa-case-studies" className="max-w-full sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-6 mt-16 sm:mt-20">
-        <h2 className="text-xl sm:text-2xl font-bold mb-2" style={{ color: "hsl(210 25% 82%)" }}>
+        <h2 className="text-xl sm:text-2xl font-bold mb-2" style={{ color: tHead }}>
           Case Studies
         </h2>
-        <p className="text-base sm:text-lg font-medium italic mb-8" style={{ color: "hsl(210 25% 72%)" }}>
+        <p className="text-base sm:text-lg font-medium italic mb-8" style={{ color: tSub }}>
           Real problems. Structured thinking. Measurable impact.
         </p>
 
@@ -201,35 +224,33 @@ const PreviewAmber = () => {
               onClick={() => status === "live" && navigate(href)}
               className={`${status === "live" ? "pa-card" : ""} w-full text-left rounded-2xl p-5 sm:p-6 flex items-center justify-between gap-3 sm:gap-4 focus-visible:outline-none`}
               style={{
-                background: "hsl(210 28% 11%)",
-                border: `1px solid ${status === "coming-soon" ? "hsl(210 20% 16%)" : "hsl(210 20% 20%)"}`,
+                background: bgCard,
+                border: `1px solid ${status === "coming-soon" ? borderFaint : border}`,
                 cursor: status === "live" ? "pointer" : "default",
                 opacity: status === "coming-soon" ? 0.55 : 1,
               }}
             >
               <div className="flex items-start gap-3 sm:gap-4 min-w-0">
-                <span className="text-xs font-black tabular-nums mt-0.5 flex-shrink-0" style={{ color: status === "coming-soon" ? "hsl(210 15% 40%)" : A }}>{id}</span>
+                <span className="text-xs font-black tabular-nums mt-0.5 flex-shrink-0" style={{ color: status === "coming-soon" ? tDim : A }}>{id}</span>
                 <div className="min-w-0">
                   <div className="flex items-center gap-2 mb-1 flex-wrap">
-                    <p className="text-sm font-bold">{title}</p>
+                    <p className="text-sm font-bold" style={{ color: tWhite }}>{title}</p>
                     {status === "coming-soon" && (
-                      <span className="text-[9px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-full" style={{ background: `${A.replace(")", " / 0.1)")}`, color: A, border: `1px solid ${A.replace(")", " / 0.25)")}` }}>
+                      <span className="text-[9px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-full" style={{ background: a10, color: A, border: `1px solid ${a25}` }}>
                         In Progress
                       </span>
                     )}
                   </div>
-                  <p className="text-xs mb-1.5" style={{ color: "hsl(210 20% 55%)" }}>{description}</p>
+                  <p className="text-xs mb-1.5" style={{ color: tDesc }}>{description}</p>
                   {metric && (
-                    <p className="text-[11px] font-bold mb-2.5" style={{ color: A }}>
-                      ↗ {metric}
-                    </p>
+                    <p className="text-[11px] font-bold mb-2.5" style={{ color: A }}>↗ {metric}</p>
                   )}
                   <div className="flex flex-wrap gap-1.5">
                     {tags.map(tag => (
                       <span
                         key={tag}
                         className="text-[10px] font-semibold px-2 py-0.5 rounded-full"
-                        style={{ background: "hsl(210 20% 14%)", color: "hsl(210 15% 50%)", border: "1px solid hsl(210 20% 22%)" }}
+                        style={{ background: bgTag, color: tTag, border: `1px solid ${borderTag}` }}
                       >
                         {tag}
                       </span>
@@ -247,19 +268,19 @@ const PreviewAmber = () => {
       <section className="max-w-full sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-6 mt-16 sm:mt-20">
         <div
           className="rounded-2xl p-12 sm:p-14 text-center"
-          style={{ background: "hsl(210 28% 11%)", border: "1px solid hsl(210 20% 20%)" }}
+          style={{ background: bgCard, border: `1px solid ${border}` }}
         >
-          <h2 className="text-xl sm:text-2xl font-black mb-3" style={{ color: "hsl(210 40% 98%)" }}>
+          <h2 className="text-xl sm:text-2xl font-black mb-3" style={{ color: tWhite }}>
             Interested in working together?
           </h2>
-          <p className="text-sm mb-6 max-w-md mx-auto" style={{ color: "hsl(210 20% 55%)" }}>
+          <p className="text-sm mb-6 max-w-md mx-auto" style={{ color: tDesc }}>
             I'm open to PM roles, contract work, or just a good product conversation.
           </p>
           <div className="flex items-center justify-center gap-3 flex-wrap">
             <a
               href="mailto:lucas.daneluz@gmail.com"
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-bold transition-opacity hover:opacity-90"
-              style={{ background: A, color: "hsl(210 35% 5%)" }}
+              style={{ background: A, color: bg }}
             >
               <Mail size={14} />
               Get in Touch
@@ -269,7 +290,7 @@ const PreviewAmber = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-bold hover:opacity-90"
-              style={{ background: "transparent", border: `1px solid ${A.replace(")", " / 0.4)")}`, color: A }}
+              style={{ background: "transparent", border: `1px solid ${a40}`, color: A }}
             >
               <Linkedin size={14} />
               LinkedIn
@@ -281,13 +302,13 @@ const PreviewAmber = () => {
       {/* Footer */}
       <footer className="max-w-full sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-6 mt-8 pb-16">
         <div className="flex items-center justify-between flex-wrap gap-3">
-          <span className="text-[11px]" style={{ color: "hsl(210 15% 40%)" }}>© {new Date().getFullYear()} Lucas Daneluz</span>
+          <span className="text-[11px]" style={{ color: tDim }}>© {new Date().getFullYear()} Lucas Daneluz</span>
           <div className="flex items-center gap-4">
-            <a href="mailto:lucas.daneluz@gmail.com" className="text-[11px] flex items-center gap-1.5 transition-opacity hover:opacity-70" style={{ color: "hsl(210 15% 45%)" }}>
+            <a href="mailto:lucas.daneluz@gmail.com" className="text-[11px] flex items-center gap-1.5 transition-opacity hover:opacity-70" style={{ color: tFooter }}>
               <Mail size={11} />
               Email
             </a>
-            <a href="https://www.linkedin.com/in/lucasdaneluz" target="_blank" rel="noopener noreferrer" className="text-[11px] flex items-center gap-1.5 transition-opacity hover:opacity-70" style={{ color: "hsl(210 15% 45%)" }}>
+            <a href="https://www.linkedin.com/in/lucasdaneluz" target="_blank" rel="noopener noreferrer" className="text-[11px] flex items-center gap-1.5 transition-opacity hover:opacity-70" style={{ color: tFooter }}>
               <Linkedin size={11} />
               LinkedIn
             </a>
