@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { Briefcase, TrendingUp, Layers, DollarSign, ArrowRight, Linkedin, Mail, Search, Compass, Rocket } from "lucide-react";
+import { Briefcase, TrendingUp, Layers, DollarSign, ArrowRight, Linkedin, Mail, Search, Compass, Rocket, BarChart2 } from "lucide-react";
 import profilePhoto from "@/assets/lucas-profile.png";
 
 const caseStudies = [
@@ -72,6 +72,11 @@ const methodologySteps = [
     description: "Synthesise insights into a clear strategy, prioritised roadmap, and success metrics.",
   },
   {
+    icon: <BarChart2 size={20} />,
+    title: "Baseline",
+    description: "Establish measurable benchmarks before shipping so progress is grounded in data, not assumption.",
+  },
+  {
     icon: <Rocket size={20} />,
     title: "Deliver",
     description: "Ship iteratively, measure outcomes, and refine based on real-world feedback.",
@@ -141,7 +146,7 @@ const Index = () => {
           A structured approach to building the right thing.
         </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
           {methodologySteps.map(({ icon, title, description }, i) => (
             <div
               key={title}
