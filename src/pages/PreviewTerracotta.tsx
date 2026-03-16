@@ -3,25 +3,25 @@ import { useNavigate } from "react-router-dom";
 import { Briefcase, TrendingUp, Layers, DollarSign, ArrowRight, Linkedin, Mail, Search, Compass, Rocket, BarChart2 } from "lucide-react";
 import profilePhoto from "@/assets/lucas-profile.png";
 
-// ─── Option B: Light / off-white + warm amber ─────────────────────────────
+// ─── samfrons.com palette: warm cream + pure white + near-black ────────────
 const c = {
-  bg:           "hsl(38 14% 88%)",
-  bgCard:       "hsl(0 0% 100%)",
-  bgCardAlt:    "hsl(40 15% 98%)",
-  border:       "hsl(35 12% 80%)",
-  borderLight:  "hsl(35 10% 85%)",
+  bg:           "#f2ede8",              // warm cream (samfrons "light" sections)
+  bgCard:       "#ffffff",             // pure white cards (samfrons "white" sections)
+  bgCardAlt:    "#faf8f5",             // near-white for subtle alt surfaces
+  border:       "#e0d8d0",             // warm light border
+  borderLight:  "#ece7e1",             // very subtle border
 
-  accent:       "hsl(38 82% 44%)",       // warm amber — darker for light bg
-  accentLight:  "hsl(38 82% 44% / 0.10)",
-  accentBorder: "hsl(38 82% 44% / 0.30)",
-  accentText:   "hsl(38 82% 36%)",       // slightly deeper for readable text
+  accent:       "#2a2218",             // warm near-black accent (outline button feel)
+  accentLight:  "rgba(42,34,24,0.06)",
+  accentBorder: "rgba(42,34,24,0.18)",
+  accentText:   "#2a2218",
 
-  text:         "hsl(30 12% 12%)",       // near-black warm charcoal
-  textSub:      "hsl(30 8% 38%)",
-  textMuted:    "hsl(30 6% 54%)",
-  textDimmed:   "hsl(30 5% 68%)",
+  text:         "#1a1612",             // rich warm near-black (samfrons text)
+  textSub:      "#3d3630",             // warm dark brown
+  textMuted:    "#7a7068",             // muted warm grey
+  textDimmed:   "#a8a099",             // dimmed warm grey
 
-  gold:         "hsl(38 82% 44%)",
+  gold:         "#2a2218",
 };
 
 const caseStudies = [
@@ -88,7 +88,7 @@ const PreviewTerracotta = () => {
       {/* Preview banner */}
       <div style={{ background: c.bgCard, borderBottom: `1px solid ${c.border}`, padding: "9px 24px", display: "flex", alignItems: "center", gap: 10, fontSize: 10, fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", color: c.textDimmed }}>
         <div style={{ width: 7, height: 7, borderRadius: "50%", background: c.accent }} />
-        <span style={{ color: c.accentText }}>Option B preview</span>
+        <span style={{ color: c.accentText }}>samfrons palette preview</span>
         — light mode — no live changes applied
       </div>
 
@@ -233,13 +233,13 @@ const PreviewTerracotta = () => {
       <div style={{ borderTop: `1px solid ${c.border}`, padding: "16px 24px", display: "flex", flexWrap: "wrap", gap: 14, alignItems: "center", justifyContent: "center", background: c.bgCard }}>
         <span style={{ fontSize: 10, fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: c.textDimmed, marginRight: 4 }}>Palette</span>
         {[
-          ["hsl(40 20% 96%)", "bg"],
-          ["hsl(0 0% 100%)", "card"],
-          ["hsl(35 15% 88%)", "border"],
-          ["hsl(38 82% 44%)", "accent"],
-          ["hsl(30 12% 12%)", "text"],
-          ["hsl(30 8% 38%)", "secondary"],
-          ["hsl(30 6% 54%)", "muted"],
+          ["#f2ede8", "bg"],
+          ["#ffffff", "card"],
+          ["#e0d8d0", "border"],
+          ["#2a2218", "accent"],
+          ["#1a1612", "text"],
+          ["#3d3630", "secondary"],
+          ["#7a7068", "muted"],
         ].map(([hex, label]) => (
           <div key={label} style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 11, color: c.textMuted }}>
             <div style={{ width: 14, height: 14, borderRadius: 4, background: hex, border: "1px solid rgba(0,0,0,0.1)" }} />
