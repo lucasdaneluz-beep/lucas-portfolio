@@ -166,7 +166,7 @@ const Index = () => {
             style={{ color: "hsl(174 80% 60%)" }}
           >
             View case studies
-            <ArrowDown size={12} />
+            <span className="bounce-arrow"><ArrowDown size={12} /></span>
           </a>
         </div>
       </section>
