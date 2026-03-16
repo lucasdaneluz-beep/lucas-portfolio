@@ -4,6 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
+import PageTransition from "./components/PageTransition";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import Moneybox from "./pages/case-studies/Moneybox";
@@ -23,6 +24,7 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <ScrollToTop />
+        <PageTransition>
         <Routes>
           <Route path="/" element={<Index />} />
 
@@ -37,6 +39,7 @@ const App = () => (
           <Route path="/preview-newdarkfonts" element={<PreviewNewDarkFonts />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
+        </PageTransition>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
