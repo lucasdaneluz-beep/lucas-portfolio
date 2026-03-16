@@ -171,13 +171,8 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Divider */}
-      <div className="fade-section max-w-full sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-6 mt-16 sm:mt-20">
-        <hr style={{ borderColor: "hsl(210 20% 15%)" }} />
-      </div>
-
       {/* How I Work */}
-      <section className="fade-section max-w-full sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-6 mt-12 sm:mt-16">
+      <section className="fade-section max-w-full sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-6 mt-10 sm:mt-12">
         <h2 className="text-xl sm:text-2xl font-bold mb-2" style={{ color: "hsl(210 25% 82%)" }}>
           How I Work
         </h2>
