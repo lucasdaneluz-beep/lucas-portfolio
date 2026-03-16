@@ -87,9 +87,9 @@ const Index = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen bg-[hsl(210_35%_5%)] text-white px-4 sm:px-6 py-12 sm:py-16">
+    <div className="min-h-screen bg-[hsl(210_35%_5%)] text-white">
       {/* Hero / Bio */}
-      <section className="max-w-full sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-2 sm:px-6 pt-12 sm:pt-16 pb-4">
+      <section className="max-w-full sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-6 pt-16 sm:pt-20 pb-4">
         {/* Badge */}
         <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-6" style={{ background: "hsl(174 80% 60% / 0.1)", border: "1px solid hsl(174 80% 60% / 0.25)" }}>
           <Briefcase size={11} style={{ color: "hsl(174 80% 60%)" }} />
@@ -115,7 +115,7 @@ const Index = () => {
         </div>
 
         {/* Bio */}
-        <p className="text-sm sm:text-base leading-relaxed mb-8" style={{ color: "hsl(210 20% 62%)" }}>
+        <p className="text-sm sm:text-base leading-relaxed mb-8 max-w-xl" style={{ color: "hsl(210 20% 62%)" }}>
           A commercially-driven PM with 10+ years in commercial and product-adjacent roles across B2B SaaS, FMCG, and supply chain. I've spent my career close to users, data, and looking to own business outcomes. I'm now channelling that into building a product portfolio grounded in real pain points, clear thinking, and measurable impact.
         </p>
 
@@ -138,11 +138,11 @@ const Index = () => {
       </section>
 
       {/* How I Work */}
-      <section className="max-w-full sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-2 sm:px-6 mt-12 sm:mt-16">
+      <section className="max-w-full sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-6 mt-16 sm:mt-20">
         <p className="text-[11px] font-bold uppercase tracking-widest mb-2" style={{ color: "hsl(210 15% 45%)" }}>
           How I Work
         </p>
-        <p className="text-base sm:text-lg font-medium mb-6" style={{ color: "hsl(210 25% 72%)" }}>
+        <p className="text-base sm:text-lg font-medium mb-8" style={{ color: "hsl(210 25% 72%)" }}>
           A structured approach to building the right thing.
         </p>
 
@@ -150,7 +150,7 @@ const Index = () => {
           {methodologySteps.map(({ icon, title, description }, i) => (
             <div
               key={title}
-              className="rounded-2xl p-5 relative"
+              className="rounded-2xl p-6 relative"
               style={{
                 background: "hsl(210 28% 11%)",
                 border: "1px solid hsl(210 20% 20%)",
@@ -175,11 +175,11 @@ const Index = () => {
       </section>
 
       {/* Case Studies List */}
-      <section className="max-w-full sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-2 sm:px-6 mt-12 sm:mt-16">
+      <section className="max-w-full sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-6 mt-16 sm:mt-20">
         <p className="text-[11px] font-bold uppercase tracking-widest mb-2" style={{ color: "hsl(210 15% 45%)" }}>
           Case Studies
         </p>
-        <p className="text-base sm:text-lg font-medium mb-6" style={{ color: "hsl(210 25% 72%)" }}>
+        <p className="text-base sm:text-lg font-medium mb-8" style={{ color: "hsl(210 25% 72%)" }}>
           Real problems. Structured thinking. Measurable impact.
         </p>
 
@@ -189,7 +189,7 @@ const Index = () => {
               key={id}
               type="button"
               onClick={() => status === "live" && navigate(href)}
-              className={`w-full text-left rounded-2xl p-4 sm:p-5 flex items-center justify-between gap-3 sm:gap-4 transition-transform focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${status === "live" ? "hover:scale-[1.01]" : ""}`}
+              className={`w-full text-left rounded-2xl p-5 sm:p-6 flex items-center justify-between gap-3 sm:gap-4 transition-transform focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${status === "live" ? "hover:scale-[1.01]" : ""}`}
               style={{
                 background: "hsl(210 28% 11%)",
                 border: `1px solid ${status === "coming-soon" ? "hsl(210 20% 16%)" : "hsl(210 20% 20%)"}`,
@@ -219,7 +219,7 @@ const Index = () => {
                       <span
                         key={tag}
                         className="text-[10px] font-semibold px-2 py-0.5 rounded-full"
-                        style={{ background: "hsl(174 80% 60% / 0.1)", color: "hsl(174 80% 60%)", border: "1px solid hsl(174 80% 60% / 0.2)" }}
+                        style={{ background: "hsl(210 20% 14%)", color: "hsl(210 15% 50%)", border: "1px solid hsl(210 20% 22%)" }}
                       >
                         {tag}
                       </span>
@@ -234,9 +234,9 @@ const Index = () => {
       </section>
 
       {/* Let's Talk CTA */}
-      <section className="max-w-full sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-2 sm:px-6 mt-16">
+      <section className="max-w-full sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-6 mt-16 sm:mt-20">
         <div
-          className="rounded-2xl p-8 sm:p-10 text-center"
+          className="rounded-2xl p-12 sm:p-14 text-center"
           style={{ background: "hsl(210 28% 11%)", border: "1px solid hsl(210 20% 20%)" }}
         >
           <p className="text-[11px] font-bold uppercase tracking-widest mb-2" style={{ color: "hsl(174 80% 60%)" }}>
@@ -272,7 +272,7 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="max-w-full sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-2 sm:px-6 mt-6 pb-6 text-center">
+      <footer className="max-w-full sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-6 mt-8 pb-16 text-center">
         <span className="text-[11px]" style={{ color: "hsl(210 15% 40%)" }}>© {new Date().getFullYear()} Lucas Daneluz</span>
       </footer>
     </div>
