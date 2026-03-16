@@ -3,25 +3,26 @@ import { useNavigate } from "react-router-dom";
 import { Briefcase, TrendingUp, Layers, DollarSign, ArrowRight, Linkedin, Mail, Search, Compass, Rocket, BarChart2 } from "lucide-react";
 import profilePhoto from "@/assets/lucas-profile.png";
 
-// ─── samfrons.com palette: warm cream + pure white + near-black ────────────
+// ─── samfrons.com palette ─────────────────────────────────────────────────
+// white sections: #ffffff  |  light sections: ~#f5f1ec  |  text: #1a1a1a
 const c = {
-  bg:           "#f2ede8",              // warm cream (samfrons "light" sections)
-  bgCard:       "#ffffff",             // pure white cards (samfrons "white" sections)
-  bgCardAlt:    "#faf8f5",             // near-white for subtle alt surfaces
-  border:       "#e0d8d0",             // warm light border
-  borderLight:  "#ece7e1",             // very subtle border
+  bg:           "#f5f1ec",              // samfrons "light" section — very subtle warm tint
+  bgCard:       "#ffffff",             // samfrons "white" section — pure white
+  bgCardAlt:    "#faf8f5",
+  border:       "#e8e3dc",             // soft warm border
+  borderLight:  "#f0ece6",
 
-  accent:       "#2a2218",             // warm near-black accent (outline button feel)
-  accentLight:  "rgba(42,34,24,0.06)",
-  accentBorder: "rgba(42,34,24,0.18)",
-  accentText:   "#2a2218",
+  accent:       "#1a1a1a",             // near-black — samfrons uses black for buttons/links
+  accentLight:  "rgba(26,26,26,0.05)",
+  accentBorder: "rgba(26,26,26,0.15)",
+  accentText:   "#1a1a1a",
 
-  text:         "#1a1612",             // rich warm near-black (samfrons text)
-  textSub:      "#3d3630",             // warm dark brown
-  textMuted:    "#7a7068",             // muted warm grey
-  textDimmed:   "#a8a099",             // dimmed warm grey
+  text:         "#1a1a1a",             // samfrons body text — clean near-black
+  textSub:      "#3a3530",
+  textMuted:    "#78726a",
+  textDimmed:   "#a8a29a",
 
-  gold:         "#2a2218",
+  gold:         "#1a1a1a",
 };
 
 const caseStudies = [
@@ -83,7 +84,8 @@ const PreviewTerracotta = () => {
   const navigate = useNavigate();
 
   return (
-    <div style={{ minHeight: "100vh", background: c.bg, color: c.text, fontFamily: "Inter, -apple-system, sans-serif", WebkitFontSmoothing: "antialiased" }}>
+    <div style={{ minHeight: "100vh", background: c.bg, color: c.text, fontFamily: "'Nunito Sans', -apple-system, sans-serif", WebkitFontSmoothing: "antialiased" }}>
+      <style>{`@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,300;6..12,400;6..12,600;6..12,700;6..12,800;6..12,900&display=swap');`}</style>
 
       {/* Preview banner */}
       <div style={{ background: c.bgCard, borderBottom: `1px solid ${c.border}`, padding: "9px 24px", display: "flex", alignItems: "center", gap: 10, fontSize: 10, fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", color: c.textDimmed }}>
@@ -233,13 +235,13 @@ const PreviewTerracotta = () => {
       <div style={{ borderTop: `1px solid ${c.border}`, padding: "16px 24px", display: "flex", flexWrap: "wrap", gap: 14, alignItems: "center", justifyContent: "center", background: c.bgCard }}>
         <span style={{ fontSize: 10, fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: c.textDimmed, marginRight: 4 }}>Palette</span>
         {[
-          ["#f2ede8", "bg"],
+          ["#f5f1ec", "bg"],
           ["#ffffff", "card"],
-          ["#e0d8d0", "border"],
-          ["#2a2218", "accent"],
-          ["#1a1612", "text"],
-          ["#3d3630", "secondary"],
-          ["#7a7068", "muted"],
+          ["#e8e3dc", "border"],
+          ["#1a1a1a", "accent"],
+          ["#1a1a1a", "text"],
+          ["#3a3530", "secondary"],
+          ["#78726a", "muted"],
         ].map(([hex, label]) => (
           <div key={label} style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 11, color: c.textMuted }}>
             <div style={{ width: 14, height: 14, borderRadius: 4, background: hex, border: "1px solid rgba(0,0,0,0.1)" }} />
