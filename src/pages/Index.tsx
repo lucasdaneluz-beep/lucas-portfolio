@@ -115,7 +115,7 @@ const Index = () => {
         </div>
 
         {/* Bio */}
-        <p className="text-sm sm:text-base leading-relaxed mb-8 max-w-xl" style={{ color: "hsl(210 20% 62%)" }}>
+        <p className="text-sm sm:text-base leading-relaxed mb-8" style={{ color: "hsl(210 20% 62%)" }}>
           A commercially-driven PM with 10+ years in commercial and product-adjacent roles across B2B SaaS, FMCG, and supply chain. I've spent my career close to users, data, and looking to own business outcomes. I'm now channelling that into building a product portfolio grounded in real pain points, clear thinking, and measurable impact.
         </p>
 
