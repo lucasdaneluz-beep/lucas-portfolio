@@ -11,6 +11,7 @@ import Walkup from "./pages/case-studies/Walkup";
 import Comingsoon from "./pages/case-studies/Comingsoon"; 
 import HipenMedia from "./pages/case-studies/HipenMedia";
 import Westpak from "./pages/case-studies/Westpak";
+import PreviewTerracotta from "./pages/PreviewTerracotta";
 
 const queryClient = new QueryClient();
 
@@ -31,6 +32,7 @@ const App = () => (
           <Route path="/case-studies/westpak" element={<Westpak />} />
           <Route path="/case-studies/Comingsoon" element={<Comingsoon />} />
           
+          <Route path="/preview-terracotta" element={<PreviewTerracotta />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
