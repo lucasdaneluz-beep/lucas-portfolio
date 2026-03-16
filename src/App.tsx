@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
 import PageTransition from "./components/PageTransition";
+import Nav from "./components/Nav";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import Moneybox from "./pages/case-studies/Moneybox";
@@ -23,7 +24,9 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <Nav />
         <ScrollToTop />
+        <div className="pt-14">
         <PageTransition>
         <Routes>
           <Route path="/" element={<Index />} />
@@ -40,6 +43,7 @@ const App = () => (
           <Route path="*" element={<NotFound />} />
         </Routes>
         </PageTransition>
+        </div>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

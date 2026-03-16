@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { Briefcase, TrendingUp, ArrowRight, Linkedin, Mail, Search, Compass, Rocket, BarChart2, ChevronRight } from "lucide-react";
+import { Briefcase, TrendingUp, ArrowRight, Linkedin, Mail, Search, Compass, Rocket, BarChart2, ChevronRight, MapPin, ArrowDown } from "lucide-react";
 import profilePhoto from "@/assets/lucas-profile.png";
 
 const caseStudies = [
@@ -83,18 +83,32 @@ const methodologySteps = [
 const Index = () => {
   const navigate = useNavigate();
 
+  useEffect(() => {
+    const els = document.querySelectorAll(".fade-section");
+    const observer = new IntersectionObserver(
+      (entries) => entries.forEach((e) => {
+        if (e.isIntersecting) { e.target.classList.add("in-view"); observer.unobserve(e.target); }
+      }),
+      { threshold: 0.08 }
+    );
+    els.forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div className="min-h-screen bg-[hsl(210_35%_5%)] text-white">
       <style>{`
         .cs-card { transition: border-color 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease; }
         .cs-card:hover { border-color: hsl(174 80% 60% / 0.5) !important; box-shadow: inset 3px 0 0 hsl(174 80% 60% / 0.45); transform: scale(1.005); }
+        .fade-section { opacity: 0; transform: translateY(18px); transition: opacity 0.55s ease, transform 0.55s ease; }
+        .fade-section.in-view { opacity: 1; transform: translateY(0); }
       `}</style>
       {/* Hero / Bio */}
-      <section className="max-w-full sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-6 pt-16 sm:pt-20 pb-4">
-        {/* Badge */}
+      <section className="max-w-full sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-6 pt-10 sm:pt-14 pb-4">
+        {/* Location badge */}
         <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-6" style={{ background: "hsl(174 80% 60% / 0.1)", border: "1px solid hsl(174 80% 60% / 0.25)" }}>
-          <Briefcase size={11} style={{ color: "hsl(174 80% 60%)" }} />
-          <span className="text-[10px] font-bold uppercase tracking-widest" style={{ color: "hsl(174 80% 60%)" }}>PM Portfolio</span>
+          <MapPin size={11} style={{ color: "hsl(174 80% 60%)" }} />
+          <span className="text-[10px] font-bold uppercase tracking-widest" style={{ color: "hsl(174 80% 60%)" }}>London, UK</span>
         </div>
 
         {/* Name & Photo row */}
@@ -136,15 +150,27 @@ const Index = () => {
             </div>
           ))}
         </div>
+
+        {/* CTA */}
+        <div className="mt-8">
+          <a
+            href="#case-studies"
+            className="inline-flex items-center gap-1.5 text-xs font-semibold transition-opacity hover:opacity-70"
+            style={{ color: "hsl(174 80% 60%)" }}
+          >
+            View case studies
+            <ArrowDown size={12} />
+          </a>
+        </div>
       </section>
 
       {/* Divider */}
-      <div className="max-w-full sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-6 mt-16 sm:mt-20">
+      <div className="fade-section max-w-full sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-6 mt-16 sm:mt-20">
         <hr style={{ borderColor: "hsl(210 20% 15%)" }} />
       </div>
 
       {/* How I Work */}
-      <section className="max-w-full sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-6 mt-12 sm:mt-16">
+      <section className="fade-section max-w-full sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-6 mt-12 sm:mt-16">
         <h2 className="text-xl sm:text-2xl font-bold mb-2" style={{ color: "hsl(210 25% 82%)" }}>
           How I Work
         </h2>
@@ -173,7 +199,7 @@ const Index = () => {
                     0{i + 1}
                   </span>
                 </div>
-                <p className="text-sm font-bold mb-1" style={{ color: "hsl(210 40% 98%)" }}>{title}</p>
+                <p className="text-sm font-bold mb-1" style={{ color: "hsl(210 25% 82%)" }}>{title}</p>
                 <p className="text-xs leading-relaxed" style={{ color: "hsl(210 20% 55%)" }}>{description}</p>
               </div>
               {i < methodologySteps.length - 1 && (
@@ -187,7 +213,7 @@ const Index = () => {
       </section>
 
       {/* Case Studies List */}
-      <section className="max-w-full sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-6 mt-16 sm:mt-20">
+      <section id="case-studies" className="fade-section max-w-full sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-6 mt-16 sm:mt-20">
         <h2 className="text-xl sm:text-2xl font-bold mb-2" style={{ color: "hsl(210 25% 82%)" }}>
           Case Studies
         </h2>
@@ -246,7 +272,7 @@ const Index = () => {
       </section>
 
       {/* Let's Talk CTA */}
-      <section className="max-w-full sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-6 mt-16 sm:mt-20">
+      <section className="fade-section max-w-full sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-6 mt-16 sm:mt-20">
         <div
           className="rounded-2xl p-12 sm:p-14 text-center"
           style={{ background: "hsl(210 28% 11%)", border: "1px solid hsl(210 20% 20%)" }}
