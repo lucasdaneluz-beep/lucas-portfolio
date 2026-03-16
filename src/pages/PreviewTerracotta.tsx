@@ -5,11 +5,11 @@ import profilePhoto from "@/assets/lucas-profile.png";
 
 // ─── Option B: Light / off-white + warm amber ─────────────────────────────
 const c = {
-  bg:           "hsl(40 20% 96%)",
+  bg:           "hsl(38 14% 88%)",
   bgCard:       "hsl(0 0% 100%)",
   bgCardAlt:    "hsl(40 15% 98%)",
-  border:       "hsl(35 15% 88%)",
-  borderLight:  "hsl(35 12% 92%)",
+  border:       "hsl(35 12% 80%)",
+  borderLight:  "hsl(35 10% 85%)",
 
   accent:       "hsl(38 82% 44%)",       // warm amber — darker for light bg
   accentLight:  "hsl(38 82% 44% / 0.10)",
