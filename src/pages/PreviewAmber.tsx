@@ -118,7 +118,7 @@ const PreviewAmber = () => {
             src={profilePhoto}
             alt="Lucas Daneluz profile photo"
             className="w-16 h-16 sm:w-20 sm:h-20 rounded-full object-cover flex-shrink-0"
-            style={{ boxShadow: `0 0 0 2px ${a30}` }}
+            style={{ boxShadow: `0 0 0 2px ${border}` }}
           />
           <div>
             <h1 className="text-3xl sm:text-4xl font-black tracking-tight leading-tight" style={{ color: tWhite }}>
