@@ -1,8 +1,14 @@
+import { useEffect } from "react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 const CaseStudyWestpak = () => {
   const navigate = useNavigate();
+
+  useEffect(() => {
+    document.title = "Westpak – Cost Optimisation | Lucas Daneluz";
+    return () => { document.title = "Lucas Daneluz – PM Portfolio"; };
+  }, []);
 
   return (
     <div
