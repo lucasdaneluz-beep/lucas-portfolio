@@ -113,12 +113,16 @@ const Index = () => {
 
         {/* Name & Photo row */}
         <div className="flex items-center gap-5 mb-3">
-          <img
-            src={profilePhoto}
-            alt="Lucas Daneluz profile photo"
-            className="w-16 h-16 sm:w-20 sm:h-20 rounded-full object-cover ring-2 flex-shrink-0"
-            style={{ boxShadow: "0 0 0 2px hsl(174 80% 60% / 0.3)" }}
-          />
+          <div
+            className="w-16 h-16 sm:w-20 sm:h-20 rounded-full flex-shrink-0 overflow-hidden"
+            style={{ background: "hsl(210 35% 5%)", outline: "1px solid hsl(210 20% 18%)" }}
+          >
+            <img
+              src={profilePhoto}
+              alt="Lucas Daneluz profile photo"
+              className="w-full h-full object-cover object-top"
+            />
+          </div>
           <div>
             <h1 className="text-3xl sm:text-4xl font-black tracking-tight leading-tight" style={{ color: "hsl(210 40% 98%)" }}>
               Lucas Daneluz
