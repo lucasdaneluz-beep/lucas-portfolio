@@ -12,6 +12,7 @@ import Comingsoon from "./pages/case-studies/Comingsoon";
 import HipenMedia from "./pages/case-studies/HipenMedia";
 import Westpak from "./pages/case-studies/Westpak";
 import PreviewTerracotta from "./pages/PreviewTerracotta";
+import PreviewNewDarkFonts from "./pages/PreviewNewDarkFonts";
 
 const queryClient = new QueryClient();
 
@@ -33,6 +34,7 @@ const App = () => (
           <Route path="/case-studies/Comingsoon" element={<Comingsoon />} />
           
           <Route path="/preview-terracotta" element={<PreviewTerracotta />} />
+          <Route path="/preview-newdarkfonts" element={<PreviewNewDarkFonts />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
