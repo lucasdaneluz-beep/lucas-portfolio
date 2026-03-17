@@ -190,19 +190,17 @@ const Index = () => {
                   border: "1px solid hsl(210 20% 20%)",
                 }}
               >
-                <div className="flex items-center gap-3 mb-3">
-                  <div
-                    className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0"
-                    style={{ background: "hsl(174 80% 60% / 0.1)", color: "hsl(174 80% 60%)" }}
-                  >
-                    {icon}
-                  </div>
-                  <span className="text-xs font-black uppercase tracking-widest" style={{ color: "hsl(210 15% 40%)" }}>
-                    0{i + 1}
-                  </span>
+                <span className="text-xs font-black uppercase tracking-widest mb-3 block" style={{ color: "hsl(210 15% 40%)" }}>
+                  0{i + 1}
+                </span>
+                <div
+                  className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0 mb-3"
+                  style={{ background: "hsl(174 80% 60% / 0.1)", color: "hsl(174 80% 60%)" }}
+                >
+                  {icon}
                 </div>
-                <p className="text-sm font-bold mb-1" style={{ color: "hsl(210 25% 82%)" }}>{title}</p>
-                <p className="text-xs leading-relaxed" style={{ color: "hsl(210 20% 55%)" }}>{description}</p>
+                <p className="text-2xl font-bold mb-2" style={{ color: "hsl(210 25% 82%)" }}>{title}</p>
+                <p className="text-sm leading-relaxed" style={{ color: "hsl(210 20% 55%)" }}>{description}</p>
               </div>
               {i < methodologySteps.length - 1 && (
                 <div className="hidden lg:flex items-center justify-center flex-shrink-0">
