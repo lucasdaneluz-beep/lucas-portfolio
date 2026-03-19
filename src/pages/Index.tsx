@@ -136,9 +136,9 @@ const Index = () => {
         {/* Bio */}
         <p className="text-2xl sm:text-3xl font-light leading-snug tracking-tight mb-2" style={{ color: "hsl(210 40% 92%)" }}>
           Turning real{" "}
-          <span className="font-semibold italic" style={{ color: "hsl(174 80% 60%)" }}>pain points</span>
+          <span className="font-medium italic" style={{ color: "hsl(174 90% 68%)" }}>pain points</span>
           {" "}into{" "}
-          <span className="font-semibold italic" style={{ color: "hsl(174 80% 60%)" }}>measurable impact</span>.
+          <span className="font-medium italic" style={{ color: "hsl(174 90% 68%)" }}>measurable impact</span>.
         </p>
         <p className="text-xs mb-8" style={{ color: "hsl(210 15% 45%)" }}>
           10+ years across B2B SaaS, FMCG, and supply chain.
