@@ -134,11 +134,14 @@ const Index = () => {
         </div>
 
         {/* Bio */}
-        <p className="text-sm sm:text-base leading-relaxed mb-4" style={{ color: "hsl(210 20% 62%)" }}>
-          A commercially-driven PM with 10+ years across B2B SaaS, FMCG, and supply chain.
+        <p className="text-2xl sm:text-3xl font-light leading-snug tracking-tight mb-2" style={{ color: "hsl(210 40% 92%)" }}>
+          Turning real{" "}
+          <span className="font-medium italic" style={{ color: "hsl(174 90% 68%)" }}>pain points</span>
+          {" "}into{" "}
+          <span className="font-medium italic" style={{ color: "hsl(174 90% 68%)" }}>measurable impact</span>.
         </p>
-        <p className="text-sm sm:text-base leading-relaxed mb-8" style={{ color: "hsl(210 20% 62%)" }}>
-          Building a product portfolio grounded in real pain points, clear thinking, and measurable impact.
+        <p className="text-xs mb-7" style={{ color: "hsl(210 15% 45%)" }}>
+          10+ years across B2B SaaS, FMCG, and supply chain.
         </p>
 
         {/* Skill pills */}
@@ -159,7 +162,7 @@ const Index = () => {
         </div>
 
         {/* CTA */}
-        <div className="mt-8">
+        <div className="mt-5">
           <a
             href="#case-studies"
             className="inline-flex items-center gap-1.5 text-xs font-semibold transition-opacity hover:opacity-70"
@@ -172,7 +175,7 @@ const Index = () => {
       </section>
 
       {/* How I Work */}
-      <section className="fade-section max-w-full sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-6 mt-10 sm:mt-12">
+      <section className="fade-section max-w-full sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-6 mt-6 sm:mt-8">
         <h2 className="text-xl sm:text-2xl font-bold mb-2" style={{ color: "hsl(210 25% 82%)" }}>
           How I Work
         </h2>
@@ -213,7 +216,7 @@ const Index = () => {
       </section>
 
       {/* Case Studies List */}
-      <section id="case-studies" className="fade-section max-w-full sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-6 mt-16 sm:mt-20">
+      <section id="case-studies" className="fade-section max-w-full sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-6 mt-12 sm:mt-14">
         <h2 className="text-xl sm:text-2xl font-bold mb-2" style={{ color: "hsl(210 25% 82%)" }}>
           Case Studies
         </h2>
