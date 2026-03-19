@@ -112,7 +112,7 @@ const About = () => {
           {skills.map(({ icon, label }) => (
             <div
               key={label}
-              className="flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-semibold"
+              className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold"
               style={{ background: "hsl(210 28% 12%)", border: "1px solid hsl(210 20% 20%)", color: "hsl(210 20% 65%)" }}
             >
               <span style={{ color: "hsl(174 80% 60%)" }}>{icon}</span>
