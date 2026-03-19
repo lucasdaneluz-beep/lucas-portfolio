@@ -93,7 +93,7 @@ const About = () => {
         </div>
 
         {/* Bio */}
-        <div className="max-w-2xl space-y-4 mb-8">
+        <div className="space-y-4 mb-8">
           <p className="text-sm sm:text-base leading-relaxed" style={{ color: "hsl(210 20% 62%)" }}>
             A commercially-driven PM with 10+ years across B2B SaaS, FMCG, and supply chain — always close to users, data, and business outcomes.
           </p>
