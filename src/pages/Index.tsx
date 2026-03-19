@@ -105,14 +105,8 @@ const Index = () => {
       `}</style>
       {/* Hero / Bio */}
       <section className="max-w-full sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-6 pt-10 sm:pt-14 pb-4">
-        {/* Location badge */}
-        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-6" style={{ background: "hsl(174 80% 60% / 0.1)", border: "1px solid hsl(174 80% 60% / 0.25)" }}>
-          <MapPin size={11} style={{ color: "hsl(174 80% 60%)" }} />
-          <span className="text-[10px] font-bold uppercase tracking-widest" style={{ color: "hsl(174 80% 60%)" }}>London, UK</span>
-        </div>
-
         {/* Name & Photo row */}
-        <div className="flex items-center gap-5 mb-3">
+        <div className="flex items-center gap-5 mb-8">
           <div
             className="w-16 h-16 sm:w-20 sm:h-20 rounded-full flex-shrink-0 overflow-hidden"
             style={{ background: "hsl(210 35% 5%)", outline: "1px solid hsl(210 20% 18%)" }}
@@ -161,17 +155,6 @@ const Index = () => {
           ))}
         </div>
 
-        {/* CTA */}
-        <div className="mt-5">
-          <a
-            href="#case-studies"
-            className="inline-flex items-center gap-1.5 text-xs font-semibold transition-opacity hover:opacity-70"
-            style={{ color: "hsl(174 80% 60%)" }}
-          >
-            View case studies
-            <span className="bounce-arrow"><ArrowDown size={12} /></span>
-          </a>
-        </div>
       </section>
 
       {/* How I Work */}

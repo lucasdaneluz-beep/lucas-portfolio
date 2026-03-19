@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Mail, Linkedin, Send, CheckCircle } from "lucide-react";
+import { Mail, Linkedin, Send, CheckCircle, MapPin } from "lucide-react";
 
 const FORMSPREE_ENDPOINT = "https://formspree.io/f/xreyjeww";
 
@@ -203,6 +203,15 @@ const Contact = () => {
                   </span>
                   linkedin.com/in/lucasdaneluz
                 </a>
+                <div className="flex items-center gap-3 text-sm font-medium" style={{ color: "hsl(210 25% 75%)" }}>
+                  <span
+                    className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0"
+                    style={{ background: "hsl(174 80% 60% / 0.1)", color: "hsl(174 80% 60%)" }}
+                  >
+                    <MapPin size={15} />
+                  </span>
+                  London, UK
+                </div>
               </div>
             </div>
 
