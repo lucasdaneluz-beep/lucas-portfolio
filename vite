@@ -1,0 +1,18 @@
+
+Port 8080 is in use, trying another one...
+Port 8081 is in use, trying another one...
+
+  VITE v5.4.21  ready in 100 ms
+
+  ➜  Local:   http://localhost:8082/
+  ➜  Network: http://192.168.1.119:8082/
+  ➜  press h + enter to show help
+[vite:css] @import must precede all other statements (besides @charset or empty @layer)
+42 |  /* Brand palette: Dark navy + Cyan accent — aligned with current Moneybox colours */
+43 |  
+44 |  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+   |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+45 |  
+46 |  @layer base {
+^Clucasdaneluz@Lucass-Laptop lucas-portfolio % > vite_react_shadcn_ts@0.0.0 dev
+zsh: command not found: devlucasdaneluz@Lucass-Laptop lucas-portfolio % > vite_react_shadcn_ts@0.0.0 dev
