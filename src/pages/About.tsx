@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { MapPin, Briefcase, Rocket, Search, TrendingUp, Download, Linkedin, Mail, ArrowRight } from "lucide-react";
+import { Briefcase, Rocket, Search, TrendingUp, Download, Linkedin, Mail, ArrowRight } from "lucide-react";
 import profilePhoto from "@/assets/lucas-profile.png";
 
 const experience = [
@@ -37,10 +37,10 @@ const experience = [
 ];
 
 const skills = [
-  { icon: <Rocket size={12} />, label: "0→1 Builds" },
-  { icon: <Briefcase size={12} />, label: "Stakeholder Alignment" },
-  { icon: <Search size={12} />, label: "User Research" },
-  { icon: <TrendingUp size={12} />, label: "Outcome-Led PM" },
+  { icon: <Rocket size={15} />, label: "0→1 Builds" },
+  { icon: <Briefcase size={15} />, label: "Stakeholder Alignment" },
+  { icon: <Search size={15} />, label: "User Research" },
+  { icon: <TrendingUp size={15} />, label: "Outcome-Led PM" },
 ];
 
 const About = () => {
@@ -71,17 +71,6 @@ const About = () => {
 
       {/* Hero */}
       <section className="max-w-full sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-6 pt-10 sm:pt-14 pb-4">
-        {/* Location badge */}
-        <div
-          className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-6"
-          style={{ background: "hsl(174 80% 60% / 0.1)", border: "1px solid hsl(174 80% 60% / 0.25)" }}
-        >
-          <MapPin size={11} style={{ color: "hsl(174 80% 60%)" }} />
-          <span className="text-[10px] font-bold uppercase tracking-widest" style={{ color: "hsl(174 80% 60%)" }}>
-            London, UK
-          </span>
-        </div>
-
         {/* Photo + name row */}
         <div className="flex items-center gap-5 mb-6">
           <div
@@ -123,7 +112,7 @@ const About = () => {
           {skills.map(({ icon, label }) => (
             <div
               key={label}
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[11px] font-semibold"
+              className="flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-semibold"
               style={{ background: "hsl(210 28% 12%)", border: "1px solid hsl(210 20% 20%)", color: "hsl(210 20% 65%)" }}
             >
               <span style={{ color: "hsl(174 80% 60%)" }}>{icon}</span>
