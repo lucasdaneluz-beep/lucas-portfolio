@@ -134,11 +134,14 @@ const Index = () => {
         </div>
 
         {/* Bio */}
-        <p className="text-sm sm:text-base leading-relaxed mb-4" style={{ color: "hsl(210 20% 62%)" }}>
-          A commercially-driven PM with 10+ years across B2B SaaS, FMCG, and supply chain.
+        <p className="text-2xl sm:text-3xl font-black leading-snug tracking-tight mb-2" style={{ color: "hsl(210 40% 92%)" }}>
+          Turning real{" "}
+          <span style={{ color: "hsl(174 80% 60%)" }}>pain points</span>
+          {" "}into{" "}
+          <span style={{ color: "hsl(174 80% 60%)" }}>measurable impact</span>.
         </p>
-        <p className="text-sm sm:text-base leading-relaxed mb-8" style={{ color: "hsl(210 20% 62%)" }}>
-          Building a product portfolio grounded in real pain points, clear thinking, and measurable impact.
+        <p className="text-xs mb-8" style={{ color: "hsl(210 15% 45%)" }}>
+          10+ years across B2B SaaS, FMCG, and supply chain.
         </p>
 
         {/* Skill pills */}
