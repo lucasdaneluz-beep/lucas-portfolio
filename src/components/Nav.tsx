@@ -40,13 +40,20 @@ const Nav = () => {
               Work
             </Link>
           )}
-          <a
-            href="mailto:lucas.daneluz@gmail.com"
+          <Link
+            to="/about"
             className="text-xs font-semibold transition-opacity hover:opacity-70"
-            style={{ color: "hsl(210 20% 55%)" }}
+            style={{ color: pathname === "/about" ? "hsl(174 80% 60%)" : "hsl(210 20% 55%)" }}
+          >
+            About
+          </Link>
+          <Link
+            to="/contact"
+            className="text-xs font-semibold transition-opacity hover:opacity-70"
+            style={{ color: pathname === "/contact" ? "hsl(174 80% 60%)" : "hsl(210 20% 55%)" }}
           >
             Contact
-          </a>
+          </Link>
         </div>
       </div>
     </nav>
