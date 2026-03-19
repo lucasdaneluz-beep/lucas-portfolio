@@ -112,7 +112,7 @@ const Index = () => {
         </div>
 
         {/* Name & Photo row */}
-        <div className="flex items-center gap-5 mb-3">
+        <div className="flex items-center gap-5 mb-5">
           <div
             className="w-16 h-16 sm:w-20 sm:h-20 rounded-full flex-shrink-0 overflow-hidden"
             style={{ background: "hsl(210 35% 5%)", outline: "1px solid hsl(210 20% 18%)" }}
