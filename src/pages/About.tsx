@@ -16,6 +16,24 @@ const experience = [
     period: "Jul 2025 – Oct 2025",
     description: "Led resolution of a critical supply disruption, aligning Operations, Manufacturing and Supply Chain to restore 100% on-time delivery within two weeks. Ran portfolio deep-dive with Finance identifying a £500k+ initiative pipeline, and segmented SKUs by brand criticality to sharpen delivery focus.",
   },
+  {
+    role: "Strategic Sourcing Manager – Product Launch & GTM",
+    company: "Westpak (FMCG, Supply Chain) · UK",
+    period: "Jul 2021 – Jul 2025",
+    description: "Co-created and launched a new product line (Crave) from research to market, contributing to a 10% revenue increase. Applied prioritisation frameworks with senior stakeholders to inform roadmap and investment decisions, and used performance dashboards to deliver a 25% cost optimisation on core SKUs.",
+  },
+  {
+    role: "Procurement Manager",
+    company: "HAVI/TMS (FMCG / Supply Chain) · UK",
+    period: "Jul 2017 – Jul 2021",
+    description: "Defined prioritisation frameworks for new product introductions and process automation across packaging portfolios. Introduced cost-to-serve analytics to improve transparency and decision-making, reducing total cost by 9.5% while maintaining service levels at scale.",
+  },
+  {
+    role: "Buying Executive",
+    company: "Arena Online Ltd (E-commerce / Retail) · London",
+    period: "Jun 2016 – Jul 2017",
+    description: "Supported product development by sourcing and launching non-core product lines with commercial and merchandising stakeholders. Managed supplier relationships, inventory levels, and catalogue data to maintain availability across seasonal and fast-moving categories.",
+  },
 ];
 
 const skills = [
