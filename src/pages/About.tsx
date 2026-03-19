@@ -5,22 +5,16 @@ import profilePhoto from "@/assets/lucas-profile.png";
 
 const experience = [
   {
-    role: "Senior Product Manager",
-    company: "<!-- TODO: Add company name -->",
-    period: "2022 – Present",
-    description: "<!-- TODO: Add 1–2 sentence summary of key responsibilities and outcomes. -->",
-  },
-  {
     role: "Product Manager",
-    company: "<!-- TODO: Add company name -->",
-    period: "2019 – 2022",
-    description: "<!-- TODO: Add 1–2 sentence summary of key responsibilities and outcomes. -->",
+    company: "Hipen Media (SaaS) · London, Remote",
+    period: "Nov 2025 – Present",
+    description: "Owning end-to-end product discovery and early delivery for a B2B SaaS platform enabling independent, Latina-led media organisations. Conducting user research with target publishers, translating insights into problem statements and acceptance criteria, and managing backlog refinement and prioritisation.",
   },
   {
-    role: "<!-- TODO: Add role -->",
-    company: "<!-- TODO: Add company name -->",
-    period: "2016 – 2019",
-    description: "<!-- TODO: Add 1–2 sentence summary of key responsibilities and outcomes. -->",
+    role: "Category Manager – Portfolio Prioritisation & Delivery",
+    company: "Intersnack (FMCG) · UK",
+    period: "Jul 2025 – Oct 2025",
+    description: "Led resolution of a critical supply disruption, aligning Operations, Manufacturing and Supply Chain to restore 100% on-time delivery within two weeks. Ran portfolio deep-dive with Finance identifying a £500k+ initiative pipeline, and segmented SKUs by brand criticality to sharpen delivery focus.",
   },
 ];
 
