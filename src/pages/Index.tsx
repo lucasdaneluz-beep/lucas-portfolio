@@ -140,10 +140,10 @@ const Index = () => {
 
         {/* Skill pills */}
         <div className="flex flex-wrap gap-2 sm:gap-3">
-          {[{ icon: <Rocket size={15} />, label: "0→1 Builds" },
-            { icon: <Briefcase size={15} />, label: "Stakeholder Alignment" },
-            { icon: <Search size={15} />, label: "User Research" },
-            { icon: <TrendingUp size={15} />, label: "Outcome-Led PM" }].map(({ icon, label }) => (
+          {[{ icon: <Rocket size={13} />, label: "0→1 Builds" },
+            { icon: <Briefcase size={13} />, label: "Stakeholder Alignment" },
+            { icon: <Search size={13} />, label: "User Research" },
+            { icon: <TrendingUp size={13} />, label: "Outcome-Led PM" }].map(({ icon, label }) => (
             <div
               key={label}
               className="flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-semibold"
