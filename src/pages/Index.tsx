@@ -135,10 +135,10 @@ const Index = () => {
 
         {/* Bio */}
         <p className="text-sm sm:text-base leading-relaxed mb-4" style={{ color: "hsl(210 20% 62%)" }}>
-          A commercially-driven PM with 10+ years across B2B SaaS, FMCG, and supply chain — always close to users, data, and business outcomes.
+          A commercially-driven PM with 10+ years across B2B SaaS, FMCG, and supply chain.
         </p>
         <p className="text-sm sm:text-base leading-relaxed mb-8" style={{ color: "hsl(210 20% 62%)" }}>
-          Now building a product portfolio grounded in real pain points, clear thinking, and measurable impact.
+          Building a product portfolio grounded in real pain points, clear thinking, and measurable impact.
         </p>
 
         {/* Skill pills */}
