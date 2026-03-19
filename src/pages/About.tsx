@@ -121,19 +121,6 @@ const About = () => {
           ))}
         </div>
 
-        {/* CV download */}
-        {/* TODO: Add your CV file to /public/lucas-daneluz-cv.pdf and uncomment the link below */}
-        {/*
-        <a
-          href="/lucas-daneluz-cv.pdf"
-          download
-          className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-bold transition-opacity hover:opacity-90"
-          style={{ background: "hsl(174 80% 60%)", color: "hsl(210 35% 5%)" }}
-        >
-          <Download size={14} />
-          Download CV
-        </a>
-        */}
       </section>
 
       {/* Experience */}
@@ -169,6 +156,20 @@ const About = () => {
               </p>
             </div>
           ))}
+        </div>
+
+        {/* CV link */}
+        <div className="mt-6">
+          <a
+            href="/Lucas Daneluz - CV Jan-26.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-bold transition-opacity hover:opacity-90"
+            style={{ background: "hsl(174 80% 60%)", color: "hsl(210 35% 5%)" }}
+          >
+            <Download size={14} />
+            View Full CV
+          </a>
         </div>
       </section>
 
