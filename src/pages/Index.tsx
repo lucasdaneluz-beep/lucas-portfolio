@@ -140,7 +140,7 @@ const Index = () => {
           {" "}into{" "}
           <span className="font-medium italic" style={{ color: "hsl(174 90% 68%)" }}>measurable impact</span>.
         </p>
-        <p className="text-xs mb-5" style={{ color: "hsl(210 15% 45%)" }}>
+        <p className="text-xs mb-7" style={{ color: "hsl(210 15% 45%)" }}>
           10+ years across B2B SaaS, FMCG, and supply chain.
         </p>
 
