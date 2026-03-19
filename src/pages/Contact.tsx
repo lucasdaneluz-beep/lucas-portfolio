@@ -4,8 +4,7 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Mail, Linkedin, Send, CheckCircle } from "lucide-react";
 
-// TODO: Replace with your Formspree endpoint — https://formspree.io/f/XXXXXXXX
-const FORMSPREE_ENDPOINT = "https://formspree.io/f/XXXXXXXX";
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/xreyjeww";
 
 const schema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
