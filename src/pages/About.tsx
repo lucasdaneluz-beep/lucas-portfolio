@@ -37,10 +37,10 @@ const experience = [
 ];
 
 const skills = [
-  { icon: <Rocket size={12} />, label: "0→1 Builds" },
-  { icon: <Briefcase size={12} />, label: "Stakeholder Alignment" },
-  { icon: <Search size={12} />, label: "User Research" },
-  { icon: <TrendingUp size={12} />, label: "Outcome-Led PM" },
+  { icon: <Rocket size={11} />, label: "0→1 Builds" },
+  { icon: <Briefcase size={11} />, label: "Stakeholder Alignment" },
+  { icon: <Search size={11} />, label: "User Research" },
+  { icon: <TrendingUp size={11} />, label: "Outcome-Led PM" },
 ];
 
 const About = () => {
