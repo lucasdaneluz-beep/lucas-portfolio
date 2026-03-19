@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { Briefcase, TrendingUp, ArrowRight, Linkedin, Mail, Search, Compass, Rocket, BarChart2, ChevronRight, MapPin, ArrowDown } from "lucide-react";
 import profilePhoto from "@/assets/lucas-profile.png";
 
@@ -284,14 +284,14 @@ const Index = () => {
             I'm open to PM roles, contract work, or just a good product conversation.
           </p>
           <div className="flex items-center justify-center gap-3 flex-wrap">
-            <a
-              href="mailto:lucas.daneluz@gmail.com"
+            <Link
+              to="/contact"
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-bold transition-opacity hover:opacity-90"
               style={{ background: "hsl(174 80% 60%)", color: "hsl(210 35% 5%)" }}
             >
               <Mail size={14} />
               Get in Touch
-            </a>
+            </Link>
             <a
               href="https://www.linkedin.com/in/lucasdaneluz"
               target="_blank"
