@@ -155,17 +155,6 @@ const Index = () => {
           ))}
         </div>
 
-        {/* CTA */}
-        <div className="mt-5">
-          <a
-            href="#case-studies"
-            className="inline-flex items-center gap-1.5 text-xs font-semibold transition-opacity hover:opacity-70"
-            style={{ color: "hsl(174 80% 60%)" }}
-          >
-            View case studies
-            <span className="bounce-arrow"><ArrowDown size={12} /></span>
-          </a>
-        </div>
       </section>
 
       {/* How I Work */}
