@@ -65,7 +65,7 @@ const About = () => {
       {/* Hero */}
       <section className="max-w-full sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-6 pt-10 sm:pt-14 pb-4">
         {/* Photo + name row */}
-        <div className="flex items-center gap-5 mb-6">
+        <div className="flex items-center gap-5 mb-8">
           <div
             className="w-16 h-16 sm:w-20 sm:h-20 rounded-full flex-shrink-0 overflow-hidden"
             style={{ background: "hsl(210 35% 5%)", outline: "1px solid hsl(210 20% 18%)" }}
