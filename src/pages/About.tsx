@@ -127,7 +127,7 @@ const About = () => {
         {/* Personal note */}
         <div className="mt-14 space-y-2 pl-4" style={{ borderLeft: "2px solid hsl(174 80% 60% / 0.4)" }}>
           <p className="text-sm sm:text-base leading-relaxed italic" style={{ color: "hsl(210 20% 55%)" }}>
-            Outside of product, my favourite people are my wife and our maltipoo, who also happen to be my harshest critics.
+            Outside of product, my favourite people are my wife and our maltipoo, who also happen to be my best motivators and harshest critics.
           </p>
           <p className="text-sm sm:text-base leading-relaxed italic" style={{ color: "hsl(210 20% 55%)" }}>
             I produce music and play in an alternative rock band. There's something about the craft of arranging a track that scratches the same itch as building a great product.
