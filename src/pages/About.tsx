@@ -130,7 +130,7 @@ const About = () => {
             Outside of product, my favourite people are my wife and our maltipoo, who also happen to be my best motivators and harshest critics.
           </p>
           <p className="text-sm sm:text-base leading-relaxed italic" style={{ color: "hsl(210 20% 55%)" }}>
-            I produce music and play in an alternative rock band. There's something about the craft of arranging a track that scratches the same itch as building a great product.
+            I produce music and play in an alternative rock band. Working on a track, mixing and releasing has a similar feel to shipping a solid product.
           </p>
         </div>
       </section>
