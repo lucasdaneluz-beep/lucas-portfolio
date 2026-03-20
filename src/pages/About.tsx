@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Briefcase, Rocket, Search, TrendingUp, Download, Linkedin, Mail, ArrowRight } from "lucide-react";
+import { Download, Linkedin, Mail } from "lucide-react";
 import profilePhoto from "@/assets/lucas-profile.png";
 
 const experience = [
@@ -34,13 +34,6 @@ const experience = [
     period: "Jun 2016 – Jul 2017",
     description: "Supported product development by sourcing and launching non-core product lines with commercial and merchandising stakeholders. Managed supplier relationships, inventory levels, and catalogue data to maintain availability across seasonal and fast-moving categories.",
   },
-];
-
-const skills = [
-  { icon: <Rocket size={11} />, label: "0→1 Builds" },
-  { icon: <Briefcase size={11} />, label: "Stakeholder Alignment" },
-  { icon: <Search size={11} />, label: "User Research" },
-  { icon: <TrendingUp size={11} />, label: "Outcome-Led PM" },
 ];
 
 const About = () => {
@@ -107,24 +100,15 @@ const About = () => {
           </p>
         </div>
 
-        {/* Skill pills */}
-        <div className="flex flex-wrap gap-2 sm:gap-3 mb-8">
-          {skills.map(({ icon, label }) => (
-            <div
-              key={label}
-              className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold"
-              style={{ background: "hsl(210 28% 12%)", border: "1px solid hsl(210 20% 20%)", color: "hsl(210 20% 65%)" }}
-            >
-              <span style={{ color: "hsl(174 80% 60%)" }}>{icon}</span>
-              {label}
-            </div>
-          ))}
-        </div>
-
       </section>
 
+      {/* Divider */}
+      <div className="max-w-full sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-6 mt-14">
+        <div style={{ height: "1px", background: "linear-gradient(to right, transparent, hsl(210 20% 20%), transparent)" }} />
+      </div>
+
       {/* Experience */}
-      <section className="fade-section max-w-full sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-6 mt-14 sm:mt-16">
+      <section className="fade-section max-w-full sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-6 mt-10 sm:mt-12">
         <h2 className="text-xl sm:text-2xl font-bold mb-2" style={{ color: "hsl(210 25% 82%)" }}>
           Experience
         </h2>
@@ -161,7 +145,7 @@ const About = () => {
         {/* CV link */}
         <div className="mt-6">
           <a
-            href="/Lucas Daneluz - CV Jan-26.pdf"
+            href="/Lucas_Daneluz-CV.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-bold transition-opacity hover:opacity-90"
