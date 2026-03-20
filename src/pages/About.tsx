@@ -88,14 +88,13 @@ const About = () => {
 
         {/* Bio */}
         <div className="space-y-4 mb-8">
-          <p className="text-sm sm:text-base leading-relaxed" style={{ color: "hsl(210 20% 62%)" }}>
+          <p className="text-lg sm:text-xl leading-snug font-medium" style={{ color: "hsl(210 25% 78%)" }}>
             A commercially-driven PM with 10+ years across B2B SaaS, FMCG, and supply chain, always close to users, data, and business outcomes.
           </p>
-          {/* TODO: Replace the paragraph below with your own personal story / what drives you as a PM */}
-          <p className="text-sm sm:text-base leading-relaxed" style={{ color: "hsl(210 20% 62%)" }}>
-            I believe the best products are built when teams deeply understand the problem before reaching for a solution. My approach combines structured discovery, cross-functional collaboration, defining baseline metrics early to guide decisions and achieve quantifiable impact.
+          <p className="text-sm sm:text-base leading-relaxed" style={{ color: "hsl(210 20% 55%)" }}>
+            I start with the problem, not the solution — using structured discovery and early metrics to keep teams aligned and decisions grounded.
           </p>
-          <p className="text-sm sm:text-base leading-relaxed" style={{ color: "hsl(210 20% 62%)" }}>
+          <p className="text-sm sm:text-base leading-relaxed" style={{ color: "hsl(210 20% 55%)" }}>
             Outside of product, I'm drawn to anything that sits at the intersection of behaviour, technology, and design. I'm always up for a good product conversation.
           </p>
         </div>
