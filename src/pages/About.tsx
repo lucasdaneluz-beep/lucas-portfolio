@@ -87,15 +87,9 @@ const About = () => {
         </div>
 
         {/* Bio */}
-        <div className="space-y-4 mb-8">
+        <div className="mb-8">
           <p className="text-lg sm:text-xl leading-snug font-medium" style={{ color: "hsl(210 25% 78%)" }}>
             A commercially-driven PM with 10+ years across B2B SaaS, FMCG, and supply chain, always close to users, data, and business outcomes.
-          </p>
-          <p className="text-sm sm:text-base leading-relaxed" style={{ color: "hsl(210 20% 55%)" }}>
-          Outside of product, my favourite people are my wife and our maltipoo, who also happen to be my harshest critics. 
-          </p>
-          <p className="text-sm sm:text-base leading-relaxed" style={{ color: "hsl(210 20% 55%)" }}>
-          I produce music and play in an alternative rock band. There's something about the craft of arranging a track that scratches the same itch as building a great product.
           </p>
         </div>
 
@@ -125,6 +119,16 @@ const About = () => {
               <p className="text-sm leading-relaxed" style={{ color: "hsl(210 20% 55%)" }}>{description}</p>
             </div>
           ))}
+        </div>
+
+        {/* Personal note */}
+        <div className="mt-6 space-y-2">
+          <p className="text-sm sm:text-base leading-relaxed" style={{ color: "hsl(210 20% 55%)" }}>
+            Outside of product, my favourite people are my wife and our maltipoo, who also happen to be my harshest critics.
+          </p>
+          <p className="text-sm sm:text-base leading-relaxed" style={{ color: "hsl(210 20% 55%)" }}>
+            I produce music and play in an alternative rock band. There's something about the craft of arranging a track that scratches the same itch as building a great product.
+          </p>
         </div>
       </section>
 
