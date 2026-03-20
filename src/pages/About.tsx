@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Download, Linkedin, Mail } from "lucide-react";
+import { Download, Linkedin, Mail, Search, TrendingUp, Briefcase, Users } from "lucide-react";
 import profilePhoto from "@/assets/lucas-profile.png";
 
 const experience = [
@@ -104,20 +104,35 @@ const About = () => {
 
       </section>
 
-      {/* Skills strip */}
-      <div className="max-w-full sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-6 mt-6">
-        <div className="flex flex-wrap gap-2">
-          {["User Research", "Product Discovery", "Roadmapping", "Stakeholder Management", "Backlog Prioritisation", "Data Analysis", "GTM Strategy", "Cross-functional Leadership"].map((skill) => (
-            <span
-              key={skill}
-              className="text-xs font-semibold px-3 py-1.5 rounded-full"
-              style={{ background: "hsl(210 28% 11%)", color: "hsl(174 80% 60%)", border: "1px solid hsl(174 80% 60% / 0.2)" }}
+      {/* What I bring */}
+      <section className="fade-section max-w-full sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-6 mt-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+          {[
+            { icon: <Search size={20} />, title: "Discovery First", description: "Research before building. User interviews, data analysis, and stakeholder mapping to frame the right problem." },
+            { icon: <TrendingUp size={20} />, title: "Outcome-Led", description: "Metrics defined before shipping. Progress measured against baselines, not gut feel." },
+            { icon: <Briefcase size={20} />, title: "Commercial Lens", description: "Every decision weighed against business value — close to revenue, cost, and customer impact." },
+            { icon: <Users size={20} />, title: "Cross-functional", description: "Bridging design, engineering, and stakeholders. Alignment is as much a deliverable as the feature." },
+          ].map(({ icon, title, description }, i) => (
+            <div
+              key={title}
+              className="rounded-2xl p-6"
+              style={{ background: "hsl(210 28% 11%)", border: "1px solid hsl(210 20% 20%)" }}
             >
-              {skill}
-            </span>
+              <span className="text-xs font-black uppercase tracking-widest mb-3 block" style={{ color: "hsl(210 15% 40%)" }}>
+                0{i + 1}
+              </span>
+              <div
+                className="w-9 h-9 rounded-lg flex items-center justify-center mb-3"
+                style={{ background: "hsl(174 80% 60% / 0.1)", color: "hsl(174 80% 60%)" }}
+              >
+                {icon}
+              </div>
+              <p className="text-lg font-bold mb-2" style={{ color: "hsl(210 25% 82%)" }}>{title}</p>
+              <p className="text-sm leading-relaxed" style={{ color: "hsl(210 20% 55%)" }}>{description}</p>
+            </div>
           ))}
         </div>
-      </div>
+      </section>
 
       {/* Divider */}
       <div className="max-w-full sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-6 mt-8">
