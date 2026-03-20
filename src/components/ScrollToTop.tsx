@@ -7,7 +7,7 @@ const ScrollToTop = () => {
     if (hash) {
       const el = document.querySelector(hash);
       if (el) {
-        el.scrollIntoView({ behavior: "smooth" });
+        el.scrollIntoView({ behavior: "instant" });
         return;
       }
     }
