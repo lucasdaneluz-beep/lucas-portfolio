@@ -118,16 +118,13 @@ const About = () => {
               className="rounded-2xl p-6"
               style={{ background: "hsl(210 28% 11%)", border: "1px solid hsl(210 20% 20%)" }}
             >
-              <span className="text-xs font-black uppercase tracking-widest mb-3 block" style={{ color: "hsl(210 15% 40%)" }}>
-                0{i + 1}
-              </span>
               <div
-                className="w-9 h-9 rounded-lg flex items-center justify-center mb-3"
+                className="w-9 h-9 rounded-lg flex items-center justify-center mb-4"
                 style={{ background: "hsl(174 80% 60% / 0.1)", color: "hsl(174 80% 60%)" }}
               >
                 {icon}
               </div>
-              <p className="text-lg font-bold mb-2" style={{ color: "hsl(210 25% 82%)" }}>{title}</p>
+              <p className="text-xl font-black mb-2" style={{ color: "hsl(174 90% 72%)" }}>{title}</p>
               <p className="text-sm leading-relaxed" style={{ color: "hsl(210 20% 55%)" }}>{description}</p>
             </div>
           ))}
