@@ -11,34 +11,40 @@ const Nav = () => {
   const linkColor = (active: boolean) =>
     active ? "hsl(174 80% 60%)" : "hsl(210 20% 55%)";
 
-  const navLinks = (
-    <>
-      <a
-        href={isHome ? "#case-studies" : "/#case-studies"}
-        onClick={() => setOpen(false)}
-        className="text-xs font-semibold transition-opacity hover:opacity-70"
-        style={{ color: linkColor(isWork) }}
-      >
-        Case Studies
-      </a>
-      <Link
-        to="/about"
-        onClick={() => setOpen(false)}
-        className="text-xs font-semibold transition-opacity hover:opacity-70"
-        style={{ color: linkColor(pathname === "/about") }}
-      >
-        About
-      </Link>
-      <Link
-        to="/contact"
-        onClick={() => setOpen(false)}
-        className="text-xs font-semibold transition-opacity hover:opacity-70"
-        style={{ color: linkColor(pathname === "/contact") }}
-      >
-        Contact
-      </Link>
-    </>
-  );
+  const desktopCls = "text-xs font-semibold transition-opacity hover:opacity-70";
+  const mobileCls  = "text-sm font-semibold transition-opacity hover:opacity-70 py-3 sm:py-0";
+
+  const navLinks = (isMobile = false) => {
+    const cls = isMobile ? mobileCls : desktopCls;
+    return (
+      <>
+        <a
+          href={isHome ? "#case-studies" : "/#case-studies"}
+          onClick={() => setOpen(false)}
+          className={cls}
+          style={{ color: linkColor(isWork) }}
+        >
+          Case Studies
+        </a>
+        <Link
+          to="/about"
+          onClick={() => setOpen(false)}
+          className={cls}
+          style={{ color: linkColor(pathname === "/about") }}
+        >
+          About
+        </Link>
+        <Link
+          to="/contact"
+          onClick={() => setOpen(false)}
+          className={cls}
+          style={{ color: linkColor(pathname === "/contact") }}
+        >
+          Contact
+        </Link>
+      </>
+    );
+  };
 
   return (
     <nav
@@ -62,7 +68,7 @@ const Nav = () => {
 
         {/* Desktop links */}
         <div className="hidden sm:flex items-center gap-6">
-          {navLinks}
+          {navLinks()}
         </div>
 
         {/* Mobile hamburger */}
@@ -79,13 +85,13 @@ const Nav = () => {
       {/* Mobile dropdown */}
       {open && (
         <div
-          className="sm:hidden px-6 pb-5 pt-2 flex flex-col gap-4 border-t"
+          className="sm:hidden px-6 pb-2 pt-1 flex flex-col border-t"
           style={{
             background: "hsl(210 35% 5% / 0.97)",
             borderColor: "hsl(210 20% 13%)",
           }}
         >
-          {navLinks}
+          {navLinks(true)}
         </div>
       )}
     </nav>
