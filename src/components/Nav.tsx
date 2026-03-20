@@ -13,25 +13,14 @@ const Nav = () => {
 
   const navLinks = (
     <>
-      {isHome ? (
-        <a
-          href="#case-studies"
-          onClick={() => setOpen(false)}
-          className="text-xs font-semibold transition-opacity hover:opacity-70"
-          style={{ color: linkColor(isWork) }}
-        >
-          Work
-        </a>
-      ) : (
-        <Link
-          to="/"
-          onClick={() => setOpen(false)}
-          className="text-xs font-semibold transition-opacity hover:opacity-70"
-          style={{ color: linkColor(isWork) }}
-        >
-          Work
-        </Link>
-      )}
+      <a
+        href={isHome ? "#case-studies" : "/#case-studies"}
+        onClick={() => setOpen(false)}
+        className="text-xs font-semibold transition-opacity hover:opacity-70"
+        style={{ color: linkColor(isWork) }}
+      >
+        Case Studies
+      </a>
       <Link
         to="/about"
         onClick={() => setOpen(false)}
