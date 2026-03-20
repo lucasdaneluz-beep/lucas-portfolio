@@ -234,9 +234,16 @@ const Index = () => {
                   </div>
                   <p className="text-xs mb-1.5" style={{ color: "hsl(210 20% 55%)" }}>{description}</p>
                   {metric && (
-                    <p className="text-[11px] font-bold mb-2.5" style={{ color: "hsl(174 80% 60%)" }}>
+                    <span
+                      className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-bold mb-2.5"
+                      style={{
+                        background: "hsl(174 80% 60% / 0.1)",
+                        border: "1px solid hsl(174 80% 60% / 0.25)",
+                        color: "hsl(174 80% 60%)",
+                      }}
+                    >
                       ↗ {metric}
-                    </p>
+                    </span>
                   )}
                   <div className="flex flex-wrap gap-1.5">
                     {tags.map(tag => (
