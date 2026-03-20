@@ -170,15 +170,12 @@ const Index = () => {
           {methodologySteps.map(({ icon, title, description }, i) => (
             <React.Fragment key={title}>
               <div
-                className="rounded-2xl p-6 relative lg:flex-1"
+                className="rounded-2xl p-4 relative lg:flex-1"
                 style={{
                   background: "hsl(210 28% 11%)",
                   border: "1px solid hsl(210 20% 20%)",
                 }}
               >
-                <span className="text-xs font-black uppercase tracking-widest mb-3 block" style={{ color: "hsl(210 15% 40%)" }}>
-                  0{i + 1}
-                </span>
                 <div
                   className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0 mb-3"
                   style={{ background: "hsl(174 80% 60% / 0.1)", color: "hsl(174 80% 60%)" }}

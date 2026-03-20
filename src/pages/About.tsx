@@ -88,8 +88,11 @@ const About = () => {
 
         {/* Bio */}
         <div className="mb-8">
-          <p className="text-lg sm:text-xl leading-snug font-medium" style={{ color: "hsl(210 25% 78%)" }}>
-            A commercially-driven PM with 10+ years across B2B SaaS, FMCG, and supply chain, always close to users, data, and business outcomes.
+          <p className="text-2xl sm:text-3xl font-light leading-snug tracking-tight" style={{ color: "hsl(210 40% 92%)" }}>
+            A commercially-driven PM with 10+ years across{" "}
+            <span className="font-medium italic" style={{ color: "hsl(174 90% 68%)" }}>B2B SaaS, FMCG, and supply chain</span>
+            {" "}— always close to{" "}
+            <span className="font-medium italic" style={{ color: "hsl(174 90% 68%)" }}>users, data, and business outcomes</span>.
           </p>
         </div>
 
@@ -122,11 +125,11 @@ const About = () => {
         </div>
 
         {/* Personal note */}
-        <div className="mt-10 space-y-2">
-          <p className="text-sm sm:text-base leading-relaxed" style={{ color: "hsl(210 20% 55%)" }}>
+        <div className="mt-14 space-y-2 pl-4" style={{ borderLeft: "2px solid hsl(174 80% 60% / 0.4)" }}>
+          <p className="text-sm sm:text-base leading-relaxed italic" style={{ color: "hsl(210 20% 55%)" }}>
             Outside of product, my favourite people are my wife and our maltipoo, who also happen to be my harshest critics.
           </p>
-          <p className="text-sm sm:text-base leading-relaxed" style={{ color: "hsl(210 20% 55%)" }}>
+          <p className="text-sm sm:text-base leading-relaxed italic" style={{ color: "hsl(210 20% 55%)" }}>
             I produce music and play in an alternative rock band. There's something about the craft of arranging a track that scratches the same itch as building a great product.
           </p>
         </div>
@@ -138,7 +141,7 @@ const About = () => {
       </div>
 
       {/* Experience */}
-      <section className="fade-section max-w-full sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-6 mt-8 sm:mt-10">
+      <section className="fade-section max-w-full sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-6 mt-8">
         <h2 className="text-xl sm:text-2xl font-bold mb-2" style={{ color: "hsl(210 25% 82%)" }}>
           Experience
         </h2>
