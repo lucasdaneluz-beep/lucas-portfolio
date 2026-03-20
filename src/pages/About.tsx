@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Download, Linkedin, Mail } from "lucide-react";
+import { Download, Linkedin, Mail, Search, TrendingUp, Briefcase, Users } from "lucide-react";
 import profilePhoto from "@/assets/lucas-profile.png";
 
 const experience = [
@@ -65,7 +65,7 @@ const About = () => {
       {/* Hero */}
       <section className="max-w-full sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-6 pt-10 sm:pt-14 pb-4">
         {/* Photo + name row */}
-        <div className="flex items-center gap-5 mb-6">
+        <div className="flex items-center gap-5 mb-8">
           <div
             className="w-16 h-16 sm:w-20 sm:h-20 rounded-full flex-shrink-0 overflow-hidden"
             style={{ background: "hsl(210 35% 5%)", outline: "1px solid hsl(210 20% 18%)" }}
@@ -87,21 +87,49 @@ const About = () => {
         </div>
 
         {/* Bio */}
-        <div className="space-y-4 mb-8">
+        <div className="mb-8">
           <p className="text-lg sm:text-xl leading-snug font-medium" style={{ color: "hsl(210 25% 78%)" }}>
             A commercially-driven PM with 10+ years across B2B SaaS, FMCG, and supply chain, always close to users, data, and business outcomes.
           </p>
-          <p className="text-sm sm:text-base leading-relaxed" style={{ color: "hsl(210 20% 55%)" }}>
-            I start with the problem, using structured discovery and early metrics to keep teams aligned and decisions grounded.
-          </p>
-          <p className="text-sm sm:text-base leading-relaxed" style={{ color: "hsl(210 20% 55%)" }}>
-          Outside of product, my favourite people are my wife and our maltipoo, who also happen to be my harshest critics. 
-          </p>
-          <p className="text-sm sm:text-base leading-relaxed" style={{ color: "hsl(210 20% 55%)" }}>
-          I produce music and play in an alternative rock band. There's something about the craft of arranging a track that scratches the same itch as building a great product.
-          </p>
         </div>
 
+      </section>
+
+      {/* What I bring */}
+      <section className="fade-section max-w-full sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-6 mt-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+          {[
+            { icon: <Search size={20} />, title: "Discovery", description: "Research before building. User interviews, data analysis, and stakeholder mapping to frame the right problem." },
+            { icon: <TrendingUp size={20} />, title: "Outcome-Led", description: "Metrics defined before shipping. Progress measured against baselines, not gut feel." },
+            { icon: <Briefcase size={20} />, title: "Commercial Lens", description: "Decisions weighed against business value — close to revenue, cost, and customer impact." },
+            { icon: <Users size={20} />, title: "Cross-functional", description: "Bridging design, engineering, and stakeholders. Alignment is as much a deliverable as the feature." },
+          ].map(({ icon, title, description }, i) => (
+            <div
+              key={title}
+              className="rounded-2xl p-6"
+              style={{ background: "hsl(210 28% 11%)", border: "1px solid hsl(210 20% 20%)" }}
+            >
+              <div
+                className="w-9 h-9 rounded-lg flex items-center justify-center mb-4"
+                style={{ background: "hsl(174 80% 60% / 0.1)", color: "hsl(174 80% 60%)" }}
+              >
+                {icon}
+              </div>
+              <p className="text-2xl font-bold mb-2" style={{ color: "hsl(210 25% 82%)" }}>{title}</p>
+              <p className="text-sm leading-relaxed" style={{ color: "hsl(210 20% 55%)" }}>{description}</p>
+            </div>
+          ))}
+        </div>
+
+        {/* Personal note */}
+        <div className="mt-10 space-y-2">
+          <p className="text-sm sm:text-base leading-relaxed" style={{ color: "hsl(210 20% 55%)" }}>
+            Outside of product, my favourite people are my wife and our maltipoo, who also happen to be my harshest critics.
+          </p>
+          <p className="text-sm sm:text-base leading-relaxed" style={{ color: "hsl(210 20% 55%)" }}>
+            I produce music and play in an alternative rock band. There's something about the craft of arranging a track that scratches the same itch as building a great product.
+          </p>
+        </div>
       </section>
 
       {/* Divider */}
@@ -110,7 +138,7 @@ const About = () => {
       </div>
 
       {/* Experience */}
-      <section className="fade-section max-w-full sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-6 mt-10 sm:mt-12">
+      <section className="fade-section max-w-full sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-6 mt-8 sm:mt-10">
         <h2 className="text-xl sm:text-2xl font-bold mb-2" style={{ color: "hsl(210 25% 82%)" }}>
           Experience
         </h2>
