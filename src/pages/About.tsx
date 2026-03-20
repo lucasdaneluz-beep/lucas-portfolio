@@ -1,13 +1,13 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Download, Linkedin, Mail, Search, Compass, BarChart2, Rocket, ChevronRight } from "lucide-react";
+import { Download, Linkedin, Mail, Search, Compass, BarChart2, Rocket } from "lucide-react";
 import profilePhoto from "@/assets/lucas-profile.png";
 
 const methodologySteps = [
-  { icon: <Search size={16} />, step: "01", title: "Discover" },
-  { icon: <Compass size={16} />, step: "02", title: "Define" },
-  { icon: <BarChart2 size={16} />, step: "03", title: "Baseline" },
-  { icon: <Rocket size={16} />, step: "04", title: "Deliver" },
+  { icon: <Search size={16} />, step: "01", title: "Discover", description: "User research, data analysis, and stakeholder interviews to frame the real problem." },
+  { icon: <Compass size={16} />, step: "02", title: "Define", description: "Synthesise insights into a clear strategy, prioritised roadmap, and success metrics." },
+  { icon: <BarChart2 size={16} />, step: "03", title: "Baseline", description: "Establish measurable benchmarks before shipping so progress is grounded in data, not assumption." },
+  { icon: <Rocket size={16} />, step: "04", title: "Deliver", description: "Ship iteratively, measure outcomes, and refine based on real-world feedback." },
 ];
 
 const experience = [
@@ -109,34 +109,29 @@ const About = () => {
 
       </section>
 
-      {/* How I Work – compact strip */}
+      {/* How I Work – 2-column icon list */}
       <section className="fade-section max-w-full sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-6 mt-10 sm:mt-12">
         <h2 className="text-xl sm:text-2xl font-bold mb-6" style={{ color: "hsl(210 25% 82%)" }}>
           How I Work
         </h2>
-        <div className="grid grid-cols-2 lg:flex lg:flex-row lg:items-center gap-3">
-          {methodologySteps.map(({ icon, step, title }, i) => (
-            <div key={title} className="lg:flex lg:items-center lg:flex-1 gap-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          {methodologySteps.map(({ icon, step, title, description }) => (
+            <div
+              key={title}
+              className="flex items-start gap-4 rounded-2xl px-4 py-4"
+              style={{ background: "hsl(210 28% 11%)", border: "1px solid hsl(210 20% 20%)" }}
+            >
               <div
-                className="flex items-center gap-3 rounded-2xl px-4 py-3 lg:flex-1"
-                style={{ background: "hsl(210 28% 11%)", border: "1px solid hsl(210 20% 20%)" }}
+                className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5"
+                style={{ background: "hsl(174 80% 60% / 0.1)", color: "hsl(174 80% 60%)" }}
               >
-                <div
-                  className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0"
-                  style={{ background: "hsl(174 80% 60% / 0.1)", color: "hsl(174 80% 60%)" }}
-                >
-                  {icon}
-                </div>
-                <div>
-                  <span className="text-[10px] font-black uppercase tracking-widest block" style={{ color: "hsl(210 15% 40%)" }}>{step}</span>
-                  <span className="text-sm font-bold" style={{ color: "hsl(210 25% 82%)" }}>{title}</span>
-                </div>
+                {icon}
               </div>
-              {i < methodologySteps.length - 1 && (
-                <div className="hidden lg:flex items-center justify-center flex-shrink-0">
-                  <ChevronRight size={14} style={{ color: "hsl(174 80% 60% / 0.35)" }} />
-                </div>
-              )}
+              <div>
+                <span className="text-[10px] font-black uppercase tracking-widest block mb-0.5" style={{ color: "hsl(210 15% 40%)" }}>{step}</span>
+                <p className="text-sm font-bold mb-1" style={{ color: "hsl(210 25% 82%)" }}>{title}</p>
+                <p className="text-xs leading-relaxed" style={{ color: "hsl(210 20% 55%)" }}>{description}</p>
+              </div>
             </div>
           ))}
         </div>
