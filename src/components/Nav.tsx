@@ -12,7 +12,7 @@ const Nav = () => {
     active ? "hsl(174 80% 60%)" : "hsl(210 20% 55%)";
 
   const desktopCls = "text-xs font-semibold transition-opacity hover:opacity-70";
-  const mobileCls  = "text-sm font-semibold transition-opacity hover:opacity-70 py-3 sm:py-0";
+  const mobileCls  = "text-base font-semibold transition-opacity hover:opacity-70 py-4 sm:py-0";
 
   const navLinks = (isMobile = false) => {
     const cls = isMobile ? mobileCls : desktopCls;
