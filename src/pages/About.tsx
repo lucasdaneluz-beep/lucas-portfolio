@@ -92,10 +92,13 @@ const About = () => {
             A commercially-driven PM with 10+ years across B2B SaaS, FMCG, and supply chain, always close to users, data, and business outcomes.
           </p>
           <p className="text-sm sm:text-base leading-relaxed" style={{ color: "hsl(210 20% 55%)" }}>
-            I start with the problem, not the solution — using structured discovery and early metrics to keep teams aligned and decisions grounded.
+            I start with the problem, using structured discovery and early metrics to keep teams aligned and decisions grounded.
           </p>
           <p className="text-sm sm:text-base leading-relaxed" style={{ color: "hsl(210 20% 55%)" }}>
-            Outside of product, I'm drawn to anything that sits at the intersection of behaviour, technology, and design. I'm always up for a good product conversation.
+          Outside of product, my favourite people are my wife and our maltipoo, who also happen to be my harshest critics. 
+          </p>
+          <p className="text-sm sm:text-base leading-relaxed" style={{ color: "hsl(210 20% 55%)" }}>
+          I produce music and play in an alternative rock band. There's something about the craft of arranging a track that scratches the same itch as building a great product.
           </p>
         </div>
 
