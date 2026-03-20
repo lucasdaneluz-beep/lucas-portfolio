@@ -88,8 +88,11 @@ const About = () => {
 
         {/* Bio */}
         <div className="mb-8">
-          <p className="text-lg sm:text-xl leading-snug font-medium" style={{ color: "hsl(210 25% 78%)" }}>
-            A commercially-driven PM with 10+ years across B2B SaaS, FMCG, and supply chain, always close to users, data, and business outcomes.
+          <p className="text-xl sm:text-2xl leading-snug font-bold mb-2" style={{ color: "hsl(210 40% 92%)" }}>
+            A commercially-driven PM with 10+ years across B2B SaaS, FMCG, and supply chain.
+          </p>
+          <p className="text-sm sm:text-base leading-relaxed" style={{ color: "hsl(210 20% 55%)" }}>
+            Always close to users, data, and business outcomes.
           </p>
         </div>
 
