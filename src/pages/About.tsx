@@ -1,7 +1,14 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Download, Linkedin, Mail } from "lucide-react";
+import { Download, Linkedin, Mail, Search, Compass, BarChart2, Rocket, ChevronRight } from "lucide-react";
 import profilePhoto from "@/assets/lucas-profile.png";
+
+const methodologySteps = [
+  { icon: <Search size={16} />, step: "01", title: "Discover" },
+  { icon: <Compass size={16} />, step: "02", title: "Define" },
+  { icon: <BarChart2 size={16} />, step: "03", title: "Baseline" },
+  { icon: <Rocket size={16} />, step: "04", title: "Deliver" },
+];
 
 const experience = [
   {
@@ -102,18 +109,37 @@ const About = () => {
 
       </section>
 
-      {/* How I Work – condensed prose */}
+      {/* How I Work – compact strip */}
       <section className="fade-section max-w-full sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-6 mt-10 sm:mt-12">
-        <h2 className="text-xl sm:text-2xl font-bold mb-3" style={{ color: "hsl(210 25% 82%)" }}>
+        <h2 className="text-xl sm:text-2xl font-bold mb-6" style={{ color: "hsl(210 25% 82%)" }}>
           How I Work
         </h2>
-        <p className="text-sm sm:text-base leading-relaxed" style={{ color: "hsl(210 20% 62%)" }}>
-          I follow a four-step approach:{" "}
-          <span style={{ color: "hsl(210 25% 82%)" }}>Discover</span> — deep user research and stakeholder interviews to frame the real problem;{" "}
-          <span style={{ color: "hsl(210 25% 82%)" }}>Define</span> — synthesising insights into a clear strategy and prioritised roadmap;{" "}
-          <span style={{ color: "hsl(210 25% 82%)" }}>Baseline</span> — establishing measurable benchmarks before shipping so decisions stay grounded in data; and{" "}
-          <span style={{ color: "hsl(210 25% 82%)" }}>Deliver</span> — iterating based on real-world feedback to drive outcomes, not just output.
-        </p>
+        <div className="grid grid-cols-2 lg:flex lg:flex-row lg:items-center gap-3">
+          {methodologySteps.map(({ icon, step, title }, i) => (
+            <div key={title} className="lg:flex lg:items-center lg:flex-1 gap-3">
+              <div
+                className="flex items-center gap-3 rounded-2xl px-4 py-3 lg:flex-1"
+                style={{ background: "hsl(210 28% 11%)", border: "1px solid hsl(210 20% 20%)" }}
+              >
+                <div
+                  className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0"
+                  style={{ background: "hsl(174 80% 60% / 0.1)", color: "hsl(174 80% 60%)" }}
+                >
+                  {icon}
+                </div>
+                <div>
+                  <span className="text-[10px] font-black uppercase tracking-widest block" style={{ color: "hsl(210 15% 40%)" }}>{step}</span>
+                  <span className="text-sm font-bold" style={{ color: "hsl(210 25% 82%)" }}>{title}</span>
+                </div>
+              </div>
+              {i < methodologySteps.length - 1 && (
+                <div className="hidden lg:flex items-center justify-center flex-shrink-0">
+                  <ChevronRight size={14} style={{ color: "hsl(174 80% 60% / 0.35)" }} />
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
       </section>
 
       {/* Divider */}
