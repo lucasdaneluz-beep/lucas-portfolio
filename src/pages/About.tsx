@@ -99,9 +99,9 @@ const About = () => {
       <section className="fade-section max-w-full sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-6 mt-6">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
           {[
-            { icon: <Search size={20} />, title: "Discovery First", description: "Research before building. User interviews, data analysis, and stakeholder mapping to frame the right problem." },
+            { icon: <Search size={20} />, title: "Discovery", description: "Research before building. User interviews, data analysis, and stakeholder mapping to frame the right problem." },
             { icon: <TrendingUp size={20} />, title: "Outcome-Led", description: "Metrics defined before shipping. Progress measured against baselines, not gut feel." },
-            { icon: <Briefcase size={20} />, title: "Commercial Lens", description: "Every decision weighed against business value — close to revenue, cost, and customer impact." },
+            { icon: <Briefcase size={20} />, title: "Commercial Lens", description: "Decisions weighed against business value — close to revenue, cost, and customer impact." },
             { icon: <Users size={20} />, title: "Cross-functional", description: "Bridging design, engineering, and stakeholders. Alignment is as much a deliverable as the feature." },
           ].map(({ icon, title, description }, i) => (
             <div
