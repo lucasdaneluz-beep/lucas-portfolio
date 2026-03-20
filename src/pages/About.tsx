@@ -104,13 +104,28 @@ const About = () => {
 
       </section>
 
+      {/* Skills strip */}
+      <div className="max-w-full sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-6 mt-6">
+        <div className="flex flex-wrap gap-2">
+          {["User Research", "Product Discovery", "Roadmapping", "Stakeholder Management", "Backlog Prioritisation", "Data Analysis", "GTM Strategy", "Cross-functional Leadership"].map((skill) => (
+            <span
+              key={skill}
+              className="text-xs font-semibold px-3 py-1.5 rounded-full"
+              style={{ background: "hsl(210 28% 11%)", color: "hsl(174 80% 60%)", border: "1px solid hsl(174 80% 60% / 0.2)" }}
+            >
+              {skill}
+            </span>
+          ))}
+        </div>
+      </div>
+
       {/* Divider */}
-      <div className="max-w-full sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-6 mt-14">
+      <div className="max-w-full sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-6 mt-8">
         <div style={{ height: "1px", background: "linear-gradient(to right, transparent, hsl(210 20% 20%), transparent)" }} />
       </div>
 
       {/* Experience */}
-      <section className="fade-section max-w-full sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-6 mt-10 sm:mt-12">
+      <section className="fade-section max-w-full sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-6 mt-8 sm:mt-10">
         <h2 className="text-xl sm:text-2xl font-bold mb-2" style={{ color: "hsl(210 25% 82%)" }}>
           Experience
         </h2>
