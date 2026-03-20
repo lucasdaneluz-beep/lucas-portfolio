@@ -115,7 +115,7 @@ const About = () => {
               >
                 {icon}
               </div>
-              <p className="text-xl font-black mb-2" style={{ color: "hsl(174 90% 72%)" }}>{title}</p>
+              <p className="text-2xl font-bold mb-2" style={{ color: "hsl(210 25% 82%)" }}>{title}</p>
               <p className="text-sm leading-relaxed" style={{ color: "hsl(210 20% 55%)" }}>{description}</p>
             </div>
           ))}
