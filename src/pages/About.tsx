@@ -125,7 +125,7 @@ const About = () => {
         </div>
 
         {/* Personal note */}
-        <div className="mt-10 space-y-2">
+        <div className="mt-8 space-y-2">
           <p className="text-sm sm:text-base leading-relaxed" style={{ color: "hsl(210 20% 55%)" }}>
             Outside of product, my favourite people are my wife and our maltipoo, who also happen to be my harshest critics.
           </p>
@@ -136,12 +136,12 @@ const About = () => {
       </section>
 
       {/* Divider */}
-      <div className="max-w-full sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-6 mt-14">
+      <div className="max-w-full sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-6 mt-8">
         <div style={{ height: "1px", background: "linear-gradient(to right, transparent, hsl(210 20% 20%), transparent)" }} />
       </div>
 
       {/* Experience */}
-      <section className="fade-section max-w-full sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-6 mt-8 sm:mt-10">
+      <section className="fade-section max-w-full sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-6 mt-8">
         <h2 className="text-xl sm:text-2xl font-bold mb-2" style={{ color: "hsl(210 25% 82%)" }}>
           Experience
         </h2>
