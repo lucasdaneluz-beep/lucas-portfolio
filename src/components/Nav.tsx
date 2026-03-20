@@ -5,7 +5,7 @@ import { Menu, X } from "lucide-react";
 const Nav = () => {
   const { pathname } = useLocation();
   const isHome = pathname === "/";
-  const isWork = pathname === "/" || pathname.startsWith("/case-studies");
+  const isWork = pathname.startsWith("/case-studies");
   const [open, setOpen] = useState(false);
 
   const linkColor = (active: boolean) =>
