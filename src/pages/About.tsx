@@ -92,9 +92,6 @@ const About = () => {
             A commercially-driven PM with 10+ years across B2B SaaS, FMCG, and supply chain, always close to users, data, and business outcomes.
           </p>
           <p className="text-sm sm:text-base leading-relaxed" style={{ color: "hsl(210 20% 55%)" }}>
-            I start with the problem, using structured discovery and early metrics to keep teams aligned and decisions grounded.
-          </p>
-          <p className="text-sm sm:text-base leading-relaxed" style={{ color: "hsl(210 20% 55%)" }}>
           Outside of product, my favourite people are my wife and our maltipoo, who also happen to be my harshest critics. 
           </p>
           <p className="text-sm sm:text-base leading-relaxed" style={{ color: "hsl(210 20% 55%)" }}>
