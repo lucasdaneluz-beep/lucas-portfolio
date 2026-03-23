@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import BackButton from "@/components/ui/BackButton";
 import MoneyboxApp from "@/components/moneybox/MoneyboxApp";
 
 const CaseStudyMoneybox = () => {
@@ -17,6 +18,8 @@ const CaseStudyMoneybox = () => {
       style={{ background: "linear-gradient(135deg, hsl(210 35% 5%) 0%, hsl(210 28% 8%) 50%, hsl(210 35% 5%) 100%)" }}
     >
       <div className="max-w-4xl mx-auto px-6 pt-10 pb-16">
+
+        <BackButton />
 
         <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-3" style={{ background: "hsl(174 80% 60% / 0.12)", border: "1px solid hsl(174 80% 60% / 0.25)" }}>
           <span className="text-[10px] font-bold uppercase tracking-widest" style={{ color: "hsl(174 80% 60%)" }}>Case Study 04 / 04</span>
@@ -206,11 +209,11 @@ const CaseStudyMoneybox = () => {
         </section>
 
         <div className="flex justify-between items-center mt-12 pt-6" style={{ borderTop: "1px solid hsl(210 20% 16%)" }}>
-          <button onClick={() => navigate("/")} className="inline-flex items-center gap-1.5 text-xs font-semibold" style={{ color: "hsl(210 15% 45%)" }}>
+          <button onClick={() => navigate("/")} className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold transition-opacity hover:opacity-75" style={{ background: "hsl(210 28% 11%)", border: "1px solid hsl(210 20% 22%)", color: "hsl(210 20% 65%)" }}>
             <ArrowLeft size={13} /> All case studies
           </button>
-          <button onClick={() => navigate("/case-studies/walkup")} className="inline-flex items-center gap-1.5 text-xs font-semibold" style={{ color: "hsl(174 80% 60%)" }}>
-            Next: WalkUp – Smarter Queues <ArrowRight size={13} />
+          <button onClick={() => navigate("/case-studies/walkup")} className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold transition-opacity hover:opacity-75" style={{ background: "hsl(174 80% 60% / 0.1)", border: "1px solid hsl(174 80% 60% / 0.3)", color: "hsl(174 80% 60%)" }}>
+            Next: WalkUp <ArrowRight size={13} />
           </button>
         </div>
 
