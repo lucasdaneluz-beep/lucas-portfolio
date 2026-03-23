@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { Briefcase, TrendingUp, ArrowRight, Linkedin, Mail, Search, Compass, Rocket, BarChart2, ChevronRight, MapPin, ArrowDown } from "lucide-react";
 import profilePhoto from "@/assets/lucas-profile.png";
@@ -13,6 +13,7 @@ const caseStudies = [
     tags: ["Marketplace", "Waitlist UX", "Loyalty", "Product Strategy"],
     status: "live",
     href: "/case-studies/walkup",
+    accent: "32 90% 58%",
   },
   {
     id: "02",
@@ -23,6 +24,7 @@ const caseStudies = [
     tags: ["Discovery", "Onboarding", "MVP", "Research"],
     status: "live",
     href: "/case-studies/hipen-media",
+    accent: "270 70% 65%",
   },
   {
     id: "03",
@@ -33,6 +35,7 @@ const caseStudies = [
     tags: ["Stakeholder Management", "Cost Optimisation", "Supply Chain"],
     status: "live",
     href: "/case-studies/westpak",
+    accent: "145 65% 50%",
   },
   {
     id: "04",
@@ -44,6 +47,7 @@ const caseStudies = [
     tags: ["UX Strategy", "Fintech", "Navigation"],
     status: "live",
     href: "/case-studies/moneybox",
+    accent: "174 80% 60%",
   },
   {
     id: "05",
@@ -54,6 +58,7 @@ const caseStudies = [
     tags: ["AI", "Music", "Discovery"],
     status: "coming-soon",
     href: "/case-studies/spotify",
+    accent: "42 90% 58%",
   },
 ];
 
@@ -82,6 +87,7 @@ const methodologySteps = [
 
 const Index = () => {
   const navigate = useNavigate();
+  const [hoveredId, setHoveredId] = useState<string | null>(null);
 
   useEffect(() => {
     const els = document.querySelectorAll(".fade-section");
@@ -98,8 +104,6 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-[hsl(210_35%_5%)] text-white">
       <style>{`
-        .cs-card { transition: border-color 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease; }
-        .cs-card:hover { border-color: hsl(174 80% 60% / 0.5) !important; box-shadow: inset 3px 0 0 hsl(174 80% 60% / 0.45); transform: scale(1.005); }
         .fade-section { opacity: 0; transform: translateY(18px); transition: opacity 0.55s ease, transform 0.55s ease; }
         .fade-section.in-view { opacity: 1; transform: translateY(0); }
       `}</style>
@@ -205,59 +209,68 @@ const Index = () => {
         </p>
 
         <div className="space-y-3">
-          {caseStudies.map(({ id, title, description, metric, tags, status, href }) => (
-            <button
-              key={id}
-              type="button"
-              onClick={() => status === "live" && navigate(href)}
-              className={`${status === "live" ? "cs-card" : ""} w-full text-left rounded-2xl p-5 sm:p-6 flex items-center justify-between gap-3 sm:gap-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2`}
-              style={{
-                background: "hsl(210 28% 11%)",
-                border: `1px solid ${status === "coming-soon" ? "hsl(210 20% 16%)" : "hsl(210 20% 20%)"}`,
-                cursor: status === "live" ? "pointer" : "default",
-                opacity: status === "coming-soon" ? 0.55 : 1,
-              }}
-            >
-              <div className="flex items-start gap-3 sm:gap-4 min-w-0">
-                <span className="text-xs font-black tabular-nums mt-0.5 flex-shrink-0" style={{ color: status === "coming-soon" ? "hsl(210 15% 40%)" : "hsl(174 80% 60%)" }}>{id}</span>
-                <div className="min-w-0">
-                  <div className="flex items-center gap-2 mb-1 flex-wrap">
-                    <p className="text-sm font-bold">{title}</p>
-                    {status === "coming-soon" && (
-                      <span className="text-[9px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-full" style={{ background: "hsl(42 90% 58% / 0.1)", color: "hsl(42 90% 58%)", border: "1px solid hsl(42 90% 58% / 0.25)" }}>
-                        In Progress
+          {caseStudies.map(({ id, title, description, metric, tags, status, href, accent }) => {
+            const isLive = status === "live";
+            const isHovered = hoveredId === id;
+            return (
+              <button
+                key={id}
+                type="button"
+                onClick={() => isLive && navigate(href)}
+                onMouseEnter={() => isLive && setHoveredId(id)}
+                onMouseLeave={() => setHoveredId(null)}
+                className="w-full text-left rounded-2xl p-5 sm:p-6 flex items-center justify-between gap-3 sm:gap-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
+                style={{
+                  background: "hsl(210 28% 11%)",
+                  border: `1px solid ${isHovered ? `hsl(${accent} / 0.5)` : status === "coming-soon" ? "hsl(210 20% 16%)" : "hsl(210 20% 20%)"}`,
+                  boxShadow: isHovered ? `inset 3px 0 0 hsl(${accent} / 0.5)` : "none",
+                  transform: isHovered ? "scale(1.005)" : "scale(1)",
+                  transition: "border-color 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease",
+                  cursor: isLive ? "pointer" : "default",
+                  opacity: status === "coming-soon" ? 0.55 : 1,
+                }}
+              >
+                <div className="flex items-start gap-3 sm:gap-4 min-w-0">
+                  <span className="text-xs font-black tabular-nums mt-0.5 flex-shrink-0" style={{ color: status === "coming-soon" ? "hsl(210 15% 40%)" : `hsl(${accent})` }}>{id}</span>
+                  <div className="min-w-0">
+                    <div className="flex items-center gap-2 mb-1 flex-wrap">
+                      <p className="text-sm font-bold">{title}</p>
+                      {status === "coming-soon" && (
+                        <span className="text-[9px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-full" style={{ background: "hsl(42 90% 58% / 0.1)", color: "hsl(42 90% 58%)", border: "1px solid hsl(42 90% 58% / 0.25)" }}>
+                          In Progress
+                        </span>
+                      )}
+                    </div>
+                    <p className="text-xs mb-1.5" style={{ color: "hsl(210 20% 55%)" }}>{description}</p>
+                    {metric && (
+                      <span
+                        className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-bold mb-2.5"
+                        style={{
+                          background: `hsl(${accent} / 0.1)`,
+                          border: `1px solid hsl(${accent} / 0.25)`,
+                          color: `hsl(${accent})`,
+                        }}
+                      >
+                        ↗ {metric}
                       </span>
                     )}
-                  </div>
-                  <p className="text-xs mb-1.5" style={{ color: "hsl(210 20% 55%)" }}>{description}</p>
-                  {metric && (
-                    <span
-                      className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-bold mb-2.5"
-                      style={{
-                        background: "hsl(174 80% 60% / 0.1)",
-                        border: "1px solid hsl(174 80% 60% / 0.25)",
-                        color: "hsl(174 80% 60%)",
-                      }}
-                    >
-                      ↗ {metric}
-                    </span>
-                  )}
-                  <div className="flex flex-wrap gap-1.5">
-                    {tags.map(tag => (
-                      <span
-                        key={tag}
-                        className="text-[10px] font-semibold px-2 py-0.5 rounded-full"
-                        style={{ background: "hsl(210 20% 14%)", color: "hsl(210 15% 50%)", border: "1px solid hsl(210 20% 22%)" }}
-                      >
-                        {tag}
-                      </span>
-                    ))}
+                    <div className="flex flex-wrap gap-1.5">
+                      {tags.map(tag => (
+                        <span
+                          key={tag}
+                          className="text-[10px] font-semibold px-2 py-0.5 rounded-full"
+                          style={{ background: "hsl(210 20% 14%)", color: "hsl(210 15% 50%)", border: "1px solid hsl(210 20% 22%)" }}
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 </div>
-              </div>
-              {status === "live" && <ArrowRight size={16} className="flex-shrink-0" style={{ color: "hsl(174 80% 60%)" }} />}
-            </button>
-          ))}
+                {isLive && <ArrowRight size={16} className="flex-shrink-0" style={{ color: `hsl(${accent})` }} />}
+              </button>
+            );
+          })}
         </div>
       </section>
 

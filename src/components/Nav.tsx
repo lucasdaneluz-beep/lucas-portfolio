@@ -8,8 +8,13 @@ const Nav = () => {
   const isWork = pathname.startsWith("/case-studies");
   const [open, setOpen] = useState(false);
 
-  const linkColor = (active: boolean) =>
-    active ? "hsl(174 80% 60%)" : "hsl(210 20% 55%)";
+  const linkStyle = (active: boolean, isMobile: boolean) => ({
+    color: active ? "hsl(174 80% 60%)" : "hsl(210 20% 55%)",
+    ...(active && !isMobile ? {
+      borderBottom: "2px solid hsl(174 80% 60%)",
+      paddingBottom: "2px",
+    } : {}),
+  });
 
   const desktopCls = "text-xs font-semibold transition-opacity hover:opacity-70";
   const mobileCls  = "text-base font-semibold transition-opacity hover:opacity-70 py-4 sm:py-0";
@@ -22,7 +27,7 @@ const Nav = () => {
           href={isHome ? "#case-studies" : "/#case-studies"}
           onClick={() => setOpen(false)}
           className={cls}
-          style={{ color: linkColor(isWork) }}
+          style={linkStyle(isWork, isMobile)}
         >
           Case Studies
         </a>
@@ -30,7 +35,7 @@ const Nav = () => {
           to="/about"
           onClick={() => setOpen(false)}
           className={cls}
-          style={{ color: linkColor(pathname === "/about") }}
+          style={linkStyle(pathname === "/about", isMobile)}
         >
           About
         </Link>
@@ -38,7 +43,7 @@ const Nav = () => {
           to="/contact"
           onClick={() => setOpen(false)}
           className={cls}
-          style={{ color: linkColor(pathname === "/contact") }}
+          style={linkStyle(pathname === "/contact", isMobile)}
         >
           Contact
         </Link>
