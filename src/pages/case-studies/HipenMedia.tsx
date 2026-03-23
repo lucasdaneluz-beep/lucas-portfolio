@@ -226,9 +226,9 @@ const CaseStudyHipenMedia = () => {
         </section>
 
         <div className="flex justify-between items-center mt-12 pt-6" style={{ borderTop: "1px solid hsl(210 20% 16%)" }}>
-          <button onClick={() => navigate("/")} className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold transition-opacity hover:opacity-75" style={{ background: "hsl(210 28% 11%)", border: "1px solid hsl(210 20% 22%)", color: "hsl(210 20% 65%)" }}>
+          <a href="/#case-studies" className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold transition-opacity hover:opacity-75" style={{ background: "hsl(210 28% 11%)", border: "1px solid hsl(210 20% 22%)", color: "hsl(210 20% 65%)" }}>
             <ArrowLeft size={13} /> All case studies
-          </button>
+          </a>
           <button onClick={() => navigate("/case-studies/westpak")} className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold transition-opacity hover:opacity-75" style={{ background: "hsl(174 80% 60% / 0.1)", border: "1px solid hsl(174 80% 60% / 0.3)", color: "hsl(174 80% 60%)" }}>
             Next: Westpak <ArrowRight size={13} />
           </button>
