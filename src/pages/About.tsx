@@ -12,7 +12,7 @@ const experience = [
   },
   {
     role: "Category Manager – Portfolio Prioritisation & Delivery",
-    company: "Intersnack (FMCG) · UK",
+    company: "KP Snacks (FMCG) · UK",
     period: "Jul 2025 – Oct 2025",
     description: "Led resolution of a critical supply disruption, aligning Operations, Manufacturing and Supply Chain to restore 100% on-time delivery within two weeks. Ran portfolio deep-dive with Finance identifying a £500k+ initiative pipeline, and segmented SKUs by brand criticality to sharpen delivery focus.",
   },
