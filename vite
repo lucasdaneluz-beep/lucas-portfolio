@@ -2,7 +2,7 @@
 Port 8080 is in use, trying another one...
 Port 8081 is in use, trying another one...
 
-  VITE v5.4.21  ready in 100 ms
+  VITE v5.4.21  ready in 102 ms
 
   ➜  Local:   http://localhost:8082/
   ➜  Network: http://192.168.1.119:8082/
@@ -14,5 +14,3 @@ Port 8081 is in use, trying another one...
    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 45 |  
 46 |  @layer base {
-^Clucasdaneluz@Lucass-Laptop lucas-portfolio % > vite_react_shadcn_ts@0.0.0 dev
-zsh: command not found: devlucasdaneluz@Lucass-Laptop lucas-portfolio % > vite_react_shadcn_ts@0.0.0 dev
