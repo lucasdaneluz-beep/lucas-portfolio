@@ -91,7 +91,7 @@ const About = () => {
           <p className="text-2xl sm:text-3xl font-light leading-snug tracking-tight" style={{ color: "hsl(210 40% 92%)" }}>
             A commercially-driven PM with 10+ years across{" "}
             <span className="font-medium italic" style={{ color: "hsl(174 90% 68%)" }}>B2B SaaS, FMCG, and supply chain</span>
-            {" "}, always close to{" "}
+            {""}, always close to{" "}
             <span className="font-medium italic" style={{ color: "hsl(174 90% 68%)" }}>users, data, and business outcomes</span>.
           </p>
         </div>
