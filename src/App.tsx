@@ -20,6 +20,7 @@ import PreviewNewDarkFonts from "./pages/PreviewNewDarkFonts";
 import PreviewAmber from "./pages/PreviewAmber";
 import PreviewWarmObsidian from "./pages/PreviewWarmObsidian";
 import PreviewClaudeCream from "./pages/PreviewClaudeCream";
+import Previews from "./pages/Previews";
 
 const queryClient = new QueryClient();
 
@@ -50,6 +51,7 @@ const App = () => (
           <Route path="/preview-amber" element={<PreviewAmber />} />
           <Route path="/preview-warm-obsidian" element={<PreviewWarmObsidian />} />
           <Route path="/preview-claude-cream" element={<PreviewClaudeCream />} />
+          <Route path="/previews" element={<Previews />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         </PageTransition>
