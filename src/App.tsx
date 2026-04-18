@@ -18,6 +18,8 @@ import Contact from "./pages/Contact";
 import PreviewTerracotta from "./pages/PreviewTerracotta";
 import PreviewNewDarkFonts from "./pages/PreviewNewDarkFonts";
 import PreviewAmber from "./pages/PreviewAmber";
+import PreviewWarmObsidian from "./pages/PreviewWarmObsidian";
+import PreviewClaudeCream from "./pages/PreviewClaudeCream";
 
 const queryClient = new QueryClient();
 
@@ -46,6 +48,8 @@ const App = () => (
           <Route path="/preview-terracotta" element={<PreviewTerracotta />} />
           <Route path="/preview-newdarkfonts" element={<PreviewNewDarkFonts />} />
           <Route path="/preview-amber" element={<PreviewAmber />} />
+          <Route path="/preview-warm-obsidian" element={<PreviewWarmObsidian />} />
+          <Route path="/preview-claude-cream" element={<PreviewClaudeCream />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         </PageTransition>
