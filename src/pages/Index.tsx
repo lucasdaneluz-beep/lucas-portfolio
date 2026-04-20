@@ -1,331 +1,383 @@
-import React, { useEffect, useState } from "react";
-import { useNavigate, Link } from "react-router-dom";
-import { Briefcase, TrendingUp, ArrowRight, Linkedin, Mail, Search, Compass, Rocket, BarChart2, ChevronRight, MapPin, ArrowDown } from "lucide-react";
-import profilePhoto from "@/assets/lucas-profile.png";
+import React, { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 
-const caseStudies = [
+const ACCENTS = [
+  { name: "Hot orange", hex: "#ff4a1c" },
+  { name: "Electric lime", hex: "#c8ff1a" },
+  { name: "Cyber cyan", hex: "#00e5ff" },
+  { name: "Hot pink", hex: "#ff3d8a" },
+  { name: "Sun yellow", hex: "#ffcc00" },
+  { name: "Pure white", hex: "#ffffff" },
+];
+
+const workItems = [
   {
-    id: "01",
-    slug: "walkup",
-    title: "WalkUp – Smarter Queues",
-    description: "Queue transparency, loyalty, and growth for a UK restaurant waitlist marketplace.",
-    metric: "3x loyalty engagement uplift",
+    id: "walkup",
+    index: "01",
+    title: "WalkUp — Smarter Queues",
+    summary: "Queue transparency, loyalty, and growth for a UK restaurant waitlist marketplace.",
+    metric: "3× loyalty engagement uplift",
     tags: ["Marketplace", "Waitlist UX", "Loyalty", "Product Strategy"],
-    status: "live",
-    href: "/case-studies/walkup",
-    accent: "32 90% 58%",
+    comingSoon: false,
   },
   {
-    id: "02",
-    slug: "hipen-media",
-    title: "Hipen Media – User Onboarding",
-    description: "Restructuring a multi-segment onboarding flow through research and lean MVP.",
+    id: "hipen-media",
+    index: "02",
+    title: "Hipen Media — User Onboarding",
+    summary: "Restructuring a multi-segment onboarding flow through research and lean MVP.",
     metric: "40% faster onboarding completion",
     tags: ["Discovery", "Onboarding", "MVP", "Research"],
-    status: "live",
-    href: "/case-studies/hipen-media",
-    accent: "270 70% 65%",
+    comingSoon: false,
   },
   {
-    id: "03",
-    slug: "westpak",
-    title: "Westpak – Cost Optimisation",
-    description: "Cost reduction across 3 categories, aligning Finance and Operations.",
+    id: "westpak",
+    index: "03",
+    title: "Westpak — Cost Optimisation",
+    summary: "Cost reduction across 3 categories, aligning Finance and Operations.",
     metric: "25% cost reduction delivered",
     tags: ["Stakeholder Management", "Cost Optimisation", "Supply Chain"],
-    status: "live",
-    href: "/case-studies/westpak",
-    accent: "145 65% 50%",
+    comingSoon: false,
   },
   {
-    id: "04",
-    slug: "moneybox",
+    id: "moneybox",
+    index: "04",
     title: "Moneybox Redesigned",
-    description:
-      "Reimagining the savings & investment journey for clarity and confidence.",
+    summary: "Reimagining the savings & investment journey for clarity and confidence.",
     metric: "Full UX redesign concept",
     tags: ["UX Strategy", "Fintech", "Navigation"],
-    status: "live",
-    href: "/case-studies/moneybox",
-    accent: "174 80% 60%",
+    comingSoon: false,
   },
   {
-    id: "05",
-    slug: "Coming Soon",
+    id: "next",
+    index: "05",
     title: "Next Case Study",
-    description: "Something new is in the works. A product concept exploring AI-driven discovery — details coming soon.",
+    summary: "Something new is in the works. A product concept exploring AI-driven discovery.",
     metric: "",
     tags: ["AI", "Music", "Discovery"],
-    status: "coming-soon",
-    href: "/case-studies/spotify",
-    accent: "42 90% 58%",
+    comingSoon: true,
   },
 ];
 
-const methodologySteps = [
-  {
-    icon: <Search size={20} />,
-    title: "Discover",
-    description: "User research, data analysis, and stakeholder interviews to frame the real problem.",
-  },
-  {
-    icon: <Compass size={20} />,
-    title: "Define",
-    description: "Synthesise insights into a clear strategy, prioritised roadmap, and success metrics.",
-  },
-  {
-    icon: <BarChart2 size={20} />,
-    title: "Baseline",
-    description: "Establish measurable benchmarks before shipping so progress is grounded in data, not assumption.",
-  },
-  {
-    icon: <Rocket size={20} />,
-    title: "Deliver",
-    description: "Ship iteratively, measure outcomes, and refine based on real-world feedback.",
-  },
+const methodology = [
+  { title: "Discover", description: "User research, data analysis, and stakeholder interviews to frame the real problem." },
+  { title: "Define",   description: "Synthesise insights into a clear strategy, prioritised roadmap, and success metrics." },
+  { title: "Baseline", description: "Establish measurable benchmarks before shipping so progress is grounded in data, not assumption." },
+  { title: "Deliver",  description: "Ship iteratively, measure outcomes, and refine based on real-world feedback." },
 ];
+
+type Theme = "dark" | "light";
+type Weight = "700" | "800" | "900";
+type DisplayCase = "uppercase" | "none";
+type Density = "compact" | "normal" | "roomy";
+
+interface Tweaks {
+  accent: string;
+  theme: Theme;
+  displayWeight: Weight;
+  displayCase: DisplayCase;
+  density: Density;
+}
+
+const defaultTweaks: Tweaks = {
+  accent: "#ff4a1c",
+  theme: "dark",
+  displayWeight: "800",
+  displayCase: "uppercase",
+  density: "normal",
+};
 
 const Index = () => {
-  const navigate = useNavigate();
-  const [hoveredId, setHoveredId] = useState<string | null>(null);
+  const [tweaks, setTweaks] = useState<Tweaks>(defaultTweaks);
+  const [tweaksOpen, setTweaksOpen] = useState(false);
+  const heroMainRef = useRef<HTMLDivElement>(null);
 
+  // Apply tweaks to document root CSS variables
   useEffect(() => {
-    const els = document.querySelectorAll(".fade-section");
-    const observer = new IntersectionObserver(
-      (entries) => entries.forEach((e) => {
-        if (e.isIntersecting) { e.target.classList.add("in-view"); observer.unobserve(e.target); }
-      }),
+    const r = document.documentElement;
+    r.style.setProperty("--accent", tweaks.accent);
+    r.setAttribute("data-theme", tweaks.theme);
+    r.style.setProperty("--display-weight", tweaks.displayWeight);
+    r.style.setProperty("--display-case", tweaks.displayCase);
+    r.setAttribute("data-density", tweaks.density);
+    return () => {
+      r.removeAttribute("data-theme");
+      r.removeAttribute("data-density");
+      r.style.removeProperty("--accent");
+      r.style.removeProperty("--display-weight");
+      r.style.removeProperty("--display-case");
+    };
+  }, [tweaks]);
+
+  // Scroll reveal
+  useEffect(() => {
+    const els = document.querySelectorAll(".reveal");
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+        });
+      },
       { threshold: 0.08 }
     );
-    els.forEach((el) => observer.observe(el));
-    return () => observer.disconnect();
+    els.forEach((el) => io.observe(el));
+    return () => io.disconnect();
   }, []);
 
+  // Hero headline stagger clip-reveal
+  useEffect(() => {
+    const lines = document.querySelectorAll("h1.display .line");
+    lines.forEach((el, i) => {
+      (el as HTMLElement).style.transitionDelay = i * 80 + "ms";
+    });
+    requestAnimationFrame(() => {
+      lines.forEach((el) => el.classList.add("in"));
+    });
+  }, []);
+
+  // Cursor spotlight on hero
+  useEffect(() => {
+    const hero = heroMainRef.current;
+    if (!hero) return;
+    const handler = (e: PointerEvent) => {
+      const r = hero.getBoundingClientRect();
+      hero.style.setProperty("--mx", ((e.clientX - r.left) / r.width) * 100 + "%");
+      hero.style.setProperty("--my", ((e.clientY - r.top) / r.height) * 100 + "%");
+    };
+    hero.addEventListener("pointermove", handler);
+    return () => hero.removeEventListener("pointermove", handler);
+  }, []);
+
+  const updateTweak = <K extends keyof Tweaks>(key: K, val: Tweaks[K]) =>
+    setTweaks((prev) => ({ ...prev, [key]: val }));
+
   return (
-    <div className="min-h-screen bg-[hsl(210_35%_5%)] text-white">
-      <style>{`
-        .fade-section { opacity: 0; transform: translateY(18px); transition: opacity 0.55s ease, transform 0.55s ease; }
-        .fade-section.in-view { opacity: 1; transform: translateY(0); }
-      `}</style>
-      {/* Hero / Bio */}
-      <section className="max-w-full sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-6 pt-10 sm:pt-14 pb-4">
-        {/* Name & Photo row */}
-        <div className="flex items-center gap-5 mb-8">
-          <div
-            className="w-16 h-16 sm:w-20 sm:h-20 rounded-full flex-shrink-0 overflow-hidden"
-            style={{ background: "hsl(210 35% 5%)", outline: "1px solid hsl(210 20% 18%)" }}
-          >
-            <img
-              src={profilePhoto}
-              alt="Lucas Daneluz profile photo"
-              className="w-full h-full object-cover object-top"
-            />
-          </div>
-          <div>
-            <h1 className="text-3xl sm:text-4xl font-black tracking-tight leading-tight" style={{ color: "hsl(210 40% 98%)" }}>
-              Lucas Daneluz
-            </h1>
-            <p className="text-base sm:text-lg font-semibold" style={{ color: "hsl(174 80% 60%)" }}>
-              Product Manager
-            </p>
+    <>
+      {/* HERO */}
+      <section className="hero">
+        <div className="hero-main reveal" ref={heroMainRef}>
+          <h1 className="display">
+            <span className="line">TURNING REAL</span>
+            <span className="line">PAIN POINTS <em>INTO</em></span>
+            <span className="line">MEASURABLE <em>IMPACT</em>.</span>
+          </h1>
+          <div className="hero-foot">
+            <a className="scroll-cue" href="#work">
+              <span className="scroll-cue-label">Scroll ↓</span>
+            </a>
+            <div className="hero-tags">
+              <span>0→1 Builds</span>
+              <span>Stakeholder Alignment</span>
+              <span>User Research</span>
+              <span>Outcome-Led</span>
+            </div>
           </div>
         </div>
 
-        {/* Bio */}
-        <p className="text-2xl sm:text-3xl font-light leading-snug tracking-tight mb-2" style={{ color: "hsl(210 40% 92%)" }}>
-          Turning real{" "}
-          <span className="font-medium italic" style={{ color: "hsl(174 90% 68%)" }}>pain points</span>
-          {" "}into{" "}
-          <span className="font-medium italic" style={{ color: "hsl(174 90% 68%)" }}>measurable impact</span>.
-        </p>
-        <p className="text-xs mb-7" style={{ color: "hsl(210 15% 45%)" }}>
-          10+ years across B2B SaaS, FMCG, and supply chain.
-        </p>
+        <div className="hero-meta">
+          <div><div className="lbl">Role</div><div className="val">Product Manager</div></div>
+          <div><div className="lbl">Based in</div><div className="val">London, UK</div></div>
+          <div><div className="lbl">Currently</div><div className="val">Open to work</div></div>
+          <div>
+            <div className="lbl">Availability</div>
+            <div className="val accent"><span className="pulse" />Open</div>
+          </div>
+        </div>
+      </section>
 
-        {/* Skill pills */}
-        <div className="flex flex-wrap gap-2 sm:gap-3">
-          {[{ icon: <Rocket size={11} />, label: "0→1 Builds" },
-            { icon: <Briefcase size={11} />, label: "Stakeholder Alignment" },
-            { icon: <Search size={11} />, label: "User Research" },
-            { icon: <TrendingUp size={11} />, label: "Outcome-Led PM" }].map(({ icon, label }) => (
-            <div
-              key={label}
-              className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold"
-              style={{ background: "hsl(210 28% 12%)", border: "1px solid hsl(210 20% 20%)", color: "hsl(210 20% 65%)" }}
-            >
-              <span style={{ color: "hsl(174 80% 60%)" }}>{icon}</span>
-              {label}
+      {/* MANIFESTO */}
+      <section className="manifesto reveal">
+        <div className="mf-left">
+          <h2>10+ YEARS. <em>FOUR</em> INDUSTRIES. ONE WAY OF WORKING.</h2>
+        </div>
+        <div className="mf-right">
+          <p>
+            A commercially-driven PM with 10+ years across{" "}
+            <strong style={{ color: "var(--ink)" }}>B2B SaaS, FMCG, and supply chain</strong>,
+            always close to users, data, and business outcomes.
+          </p>
+          <p>
+            I care about the parts of product that don't trend: baselines before launch,
+            outcomes over outputs, and alignment as a deliverable.
+          </p>
+        </div>
+      </section>
+
+      {/* METHODOLOGY */}
+      <section className="section reveal">
+        <div className="section-head">
+          <span>§ METHODOLOGY — 02</span>
+          <h2>A structured approach to building the right thing</h2>
+          <span className="count">04 / 04</span>
+        </div>
+        <div className="method">
+          {methodology.map((m, i) => (
+            <div key={m.title}>
+              <div className="n">0{i + 1} / 04</div>
+              <h4>{m.title}</h4>
+              <p>{m.description}</p>
             </div>
           ))}
         </div>
-
       </section>
 
-      {/* How I Work */}
-      <section className="fade-section max-w-full sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-6 mt-6 sm:mt-8">
-        <h2 className="text-xl sm:text-2xl font-bold mb-2" style={{ color: "hsl(210 25% 82%)" }}>
-          How I Work
-        </h2>
-        <p className="text-base sm:text-lg font-medium italic mb-8" style={{ color: "hsl(210 25% 72%)" }}>
-          A structured approach to building the right thing.
-        </p>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:flex lg:flex-row lg:items-stretch gap-3">
-          {methodologySteps.map(({ icon, title, description }, i) => (
-            <React.Fragment key={title}>
-              <div
-                className="rounded-2xl p-4 relative lg:flex-1"
-                style={{
-                  background: "hsl(210 28% 11%)",
-                  border: "1px solid hsl(210 20% 20%)",
-                }}
-              >
-                <div
-                  className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0 mb-3"
-                  style={{ background: "hsl(174 80% 60% / 0.1)", color: "hsl(174 80% 60%)" }}
-                >
-                  {icon}
-                </div>
-                <p className="text-2xl font-bold mb-2" style={{ color: "hsl(210 25% 82%)" }}>{title}</p>
-                <p className="text-sm leading-relaxed" style={{ color: "hsl(210 20% 55%)" }}>{description}</p>
-              </div>
-              {i < methodologySteps.length - 1 && (
-                <div className="hidden lg:flex items-center justify-center flex-shrink-0">
-                  <ChevronRight size={14} style={{ color: "hsl(174 80% 60% / 0.35)" }} />
-                </div>
-              )}
-            </React.Fragment>
-          ))}
+      {/* WORK */}
+      <section className="section reveal" id="work">
+        <div className="section-head">
+          <span>§ SELECTED WORK — 03</span>
+          <h2>Real problems · structured thinking · measurable impact</h2>
+          <span className="count">05 / 05</span>
         </div>
-      </section>
-
-      {/* Case Studies List */}
-      <section id="case-studies" className="fade-section max-w-full sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-6 mt-12 sm:mt-14" style={{ scrollMarginTop: "96px" }}>
-        <h2 className="text-xl sm:text-2xl font-bold mb-2" style={{ color: "hsl(210 25% 82%)" }}>
-          Case Studies
-        </h2>
-        <p className="text-base sm:text-lg font-medium italic mb-8" style={{ color: "hsl(210 25% 72%)" }}>
-          Real problems. Structured thinking. Measurable impact.
-        </p>
-
-        <div className="space-y-3">
-          {caseStudies.map(({ id, title, description, metric, tags, status, href, accent }) => {
-            const isLive = status === "live";
-            const isHovered = hoveredId === id;
-            return (
-              <button
-                key={id}
-                type="button"
-                onClick={() => isLive && navigate(href)}
-                onMouseEnter={() => isLive && setHoveredId(id)}
-                onMouseLeave={() => setHoveredId(null)}
-                className="w-full text-left rounded-2xl p-5 sm:p-6 flex items-center justify-between gap-3 sm:gap-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
-                style={{
-                  background: "hsl(210 28% 11%)",
-                  border: `1px solid ${isHovered ? `hsl(${accent} / 0.5)` : status === "coming-soon" ? "hsl(210 20% 16%)" : "hsl(210 20% 20%)"}`,
-                  boxShadow: isHovered ? `inset 3px 0 0 hsl(${accent} / 0.5)` : "none",
-                  transform: isHovered ? "scale(1.005)" : "scale(1)",
-                  transition: "border-color 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease",
-                  cursor: isLive ? "pointer" : "default",
-                  opacity: status === "coming-soon" ? 0.55 : 1,
-                }}
-              >
-                <div className="flex items-start gap-3 sm:gap-4 min-w-0">
-                  <span className="text-xs font-black tabular-nums mt-0.5 flex-shrink-0" style={{ color: status === "coming-soon" ? "hsl(210 15% 40%)" : `hsl(${accent})` }}>{id}</span>
-                  <div className="min-w-0">
-                    <div className="flex items-center gap-2 mb-1 flex-wrap">
-                      <p className="text-sm font-bold">{title}</p>
-                      {status === "coming-soon" && (
-                        <span className="text-[9px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-full" style={{ background: "hsl(42 90% 58% / 0.1)", color: "hsl(42 90% 58%)", border: "1px solid hsl(42 90% 58% / 0.25)" }}>
-                          In Progress
-                        </span>
-                      )}
-                    </div>
-                    <p className="text-xs mb-1.5" style={{ color: "hsl(210 20% 55%)" }}>{description}</p>
-                    {metric && (
-                      <span
-                        className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-bold mb-2.5"
-                        style={{
-                          background: `hsl(${accent} / 0.1)`,
-                          border: `1px solid hsl(${accent} / 0.25)`,
-                          color: `hsl(${accent})`,
-                        }}
-                      >
-                        ↗ {metric}
-                      </span>
-                    )}
-                    <div className="flex flex-wrap gap-1.5">
-                      {tags.map(tag => (
-                        <span
-                          key={tag}
-                          className="text-[10px] font-semibold px-2 py-0.5 rounded-full"
-                          style={{ background: "hsl(210 20% 14%)", color: "hsl(210 15% 50%)", border: "1px solid hsl(210 20% 22%)" }}
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
+        <div className="work-table">
+          {workItems.map((w) => {
+            const tags = (
+              <div className="w-tags">
+                {w.tags.slice(0, 3).map((t) => <span key={t}>{t}</span>)}
+              </div>
+            );
+            if (w.comingSoon) {
+              return (
+                <React.Fragment key={w.id}>
+                  <div className="w-idx" style={{ opacity: 0.4 }}>{w.index}</div>
+                  <div className="w-marker soon" style={{ opacity: 0.4 }}><span className="dot" /></div>
+                  <div style={{ opacity: 0.4, padding: "28px var(--pad)", borderBottom: "1px solid var(--rule)", minHeight: 110, display: "flex", flexDirection: "column", justifyContent: "center" }}>
+                    <div className="w-title">{w.title}</div>{tags}
                   </div>
+                  <div className="w-summary" style={{ opacity: 0.4 }}>{w.summary}</div>
+                  <div className="w-metric none" style={{ opacity: 0.4 }}>IN PROGRESS</div>
+                  <div className="w-arrow" style={{ opacity: 0.4 }}>—</div>
+                </React.Fragment>
+              );
+            }
+            return (
+              <Link
+                key={w.id}
+                to={`/case-studies/${w.id}`}
+                className="work-row"
+                style={{ display: "contents" }}
+              >
+                <div className="w-idx">{w.index}</div>
+                <div className="w-marker"><span className="dot" /></div>
+                <div>
+                  <div className="w-title">{w.title}</div>
+                  {tags}
                 </div>
-                {isLive && <ArrowRight size={16} className="flex-shrink-0" style={{ color: `hsl(${accent})` }} />}
-              </button>
+                <div className="w-summary">{w.summary}</div>
+                <div className="w-metric">↗ {w.metric}</div>
+                <div className="w-arrow">→</div>
+              </Link>
             );
           })}
         </div>
       </section>
 
-      {/* Let's Talk CTA */}
-      <section className="fade-section max-w-full sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-6 mt-16 sm:mt-20">
-        <div
-          className="rounded-2xl p-12 sm:p-14 text-center"
-          style={{ background: "hsl(210 28% 11%)", border: "1px solid hsl(210 20% 20%)" }}
-        >
-          <h2 className="text-xl sm:text-2xl font-black mb-3" style={{ color: "hsl(210 40% 98%)" }}>
-            Interested in working together?
-          </h2>
-          <p className="text-sm mb-6 max-w-md mx-auto" style={{ color: "hsl(210 20% 55%)" }}>
-            I'm open to PM roles, contract work, or just a good product conversation.
-          </p>
-          <div className="flex items-center justify-center gap-3 flex-wrap">
-            <Link
-              to="/contact"
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-bold transition-opacity hover:opacity-90"
-              style={{ background: "hsl(174 80% 60%)", color: "hsl(210 35% 5%)" }}
-            >
-              <Mail size={14} />
-              Get in Touch
-            </Link>
-            <a
-              href="https://www.linkedin.com/in/lucasdaneluz"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-bold transition-colors hover:opacity-90"
-              style={{ background: "transparent", border: "1px solid hsl(174 80% 60% / 0.4)", color: "hsl(174 80% 60%)" }}
-            >
-              <Linkedin size={14} />
-              LinkedIn
-            </a>
+      {/* CTA */}
+      <section className="cta reveal">
+        <h2>
+          WANT TO <em>WORK</em>
+          <br />
+          TOGETHER?{" "}
+          <Link to="/contact">START HERE →</Link>
+        </h2>
+        <div className="cta-sub">
+          <a href="mailto:lucas.daneluz@gmail.com">
+            <div className="lbl">Email</div>
+            <div className="val">lucas.daneluz@gmail.com</div>
+          </a>
+          <a href="https://www.linkedin.com/in/lucasdaneluz" target="_blank" rel="noopener noreferrer">
+            <div className="lbl">LinkedIn</div>
+            <div className="val">/in/lucasdaneluz</div>
+          </a>
+          <div>
+            <div className="lbl">Based</div>
+            <div className="val">London, UK</div>
           </div>
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="max-w-full sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-6 mt-8 pb-16">
-        <div className="flex items-center justify-between flex-wrap gap-3">
-          <span className="text-[11px]" style={{ color: "hsl(210 15% 40%)" }}>© {new Date().getFullYear()} Lucas Daneluz</span>
-          <div className="flex items-center gap-4">
-            <a href="mailto:lucas.daneluz@gmail.com" className="text-[11px] flex items-center gap-1.5 transition-opacity hover:opacity-70" style={{ color: "hsl(210 15% 45%)" }}>
-              <Mail size={11} />
-              Email
-            </a>
-            <a href="https://www.linkedin.com/in/lucasdaneluz" target="_blank" rel="noopener noreferrer" className="text-[11px] flex items-center gap-1.5 transition-opacity hover:opacity-70" style={{ color: "hsl(210 15% 45%)" }}>
-              <Linkedin size={11} />
-              LinkedIn
-            </a>
-          </div>
+      <footer className="footer-b">
+        <span>© 2026 Lucas Daneluz · Product Manager · London</span>
+        <div className="socials">
+          <a href="mailto:lucas.daneluz@gmail.com">Email</a>
+          <a href="https://www.linkedin.com/in/lucasdaneluz" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         </div>
       </footer>
-    </div>
+
+      {/* TWEAKS PANEL */}
+      {tweaksOpen && (
+        <div className="tweaks">
+          <div className="tweaks-hdr">
+            <span>TWEAKS</span>
+            <button onClick={() => setTweaksOpen(false)} aria-label="Close">×</button>
+          </div>
+          <div className="tweaks-body">
+            <div className="tweak-group">
+              <label className="tweak-label">Accent color</label>
+              <div className="swatch-row">
+                {ACCENTS.map((a) => (
+                  <button
+                    key={a.hex}
+                    className={`sw${tweaks.accent === a.hex ? " on" : ""}`}
+                    style={{ "--c": a.hex } as React.CSSProperties}
+                    title={a.name}
+                    onClick={() => updateTweak("accent", a.hex)}
+                  />
+                ))}
+              </div>
+            </div>
+
+            <div className="tweak-group">
+              <label className="tweak-label">Theme</label>
+              <div className="seg">
+                {(["dark", "light"] as Theme[]).map((v) => (
+                  <button key={v} className={tweaks.theme === v ? "on" : ""} onClick={() => updateTweak("theme", v)}>
+                    {v === "dark" ? "Dark" : "Light"}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            <div className="tweak-group">
+              <label className="tweak-label">Display weight</label>
+              <div className="seg">
+                {(["700", "800", "900"] as Weight[]).map((v) => (
+                  <button key={v} className={tweaks.displayWeight === v ? "on" : ""} onClick={() => updateTweak("displayWeight", v)}>
+                    {v}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            <div className="tweak-group">
+              <label className="tweak-label">Display case</label>
+              <div className="seg">
+                <button className={tweaks.displayCase === "uppercase" ? "on" : ""} onClick={() => updateTweak("displayCase", "uppercase")}>UPPER</button>
+                <button className={tweaks.displayCase === "none" ? "on" : ""} onClick={() => updateTweak("displayCase", "none")}>Mixed</button>
+              </div>
+            </div>
+
+            <div className="tweak-group">
+              <label className="tweak-label">Density</label>
+              <div className="seg">
+                {(["compact", "normal", "roomy"] as Density[]).map((v) => (
+                  <button key={v} className={tweaks.density === v ? "on" : ""} onClick={() => updateTweak("density", v)}>
+                    {v.charAt(0).toUpperCase() + v.slice(1)}
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      <button
+        className="tweaks-trigger"
+        onClick={() => setTweaksOpen((v) => !v)}
+        title="Tweaks"
+        aria-label="Open tweaks panel"
+      >
+        ⚙
+      </button>
+    </>
   );
 };
 

@@ -4,99 +4,40 @@ import { Menu, X } from "lucide-react";
 
 const Nav = () => {
   const { pathname } = useLocation();
-  const isHome = pathname === "/";
-  const isWork = pathname.startsWith("/case-studies");
   const [open, setOpen] = useState(false);
 
-  const linkStyle = (active: boolean, isMobile: boolean) => ({
-    color: active ? "hsl(174 80% 60%)" : "hsl(210 20% 55%)",
-    ...(active && !isMobile ? {
-      borderBottom: "2px solid hsl(174 80% 60%)",
-      paddingBottom: "2px",
-    } : {}),
-  });
-
-  const desktopCls = "text-xs font-semibold transition-opacity hover:opacity-70";
-  const mobileCls  = "text-base font-semibold transition-opacity hover:opacity-70 py-4 sm:py-0";
-
-  const navLinks = (isMobile = false) => {
-    const cls = isMobile ? mobileCls : desktopCls;
-    return (
-      <>
-        <a
-          href={isHome ? "#case-studies" : "/#case-studies"}
-          onClick={() => setOpen(false)}
-          className={cls}
-          style={linkStyle(isWork, isMobile)}
-        >
-          Case Studies
-        </a>
-        <Link
-          to="/about"
-          onClick={() => setOpen(false)}
-          className={cls}
-          style={linkStyle(pathname === "/about", isMobile)}
-        >
-          About
-        </Link>
-        <Link
-          to="/contact"
-          onClick={() => setOpen(false)}
-          className={cls}
-          style={linkStyle(pathname === "/contact", isMobile)}
-        >
-          Contact
-        </Link>
-      </>
-    );
-  };
+  const isHome = pathname === "/";
+  const isWork = pathname.startsWith("/case-studies");
+  const isAbout = pathname === "/about";
+  const isContact = pathname === "/contact";
 
   return (
-    <nav
-      className="fixed top-0 left-0 right-0 z-50"
-      style={{
-        background: "hsl(210 35% 5% / 0.92)",
-        borderBottom: "1px solid hsl(210 20% 13%)",
-        backdropFilter: "blur(12px)",
-        WebkitBackdropFilter: "blur(12px)",
-      }}
-    >
-      {/* Main bar */}
-      <div className="max-w-full sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-6 h-14 flex items-center justify-between">
-        <Link
-          to="/"
-          className="text-sm font-bold transition-opacity hover:opacity-70"
-          style={{ color: "hsl(210 25% 82%)" }}
-        >
-          Lucas Daneluz
+    <nav className="nav">
+      <div className="nav-inner">
+        <Link to="/" className="nav-mark">
+          Lucas Daneluz — <b>Product Manager</b>
         </Link>
-
-        {/* Desktop links */}
-        <div className="hidden sm:flex items-center gap-6">
-          {navLinks()}
+        <div className="nav-status" />
+        <div className="nav-links">
+          <Link to="/" className={isHome ? "active" : ""}>Home</Link>
+          <a href="/#work" className={isWork ? "active" : ""}>Work</a>
+          <Link to="/about" className={isAbout ? "active" : ""}>About</Link>
+          <Link to="/contact" className={isContact ? "active" : ""}>Contact</Link>
+          <button
+            className="nav-hamburger"
+            onClick={() => setOpen(v => !v)}
+            aria-label={open ? "Close menu" : "Open menu"}
+          >
+            {open ? <X size={16} /> : <Menu size={16} />}
+          </button>
         </div>
-
-        {/* Mobile hamburger */}
-        <button
-          className="sm:hidden flex items-center justify-center w-8 h-8 rounded-lg transition-opacity hover:opacity-70"
-          style={{ color: "hsl(210 20% 65%)" }}
-          onClick={() => setOpen((v) => !v)}
-          aria-label={open ? "Close menu" : "Open menu"}
-        >
-          {open ? <X size={18} /> : <Menu size={18} />}
-        </button>
       </div>
-
-      {/* Mobile dropdown */}
       {open && (
-        <div
-          className="sm:hidden px-6 pb-2 pt-1 flex flex-col border-t"
-          style={{
-            background: "hsl(210 35% 5% / 0.97)",
-            borderColor: "hsl(210 20% 13%)",
-          }}
-        >
-          {navLinks(true)}
+        <div className="nav-mobile">
+          <Link to="/" onClick={() => setOpen(false)} className={isHome ? "active" : ""}>Home</Link>
+          <a href="/#work" onClick={() => setOpen(false)} className={isWork ? "active" : ""}>Work</a>
+          <Link to="/about" onClick={() => setOpen(false)} className={isAbout ? "active" : ""}>About</Link>
+          <Link to="/contact" onClick={() => setOpen(false)} className={isContact ? "active" : ""}>Contact</Link>
         </div>
       )}
     </nav>
