@@ -1,31 +1,38 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Mail, Linkedin, Send, CheckCircle, MapPin } from "lucide-react";
 
 const FORMSPREE_ENDPOINT = "https://formspree.io/f/xreyjeww";
 
 const schema = z.object({
-  name: z.string().min(2, "Name must be at least 2 characters"),
-  email: z.string().email("Please enter a valid email address"),
+  name: z.string().min(2, "Please enter your name"),
+  email: z.string().email("Please enter a valid email"),
   message: z.string().min(10, "Message must be at least 10 characters"),
 });
 
 type FormData = z.infer<typeof schema>;
 
 const Contact = () => {
-  const [submitted, setSubmitted] = useState(false);
-  const [serverError, setServerError] = useState<string | null>(null);
+  const [statusMsg, setStatusMsg] = useState("");
+  const [statusType, setStatusType] = useState<"idle" | "sending" | "ok" | "error">("idle");
 
-  const {
-    register,
-    handleSubmit,
-    formState: { errors, isSubmitting },
-  } = useForm<FormData>({ resolver: zodResolver(schema) });
+  const { register, handleSubmit, formState: { errors, isSubmitting }, reset } = useForm<FormData>({
+    resolver: zodResolver(schema),
+  });
+
+  // Stagger hero headline lines on mount
+  useEffect(() => {
+    const lines = document.querySelectorAll("h1.display .line");
+    lines.forEach((el, i) => {
+      (el as HTMLElement).style.transitionDelay = i * 80 + "ms";
+    });
+    requestAnimationFrame(() => lines.forEach((el) => el.classList.add("in")));
+  }, []);
 
   const onSubmit = async (data: FormData) => {
-    setServerError(null);
+    setStatusMsg("SENDING…");
+    setStatusType("sending");
     try {
       const res = await fetch(FORMSPREE_ENDPOINT, {
         method: "POST",
@@ -33,237 +40,101 @@ const Contact = () => {
         body: JSON.stringify(data),
       });
       if (res.ok) {
-        setSubmitted(true);
-      } else {
-        setServerError("Something went wrong. Please try emailing me directly.");
-      }
+        setStatusMsg("● SENT. I'LL GET BACK TO YOU SHORTLY.");
+        setStatusType("ok");
+        reset();
+      } else throw new Error();
     } catch {
-      setServerError("Something went wrong. Please try emailing me directly.");
+      setStatusMsg("● ERROR. EMAIL ME DIRECTLY.");
+      setStatusType("error");
     }
   };
 
-  const inputBase =
-    "w-full rounded-xl px-4 py-3 text-sm outline-none transition-all";
-  const inputStyle = {
-    background: "hsl(210 28% 9%)",
-    border: "1px solid hsl(210 20% 20%)",
-    color: "hsl(210 25% 88%)",
-  };
-  const focusClass = "focus:ring-2 focus:ring-[hsl(174_80%_60%/0.4)]";
+  const statusColor =
+    statusType === "ok" ? "var(--accent)" :
+    statusType === "error" ? "#ff6a6a" :
+    "var(--ink-mute)";
 
   return (
-    <div className="min-h-screen bg-[hsl(210_35%_5%)] text-white">
-      <div className="max-w-full sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-6 pt-10 sm:pt-14 pb-20">
-
-        {/* Header */}
-        <div className="mb-10">
-          <h1 className="text-3xl sm:text-4xl font-black tracking-tight mb-3" style={{ color: "hsl(210 40% 98%)" }}>
-            Get in Touch
+    <>
+      {/* HERO */}
+      <section className="hero">
+        <div className="hero-main" style={{ paddingBottom: 40 }}>
+          <div className="hero-index">
+            CONTACT / 04 <span className="sep">·</span> INBOX OPEN
+          </div>
+          <h1 className="display">
+            <span className="line">OPEN TO <em>ROLES</em>,</span>
+            <span className="line">CONTRACT WORK,</span>
+            <span className="line">OR A GOOD <em>CHAT</em>.</span>
           </h1>
-          <p className="text-sm sm:text-base leading-relaxed max-w-lg" style={{ color: "hsl(210 20% 55%)" }}>
-            Open to PM roles, contract work, or just a good product conversation. Fill in the form and I'll get back to you.
-          </p>
         </div>
+      </section>
 
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-8 items-start">
-
-          {/* Form */}
-          <div className="md:col-span-3">
-            {submitted ? (
-              <div
-                className="rounded-2xl p-10 flex flex-col items-center text-center gap-4"
-                style={{ background: "hsl(210 28% 11%)", border: "1px solid hsl(174 80% 60% / 0.3)" }}
-              >
-                <CheckCircle size={40} style={{ color: "hsl(174 80% 60%)" }} />
-                <h2 className="text-lg font-bold" style={{ color: "hsl(210 40% 98%)" }}>
-                  Message sent!
-                </h2>
-                <p className="text-sm" style={{ color: "hsl(210 20% 55%)" }}>
-                  Thanks for reaching out — I'll get back to you shortly.
-                </p>
-              </div>
-            ) : (
-              <form
-                onSubmit={handleSubmit(onSubmit)}
-                noValidate
-                className="rounded-2xl p-6 sm:p-8 space-y-5"
-                style={{ background: "hsl(210 28% 11%)", border: "1px solid hsl(210 20% 20%)" }}
-              >
-                {/* Name */}
-                <div>
-                  <label className="block text-xs font-semibold mb-2" style={{ color: "hsl(210 20% 60%)" }}>
-                    Name
-                  </label>
-                  <input
-                    {...register("name")}
-                    type="text"
-                    placeholder="Your name"
-                    className={`${inputBase} ${focusClass}`}
-                    style={inputStyle}
-                  />
-                  {errors.name && (
-                    <p className="text-[11px] mt-1.5" style={{ color: "hsl(0 75% 65%)" }}>
-                      {errors.name.message}
-                    </p>
-                  )}
-                </div>
-
-                {/* Email */}
-                <div>
-                  <label className="block text-xs font-semibold mb-2" style={{ color: "hsl(210 20% 60%)" }}>
-                    Email
-                  </label>
-                  <input
-                    {...register("email")}
-                    type="email"
-                    placeholder="your@email.com"
-                    className={`${inputBase} ${focusClass}`}
-                    style={inputStyle}
-                  />
-                  {errors.email && (
-                    <p className="text-[11px] mt-1.5" style={{ color: "hsl(0 75% 65%)" }}>
-                      {errors.email.message}
-                    </p>
-                  )}
-                </div>
-
-                {/* Message */}
-                <div>
-                  <label className="block text-xs font-semibold mb-2" style={{ color: "hsl(210 20% 60%)" }}>
-                    Message
-                  </label>
-                  <textarea
-                    {...register("message")}
-                    rows={5}
-                    placeholder="What's on your mind?"
-                    className={`${inputBase} ${focusClass} resize-none`}
-                    style={inputStyle}
-                  />
-                  {errors.message && (
-                    <p className="text-[11px] mt-1.5" style={{ color: "hsl(0 75% 65%)" }}>
-                      {errors.message.message}
-                    </p>
-                  )}
-                </div>
-
-                {serverError && (
-                  <p className="text-[12px] font-semibold" style={{ color: "hsl(0 75% 65%)" }}>
-                    {serverError}
-                  </p>
-                )}
-
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full text-sm font-bold transition-opacity hover:opacity-90 disabled:opacity-50"
-                  style={{ background: "hsl(174 80% 60%)", color: "hsl(210 35% 5%)" }}
-                >
-                  <Send size={14} />
-                  {isSubmitting ? "Sending…" : "Send Message"}
-                </button>
-              </form>
+      {/* CONTACT SPLIT */}
+      <section className="contact-b">
+        <div className="left">
+          <form className="form-b" onSubmit={handleSubmit(onSubmit)} noValidate>
+            <label>
+              <div className="lbl">NAME</div>
+              <input type="text" {...register("name")} placeholder="Your name" />
+              {errors.name && <div className="field-error">{errors.name.message}</div>}
+            </label>
+            <label>
+              <div className="lbl">EMAIL</div>
+              <input type="email" {...register("email")} placeholder="your@email.com" />
+              {errors.email && <div className="field-error">{errors.email.message}</div>}
+            </label>
+            <label>
+              <div className="lbl">MESSAGE</div>
+              <textarea {...register("message")} rows={5} placeholder="What's on your mind?" />
+              {errors.message && <div className="field-error">{errors.message.message}</div>}
+            </label>
+            <button type="submit" disabled={isSubmitting}>
+              {isSubmitting ? "SENDING…" : "SEND MESSAGE →"}
+            </button>
+            {statusMsg && (
+              <p className="status" style={{ color: statusColor }}>{statusMsg}</p>
             )}
-          </div>
-
-          {/* Sidebar */}
-          <div className="md:col-span-2 space-y-4">
-            <div
-              className="rounded-2xl p-6"
-              style={{ background: "hsl(210 28% 11%)", border: "1px solid hsl(210 20% 20%)" }}
-            >
-              <p className="text-xs font-semibold uppercase tracking-widest mb-4" style={{ color: "hsl(210 15% 45%)" }}>
-                Or reach me directly
-              </p>
-              <div className="space-y-3">
-                <a
-                  href="mailto:lucas.daneluz@gmail.com"
-                  className="flex items-center gap-3 text-sm font-medium transition-opacity hover:opacity-70"
-                  style={{ color: "hsl(210 25% 75%)" }}
-                >
-                  <span
-                    className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0"
-                    style={{ background: "hsl(174 80% 60% / 0.1)", color: "hsl(174 80% 60%)" }}
-                  >
-                    <Mail size={15} />
-                  </span>
-                  lucas.daneluz@gmail.com
-                </a>
-                <a
-                  href="https://www.linkedin.com/in/lucasdaneluz"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-3 text-sm font-medium transition-opacity hover:opacity-70"
-                  style={{ color: "hsl(210 25% 75%)" }}
-                >
-                  <span
-                    className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0"
-                    style={{ background: "hsl(174 80% 60% / 0.1)", color: "hsl(174 80% 60%)" }}
-                  >
-                    <Linkedin size={15} />
-                  </span>
-                  linkedin.com/in/lucasdaneluz
-                </a>
-                <div className="flex items-center gap-3 text-sm font-medium" style={{ color: "hsl(210 25% 75%)" }}>
-                  <span
-                    className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0"
-                    style={{ background: "hsl(174 80% 60% / 0.1)", color: "hsl(174 80% 60%)" }}
-                  >
-                    <MapPin size={15} />
-                  </span>
-                  London, UK
-                </div>
-              </div>
-            </div>
-
-            <div
-              className="rounded-2xl p-6"
-              style={{ background: "hsl(210 28% 11%)", border: "1px solid hsl(210 20% 20%)" }}
-            >
-              <p className="text-xs font-semibold uppercase tracking-widest mb-2" style={{ color: "hsl(210 15% 45%)" }}>
-                Availability
-              </p>
-              {/* TODO: Update this to reflect your current availability */}
-              <div className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full flex-shrink-0" style={{ background: "hsl(142 70% 55%)" }} />
-                <p className="text-sm" style={{ color: "hsl(210 25% 75%)" }}>
-                  Open to new opportunities
-                </p>
-              </div>
-            </div>
-          </div>
-
+          </form>
         </div>
-      </div>
 
-      {/* Footer */}
-      <footer className="max-w-full sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto px-6 pb-16">
-        <div className="flex items-center justify-between flex-wrap gap-3">
-          <span className="text-[11px]" style={{ color: "hsl(210 15% 40%)" }}>
-            © {new Date().getFullYear()} Lucas Daneluz
-          </span>
-          <div className="flex items-center gap-4">
-            <a
-              href="mailto:lucas.daneluz@gmail.com"
-              className="text-[11px] flex items-center gap-1.5 transition-opacity hover:opacity-70"
-              style={{ color: "hsl(210 15% 45%)" }}
-            >
-              <Mail size={11} />
-              Email
-            </a>
-            <a
-              href="https://www.linkedin.com/in/lucasdaneluz"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[11px] flex items-center gap-1.5 transition-opacity hover:opacity-70"
-              style={{ color: "hsl(210 15% 45%)" }}
-            >
-              <Linkedin size={11} />
-              LinkedIn
-            </a>
+        <div className="right">
+          <div className="direct-reach-label">OR REACH ME DIRECTLY</div>
+          <a href="mailto:lucas.daneluz@gmail.com" className="direct-b">
+            <div className="lbl">EMAIL</div>
+            <div className="val">lucas.daneluz@gmail.com</div>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/lucasdaneluz"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="direct-b"
+          >
+            <div className="lbl">LINKEDIN</div>
+            <div className="val">/in/lucasdaneluz</div>
+          </a>
+          <div className="direct-b" style={{ cursor: "default" }}>
+            <div className="lbl">LOCATION</div>
+            <div className="val">London, UK</div>
           </div>
+          <div className="direct-b" style={{ cursor: "default", borderBottom: "none" }}>
+            <div className="lbl">AVAILABILITY</div>
+            <div className="val" style={{ color: "var(--accent)" }}>
+              <span className="pulse" />Open to new opportunities
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer className="footer-b">
+        <span>© 2026 Lucas Daneluz · Product Manager</span>
+        <div className="socials">
+          <a href="mailto:lucas.daneluz@gmail.com">Email</a>
+          <a href="https://www.linkedin.com/in/lucasdaneluz" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         </div>
       </footer>
-    </div>
+    </>
   );
 };
 
