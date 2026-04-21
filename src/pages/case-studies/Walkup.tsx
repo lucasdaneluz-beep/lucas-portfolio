@@ -27,9 +27,6 @@ const CaseStudyWalkup = () => {
 
       <h3>Outcome</h3>
       <p>Headline outcome: <strong style={{ color: "var(--accent)" }}>3× loyalty engagement uplift</strong>. Full numbers, charts, and reflections on what I'd do differently are in the long-form case study.</p>
-
-      <h3>Full case study</h3>
-      <p>The long-form write-up lives at <a className="inline" href="https://lucasdaneluz.vercel.app" target="_blank" rel="noopener noreferrer">lucasdaneluz.vercel.app</a>.</p>
     </MonolithCaseLayout>
   );
 };
