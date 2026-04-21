@@ -381,7 +381,7 @@ h1.display .line.in { clip-path: inset(0 0 -10% 0); transform: translateY(0); }
 /* --- WORK TABLE --- */
 .work-table {
   display: grid;
-  grid-template-columns: 1.2fr 1fr 180px 50px;
+  grid-template-columns: 1.2fr 1fr 50px;
 }
 .work-table > * {
   padding: 28px var(--pad); border-bottom: 1px solid var(--rule);
@@ -605,8 +605,7 @@ html[data-theme="light"] .about-hero .right img { filter: grayscale(1) contrast(
   .hero-tags { justify-content: flex-start; }
   .work-table { grid-template-columns: 1fr 36px; }
   .work-row > .w-marker,
-  .work-row > .w-summary,
-  .work-row > .w-metric { display: none; }
+  .work-row > .w-summary { display: none; }
   .section-head { grid-template-columns: 1fr; gap: 6px; }
   .manifesto,
   .method { grid-template-columns: 1fr; }

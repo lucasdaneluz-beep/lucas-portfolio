@@ -173,15 +173,6 @@ const Index = () => {
           </div>
         </div>
 
-        <div className="hero-meta">
-          <div><div className="lbl">Role</div><div className="val">Product Manager</div></div>
-          <div><div className="lbl">Based in</div><div className="val">London, UK</div></div>
-          <div><div className="lbl">Currently</div><div className="val">Open to work</div></div>
-          <div>
-            <div className="lbl">Availability</div>
-            <div className="val accent"><span className="pulse" />Open</div>
-          </div>
-        </div>
       </section>
 
       {/* MANIFESTO */}
@@ -242,7 +233,6 @@ const Index = () => {
                     <div className="w-title">{w.title}</div>{tags}
                   </div>
                   <div className="w-summary" style={{ opacity: 0.4 }}>{w.summary}</div>
-                  <div className="w-metric none" style={{ opacity: 0.4 }}>IN PROGRESS</div>
                   <div className="w-arrow" style={{ opacity: 0.4 }}>—</div>
                 </React.Fragment>
               );
@@ -260,7 +250,6 @@ const Index = () => {
                   {tags}
                 </div>
                 <div className="w-summary">{w.summary}</div>
-                <div className="w-metric">↗ {w.metric}</div>
                 <div className="w-arrow">→</div>
               </Link>
             );
