@@ -15,7 +15,6 @@ const CaseStudyWestpak = () => {
       focus="Stakeholder Management"
       metric="25% cost reduction delivered"
       tags={["Stakeholder Management", "Cost Optimisation", "Supply Chain"]}
-      disclaimer="This is an independent case study created for portfolio purposes only. Not affiliated with Westpak."
     >
       <h3>Context</h3>
       <p>Three core packaging categories carrying avoidable cost due to vendor relationships that hadn't been competitively reviewed. Finance was mid month-end close, making data access a significant early blocker. Operations were resistant to vendor switching due to supply chain reliability concerns — valid pushback that needed to be addressed structurally, not overridden.</p>

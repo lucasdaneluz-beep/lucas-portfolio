@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 
 const ACCENTS = [
-  { name: "Hot orange", hex: "#ff4a1c" },
+  { name: "Hot orange", hex: "#ffcc00" },
   { name: "Electric lime", hex: "#c8ff1a" },
   { name: "Cyber cyan", hex: "#00e5ff" },
   { name: "Hot pink", hex: "#ff3d8a" },
@@ -79,7 +79,7 @@ interface Tweaks {
 }
 
 const defaultTweaks: Tweaks = {
-  accent: "#ff4a1c",
+  accent: "#ffcc00",
   theme: "dark",
   displayWeight: "800",
   displayCase: "uppercase",
@@ -187,7 +187,7 @@ const Index = () => {
       {/* MANIFESTO */}
       <section className="manifesto reveal">
         <div className="mf-left">
-          <h2>TURNING REAL<br />PAIN POINTS <em>INTO</em><br />MEASURABLE IMPACT.</h2>
+          <h2>TURNING REAL<br />PAIN POINTS <em>INTO</em><br />MEASURABLE <span style={{ color: "var(--accent)" }}>IMPACT</span>.</h2>
         </div>
         <div className="mf-right">
           <p>

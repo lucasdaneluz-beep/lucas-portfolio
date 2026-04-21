@@ -15,7 +15,6 @@ const CaseStudyHipenMedia = () => {
       focus="Discovery · Onboarding"
       metric="40% faster onboarding completion"
       tags={["Discovery", "Onboarding", "MVP", "Research"]}
-      disclaimer="This is an independent product concept created for portfolio purposes only."
     >
       <h3>Context</h3>
       <p>Hipen Media operates a user onboarding platform serving diverse media clients — digital publishers, print magazines, and newspapers — each with distinct workflows and go-to-market channels. The core problem: one-size-fits-all onboarding backed by a massive, unfiltered dataset, creating friction and slowing time-to-value for every new user regardless of their segment.</p>
