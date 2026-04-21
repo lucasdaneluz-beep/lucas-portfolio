@@ -156,9 +156,9 @@ const Index = () => {
       <section className="hero">
         <div className="hero-main reveal" ref={heroMainRef}>
           <h1 className="display">
-            <span className="line">TURNING REAL</span>
-            <span className="line">PAIN POINTS <em>INTO</em></span>
-            <span className="line">MEASURABLE <em>IMPACT</em>.</span>
+            <span className="line">LUCAS</span>
+            <span className="line">DANELUZ —</span>
+            <span className="line">PRODUCT <em>MANAGER</em>.</span>
           </h1>
           <div className="hero-foot">
             <a className="scroll-cue" href="#work">
@@ -187,7 +187,7 @@ const Index = () => {
       {/* MANIFESTO */}
       <section className="manifesto reveal">
         <div className="mf-left">
-          <h2>10+ YEARS. <em>FOUR</em> INDUSTRIES. ONE WAY OF WORKING.</h2>
+          <h2>TURNING REAL<br />PAIN POINTS <em>INTO</em><br />MEASURABLE IMPACT.</h2>
         </div>
         <div className="mf-right">
           <p>
