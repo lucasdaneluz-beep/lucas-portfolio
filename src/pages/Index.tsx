@@ -83,7 +83,7 @@ const defaultTweaks: Tweaks = {
   theme: "dark",
   displayWeight: "800",
   displayCase: "uppercase",
-  density: "normal",
+  density: "roomy",
 };
 
 const Index = () => {
