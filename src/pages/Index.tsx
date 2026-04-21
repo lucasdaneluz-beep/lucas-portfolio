@@ -195,11 +195,6 @@ const Index = () => {
 
       {/* METHODOLOGY */}
       <section className="section reveal">
-        <div className="section-head">
-          <span>§ METHODOLOGY — 02</span>
-          <h2>A structured approach to building the right thing</h2>
-          <span className="count">04 / 04</span>
-        </div>
         <div className="method">
           {methodology.map((m) => (
             <div key={m.title}>
@@ -212,19 +207,18 @@ const Index = () => {
 
       {/* WORK */}
       <section className="section reveal" id="work">
-        <div className="section-head">
-          <span>§ SELECTED WORK — 03</span>
-          <h2>Real problems · structured thinking · measurable impact</h2>
-          <span className="count">05 / 05</span>
+        <div className="work-head">
+          <h2>CASE STUDIES</h2>
+          <p>Real problems · structured thinking · measurable impact</p>
         </div>
-        <div className="work-table">
+        <div className="work-list">
           {workItems.map((w) => {
             if (w.comingSoon) {
               return (
-                <React.Fragment key={w.id}>
-                  <div className="w-title" style={{ opacity: 0.4 }}>{w.title}</div>
-                  <div className="w-arrow" style={{ opacity: 0.4 }}>—</div>
-                </React.Fragment>
+                <div key={w.id} className="work-row soon">
+                  <span className="w-title">{w.title}</span>
+                  <span className="w-arrow">—</span>
+                </div>
               );
             }
             return (
@@ -232,10 +226,9 @@ const Index = () => {
                 key={w.id}
                 to={`/case-studies/${w.id}`}
                 className="work-row"
-                style={{ display: "contents" }}
               >
-                <div className="w-title">{w.title}</div>
-                <div className="w-arrow">→</div>
+                <span className="w-title">{w.title}</span>
+                <span className="w-arrow">→</span>
               </Link>
             );
           })}
