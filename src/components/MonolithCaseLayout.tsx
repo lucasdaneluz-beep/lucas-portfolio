@@ -16,8 +16,10 @@ const MonolithCaseLayout = ({
 }: Props) => (
   <>
     <section className="case-hero-b">
-      <h1>{title}</h1>
-      <p className="lede">{lede}</p>
+      <div className="wrap">
+        <h1>{title}</h1>
+        <p className="lede">{lede}</p>
+      </div>
     </section>
 
     <section className="case-grid-b">
@@ -40,13 +42,15 @@ const MonolithCaseLayout = ({
     </section>
 
     <section className="case-body-b">
-      {children}
+      <div className="wrap">
+        {children}
+      </div>
     </section>
 
     <section className="cta" style={{ paddingTop: "clamp(48px,8vw,96px)", paddingBottom: "clamp(48px,8vw,96px)" }}>
-      <h2>
-        <Link to="/">← ALL WORK</Link>
-      </h2>
+      <div className="wrap">
+        <h2><Link to="/">← ALL WORK</Link></h2>
+      </div>
     </section>
 
     {disclaimer && <p className="case-disclaimer">{disclaimer}</p>}

@@ -89,6 +89,7 @@ const defaultTweaks: Tweaks = {
 const Index = () => {
   const [tweaks, setTweaks] = useState<Tweaks>(defaultTweaks);
   const [tweaksOpen, setTweaksOpen] = useState(false);
+  const [methodTab, setMethodTab] = useState(0);
   const heroMainRef = useRef<HTMLDivElement>(null);
 
   // Apply tweaks to document root CSS variables
@@ -177,61 +178,65 @@ const Index = () => {
 
       {/* MANIFESTO */}
       <section className="manifesto reveal">
-        <div className="mf-left">
+        <div className="wrap">
           <h2>TURNING REAL<br /><span style={{ color: "var(--accent)" }}>PAIN POINTS</span> INTO<br /><span style={{ color: "var(--accent)" }}>MEASURABLE IMPACT</span>.</h2>
-        </div>
-        <div className="mf-right">
-          <p>
-            A commercially-driven PM with 10+ years across{" "}
-            <strong style={{ color: "var(--ink)" }}>B2B SaaS, FMCG, and supply chain</strong>,
-            always close to users, data, and business outcomes.
-          </p>
-          <p>
-            I care about the parts of product that don't trend: baselines before launch,
-            outcomes over outputs, and alignment as a deliverable.
-          </p>
+          <div className="mf-body">
+            <p>A commercially-driven PM with 10+ years across{" "}<strong style={{ color: "var(--ink)" }}>B2B SaaS, FMCG, and supply chain</strong>, always close to users, data, and business outcomes.</p>
+            <p>I care about the parts of product that don't trend: baselines before launch, outcomes over outputs, and alignment as a deliverable.</p>
+          </div>
         </div>
       </section>
 
-      {/* METHODOLOGY */}
-      <section className="section reveal">
-        <div className="method">
-          {methodology.map((m) => (
-            <div key={m.title}>
-              <h4>{m.title}</h4>
-              <p>{m.description}</p>
-            </div>
-          ))}
+      {/* HOW I WORK */}
+      <section className="how-i-work reveal">
+        <div className="wrap">
+          <div className="hw-head">
+            <h2>HOW I WORK</h2>
+            <p>A structured approach to building the right thing.</p>
+          </div>
+          <div className="hw-tabs">
+            {methodology.map((m, i) => (
+              <button key={m.title} className={`hw-tab${methodTab === i ? " active" : ""}`} onClick={() => setMethodTab(i)}>
+                {m.title}
+              </button>
+            ))}
+          </div>
+          <div className="hw-panels">
+            {methodology.map((m, i) => (
+              <div key={m.title} className={`hw-panel${methodTab === i ? " active" : ""}`}>
+                <h3>{m.title}</h3>
+                <p>{m.description}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* WORK */}
-      <section className="section reveal" id="work">
-        <div className="work-head">
-          <h2>CASE STUDIES</h2>
-          <p>Real problems · structured thinking · measurable impact</p>
-        </div>
-        <div className="work-list">
-          {workItems.map((w) => {
-            if (w.comingSoon) {
+      <section className="work-section reveal" id="work">
+        <div className="wrap">
+          <div className="work-head">
+            <h2>CASE STUDIES</h2>
+            <p>Real problems · structured thinking · measurable impact</p>
+          </div>
+          <div className="work-list">
+            {workItems.map((w) => {
+              if (w.comingSoon) {
+                return (
+                  <div key={w.id} className="work-row soon">
+                    <span className="w-title">{w.title}</span>
+                    <span className="w-arrow">—</span>
+                  </div>
+                );
+              }
               return (
-                <div key={w.id} className="work-row soon">
+                <Link key={w.id} to={`/case-studies/${w.id}`} className="work-row">
                   <span className="w-title">{w.title}</span>
-                  <span className="w-arrow">—</span>
-                </div>
+                  <span className="w-arrow">→</span>
+                </Link>
               );
-            }
-            return (
-              <Link
-                key={w.id}
-                to={`/case-studies/${w.id}`}
-                className="work-row"
-              >
-                <span className="w-title">{w.title}</span>
-                <span className="w-arrow">→</span>
-              </Link>
-            );
-          })}
+            })}
+          </div>
         </div>
       </section>
 
