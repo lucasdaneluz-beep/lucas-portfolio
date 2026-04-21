@@ -201,9 +201,8 @@ const Index = () => {
           <span className="count">04 / 04</span>
         </div>
         <div className="method">
-          {methodology.map((m, i) => (
+          {methodology.map((m) => (
             <div key={m.title}>
-              <div className="n">0{i + 1} / 04</div>
               <h4>{m.title}</h4>
               <p>{m.description}</p>
             </div>
@@ -220,19 +219,10 @@ const Index = () => {
         </div>
         <div className="work-table">
           {workItems.map((w) => {
-            const tags = (
-              <div className="w-tags">
-                {w.tags.slice(0, 3).map((t) => <span key={t}>{t}</span>)}
-              </div>
-            );
             if (w.comingSoon) {
               return (
                 <React.Fragment key={w.id}>
-                  <div className="w-marker soon" style={{ opacity: 0.4 }}><span className="dot" /></div>
-                  <div style={{ opacity: 0.4, padding: "28px var(--pad)", borderBottom: "1px solid var(--rule)", minHeight: 110, display: "flex", flexDirection: "column", justifyContent: "center" }}>
-                    <div className="w-title">{w.title}</div>{tags}
-                  </div>
-                  <div className="w-summary" style={{ opacity: 0.4 }}>{w.summary}</div>
+                  <div className="w-title" style={{ opacity: 0.4 }}>{w.title}</div>
                   <div className="w-arrow" style={{ opacity: 0.4 }}>—</div>
                 </React.Fragment>
               );
@@ -244,12 +234,7 @@ const Index = () => {
                 className="work-row"
                 style={{ display: "contents" }}
               >
-                <div className="w-marker"><span className="dot" /></div>
-                <div>
-                  <div className="w-title">{w.title}</div>
-                  {tags}
-                </div>
-                <div className="w-summary">{w.summary}</div>
+                <div className="w-title">{w.title}</div>
                 <div className="w-arrow">→</div>
               </Link>
             );
