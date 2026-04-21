@@ -9,7 +9,6 @@ const CaseStudyMoneybox = () => {
 
   return (
     <MonolithCaseLayout
-      idx="04 / 05 · CASE STUDY"
       title="Moneybox Redesigned"
       lede="Reimagining the savings & investment journey for clarity and confidence — restructuring navigation, surfacing key rates and allowances, and connecting saving to investing."
       focus="UX Strategy · Fintech"

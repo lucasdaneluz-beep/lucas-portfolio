@@ -9,7 +9,6 @@ const CaseStudyHipenMedia = () => {
 
   return (
     <MonolithCaseLayout
-      idx="02 / 05 · CASE STUDY"
       title="Hipen Media — User Onboarding"
       lede="Bringing structure to a complex, multi-segment onboarding flow through qualitative research, dataset filtering, and a lean MVP — reducing onboarding time by 40%."
       focus="Discovery · Onboarding"

@@ -9,7 +9,6 @@ const CaseStudyWalkup = () => {
 
   return (
     <MonolithCaseLayout
-      idx="01 / 05 · CASE STUDY"
       title="WalkUp — Smarter Queues"
       lede="Queue transparency, loyalty, and growth for a UK restaurant waitlist marketplace used by 400K+ diners and 800+ restaurant partners."
       focus="Marketplace · Waitlist UX"

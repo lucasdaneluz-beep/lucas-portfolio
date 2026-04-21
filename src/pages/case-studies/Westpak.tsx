@@ -9,7 +9,6 @@ const CaseStudyWestpak = () => {
 
   return (
     <MonolithCaseLayout
-      idx="03 / 05 · CASE STUDY"
       title="Westpak — Cost Optimisation"
       lede="Leading a cross-functional cost optimisation project across three core categories — navigating Finance and Operations, running a 6-vendor tender, and delivering a 25% cost reduction."
       focus="Stakeholder Management"

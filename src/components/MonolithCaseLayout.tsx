@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 
 interface Props {
-  idx: string;
   title: string;
   lede: string;
   role?: string;
@@ -13,11 +12,10 @@ interface Props {
 }
 
 const MonolithCaseLayout = ({
-  idx, title, lede, role = "Product Manager", focus, metric, tags, disclaimer, children,
+  title, lede, role = "Product Manager", focus, metric, tags, disclaimer, children,
 }: Props) => (
   <>
     <section className="case-hero-b">
-      <div className="idx">{idx}</div>
       <h1>{title}</h1>
       <p className="lede">{lede}</p>
     </section>

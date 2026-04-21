@@ -237,7 +237,6 @@ const Index = () => {
             if (w.comingSoon) {
               return (
                 <React.Fragment key={w.id}>
-                  <div className="w-idx" style={{ opacity: 0.4 }}>{w.index}</div>
                   <div className="w-marker soon" style={{ opacity: 0.4 }}><span className="dot" /></div>
                   <div style={{ opacity: 0.4, padding: "28px var(--pad)", borderBottom: "1px solid var(--rule)", minHeight: 110, display: "flex", flexDirection: "column", justifyContent: "center" }}>
                     <div className="w-title">{w.title}</div>{tags}
@@ -255,7 +254,6 @@ const Index = () => {
                 className="work-row"
                 style={{ display: "contents" }}
               >
-                <div className="w-idx">{w.index}</div>
                 <div className="w-marker"><span className="dot" /></div>
                 <div>
                   <div className="w-title">{w.title}</div>
