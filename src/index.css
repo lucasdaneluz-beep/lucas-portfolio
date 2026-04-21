@@ -628,5 +628,53 @@ html[data-theme="light"] .about-hero .right img { filter: grayscale(1) contrast(
   .contact-b .left { border-right: none; border-bottom: 1px solid var(--rule); }
 }
 
+/* --- CASE STUDIES (Monolith) --- */
+.case-hero-b { padding: clamp(80px,10vw,140px) var(--pad) clamp(40px,5vw,80px); border-bottom: 1px solid var(--rule); }
+.case-hero-b .idx { font-family: var(--mono); font-size: 11px; color: var(--ink-mute); letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 32px; }
+.case-hero-b h1 { font-family: var(--display); font-size: clamp(36px,5vw,72px); font-weight: var(--display-weight); letter-spacing: -0.03em; line-height: 1; margin: 0 0 24px; text-transform: var(--display-case); }
+.case-hero-b .lede { color: var(--ink-dim); font-size: 18px; line-height: 1.5; max-width: 64ch; }
+.case-grid-b { display: grid; grid-template-columns: repeat(4,1fr); border-bottom: 1px solid var(--rule); }
+.case-grid-b > div { padding: 32px var(--pad); border-right: 1px solid var(--rule); }
+.case-grid-b > div:last-child { border-right: none; }
+.case-grid-b .lbl { font-family: var(--mono); font-size: 10px; color: var(--ink-mute); letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 10px; }
+.case-grid-b .val { font-family: var(--display); font-size: 18px; font-weight: 600; color: var(--ink); }
+.case-grid-b .val.big { color: var(--accent); font-size: 28px; font-weight: 700; }
+.case-grid-b .val.mono { font-family: var(--mono); font-size: 12px; font-weight: 400; color: var(--ink-dim); letter-spacing: 0.04em; }
+.case-body-b { padding: clamp(48px,6vw,96px) var(--pad); }
+.case-section-hd { font-family: var(--mono); font-size: 10px; color: var(--ink-mute); letter-spacing: 0.14em; text-transform: uppercase; border-top: 1px solid var(--rule); padding-top: 20px; margin: 40px 0 24px; }
+.case-section-hd:first-child { border-top: none; padding-top: 0; margin-top: 0; }
+.cs-cards { display: grid; gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin-bottom: 40px; }
+.cs-cards.two { grid-template-columns: 1fr 1fr; }
+.cs-cards.three { grid-template-columns: repeat(3,1fr); }
+.cs-cards.four { grid-template-columns: repeat(4,1fr); }
+.cs-card { background: var(--bg); padding: 28px 24px; }
+.cs-card-title { font-family: var(--mono); font-size: 10px; color: var(--ink-mute); letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 16px; }
+.cs-card-title.accent { color: var(--accent); }
+.cs-card-body { color: var(--ink-dim); font-size: 14px; line-height: 1.65; }
+.cs-card-body p { margin-bottom: 12px; }
+.cs-card-body ul { list-style: none; padding: 0; margin: 0; }
+.cs-card-body li { padding: 4px 0 4px 20px; position: relative; }
+.cs-card-body li::before { content: '—'; position: absolute; left: 0; color: var(--ink-mute); }
+.cs-metric-row { display: grid; grid-template-columns: repeat(4,1fr); gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin-bottom: 40px; }
+.cs-metric { background: var(--bg); padding: 28px 24px; }
+.cs-metric-val { font-family: var(--display); font-size: clamp(28px,3vw,44px); font-weight: 800; color: var(--accent); letter-spacing: -0.02em; margin-bottom: 6px; }
+.cs-metric-lbl { font-family: var(--mono); font-size: 10px; color: var(--ink-mute); letter-spacing: 0.14em; text-transform: uppercase; }
+.cs-metric-sub { font-family: var(--mono); font-size: 10px; color: var(--ink-mute); margin-top: 4px; }
+.cs-grid-two { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(24px,4vw,56px); margin-bottom: 48px; }
+.cs-grid-two p { color: var(--ink-dim); line-height: 1.65; margin-bottom: 16px; }
+.case-callout { border-left: 3px solid var(--accent); padding: 20px 24px; background: var(--bg-2); color: var(--ink-dim); font-size: 14px; line-height: 1.65; margin-bottom: 40px; }
+.case-callout strong { color: var(--ink); }
+.case-disclaimer { font-family: var(--mono); font-size: 10px; color: var(--ink-mute); letter-spacing: 0.08em; text-align: center; padding: 24px var(--pad); border-top: 1px solid var(--rule); }
+
+@media (max-width: 900px) {
+  .case-grid-b { grid-template-columns: 1fr 1fr; }
+  .case-grid-b > div:nth-child(2) { border-right: none; }
+  .case-grid-b > div:nth-child(3) { border-top: 1px solid var(--rule); }
+  .case-grid-b > div:nth-child(4) { border-top: 1px solid var(--rule); border-right: none; }
+  .cs-cards.two, .cs-cards.three, .cs-cards.four { grid-template-columns: 1fr; }
+  .cs-metric-row { grid-template-columns: 1fr 1fr; }
+  .cs-grid-two { grid-template-columns: 1fr; }
+}
+
 /* body background for Monolith pages */
 body { background: var(--bg); }
