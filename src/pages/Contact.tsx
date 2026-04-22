@@ -65,7 +65,7 @@ const Contact = () => {
               <span className="line">TOUCH.</span>
             </h1>
             <p className="contact-tagline">
-              Open to roles,<br />contract work,<br />or a good chat.
+              Whether you'd like to discuss a role, collaborate on something, or just say hello.
             </p>
           </div>
         </div>
@@ -75,9 +75,6 @@ const Contact = () => {
       <section className="contact-body">
         <div className="wrap">
           <div className="contact-narrow">
-            <p className="contact-intro">
-              Whether you'd like to discuss a role, collaborate on something, or just say hello.
-            </p>
             <p className="contact-intro">
               Reach me directly at{" "}
               <a href="mailto:lucas.daneluz@gmail.com">lucas.daneluz@gmail.com</a>
