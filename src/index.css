@@ -343,15 +343,14 @@ h1.display .line.in { clip-path: inset(0 0 -10% 0); transform: translateY(0); }
 .hw-tab { background: none; border: none; border-bottom: 2px solid transparent; padding: 12px 32px 12px 0; font-family: var(--display); font-size: 16px; font-weight: 600; color: var(--ink-mute); cursor: pointer; transition: color .2s; margin-bottom: -1px; letter-spacing: -0.01em; text-transform: var(--display-case); }
 .hw-tab:hover { color: var(--ink); }
 .hw-tab.active { color: var(--ink); border-bottom-color: var(--accent); }
-.hw-panels { display: grid; }
+.hw-panels { display: flex; flex-direction: row; align-items: center; gap: 3rem; }
+.hw-panels-text { flex: 1; min-width: 0; display: grid; }
 .hw-panel { grid-area: 1/1; opacity: 0; transition: opacity .3s; pointer-events: none; }
 .hw-panel.active { opacity: 1; pointer-events: auto; }
 .hw-panel h3 { font-family: var(--display); font-size: clamp(22px,2.5vw,36px); font-weight: 700; letter-spacing: -0.02em; margin-bottom: 20px; }
 .hw-panel p { color: var(--ink-dim); font-size: 16px; line-height: 1.65; }
-.hw-panel-inner { display: flex; flex-direction: row; align-items: center; gap: 3rem; }
-.hw-panel-text { flex: 1; min-width: 0; }
-.hw-panel-img { width: 180px; flex-shrink: 0; aspect-ratio: 1/1; overflow: hidden; display: flex; align-items: center; justify-content: center; }
-.hw-panel-img img { width: 100%; height: 100%; object-fit: contain; transition: opacity .3s; }
+.hw-panels-img { width: 180px; flex-shrink: 0; aspect-ratio: 1/1; position: relative; overflow: hidden; }
+.hw-img-item { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; transition: opacity .3s; mix-blend-mode: multiply; }
 
 /* --- WORK LIST --- */
 .work-section { padding: clamp(64px,8vw,120px) 0; }
@@ -537,8 +536,8 @@ html[data-theme="light"] .about-hero .right img { filter: grayscale(1) contrast(
   .hero-foot { grid-template-columns: 1fr; }
   .hero-tags { justify-content: flex-start; }
   .hw-tab { padding-right: 20px; font-size: 14px; }
-  .hw-panel-inner { flex-direction: column; gap: 1.5rem; }
-  .hw-panel-img { width: 100%; max-width: 160px; }
+  .hw-panels { flex-direction: column; gap: 1.5rem; }
+  .hw-panels-img { width: 100%; max-width: 160px; }
   .cta-links { gap: 16px; }
   .tweaks { right: 12px; bottom: 72px; width: calc(100vw - 24px); max-width: 320px; }
   .tweaks-trigger { right: 12px; bottom: 20px; }

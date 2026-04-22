@@ -204,19 +204,25 @@ const Index = () => {
             ))}
           </div>
           <div className="hw-panels">
-            {methodology.map((m, i) => (
-              <div key={m.title} className={`hw-panel${methodTab === i ? " active" : ""}`}>
-                <div className="hw-panel-inner">
-                  <div className="hw-panel-text">
-                    <h3>{m.title}</h3>
-                    <p>{m.description}</p>
-                  </div>
-                  <div className="hw-panel-img">
-                    <img src={m.image} alt={m.title} />
-                  </div>
+            <div className="hw-panels-text">
+              {methodology.map((m, i) => (
+                <div key={m.title} className={`hw-panel${methodTab === i ? " active" : ""}`}>
+                  <h3>{m.title}</h3>
+                  <p>{m.description}</p>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
+            <div className="hw-panels-img">
+              {methodology.map((m, i) => (
+                <img
+                  key={m.title}
+                  src={m.image}
+                  alt={m.title}
+                  className="hw-img-item"
+                  style={{ opacity: methodTab === i ? 1 : 0 }}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </section>
