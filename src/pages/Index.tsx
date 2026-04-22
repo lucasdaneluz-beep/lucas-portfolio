@@ -1,9 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import hwDiscover from "@/assets/hw-discover.png";
-import hwDefine from "@/assets/hw-define.png";
-import hwBaseline from "@/assets/hw-baseline.png";
-import hwDeliver from "@/assets/hw-deliver.png";
+import hwDiscover from "@/assets/hw-discover.webp";
+import hwDefine from "@/assets/hw-define.webp";
+import hwBaseline from "@/assets/hw-baseline.webp";
+import hwDeliver from "@/assets/hw-deliver.webp";
 
 const workItems = [
   {
