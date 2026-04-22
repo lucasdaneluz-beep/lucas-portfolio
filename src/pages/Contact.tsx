@@ -61,10 +61,12 @@ const Contact = () => {
         <div className="hero-main">
           <div className="wrap">
             <h1 className="display">
-              <span className="line">OPEN TO <em>ROLES</em>,</span>
-              <span className="line">CONTRACT WORK,</span>
-              <span className="line">OR A GOOD <em>CHAT</em>.</span>
+              <span className="line">GET IN</span>
+              <span className="line">TOUCH.</span>
             </h1>
+            <p className="contact-tagline">
+              Open to roles,<br />contract work,<br />or a good chat.
+            </p>
           </div>
         </div>
       </section>

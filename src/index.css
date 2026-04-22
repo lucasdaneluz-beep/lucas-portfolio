@@ -484,6 +484,11 @@ html[data-theme="light"] .about-hero .right img { filter: grayscale(1) contrast(
 .exp-row-b .meta-b { font-family: var(--mono); font-size: 10px; color: var(--ink-mute); letter-spacing: 0.08em; text-transform: uppercase; text-align: right; }
 
 /* --- CONTACT --- */
+.contact-tagline {
+  font-family: var(--display); font-size: clamp(20px, 2.5vw, 32px);
+  font-weight: 500; color: var(--ink-dim); line-height: 1.4;
+  margin-top: clamp(24px, 3vw, 40px); max-width: 24ch;
+}
 .contact-b { display: grid; grid-template-columns: 3fr 2fr; }
 .contact-b .left { padding: clamp(32px, 4vw, 56px) var(--pad); }
 .contact-b .right { padding: clamp(32px, 4vw, 56px) var(--pad); background: var(--bg-2); }
