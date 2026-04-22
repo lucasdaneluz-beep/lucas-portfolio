@@ -2,6 +2,10 @@ import React, { useEffect, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { Briefcase, TrendingUp, ArrowRight, Linkedin, Mail, Search, Compass, Rocket, BarChart2, ChevronRight, MapPin, ArrowDown } from "lucide-react";
 import profilePhoto from "@/assets/lucas-profile.png";
+import hwDiscover from "@/assets/hw-discover.png";
+import hwDefine from "@/assets/hw-define.png";
+import hwBaseline from "@/assets/hw-baseline.png";
+import hwDeliver from "@/assets/hw-deliver.png";
 
 const caseStudies = [
   {
@@ -67,21 +71,25 @@ const methodologySteps = [
     icon: <Search size={20} />,
     title: "Discover",
     description: "User research, data analysis, and stakeholder interviews to frame the real problem.",
+    image: hwDiscover,
   },
   {
     icon: <Compass size={20} />,
     title: "Define",
     description: "Synthesise insights into a clear strategy, prioritised roadmap, and success metrics.",
+    image: hwDefine,
   },
   {
     icon: <BarChart2 size={20} />,
     title: "Baseline",
     description: "Establish measurable benchmarks before shipping so progress is grounded in data, not assumption.",
+    image: hwBaseline,
   },
   {
     icon: <Rocket size={20} />,
     title: "Deliver",
     description: "Ship iteratively, measure outcomes, and refine based on real-world feedback.",
+    image: hwDeliver,
   },
 ];
 
@@ -171,23 +179,30 @@ const Index = () => {
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:flex lg:flex-row lg:items-stretch gap-3">
-          {methodologySteps.map(({ icon, title, description }, i) => (
+          {methodologySteps.map(({ icon, title, description, image }, i) => (
             <React.Fragment key={title}>
               <div
-                className="rounded-2xl p-4 relative lg:flex-1"
+                className="rounded-2xl p-4 relative lg:flex-1 flex flex-col"
                 style={{
                   background: "hsl(210 28% 11%)",
                   border: "1px solid hsl(210 20% 20%)",
                 }}
               >
-                <div
-                  className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0 mb-3"
-                  style={{ background: "hsl(174 80% 60% / 0.1)", color: "hsl(174 80% 60%)" }}
-                >
-                  {icon}
+                <div className="flex items-start gap-3 flex-1">
+                  <div className="flex-1 min-w-0">
+                    <div
+                      className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0 mb-3"
+                      style={{ background: "hsl(174 80% 60% / 0.1)", color: "hsl(174 80% 60%)" }}
+                    >
+                      {icon}
+                    </div>
+                    <p className="text-2xl font-bold mb-2" style={{ color: "hsl(210 25% 82%)" }}>{title}</p>
+                    <p className="text-sm leading-relaxed" style={{ color: "hsl(210 20% 55%)" }}>{description}</p>
+                  </div>
+                  <div className="w-[88px] shrink-0 aspect-square overflow-hidden flex items-center justify-center">
+                    <img src={image} alt={title} className="w-full h-full object-contain" />
+                  </div>
                 </div>
-                <p className="text-2xl font-bold mb-2" style={{ color: "hsl(210 25% 82%)" }}>{title}</p>
-                <p className="text-sm leading-relaxed" style={{ color: "hsl(210 20% 55%)" }}>{description}</p>
               </div>
               {i < methodologySteps.length - 1 && (
                 <div className="hidden lg:flex items-center justify-center flex-shrink-0">
