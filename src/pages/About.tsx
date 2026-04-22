@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import profilePhoto from "@/assets/lucas-profile.png";
 
@@ -7,11 +7,6 @@ const values = [
   { title: "Outcome-Led",      description: "Metrics defined before shipping. Progress measured against baselines, not gut feel." },
   { title: "Commercial Lens",  description: "Decisions weighed against business value — close to revenue, cost, and customer impact." },
   { title: "Cross-functional", description: "Bridging design, engineering, and stakeholders. Alignment is as much a deliverable as the feature." },
-];
-
-const personal = [
-  "Outside of product, my favourite people are my wife and our maltipoo, who also happen to be my best motivators and harshest critics.",
-  "I produce music and play in an alternative rock band. Working on a track, mixing and releasing has a similar feel to shipping a solid product.",
 ];
 
 const experience = [
@@ -53,6 +48,8 @@ const experience = [
 ];
 
 const About = () => {
+  const [valueTab, setValueTab] = useState(0);
+
   useEffect(() => {
     const els = document.querySelectorAll(".reveal");
     const io = new IntersectionObserver(
@@ -72,9 +69,6 @@ const About = () => {
       {/* ABOUT HERO */}
       <section className="about-hero">
         <div className="left">
-          <div className="hero-index">
-            PROFILE / 01 <span className="sep">·</span> LUCAS DANELUZ
-          </div>
           <h1>
             CLOSE TO <em>USERS</em>,<br />
             DATA, AND BUSINESS <em>OUTCOMES</em>.
@@ -91,56 +85,67 @@ const About = () => {
       </section>
 
       {/* WHAT I BRING */}
-      <section className="section reveal">
-        <div className="section-head">
-          <span>§ WHAT I BRING</span>
-          <h2>Four principles I return to</h2>
-          <span className="count">04 / 04</span>
-        </div>
-        <div className="method">
-          {values.map((v, i) => (
-            <div key={v.title}>
-              <div className="n">0{i + 1} / 04</div>
-              <h4>{v.title}</h4>
-              <p>{v.description}</p>
-            </div>
-          ))}
+      <section className="how-i-work reveal">
+        <div className="wrap">
+          <div className="hw-head">
+            <h2>WHAT I BRING</h2>
+            <p>Four principles I return to.</p>
+          </div>
+          <div className="hw-tabs">
+            {values.map((v, i) => (
+              <button key={v.title} className={`hw-tab${valueTab === i ? " active" : ""}`} onClick={() => setValueTab(i)}>
+                {v.title}
+              </button>
+            ))}
+          </div>
+          <div className="hw-panels">
+            {values.map((v, i) => (
+              <div key={v.title} className={`hw-panel${valueTab === i ? " active" : ""}`}>
+                <h3>{v.title}</h3>
+                <p>{v.description}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* OFF THE CLOCK */}
       <section className="manifesto reveal">
-        <div className="mf-left">
+        <div className="wrap">
           <h2>OFF THE <em>CLOCK</em>.</h2>
-        </div>
-        <div className="mf-right">
-          {personal.map((p, i) => (
-            <p key={i} style={{ fontStyle: "italic" }}>{p}</p>
-          ))}
+          <div className="mf-body">
+            <p style={{ fontStyle: "italic" }}>
+              Outside of product, my favourite people are my wife and our maltipoo,
+              who also happen to be my best motivators and harshest critics.
+            </p>
+            <p style={{ fontStyle: "italic" }}>
+              I produce music and play in an alternative rock band. Working on a track,
+              mixing and releasing has a similar feel to shipping a solid product.
+            </p>
+          </div>
         </div>
       </section>
 
       {/* EXPERIENCE */}
-      <section className="section reveal">
-        <div className="section-head">
-          <span>§ EXPERIENCE / 10+ YRS</span>
-          <h2>Building products people actually use</h2>
-          <span className="count">05 ROLES</span>
+      <section className="about-exp reveal">
+        <div className="wrap about-exp-head">
+          <div className="hw-head">
+            <h2>EXPERIENCE</h2>
+            <p>10+ years across B2B SaaS, FMCG, and supply chain.</p>
+          </div>
         </div>
-        <div className="exp-table">
-          {experience.map((e) => (
-            <div className="exp-row-b" key={`${e.company}-${e.period}`}>
-              <div className="period">{e.period}</div>
-              <div className="company">{e.company}</div>
-              <div>
-                <div style={{ fontWeight: 500, color: "var(--ink)", marginBottom: 8 }}>{e.role}</div>
-                <div style={{ color: "var(--ink-dim)", fontSize: 14 }}>{e.description}</div>
-              </div>
-              <div className="meta-b">{e.meta}</div>
+        {experience.map((e) => (
+          <div className="exp-row-b" key={`${e.company}-${e.period}`}>
+            <div className="period">{e.period}</div>
+            <div className="company">{e.company}</div>
+            <div>
+              <div style={{ fontWeight: 500, color: "var(--ink)", marginBottom: 8 }}>{e.role}</div>
+              <div style={{ color: "var(--ink-dim)", fontSize: 14 }}>{e.description}</div>
             </div>
-          ))}
-        </div>
-        <div style={{ padding: "32px var(--pad)", borderBottom: "1px solid var(--rule)" }}>
+            <div className="meta-b">{e.meta}</div>
+          </div>
+        ))}
+        <div style={{ padding: "32px var(--pad)" }}>
           <a
             href="/Lucas_Daneluz-CV.pdf"
             target="_blank"
@@ -158,18 +163,19 @@ const About = () => {
       </section>
 
       {/* CTA */}
-      <section
-        className="cta reveal"
-        style={{ paddingTop: "clamp(60px, 10vw, 120px)", paddingBottom: "clamp(60px, 10vw, 120px)" }}
-      >
-        <h2>LET'S <em>TALK</em>. <Link to="/contact">START →</Link></h2>
+      <section className="cta reveal">
+        <div className="wrap">
+          <h2>LET'S <em>TALK</em>. <Link to="/contact">START →</Link></h2>
+        </div>
       </section>
 
       <footer className="footer-b">
-        <span>© 2026 Lucas Daneluz · Product Manager</span>
-        <div className="socials">
-          <a href="mailto:lucas.daneluz@gmail.com">Email</a>
-          <a href="https://www.linkedin.com/in/lucasdaneluz" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <div className="wrap">
+          <span>© 2026 Lucas Daneluz · Product Manager</span>
+          <div className="socials">
+            <a href="mailto:lucas.daneluz@gmail.com">Email</a>
+            <a href="https://www.linkedin.com/in/lucasdaneluz" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          </div>
         </div>
       </footer>
     </>
