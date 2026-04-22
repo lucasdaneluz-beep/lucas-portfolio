@@ -1,5 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
+import hwDiscover from "@/assets/hw-discover.png";
+import hwDefine from "@/assets/hw-define.png";
+import hwBaseline from "@/assets/hw-baseline.png";
+import hwDeliver from "@/assets/hw-deliver.png";
 
 const ACCENTS = [
   { name: "Hot orange", hex: "#ffcc00" },
@@ -59,10 +63,10 @@ const workItems = [
 ];
 
 const methodology = [
-  { title: "Discover", description: "User research, data analysis, and stakeholder interviews to frame the real problem." },
-  { title: "Define",   description: "Synthesise insights into a clear strategy, prioritised roadmap, and success metrics." },
-  { title: "Baseline", description: "Establish measurable benchmarks before shipping so progress is grounded in data, not assumption." },
-  { title: "Deliver",  description: "Ship iteratively, measure outcomes, and refine based on real-world feedback." },
+  { title: "Discover", description: "User research, data analysis, and stakeholder interviews to frame the real problem.", image: hwDiscover },
+  { title: "Define",   description: "Synthesise insights into a clear strategy, prioritised roadmap, and success metrics.", image: hwDefine },
+  { title: "Baseline", description: "Establish measurable benchmarks before shipping so progress is grounded in data, not assumption.", image: hwBaseline },
+  { title: "Deliver",  description: "Ship iteratively, measure outcomes, and refine based on real-world feedback.", image: hwDeliver },
 ];
 
 type Theme = "dark" | "light";
@@ -202,8 +206,15 @@ const Index = () => {
           <div className="hw-panels">
             {methodology.map((m, i) => (
               <div key={m.title} className={`hw-panel${methodTab === i ? " active" : ""}`}>
-                <h3>{m.title}</h3>
-                <p>{m.description}</p>
+                <div className="hw-panel-inner">
+                  <div className="hw-panel-text">
+                    <h3>{m.title}</h3>
+                    <p>{m.description}</p>
+                  </div>
+                  <div className="hw-panel-img">
+                    <img src={m.image} alt={m.title} />
+                  </div>
+                </div>
               </div>
             ))}
           </div>
