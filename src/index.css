@@ -264,7 +264,7 @@ html[data-density="roomy"]   { --pad: clamp(28px, 5.5vw, 72px); }
 h1.display {
   font-family: var(--display);
   font-weight: var(--display-weight);
-  font-size: clamp(52px, 11.5vw, 180px);
+  font-size: clamp(34px, 8vw, 140px);
   line-height: 0.84;
   letter-spacing: -0.045em;
   text-transform: var(--display-case);
@@ -288,10 +288,7 @@ h1.display .line.in { clip-path: inset(0 0 -10% 0); transform: translateY(0); }
   color: var(--ink); cursor: pointer; text-decoration: none; transition: color .2s;
 }
 .scroll-cue:hover { color: var(--accent); }
-.scroll-cue-label {
-  font-family: var(--mono); font-size: 11px;
-  letter-spacing: 0.14em; text-transform: uppercase;
-}
+.scroll-cue-arrow { font-size: 28px; line-height: 1; }
 .hero-tags {
   font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em;
   text-transform: uppercase; color: var(--ink-dim);
@@ -370,8 +367,8 @@ h1.display .line.in { clip-path: inset(0 0 -10% 0); transform: translateY(0); }
 }
 .cta h2 {
   font-family: var(--display); font-weight: var(--display-weight);
-  font-size: clamp(52px, 11vw, 170px);
-  line-height: 0.88; letter-spacing: -0.04em;
+  font-size: clamp(36px, 4.5vw, 72px);
+  line-height: 0.95; letter-spacing: -0.03em;
   text-transform: var(--display-case); max-width: 18ch;
 }
 .cta h2 em { font-style: normal; color: var(--accent); }

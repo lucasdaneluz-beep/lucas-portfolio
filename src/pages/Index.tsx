@@ -164,7 +164,7 @@ const Index = () => {
             </h1>
             <div className="hero-foot">
               <a className="scroll-cue" href="#work">
-                <span className="scroll-cue-label">Scroll ↓</span>
+                <span className="scroll-cue-arrow bounce-arrow">↓</span>
               </a>
               <div className="hero-tags">
                 0→1 Builds · Stakeholder Alignment · User Research · Outcome-Led
