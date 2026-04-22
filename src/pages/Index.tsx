@@ -156,24 +156,22 @@ const Index = () => {
       {/* HERO */}
       <section className="hero">
         <div className="hero-main reveal" ref={heroMainRef}>
-          <h1 className="display">
-            <span className="line">LUCAS</span>
-            <span className="line">DANELUZ</span>
-            <span className="line"><span style={{ color: "var(--accent)" }}>PRODUCT</span> MANAGER.</span>
-          </h1>
-          <div className="hero-foot">
-            <a className="scroll-cue" href="#work">
-              <span className="scroll-cue-label">Scroll ↓</span>
-            </a>
-            <div className="hero-tags">
-              <span>0→1 Builds</span>
-              <span>Stakeholder Alignment</span>
-              <span>User Research</span>
-              <span>Outcome-Led</span>
+          <div className="wrap">
+            <h1 className="display">
+              <span className="line">LUCAS</span>
+              <span className="line">DANELUZ</span>
+              <span className="line"><span style={{ color: "var(--accent)" }}>PRODUCT</span> MANAGER.</span>
+            </h1>
+            <div className="hero-foot">
+              <a className="scroll-cue" href="#work">
+                <span className="scroll-cue-label">Scroll ↓</span>
+              </a>
+              <div className="hero-tags">
+                0→1 Builds · Stakeholder Alignment · User Research · Outcome-Led
+              </div>
             </div>
           </div>
         </div>
-
       </section>
 
       {/* MANIFESTO */}
@@ -242,33 +240,28 @@ const Index = () => {
 
       {/* CTA */}
       <section className="cta reveal">
-        <h2>
-          WANT TO <em>WORK</em>
-          <br />
-          TOGETHER?{" "}
-          <Link to="/contact">START HERE →</Link>
-        </h2>
-        <div className="cta-sub">
-          <a href="mailto:lucas.daneluz@gmail.com">
-            <div className="lbl">Email</div>
-            <div className="val">lucas.daneluz@gmail.com</div>
-          </a>
-          <a href="https://www.linkedin.com/in/lucasdaneluz" target="_blank" rel="noopener noreferrer">
-            <div className="lbl">LinkedIn</div>
-            <div className="val">/in/lucasdaneluz</div>
-          </a>
-          <div>
-            <div className="lbl">Based</div>
-            <div className="val">London, UK</div>
+        <div className="wrap">
+          <h2>
+            WANT TO <em>WORK</em>
+            <br />
+            TOGETHER?{" "}
+            <Link to="/contact">START HERE →</Link>
+          </h2>
+          <div className="cta-links">
+            <a href="mailto:lucas.daneluz@gmail.com">lucas.daneluz@gmail.com</a>
+            <a href="https://www.linkedin.com/in/lucasdaneluz" target="_blank" rel="noopener noreferrer">/in/lucasdaneluz</a>
+            <span>London, UK</span>
           </div>
         </div>
       </section>
 
       <footer className="footer-b">
-        <span>© 2026 Lucas Daneluz · Product Manager · London</span>
-        <div className="socials">
-          <a href="mailto:lucas.daneluz@gmail.com">Email</a>
-          <a href="https://www.linkedin.com/in/lucasdaneluz" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <div className="wrap">
+          <span>© 2026 Lucas Daneluz · Product Manager · London</span>
+          <div className="socials">
+            <a href="mailto:lucas.daneluz@gmail.com">Email</a>
+            <a href="https://www.linkedin.com/in/lucasdaneluz" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          </div>
         </div>
       </footer>
 
