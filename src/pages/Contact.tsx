@@ -21,7 +21,6 @@ const Contact = () => {
     resolver: zodResolver(schema),
   });
 
-  // Stagger hero headline lines on mount
   useEffect(() => {
     const lines = document.querySelectorAll("h1.display .line");
     lines.forEach((el, i) => {
@@ -59,15 +58,14 @@ const Contact = () => {
     <>
       {/* HERO */}
       <section className="hero">
-        <div className="hero-main" style={{ paddingBottom: 40 }}>
-          <div className="hero-index">
-            CONTACT / 04 <span className="sep">·</span> INBOX OPEN
+        <div className="hero-main">
+          <div className="wrap">
+            <h1 className="display">
+              <span className="line">OPEN TO <em>ROLES</em>,</span>
+              <span className="line">CONTRACT WORK,</span>
+              <span className="line">OR A GOOD <em>CHAT</em>.</span>
+            </h1>
           </div>
-          <h1 className="display">
-            <span className="line">OPEN TO <em>ROLES</em>,</span>
-            <span className="line">CONTRACT WORK,</span>
-            <span className="line">OR A GOOD <em>CHAT</em>.</span>
-          </h1>
         </div>
       </section>
 
@@ -101,37 +99,33 @@ const Contact = () => {
 
         <div className="right">
           <div className="direct-reach-label">OR REACH ME DIRECTLY</div>
-          <a href="mailto:lucas.daneluz@gmail.com" className="direct-b">
-            <div className="lbl">EMAIL</div>
-            <div className="val">lucas.daneluz@gmail.com</div>
-          </a>
-          <a
-            href="https://www.linkedin.com/in/lucasdaneluz"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="direct-b"
-          >
-            <div className="lbl">LINKEDIN</div>
-            <div className="val">/in/lucasdaneluz</div>
-          </a>
-          <div className="direct-b" style={{ cursor: "default" }}>
-            <div className="lbl">LOCATION</div>
-            <div className="val">London, UK</div>
-          </div>
-          <div className="direct-b" style={{ cursor: "default", borderBottom: "none" }}>
-            <div className="lbl">AVAILABILITY</div>
-            <div className="val" style={{ color: "var(--accent)" }}>
+          <div className="direct-links">
+            <a href="mailto:lucas.daneluz@gmail.com" className="direct-link">
+              lucas.daneluz@gmail.com
+            </a>
+            <a
+              href="https://www.linkedin.com/in/lucasdaneluz"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="direct-link"
+            >
+              /in/lucasdaneluz
+            </a>
+            <span className="direct-link muted">London, UK</span>
+            <span className="direct-link accent">
               <span className="pulse" />Open to new opportunities
-            </div>
+            </span>
           </div>
         </div>
       </section>
 
       <footer className="footer-b">
-        <span>© 2026 Lucas Daneluz · Product Manager</span>
-        <div className="socials">
-          <a href="mailto:lucas.daneluz@gmail.com">Email</a>
-          <a href="https://www.linkedin.com/in/lucasdaneluz" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <div className="wrap">
+          <span>© 2026 Lucas Daneluz · Product Manager</span>
+          <div className="socials">
+            <a href="mailto:lucas.daneluz@gmail.com">Email</a>
+            <a href="https://www.linkedin.com/in/lucasdaneluz" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          </div>
         </div>
       </footer>
     </>

@@ -486,7 +486,13 @@ html[data-theme="light"] .about-hero .right img { filter: grayscale(1) contrast(
 /* --- CONTACT --- */
 .contact-b { display: grid; grid-template-columns: 3fr 2fr; }
 .contact-b .left { padding: clamp(32px, 4vw, 56px) var(--pad); }
-.contact-b .right { padding: clamp(32px, 4vw, 56px) var(--pad); }
+.contact-b .right { padding: clamp(32px, 4vw, 56px) var(--pad); background: var(--bg-2); }
+.direct-reach-label { font-family: var(--mono); font-size: 10px; color: var(--ink-mute); letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 28px; }
+.direct-links { display: flex; flex-direction: column; gap: 20px; }
+.direct-link { font-family: var(--display); font-size: 18px; font-weight: 600; color: var(--ink); text-decoration: none; transition: color .2s; display: flex; align-items: center; gap: 8px; }
+a.direct-link:hover { color: var(--accent); }
+.direct-link.muted { color: var(--ink-dim); }
+.direct-link.accent { color: var(--accent); }
 .form-b label { display: block; margin-bottom: 32px; }
 .form-b .lbl { font-family: var(--mono); font-size: 10px; color: var(--ink-mute); letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 10px; }
 .form-b input, .form-b textarea {
