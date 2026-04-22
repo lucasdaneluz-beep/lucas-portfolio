@@ -5,15 +5,6 @@ import hwDefine from "@/assets/hw-define.png";
 import hwBaseline from "@/assets/hw-baseline.png";
 import hwDeliver from "@/assets/hw-deliver.png";
 
-const ACCENTS = [
-  { name: "Hot orange", hex: "#ffcc00" },
-  { name: "Electric lime", hex: "#c8ff1a" },
-  { name: "Cyber cyan", hex: "#00e5ff" },
-  { name: "Hot pink", hex: "#ff3d8a" },
-  { name: "Sun yellow", hex: "#ffcc00" },
-  { name: "Pure white", hex: "#ffffff" },
-];
-
 const workItems = [
   {
     id: "walkup",
@@ -69,49 +60,9 @@ const methodology = [
   { title: "Deliver",  description: "Ship iteratively, measure outcomes, and refine based on real-world feedback.", image: hwDeliver },
 ];
 
-type Theme = "dark" | "light";
-type Weight = "700" | "800" | "900";
-type DisplayCase = "uppercase" | "none";
-type Density = "compact" | "normal" | "roomy";
-
-interface Tweaks {
-  accent: string;
-  theme: Theme;
-  displayWeight: Weight;
-  displayCase: DisplayCase;
-  density: Density;
-}
-
-const defaultTweaks: Tweaks = {
-  accent: "#ffcc00",
-  theme: "dark",
-  displayWeight: "800",
-  displayCase: "uppercase",
-  density: "roomy",
-};
-
 const Index = () => {
-  const [tweaks, setTweaks] = useState<Tweaks>(defaultTweaks);
-  const [tweaksOpen, setTweaksOpen] = useState(false);
   const [methodTab, setMethodTab] = useState(0);
   const heroMainRef = useRef<HTMLDivElement>(null);
-
-  // Apply tweaks to document root CSS variables
-  useEffect(() => {
-    const r = document.documentElement;
-    r.style.setProperty("--accent", tweaks.accent);
-    r.setAttribute("data-theme", tweaks.theme);
-    r.style.setProperty("--display-weight", tweaks.displayWeight);
-    r.style.setProperty("--display-case", tweaks.displayCase);
-    r.setAttribute("data-density", tweaks.density);
-    return () => {
-      r.removeAttribute("data-theme");
-      r.removeAttribute("data-density");
-      r.style.removeProperty("--accent");
-      r.style.removeProperty("--display-weight");
-      r.style.removeProperty("--display-case");
-    };
-  }, [tweaks]);
 
   // Scroll reveal
   useEffect(() => {
@@ -151,9 +102,6 @@ const Index = () => {
     hero.addEventListener("pointermove", handler);
     return () => hero.removeEventListener("pointermove", handler);
   }, []);
-
-  const updateTweak = <K extends keyof Tweaks>(key: K, val: Tweaks[K]) =>
-    setTweaks((prev) => ({ ...prev, [key]: val }));
 
   return (
     <>
@@ -220,6 +168,7 @@ const Index = () => {
                   alt={m.title}
                   className="hw-img-item"
                   style={{ opacity: methodTab === i ? 1 : 0 }}
+                  loading={i === 0 ? "eager" : "lazy"}
                 />
               ))}
             </div>
@@ -239,14 +188,19 @@ const Index = () => {
               if (w.comingSoon) {
                 return (
                   <div key={w.id} className="work-row soon">
-                    <span className="w-title">{w.title}</span>
+                    <div className="w-info">
+                      <span className="w-title">{w.title}</span>
+                    </div>
                     <span className="w-arrow">—</span>
                   </div>
                 );
               }
               return (
                 <Link key={w.id} to={`/case-studies/${w.id}`} className="work-row">
-                  <span className="w-title">{w.title}</span>
+                  <div className="w-info">
+                    <span className="w-title">{w.title}</span>
+                    {w.metric && <span className="w-metric">{w.metric}</span>}
+                  </div>
                   <span className="w-arrow">→</span>
                 </Link>
               );
@@ -282,81 +236,6 @@ const Index = () => {
         </div>
       </footer>
 
-      {/* TWEAKS PANEL */}
-      {tweaksOpen && (
-        <div className="tweaks">
-          <div className="tweaks-hdr">
-            <span>TWEAKS</span>
-            <button onClick={() => setTweaksOpen(false)} aria-label="Close">×</button>
-          </div>
-          <div className="tweaks-body">
-            <div className="tweak-group">
-              <label className="tweak-label">Accent color</label>
-              <div className="swatch-row">
-                {ACCENTS.map((a) => (
-                  <button
-                    key={a.hex}
-                    className={`sw${tweaks.accent === a.hex ? " on" : ""}`}
-                    style={{ "--c": a.hex } as React.CSSProperties}
-                    title={a.name}
-                    onClick={() => updateTweak("accent", a.hex)}
-                  />
-                ))}
-              </div>
-            </div>
-
-            <div className="tweak-group">
-              <label className="tweak-label">Theme</label>
-              <div className="seg">
-                {(["dark", "light"] as Theme[]).map((v) => (
-                  <button key={v} className={tweaks.theme === v ? "on" : ""} onClick={() => updateTweak("theme", v)}>
-                    {v === "dark" ? "Dark" : "Light"}
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            <div className="tweak-group">
-              <label className="tweak-label">Display weight</label>
-              <div className="seg">
-                {(["700", "800", "900"] as Weight[]).map((v) => (
-                  <button key={v} className={tweaks.displayWeight === v ? "on" : ""} onClick={() => updateTweak("displayWeight", v)}>
-                    {v}
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            <div className="tweak-group">
-              <label className="tweak-label">Display case</label>
-              <div className="seg">
-                <button className={tweaks.displayCase === "uppercase" ? "on" : ""} onClick={() => updateTweak("displayCase", "uppercase")}>UPPER</button>
-                <button className={tweaks.displayCase === "none" ? "on" : ""} onClick={() => updateTweak("displayCase", "none")}>Mixed</button>
-              </div>
-            </div>
-
-            <div className="tweak-group">
-              <label className="tweak-label">Density</label>
-              <div className="seg">
-                {(["compact", "normal", "roomy"] as Density[]).map((v) => (
-                  <button key={v} className={tweaks.density === v ? "on" : ""} onClick={() => updateTweak("density", v)}>
-                    {v.charAt(0).toUpperCase() + v.slice(1)}
-                  </button>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
-
-      <button
-        className="tweaks-trigger"
-        onClick={() => setTweaksOpen((v) => !v)}
-        title="Tweaks"
-        aria-label="Open tweaks panel"
-      >
-        ⚙
-      </button>
     </>
   );
 };
