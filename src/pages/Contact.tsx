@@ -71,52 +71,53 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* CONTACT SPLIT */}
-      <section className="contact-b">
-        <div className="left">
-          <form className="form-b" onSubmit={handleSubmit(onSubmit)} noValidate>
-            <label>
-              <div className="lbl">NAME</div>
-              <input type="text" {...register("name")} placeholder="Your name" />
-              {errors.name && <div className="field-error">{errors.name.message}</div>}
-            </label>
-            <label>
-              <div className="lbl">EMAIL</div>
-              <input type="email" {...register("email")} placeholder="your@email.com" />
-              {errors.email && <div className="field-error">{errors.email.message}</div>}
-            </label>
-            <label>
-              <div className="lbl">MESSAGE</div>
-              <textarea {...register("message")} rows={5} placeholder="What's on your mind?" />
-              {errors.message && <div className="field-error">{errors.message.message}</div>}
-            </label>
-            <button type="submit" disabled={isSubmitting}>
-              {isSubmitting ? "SENDING…" : "SEND MESSAGE →"}
-            </button>
-            {statusMsg && (
-              <p className="status" style={{ color: statusColor }}>{statusMsg}</p>
-            )}
-          </form>
-        </div>
+      {/* CONTACT BODY */}
+      <section className="contact-body">
+        <div className="wrap">
+          <div className="contact-narrow">
+            <p className="contact-intro">
+              Whether you'd like to discuss a role, collaborate on something, or just say hello.
+            </p>
+            <p className="contact-intro">
+              Reach me directly at{" "}
+              <a href="mailto:lucas.daneluz@gmail.com">lucas.daneluz@gmail.com</a>
+              {" "}or on{" "}
+              <a href="https://www.linkedin.com/in/lucasdaneluz" target="_blank" rel="noopener noreferrer">LinkedIn</a>.
+            </p>
+            <p className="contact-avail">
+              <span className="pulse" />
+              <span style={{ color: "var(--accent)" }}>Open to new opportunities</span>
+              <span className="contact-avail-sep">·</span>
+              London, UK
+            </p>
 
-        <div className="right">
-          <div className="direct-reach-label">OR REACH ME DIRECTLY</div>
-          <div className="direct-links">
-            <a href="mailto:lucas.daneluz@gmail.com" className="direct-link">
-              lucas.daneluz@gmail.com
-            </a>
-            <a
-              href="https://www.linkedin.com/in/lucasdaneluz"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="direct-link"
-            >
-              /in/lucasdaneluz
-            </a>
-            <span className="direct-link muted">London, UK</span>
-            <span className="direct-link accent">
-              <span className="pulse" />Open to new opportunities
-            </span>
+            <hr className="contact-rule" />
+
+            <p className="contact-form-label">Alternatively, use the form below.</p>
+
+            <form className="form-b" onSubmit={handleSubmit(onSubmit)} noValidate>
+              <label>
+                <div className="lbl">NAME</div>
+                <input type="text" {...register("name")} placeholder="Your name" />
+                {errors.name && <div className="field-error">{errors.name.message}</div>}
+              </label>
+              <label>
+                <div className="lbl">EMAIL</div>
+                <input type="email" {...register("email")} placeholder="your@email.com" />
+                {errors.email && <div className="field-error">{errors.email.message}</div>}
+              </label>
+              <label>
+                <div className="lbl">MESSAGE</div>
+                <textarea {...register("message")} rows={5} placeholder="What's on your mind?" />
+                {errors.message && <div className="field-error">{errors.message.message}</div>}
+              </label>
+              <button type="submit" disabled={isSubmitting}>
+                {isSubmitting ? "SENDING…" : "SEND MESSAGE →"}
+              </button>
+              {statusMsg && (
+                <p className="status" style={{ color: statusColor }}>{statusMsg}</p>
+              )}
+            </form>
           </div>
         </div>
       </section>

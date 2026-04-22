@@ -489,15 +489,15 @@ html[data-theme="light"] .about-hero .right img { filter: grayscale(1) contrast(
   font-weight: 500; color: var(--ink-dim); line-height: 1.4;
   margin-top: clamp(24px, 3vw, 40px); max-width: 24ch;
 }
-.contact-b { display: grid; grid-template-columns: 3fr 2fr; }
-.contact-b .left { padding: clamp(32px, 4vw, 56px) var(--pad); }
-.contact-b .right { padding: clamp(32px, 4vw, 56px) var(--pad); background: var(--bg-2); }
-.direct-reach-label { font-family: var(--mono); font-size: 10px; color: var(--ink-mute); letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 28px; }
-.direct-links { display: flex; flex-direction: column; gap: 20px; }
-.direct-link { font-family: var(--display); font-size: 18px; font-weight: 600; color: var(--ink); text-decoration: none; transition: color .2s; display: flex; align-items: center; gap: 8px; }
-a.direct-link:hover { color: var(--accent); }
-.direct-link.muted { color: var(--ink-dim); }
-.direct-link.accent { color: var(--accent); }
+.contact-body { padding: clamp(48px, 6vw, 80px) 0 clamp(80px, 10vw, 120px); }
+.contact-narrow { max-width: 640px; }
+.contact-intro { font-size: 18px; color: var(--ink-dim); line-height: 1.65; margin-bottom: 16px; }
+.contact-intro a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--rule-2); transition: color .2s; }
+.contact-intro a:hover { color: var(--accent); }
+.contact-avail { display: flex; align-items: center; gap: 10px; margin-top: 24px; font-family: var(--mono); font-size: 11px; color: var(--ink-mute); letter-spacing: 0.08em; text-transform: uppercase; }
+.contact-avail-sep { color: var(--ink-mute); }
+.contact-rule { border: none; border-top: 1px solid var(--rule); margin: 48px 0 32px; }
+.contact-form-label { font-family: var(--mono); font-size: 11px; color: var(--ink-mute); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 40px; }
 .form-b label { display: block; margin-bottom: 32px; }
 .form-b .lbl { font-family: var(--mono); font-size: 10px; color: var(--ink-mute); letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 10px; }
 .form-b input, .form-b textarea {
@@ -525,14 +525,6 @@ a.direct-link:hover { color: var(--accent); }
   font-family: var(--mono); font-size: 10px; color: #ff6a6a;
   margin-top: 6px; letter-spacing: 0.08em; text-transform: uppercase;
 }
-.direct-b {
-  display: block; padding: 24px 0;
-  text-decoration: none; transition: color .2s; color: var(--ink);
-}
-.direct-b .lbl { font-family: var(--mono); font-size: 10px; color: var(--ink-mute); letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 8px; }
-.direct-b .val { font-family: var(--display); font-size: 22px; font-weight: 600; letter-spacing: -0.01em; color: var(--ink); }
-.direct-b:hover .val { color: var(--accent); }
-.direct-reach-label { font-family: var(--mono); font-size: 10px; color: var(--ink-mute); letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 24px; }
 
 /* --- RESPONSIVE --- */
 @media (max-width: 900px) {
@@ -552,8 +544,6 @@ a.direct-link:hover { color: var(--accent); }
   .about-hero .right { min-height: 300px; }
   .exp-row-b { grid-template-columns: 1fr; gap: 8px; }
   .exp-row-b .meta-b { text-align: left; }
-  .contact-b { grid-template-columns: 1fr; }
-  .contact-b .left { }
 }
 
 /* --- CASE STUDIES (Monolith) --- */
