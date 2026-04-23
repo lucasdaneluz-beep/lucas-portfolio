@@ -272,6 +272,12 @@ h1.display {
 }
 h1.display em { font-style: normal; color: var(--accent); }
 h1.display .line { display: block; overflow: hidden; }
+h1.display .hero-statement {
+  font-size: clamp(26px, 4vw, 58px);
+  line-height: 0.92;
+  letter-spacing: -0.03em;
+  max-width: 14ch;
+}
 h1.display .line {
   clip-path: inset(0 0 100% 0);
   transform: translateY(20%);
@@ -279,9 +285,49 @@ h1.display .line {
 }
 h1.display .line.in { clip-path: inset(0 0 -10% 0); transform: translateY(0); }
 
+.hero-intro {
+  color: var(--ink-dim);
+  font-size: clamp(18px, 2vw, 24px);
+  line-height: 1.45;
+  max-width: 34ch;
+  margin-top: clamp(28px, 4vw, 40px);
+}
+
 .hero-foot {
   display: grid; grid-template-columns: 1fr auto; gap: 32px; align-items: end;
   margin-top: clamp(40px, 7vw, 80px); position: relative;
+}
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.hero-cta {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #000;
+  background: var(--accent);
+  border: 1px solid var(--accent);
+  text-decoration: none;
+  padding: 14px 18px;
+  transition: transform .2s, filter .2s, color .2s, background .2s;
+}
+.hero-cta:hover {
+  filter: brightness(1.05);
+  transform: translateY(-2px);
+}
+.hero-cta.secondary {
+  background: transparent;
+  color: var(--ink);
+  border-color: var(--rule-2);
+}
+.hero-cta.secondary:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  filter: none;
 }
 .scroll-cue {
   display: inline-flex; flex-direction: column; gap: 4px;
@@ -293,6 +339,7 @@ h1.display .line.in { clip-path: inset(0 0 -10% 0); transform: translateY(0); }
   font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em;
   text-transform: uppercase; color: var(--ink-dim);
   text-align: right;
+  max-width: 24ch;
 }
 
 .hero-meta {
@@ -338,7 +385,7 @@ h1.display .line.in { clip-path: inset(0 0 -10% 0); transform: translateY(0); }
 .how-i-work { padding: clamp(64px,8vw,120px) 0; background: var(--bg); }
 .hw-head { margin-bottom: 48px; }
 .hw-head h2 { font-family: var(--display); font-size: clamp(28px,3.5vw,48px); font-weight: var(--display-weight); letter-spacing: -0.02em; text-transform: var(--display-case); margin-bottom: 12px; }
-.hw-head p { font-family: var(--mono); font-size: 11px; color: var(--ink-mute); letter-spacing: 0.12em; text-transform: uppercase; }
+.hw-head p { color: var(--ink-dim); font-size: 16px; line-height: 1.65; max-width: 58ch; }
 .hw-tabs { display: flex; margin-bottom: 48px; }
 .hw-tab { background: none; border: none; border-bottom: 2px solid transparent; padding: 12px 32px 12px 0; font-family: var(--display); font-size: 16px; font-weight: 600; color: var(--ink-mute); cursor: pointer; transition: color .2s; margin-bottom: -1px; letter-spacing: -0.01em; text-transform: var(--display-case); }
 .hw-tab:hover { color: var(--ink); }
@@ -351,12 +398,43 @@ h1.display .line.in { clip-path: inset(0 0 -10% 0); transform: translateY(0); }
 .hw-panel p { color: var(--ink-dim); font-size: 16px; line-height: 1.65; }
 .hw-panels-img { width: 180px; flex-shrink: 0; aspect-ratio: 1/1; position: relative; overflow: hidden; }
 .hw-img-item { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; transition: opacity .3s; mix-blend-mode: screen; }
+.principles-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  background: var(--rule);
+  border: 1px solid var(--rule);
+}
+.principle-card {
+  background: var(--bg);
+  padding: clamp(24px, 4vw, 36px);
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.principle-card h3 {
+  font-family: var(--display);
+  font-size: clamp(22px, 2.6vw, 34px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 0.95;
+  text-transform: var(--display-case);
+  margin-bottom: 18px;
+  max-width: 12ch;
+}
+.principle-card p {
+  color: var(--ink-dim);
+  font-size: 16px;
+  line-height: 1.65;
+  max-width: 32ch;
+}
 
 /* --- WORK LIST --- */
 .work-section { padding: clamp(64px,8vw,120px) 0; }
 .work-head { padding: 0 0 clamp(36px,5vw,56px); }
 .work-head h2 { font-family: var(--display); font-size: clamp(32px,4vw,52px); font-weight: var(--display-weight); letter-spacing: -0.02em; text-transform: var(--display-case); margin-bottom: 8px; }
-.work-head p { font-family: var(--mono); font-size: 11px; color: var(--ink-mute); letter-spacing: 0.12em; text-transform: uppercase; }
+.work-head p { color: var(--ink-dim); font-size: 16px; line-height: 1.65; max-width: 58ch; }
 .work-row { display: flex; align-items: center; justify-content: space-between; padding: 22px 0; text-decoration: none; transition: color .25s; }
 .work-row.soon { opacity: 0.4; pointer-events: none; }
 .work-row:not(.soon):hover .w-title { color: var(--accent); }
@@ -379,6 +457,13 @@ h1.display .line.in { clip-path: inset(0 0 -10% 0); transform: translateY(0); }
 .cta h2 em { font-style: normal; color: var(--accent); }
 .cta h2 a { font-style: normal; color: var(--accent); text-decoration: none; border-bottom: 4px solid var(--accent); transition: opacity .2s; }
 .cta h2 a:hover { opacity: 0.7; }
+.cta-copy {
+  color: var(--ink-dim);
+  font-size: 18px;
+  line-height: 1.6;
+  max-width: 42ch;
+  margin-top: 24px;
+}
 .cta-links {
   display: flex; gap: 32px; flex-wrap: wrap;
   margin-top: clamp(40px, 6vw, 80px);
@@ -486,10 +571,13 @@ html[data-theme="light"] .about-hero .right img { filter: grayscale(1) contrast(
   .nav-links a:not(.nav-hamburger-wrap) { display: none; }
   .nav-hamburger { display: flex; }
   .hero-foot { grid-template-columns: 1fr; }
-  .hero-tags { justify-content: flex-start; }
+  .hero-tags { text-align: left; }
+  .hero-actions { gap: 12px; }
   .hw-tab { padding-right: 20px; font-size: 14px; }
   .hw-panels { flex-direction: column; gap: 1.5rem; }
   .hw-panels-img { width: 100%; max-width: 160px; }
+  .principles-grid { grid-template-columns: 1fr; }
+  .principle-card { min-height: unset; }
   .cta-links { gap: 16px; }
   .about-hero { grid-template-columns: 1fr; }
   .about-hero .left { }

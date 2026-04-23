@@ -1,9 +1,5 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-import hwDiscover from "@/assets/hw-discover.webp";
-import hwDefine from "@/assets/hw-define.webp";
-import hwBaseline from "@/assets/hw-baseline.webp";
-import hwDeliver from "@/assets/hw-deliver.webp";
 
 const workItems = [
   {
@@ -53,15 +49,26 @@ const workItems = [
   },
 ];
 
-const methodology = [
-  { title: "Discover", description: "User research, data analysis, and stakeholder interviews to frame the real problem.", image: hwDiscover },
-  { title: "Define",   description: "Synthesise insights into a clear strategy, prioritised roadmap, and success metrics.", image: hwDefine },
-  { title: "Baseline", description: "Establish measurable benchmarks before shipping so progress is grounded in data, not assumption.", image: hwBaseline },
-  { title: "Deliver",  description: "Ship iteratively, measure outcomes, and refine based on real-world feedback.", image: hwDeliver },
+const principles = [
+  {
+    title: "Research Before Roadmap",
+    description: "Understand the real problem before moving to solutions.",
+  },
+  {
+    title: "Baselines Before Launch",
+    description: "Define success early so progress can be measured properly.",
+  },
+  {
+    title: "Alignment Is Part Of The Work",
+    description: "Good product work means creating shared understanding, not just shipping.",
+  },
+  {
+    title: "Commercial Reality Matters",
+    description: "The best decisions work for users and make sense for the business.",
+  },
 ];
 
 const Index = () => {
-  const [methodTab, setMethodTab] = useState(0);
   const heroMainRef = useRef<HTMLDivElement>(null);
 
   // Scroll reveal
@@ -112,66 +119,52 @@ const Index = () => {
             <h1 className="display">
               <span className="line">LUCAS</span>
               <span className="line">DANELUZ</span>
-              <span className="line"><span style={{ color: "var(--accent)" }}>PRODUCT</span> MANAGER.</span>
+              <span className="line hero-statement">FROM USER PAIN AND</span>
+              <span className="line hero-statement">STAKEHOLDER NOISE TO</span>
+              <span className="line hero-statement">CLEAR PRIORITIES AND</span>
+              <span className="line hero-statement"><span style={{ color: "var(--accent)" }}>MEASURABLE OUTCOMES.</span></span>
             </h1>
+            <p className="hero-intro">
+              I help teams bring structure to ambiguity across user needs, business goals, and delivery constraints.
+            </p>
             <div className="hero-foot">
-              <a className="scroll-cue" href="#work">
-                <span className="scroll-cue-arrow bounce-arrow">↓</span>
-              </a>
+              <div className="hero-actions">
+                <Link className="hero-cta" to="/case-studies/walkup">View Case Studies →</Link>
+                <Link className="hero-cta secondary" to="/about">About Me →</Link>
+              </div>
               <div className="hero-tags">
-                0→1 Builds · Stakeholder Alignment · User Research · Outcome-Led
+                10+ Years Across SaaS, FMCG, And Supply Chain
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* MANIFESTO */}
+      {/* CROSS-INDUSTRY */}
       <section className="manifesto reveal">
         <div className="wrap">
-          <h2>TURNING REAL<br /><span style={{ color: "var(--accent)" }}>PAIN POINTS</span> INTO<br /><span style={{ color: "var(--accent)" }}>MEASURABLE IMPACT</span>.</h2>
+          <h2>A PRODUCT LENS<br />SHAPED BY <span style={{ color: "var(--accent)" }}>COMPLEXITY</span>.</h2>
           <div className="mf-body">
-            <p>A commercially-driven PM with 10+ years across{" "}<strong style={{ color: "var(--ink)" }}>B2B SaaS, FMCG, and supply chain</strong>, always close to users, data, and business outcomes.</p>
-            <p>I care about the parts of product that don't trend: baselines before launch, outcomes over outputs, and alignment as a deliverable.</p>
+            <p>I&apos;ve worked in environments where customer needs, operational complexity, and commercial pressure all matter at once. That&apos;s the lens I bring to product.</p>
+            <p>Across SaaS, FMCG, and supply chain, I&apos;ve learned how to work through ambiguity, weigh trade-offs, and focus teams on what matters most. I&apos;m at my best when the problem is messy, the inputs are noisy, and clarity needs to be created before progress can happen.</p>
           </div>
         </div>
       </section>
 
-      {/* HOW I WORK */}
+      {/* HOW I CREATE CLARITY */}
       <section className="how-i-work reveal">
         <div className="wrap">
           <div className="hw-head">
-            <h2>HOW I WORK</h2>
-            <p>A structured approach to building the right thing.</p>
+            <h2>HOW I CREATE CLARITY</h2>
+            <p>The product work I value most is grounded in evidence, shaped by alignment, and measured by outcomes.</p>
           </div>
-          <div className="hw-tabs">
-            {methodology.map((m, i) => (
-              <button key={m.title} className={`hw-tab${methodTab === i ? " active" : ""}`} onClick={() => setMethodTab(i)}>
-                {m.title}
-              </button>
+          <div className="principles-grid">
+            {principles.map((principle) => (
+              <article key={principle.title} className="principle-card">
+                <h3>{principle.title}</h3>
+                <p>{principle.description}</p>
+              </article>
             ))}
-          </div>
-          <div className="hw-panels">
-            <div className="hw-panels-text">
-              {methodology.map((m, i) => (
-                <div key={m.title} className={`hw-panel${methodTab === i ? " active" : ""}`}>
-                  <h3>{m.title}</h3>
-                  <p>{m.description}</p>
-                </div>
-              ))}
-            </div>
-            <div className="hw-panels-img">
-              {methodology.map((m, i) => (
-                <img
-                  key={m.title}
-                  src={m.image}
-                  alt={m.title}
-                  className="hw-img-item"
-                  style={{ opacity: methodTab === i ? 1 : 0 }}
-                  loading={i === 0 ? "eager" : "lazy"}
-                />
-              ))}
-            </div>
           </div>
         </div>
       </section>
@@ -180,8 +173,8 @@ const Index = () => {
       <section className="work-section reveal" id="work">
         <div className="wrap">
           <div className="work-head">
-            <h2>CASE STUDIES</h2>
-            <p>Real problems · structured thinking · measurable impact</p>
+            <h2>SELECTED WORK</h2>
+            <p>A few examples of how I&apos;ve approached product problems across growth, onboarding, experience design, and operational improvement.</p>
           </div>
           <div className="work-list">
             {workItems.map((w) => {
@@ -213,11 +206,14 @@ const Index = () => {
       <section className="cta reveal">
         <div className="wrap">
           <h2>
-            WANT TO <em>WORK</em>
+            LOOKING FOR SOMEONE WHO CAN BRING <em>CLARITY</em>
             <br />
-            TOGETHER?{" "}
+            TO COMPLEX PRODUCT PROBLEMS?{" "}
             <Link to="/contact">START HERE →</Link>
           </h2>
+          <p className="cta-copy">
+            If that sounds like the kind of challenge you&apos;re hiring for, I&apos;d love to connect.
+          </p>
           <div className="cta-links">
             <a href="mailto:lucas.daneluz@gmail.com">lucas.daneluz@gmail.com</a>
             <a href="https://www.linkedin.com/in/lucasdaneluz" target="_blank" rel="noopener noreferrer">/in/lucasdaneluz</a>
