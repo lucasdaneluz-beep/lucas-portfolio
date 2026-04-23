@@ -290,11 +290,14 @@ h1.display .line.in { clip-path: inset(0 0 -10% 0); transform: translateY(0); }
   font-weight: 600;
   line-height: 1.02;
   letter-spacing: -0.025em;
-  text-transform: var(--display-case);
+  text-transform: none;
   color: var(--ink);
 }
 .hero-statement-accent {
   color: var(--accent);
+}
+.hero-statement em {
+  font-style: italic;
 }
 
 .hero-intro {
