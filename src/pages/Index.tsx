@@ -122,7 +122,7 @@ const Index = () => {
             </h1>
             <div className="hero-copy">
               <p className="hero-statement">
-                From noise to <span className="hero-statement-accent">clear priorities and measurable outcomes.</span>
+                From noise to <span className="hero-statement-accent">clear priorities</span> and <span className="hero-statement-accent">measurable outcomes.</span>
               </p>
               <p className="hero-intro">
                 I help teams bring structure to ambiguity across user needs, business goals, and delivery constraints.
@@ -144,10 +144,10 @@ const Index = () => {
       {/* CROSS-INDUSTRY */}
       <section className="manifesto reveal">
         <div className="wrap">
-          <h2>A PRODUCT LENS<br />SHAPED BY <span style={{ color: "var(--accent)" }}>COMPLEXITY</span>.</h2>
+          <h2>A CROSS-INDUSTRY<br />PRODUCT LENS.</h2>
           <div className="mf-body">
             <p>I&apos;ve worked in environments where customer needs, operational complexity, and commercial pressure all matter at once. That&apos;s the lens I bring to product.</p>
-            <p>Across SaaS, FMCG, and supply chain, I&apos;ve learned how to work through ambiguity, weigh trade-offs, and focus teams on what matters most. I&apos;m at my best when the problem is messy, the inputs are noisy, and clarity needs to be created before progress can happen.</p>
+            <p>Across SaaS, FMCG, and supply chain, I&apos;ve learned how to work through ambiguity, weigh trade-offs, and focus teams on what matters most. I&apos;m most energised when the problem is messy, the inputs are noisy, and clarity needs to be created before progress can happen.</p>
           </div>
         </div>
       </section>
