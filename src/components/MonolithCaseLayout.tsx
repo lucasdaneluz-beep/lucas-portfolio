@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 interface Props {
   title: string;
   lede: string;
-  role?: string;
   focus: string;
   metric: string;
   tags: string[];
@@ -12,7 +11,7 @@ interface Props {
 }
 
 const MonolithCaseLayout = ({
-  title, lede, role = "Product Manager", focus, metric, tags, disclaimer, children,
+  title, lede, focus, metric, tags, disclaimer, children,
 }: Props) => (
   <>
     <section className="case-hero-b">
@@ -25,19 +24,15 @@ const MonolithCaseLayout = ({
     <section className="case-grid-b">
       <div className="wrap">
         <div className="case-meta-row">
-          <div>
-            <div className="lbl">Role</div>
-            <div className="val">{role}</div>
-          </div>
-          <div>
+          <div className="case-meta-item case-meta-item-focus">
             <div className="lbl">Focus</div>
             <div className="val">{focus}</div>
           </div>
-          <div>
+          <div className="case-meta-item case-meta-item-outcome">
             <div className="lbl">Outcome</div>
             <div className="val big">{metric}</div>
           </div>
-          <div>
+          <div className="case-meta-item case-meta-item-tags">
             <div className="lbl">Tags</div>
             <div className="val mono">{tags.join(" · ")}</div>
           </div>

@@ -293,6 +293,9 @@ h1.display .line.in { clip-path: inset(0 0 -10% 0); transform: translateY(0); }
   text-transform: var(--display-case);
   color: var(--ink);
 }
+.hero-statement-accent {
+  color: var(--accent);
+}
 
 .hero-intro {
   color: var(--ink-dim);
@@ -606,6 +609,9 @@ html[data-theme="light"] .about-hero .right img { filter: grayscale(1) contrast(
 .case-grid-b { padding: clamp(32px,4vw,56px) 0; }
 .case-meta-row { display: flex; gap: clamp(32px,5vw,64px); flex-wrap: wrap; }
 .case-meta-row > div { flex: 1; min-width: 140px; }
+.case-meta-item-focus { flex: 1.1; }
+.case-meta-item-outcome { flex: 0.95; }
+.case-meta-item-tags { flex: 1.25; }
 .case-grid-b .lbl { font-family: var(--mono); font-size: 10px; color: var(--ink-mute); letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 10px; }
 .case-grid-b .val { font-family: var(--display); font-size: 18px; font-weight: 600; color: var(--ink); }
 .case-grid-b .val.big { color: var(--accent); font-size: 28px; font-weight: 700; }

@@ -122,7 +122,7 @@ const Index = () => {
             </h1>
             <div className="hero-copy">
               <p className="hero-statement">
-                From noise to clear priorities and measurable outcomes.
+                From noise to <span className="hero-statement-accent">clear priorities and measurable outcomes.</span>
               </p>
               <p className="hero-intro">
                 I help teams bring structure to ambiguity across user needs, business goals, and delivery constraints.
