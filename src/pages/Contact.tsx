@@ -57,7 +57,7 @@ const Contact = () => {
   return (
     <>
       {/* HERO */}
-      <section className="hero">
+      <section className="hero contact-page">
         <div className="hero-main">
           <div className="wrap">
             <h1 className="display">

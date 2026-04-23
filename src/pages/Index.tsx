@@ -122,7 +122,7 @@ const Index = () => {
             </h1>
             <div className="hero-copy">
               <p className="hero-statement">
-                From user pain and stakeholder noise to clear priorities and measurable outcomes.
+                From noise to clear priorities and measurable outcomes.
               </p>
               <p className="hero-intro">
                 I help teams bring structure to ambiguity across user needs, business goals, and delivery constraints.
@@ -207,7 +207,7 @@ const Index = () => {
       <section className="cta reveal">
         <div className="wrap">
           <h2>
-            NEED <em>PRODUCT CLARITY</em>?{" "}
+            BRING <em>CLARITY</em> TO COMPLEX PRODUCT PROBLEMS.{" "}
             <Link to="/contact">START HERE →</Link>
           </h2>
           <p className="cta-copy">
