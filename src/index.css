@@ -296,9 +296,6 @@ h1.display .line.in { clip-path: inset(0 0 -10% 0); transform: translateY(0); }
 .hero-statement-accent {
   color: var(--accent);
 }
-.hero-statement em {
-  font-style: italic;
-}
 
 .hero-intro {
   color: var(--ink-dim);
