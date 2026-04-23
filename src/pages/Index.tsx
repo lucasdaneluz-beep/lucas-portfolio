@@ -119,14 +119,15 @@ const Index = () => {
             <h1 className="display">
               <span className="line">LUCAS</span>
               <span className="line">DANELUZ</span>
-              <span className="line hero-statement">FROM USER PAIN AND</span>
-              <span className="line hero-statement">STAKEHOLDER NOISE TO</span>
-              <span className="line hero-statement">CLEAR PRIORITIES AND</span>
-              <span className="line hero-statement"><span style={{ color: "var(--accent)" }}>MEASURABLE OUTCOMES.</span></span>
             </h1>
-            <p className="hero-intro">
-              I help teams bring structure to ambiguity across user needs, business goals, and delivery constraints.
-            </p>
+            <div className="hero-copy">
+              <p className="hero-statement">
+                From user pain and stakeholder noise to clear priorities and measurable outcomes.
+              </p>
+              <p className="hero-intro">
+                I help teams bring structure to ambiguity across user needs, business goals, and delivery constraints.
+              </p>
+            </div>
             <div className="hero-foot">
               <div className="hero-actions">
                 <Link className="hero-cta" to="/case-studies/walkup">View Case Studies →</Link>
@@ -206,9 +207,7 @@ const Index = () => {
       <section className="cta reveal">
         <div className="wrap">
           <h2>
-            LOOKING FOR SOMEONE WHO CAN BRING <em>CLARITY</em>
-            <br />
-            TO COMPLEX PRODUCT PROBLEMS?{" "}
+            NEED <em>PRODUCT CLARITY</em>?{" "}
             <Link to="/contact">START HERE →</Link>
           </h2>
           <p className="cta-copy">
