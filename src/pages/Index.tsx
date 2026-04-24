@@ -1,32 +1,42 @@
 import React, { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
+import defineGraphic from "@/assets/hw-define.png";
+import discoverGraphic from "@/assets/hw-discover.png";
+import baselineGraphic from "@/assets/hw-baseline.png";
+import deliverGraphic from "@/assets/hw-deliver.png";
 
 const workItems = [
   {
     id: "walkup",
     index: "01",
     title: "WalkUp — Smarter Queues",
-    summary: "Queue transparency, loyalty, and growth for a UK restaurant waitlist marketplace.",
+    summary: "Improved trust, queue transparency, and retention in a two-sided marketplace.",
     metric: "3× loyalty engagement uplift",
-    tags: ["Marketplace", "Waitlist UX", "Loyalty", "Product Strategy"],
+    problem: "Wait times felt unreliable, the app was unstable, and there was no loyalty loop to bring diners back.",
+    tags: ["Marketplace", "Waitlist UX", "Loyalty"],
+    visualLabel: "Marketplace Trust",
     comingSoon: false,
   },
   {
     id: "hipen-media",
     index: "02",
     title: "Hipen Media — User Onboarding",
-    summary: "Restructuring a multi-segment onboarding flow through research and lean MVP.",
+    summary: "Reduced onboarding friction across multiple customer segments with a lean MVP.",
     metric: "40% faster onboarding completion",
-    tags: ["Discovery", "Onboarding", "MVP", "Research"],
+    problem: "A one-size-fits-all onboarding flow and unfiltered dataset slowed time-to-value for every segment.",
+    tags: ["Discovery", "Onboarding", "MVP"],
+    visualLabel: "Segmentation Flow",
     comingSoon: false,
   },
   {
     id: "westpak",
     index: "03",
     title: "Westpak — Cost Optimisation",
-    summary: "Cost reduction across 3 categories, aligning Finance and Operations.",
+    summary: "Aligned finance and operations around a cost-saving initiative without disrupting supply.",
     metric: "25% cost reduction delivered",
+    problem: "Costs were inflated across three core categories, with internal resistance to changing suppliers.",
     tags: ["Stakeholder Management", "Cost Optimisation", "Supply Chain"],
+    visualLabel: "Cost Programme",
     comingSoon: false,
   },
   {
@@ -35,7 +45,9 @@ const workItems = [
     title: "Moneybox Redesigned",
     summary: "Reimagining the savings & investment journey for clarity and confidence.",
     metric: "Full UX redesign concept",
+    problem: "Savings and investing felt disconnected, with key rates and allowances buried too deep in the app.",
     tags: ["UX Strategy", "Fintech", "Navigation"],
+    image: "/moneybox-redesign-comparison.png",
     comingSoon: false,
   },
   {
@@ -49,22 +61,54 @@ const workItems = [
   },
 ];
 
-const principles = [
+const snapshotItems = [
+  { label: "Experience", value: "10+ years across SaaS, FMCG, and supply chain" },
+  { label: "Current focus", value: "Product Manager opportunities" },
+  { label: "Strengths", value: "Discovery, prioritisation, alignment, measurable outcomes" },
+  { label: "Location", value: "London, UK" },
+];
+
+const impactItems = [
+  { metric: "3×", label: "Loyalty engagement uplift", detail: "WalkUp" },
+  { metric: "40%", label: "Faster onboarding completion", detail: "Hipen Media" },
+  { metric: "25%", label: "Cost reduction delivered", detail: "Westpak" },
+];
+
+const frameworkSteps = [
   {
-    title: "Research Before Roadmap",
-    description: "Understand the real problem before moving to solutions.",
+    title: "Understand",
+    description: "User research, workflow mapping, and problem framing before solutions.",
+    image: defineGraphic,
   },
   {
-    title: "Baselines Before Launch",
-    description: "Define success early so progress can be measured properly.",
+    title: "Prioritise",
+    description: "Trade-offs, baselines, and scope decisions shaped by value and feasibility.",
+    image: discoverGraphic,
   },
   {
-    title: "Alignment Is Part Of The Work",
-    description: "Good product work means creating shared understanding, not just shipping.",
+    title: "Align",
+    description: "Shared clarity across stakeholders, engineering, operations, and delivery.",
+    image: baselineGraphic,
   },
   {
-    title: "Commercial Reality Matters",
-    description: "The best decisions work for users and make sense for the business.",
+    title: "Measure",
+    description: "Success metrics defined early so progress is visible after launch.",
+    image: deliverGraphic,
+  },
+];
+
+const reasons = [
+  {
+    title: "Commercially Grounded",
+    description: "I’m comfortable making product decisions close to revenue, cost, and operational reality.",
+  },
+  {
+    title: "Strong In Ambiguity",
+    description: "My best work happens when a team needs structure before momentum can happen.",
+  },
+  {
+    title: "Built For Cross-Functional Work",
+    description: "I bridge user needs, business constraints, and delivery realities without losing clarity.",
   },
 ];
 
@@ -117,53 +161,66 @@ const Index = () => {
         <div className="hero-main reveal" ref={heroMainRef}>
           <div className="wrap">
             <h1 className="display">
-              <span className="line">LUCAS</span>
-              <span className="line">DANELUZ</span>
+              <span className="line">PRODUCT</span>
+              <span className="line">MANAGER</span>
             </h1>
             <div className="hero-copy">
               <p className="hero-statement">
-                From noise to <span className="hero-statement-accent">clear priorities</span> and <span className="hero-statement-accent">measurable outcomes.</span>
+                Turning <span className="hero-statement-accent">ambiguous problems</span> into focused roadmaps and <span className="hero-statement-accent">measurable outcomes.</span>
               </p>
               <p className="hero-intro">
-                I help teams bring structure to ambiguity across user needs, business goals, and delivery constraints.
+                10+ years across B2B SaaS, FMCG, and supply chain. Strongest in discovery, prioritisation, stakeholder alignment, and bringing structure to messy inputs.
+              </p>
+              <p className="hero-availability">
+                Open to Product Manager opportunities in London and remote.
               </p>
             </div>
             <div className="hero-foot">
               <div className="hero-actions">
                 <Link className="hero-cta" to="/case-studies/walkup">View Case Studies →</Link>
-                <Link className="hero-cta secondary" to="/about">About Me →</Link>
+                <a className="hero-cta secondary" href="/Lucas_Daneluz-CV.pdf" target="_blank" rel="noopener noreferrer">Download CV →</a>
+                <Link className="hero-cta secondary" to="/contact">Let&apos;s Talk →</Link>
               </div>
-              <div className="hero-tags">
-                10+ Years Across SaaS, FMCG, And Supply Chain
+              <div className="hero-tags hero-trust-strip">
+                <span>Based in London</span>
+                <span>B2B SaaS · Marketplace · Operations</span>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* CROSS-INDUSTRY */}
-      <section className="manifesto reveal">
+      {/* SNAPSHOT */}
+      <section className="snapshot reveal">
         <div className="wrap">
-          <h2>A CROSS-INDUSTRY<br />PRODUCT LENS.</h2>
-          <div className="mf-body">
-            <p>I bring a product perspective shaped by environments where customer needs, operational complexity, and commercial pressure all matter at once.</p>
-            <p>Across SaaS, FMCG, and supply chain, I&apos;ve learned how to navigate ambiguity, weigh trade-offs, and focus teams on what matters most. I&apos;m most energised when the problem is messy, the inputs are noisy, and clarity is needed before progress can happen.</p>
+          <div className="snapshot-head">
+            <h2>AT A GLANCE</h2>
+            <p>A fast read for recruiters and hiring managers scanning for fit.</p>
+          </div>
+          <div className="snapshot-grid">
+            {snapshotItems.map((item) => (
+              <article key={item.label} className="snapshot-card">
+                <span className="snapshot-label">{item.label}</span>
+                <p>{item.value}</p>
+              </article>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* HOW I CREATE CLARITY */}
-      <section className="how-i-work reveal">
+      {/* IMPACT */}
+      <section className="impact-strip reveal">
         <div className="wrap">
-          <div className="hw-head">
-            <h2>HOW I CREATE CLARITY</h2>
-            <p>The product work I value most is grounded in evidence, shaped by alignment, and measured by outcomes.</p>
+          <div className="impact-head">
+            <h2>SELECTED IMPACT</h2>
+            <p>Proof points from product, onboarding, and operational improvement work.</p>
           </div>
-          <div className="principles-grid">
-            {principles.map((principle) => (
-              <article key={principle.title} className="principle-card">
-                <h3>{principle.title}</h3>
-                <p>{principle.description}</p>
+          <div className="impact-grid">
+            {impactItems.map((item) => (
+              <article key={item.detail} className="impact-card">
+                <span className="impact-metric">{item.metric}</span>
+                <h3>{item.label}</h3>
+                <p>{item.detail}</p>
               </article>
             ))}
           </div>
@@ -174,31 +231,99 @@ const Index = () => {
       <section className="work-section reveal" id="work">
         <div className="wrap">
           <div className="work-head">
-            <h2>SELECTED WORK</h2>
-            <p>A few examples of how I&apos;ve approached product problems across growth, onboarding, experience design, and operational improvement.</p>
+            <h2>FEATURED WORK</h2>
+            <p>Selected case studies showing how I move from ambiguity to focus, alignment, and measurable change.</p>
           </div>
-          <div className="work-list">
+          <div className="work-grid">
             {workItems.map((w) => {
               if (w.comingSoon) {
                 return (
-                  <div key={w.id} className="work-row soon">
-                    <div className="w-info">
-                      <span className="w-title">{w.title}</span>
+                  <article key={w.id} className="work-card soon">
+                    <div className="work-card-visual work-card-visual-soon">
+                      <span className="work-card-index">{w.index}</span>
+                      <span className="work-card-soon-label">Coming Soon</span>
                     </div>
-                    <span className="w-arrow">—</span>
-                  </div>
+                    <div className="work-card-body">
+                      <div className="work-card-topline">{w.visualLabel ?? "In Progress"}</div>
+                      <h3>{w.title}</h3>
+                      <p>{w.summary}</p>
+                    </div>
+                  </article>
                 );
               }
+
               return (
-                <Link key={w.id} to={`/case-studies/${w.id}`} className="work-row">
-                  <div className="w-info">
-                    <span className="w-title">{w.title}</span>
-                    {w.metric && <span className="w-metric">{w.metric}</span>}
+                <Link key={w.id} to={`/case-studies/${w.id}`} className="work-card">
+                  <div className={`work-card-visual work-card-visual-${w.id}`}>
+                    <span className="work-card-index">{w.index}</span>
+                    {w.image ? (
+                      <img src={w.image} alt={`${w.title} case study preview`} className="work-card-image" />
+                    ) : (
+                      <div className="work-card-visual-inner">
+                        <span className="work-card-visual-label">{w.visualLabel}</span>
+                        <div className="work-card-stat">{w.metric}</div>
+                        <div className="work-card-mini-bars">
+                          <span />
+                          <span />
+                          <span />
+                        </div>
+                      </div>
+                    )}
                   </div>
-                  <span className="w-arrow">→</span>
+                  <div className="work-card-body">
+                    <div className="work-card-topline">{w.tags.join(" · ")}</div>
+                    <h3>{w.title}</h3>
+                    <p>{w.summary}</p>
+                    <p className="work-card-problem">{w.problem}</p>
+                    <div className="work-card-footer">
+                      <span className="work-card-metric">{w.metric}</span>
+                      <span className="work-card-cta">View Case Study →</span>
+                    </div>
+                  </div>
                 </Link>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      {/* HOW I WORK */}
+      <section className="how-i-work reveal">
+        <div className="wrap">
+          <div className="hw-head">
+            <h2>HOW I WORK</h2>
+            <p>A practical product rhythm for turning messy inputs into clear execution.</p>
+          </div>
+          <div className="framework-grid">
+            {frameworkSteps.map((step) => (
+              <article key={step.title} className="framework-card">
+                <div className="framework-card-image">
+                  <img src={step.image} alt="" />
+                </div>
+                <div className="framework-card-copy">
+                  <span className="framework-label">{step.title}</span>
+                  <p>{step.description}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* WHY ME */}
+      <section className="manifesto reveal">
+        <div className="wrap">
+          <h2>WHY MY BACKGROUND<br />WORKS IN <em>PRODUCT</em>.</h2>
+          <div className="mf-body">
+            <p>I&apos;ve built my product perspective in environments where customer needs, commercial pressure, and operational complexity all matter at once. That makes me especially effective in roles that need clarity, prioritisation, and alignment before momentum can happen.</p>
+          </div>
+          <div className="principles-grid recruiter-grid">
+            {reasons.map((reason) => (
+              <article key={reason.title} className="principle-card">
+                <h3>{reason.title}</h3>
+                <p>{reason.description}</p>
+              </article>
+            ))}
           </div>
         </div>
       </section>
@@ -207,15 +332,16 @@ const Index = () => {
       <section className="cta reveal">
         <div className="wrap">
           <h2>
-            BRING <em>CLARITY</em> TO COMPLEX PRODUCT PROBLEMS.{" "}
-            <Link to="/contact">START HERE →</Link>
+            HIRING FOR A <em>PM</em> WHO CAN BRING STRUCTURE, ALIGNMENT, AND MEASURABLE PROGRESS?{" "}
+            <Link to="/contact">LET&apos;S TALK →</Link>
           </h2>
           <p className="cta-copy">
-            If that sounds like the kind of challenge you&apos;re hiring for, I&apos;d love to connect.
+            If that sounds like the kind of role you&apos;re hiring for, I&apos;d love to connect.
           </p>
           <div className="cta-links">
             <a href="mailto:lucas.daneluz@gmail.com">lucas.daneluz@gmail.com</a>
             <a href="https://www.linkedin.com/in/lucasdaneluz" target="_blank" rel="noopener noreferrer">/in/lucasdaneluz</a>
+            <a href="/Lucas_Daneluz-CV.pdf" target="_blank" rel="noopener noreferrer">Download CV</a>
             <span>London, UK</span>
           </div>
         </div>
