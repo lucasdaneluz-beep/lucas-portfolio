@@ -47,15 +47,6 @@ const workItems = [
     image: "/moneybox-redesign-comparison.png",
     comingSoon: false,
   },
-  {
-    id: "next",
-    index: "05",
-    title: "Next Case Study",
-    summary: "Something new is in the works. A product concept exploring AI-driven discovery.",
-    metric: "",
-    tags: ["AI", "Music", "Discovery"],
-    comingSoon: true,
-  },
 ];
 
 const snapshotItems = [
