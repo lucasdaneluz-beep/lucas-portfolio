@@ -569,10 +569,6 @@ h1.display .line.in { clip-path: inset(0 0 -10% 0); transform: translateY(0); }
   margin-top: 40px;
 }
 .reasons-item {
-  border-bottom: 1px solid var(--rule);
-}
-.reasons-item:first-child {
-  border-top: 1px solid var(--rule);
 }
 .reasons-trigger {
   width: 100%;
@@ -626,7 +622,6 @@ h1.display .line.in { clip-path: inset(0 0 -10% 0); transform: translateY(0); }
   font-size: 1.05rem;
   font-weight: 300;
   line-height: 1.75;
-  max-width: 64ch;
 }
 
 /* --- WORK --- */
