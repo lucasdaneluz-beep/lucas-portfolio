@@ -294,17 +294,18 @@ const Index = () => {
             <h2>HOW I WORK</h2>
             <p>A practical product rhythm from unclear problems to focused, measurable execution.</p>
           </div>
-          <div className="framework-grid">
-            {frameworkSteps.map((step) => (
-              <article key={step.title} className="framework-card">
-                <div className="framework-card-image">
-                  <img src={step.image} alt="" />
-                </div>
-                <div className="framework-card-copy">
-                  <span className="framework-label">{step.title}</span>
-                  <p>{step.description}</p>
-                </div>
-              </article>
+          <div className="framework-steps">
+            {frameworkSteps.map((step, i) => (
+              <React.Fragment key={step.title}>
+                <article className="framework-step">
+                  <span className="step-num">0{i + 1}</span>
+                  <h3 className="step-title">{step.title}</h3>
+                  <p className="step-desc">{step.description}</p>
+                </article>
+                {i < frameworkSteps.length - 1 && (
+                  <span className="step-connector" aria-hidden="true">→</span>
+                )}
+              </React.Fragment>
             ))}
           </div>
         </div>
