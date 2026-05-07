@@ -104,7 +104,7 @@ const reasons = [
   },
   {
     title: "Strong In Ambiguity",
-    description: "My best work happens when a team needs structure before momentum can happen.",
+    description: "My best work happens when a team needs structure, not just speed.",
   },
   {
     title: "Built For Cross-Functional Work",
@@ -169,7 +169,7 @@ const Index = () => {
                 Turning <span className="hero-statement-accent">ambiguous problems</span> into focused roadmaps and <span className="hero-statement-accent">measurable outcomes.</span>
               </p>
               <p className="hero-intro">
-                10+ years across B2B SaaS, FMCG, and supply chain. Strongest in discovery, prioritisation, stakeholder alignment, and bringing structure to messy inputs.
+                10+ years across B2B SaaS, FMCG, and supply chain. Strongest in discovery, prioritisation, stakeholder alignment, and bringing clarity to ambiguous problems.
               </p>
               <p className="hero-availability">
                 Open to Product Manager opportunities in London and remote.
@@ -195,7 +195,7 @@ const Index = () => {
         <div className="wrap">
           <div className="snapshot-head">
             <h2>AT A GLANCE</h2>
-            <p>A fast read for recruiters and hiring managers scanning for fit.</p>
+            <p>The essentials, before you read further.</p>
           </div>
           <div className="snapshot-grid">
             {snapshotItems.map((item) => (
@@ -213,7 +213,7 @@ const Index = () => {
         <div className="wrap">
           <div className="impact-head">
             <h2>SELECTED IMPACT</h2>
-            <p>Proof points from product, onboarding, and operational improvement work.</p>
+            <p>Numbers from product, onboarding, and operations.</p>
           </div>
           <div className="impact-grid">
             {impactItems.map((item) => (
@@ -292,7 +292,7 @@ const Index = () => {
         <div className="wrap">
           <div className="hw-head">
             <h2>HOW I WORK</h2>
-            <p>A practical product rhythm for turning messy inputs into clear execution.</p>
+            <p>A practical product rhythm from unclear problems to focused, measurable execution.</p>
           </div>
           <div className="framework-grid">
             {frameworkSteps.map((step) => (
@@ -313,9 +313,9 @@ const Index = () => {
       {/* WHY ME */}
       <section className="manifesto reveal">
         <div className="wrap">
-          <h2>WHY MY BACKGROUND<br />WORKS IN <em>PRODUCT</em>.</h2>
+          <h2>BUILT ACROSS INDUSTRIES.<br />WIRED FOR <em>PRODUCT</em>.</h2>
           <div className="mf-body">
-            <p>I&apos;ve built my product perspective in environments where customer needs, commercial pressure, and operational complexity all matter at once. That makes me especially effective in roles that need clarity, prioritisation, and alignment before momentum can happen.</p>
+            <p>My product instincts were shaped in environments where customer needs, commercial pressure, and operational complexity collide. That makes me especially effective in roles where clarity and alignment are prerequisites to progress.</p>
           </div>
           <div className="principles-grid recruiter-grid">
             {reasons.map((reason) => (
@@ -336,7 +336,7 @@ const Index = () => {
             <Link to="/contact">LET&apos;S TALK →</Link>
           </h2>
           <p className="cta-copy">
-            If that sounds like the kind of role you&apos;re hiring for, I&apos;d love to connect.
+            Currently open to PM roles in London and remote.
           </p>
           <div className="cta-links">
             <a href="mailto:lucas.daneluz@gmail.com">lucas.daneluz@gmail.com</a>
