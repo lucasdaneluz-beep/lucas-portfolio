@@ -1,9 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-import defineGraphic from "@/assets/hw-define.png";
-import discoverGraphic from "@/assets/hw-discover.png";
-import baselineGraphic from "@/assets/hw-baseline.png";
-import deliverGraphic from "@/assets/hw-deliver.png";
+import { Search, ListOrdered, Users, TrendingUp } from "lucide-react";
 
 const workItems = [
   {
@@ -78,22 +75,22 @@ const frameworkSteps = [
   {
     title: "Understand",
     description: "User research, workflow mapping, and problem framing before solutions.",
-    image: defineGraphic,
+    icon: Search,
   },
   {
     title: "Prioritise",
     description: "Trade-offs, baselines, and scope decisions shaped by value and feasibility.",
-    image: discoverGraphic,
+    icon: ListOrdered,
   },
   {
     title: "Align",
     description: "Shared clarity across stakeholders, engineering, operations, and delivery.",
-    image: baselineGraphic,
+    icon: Users,
   },
   {
     title: "Measure",
     description: "Success metrics defined early so progress is visible after launch.",
-    image: deliverGraphic,
+    icon: TrendingUp,
   },
 ];
 
@@ -295,17 +292,14 @@ const Index = () => {
             <p>A practical product rhythm from unclear problems to focused, measurable execution.</p>
           </div>
           <div className="framework-steps">
-            {frameworkSteps.map((step, i) => (
-              <React.Fragment key={step.title}>
-                <article className="framework-step">
-                  <span className="step-num">0{i + 1}</span>
-                  <h3 className="step-title">{step.title}</h3>
-                  <p className="step-desc">{step.description}</p>
-                </article>
-                {i < frameworkSteps.length - 1 && (
-                  <span className="step-connector" aria-hidden="true">→</span>
-                )}
-              </React.Fragment>
+            {frameworkSteps.map((step) => (
+              <article key={step.title} className="framework-step">
+                <div className="step-icon">
+                  <step.icon size={32} strokeWidth={1.5} />
+                </div>
+                <h3 className="step-title">{step.title}</h3>
+                <p className="step-desc">{step.description}</p>
+              </article>
             ))}
           </div>
         </div>
