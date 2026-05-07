@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { Search, ListOrdered, Users, TrendingUp, Briefcase, Target, Zap, MapPin } from "lucide-react";
 
@@ -111,6 +111,7 @@ const reasons = [
 
 const Index = () => {
   const heroMainRef = useRef<HTMLDivElement>(null);
+  const [openReason, setOpenReason] = useState<number | null>(0);
 
   // Scroll reveal
   useEffect(() => {
@@ -315,13 +316,27 @@ const Index = () => {
           <div className="mf-body">
             <p>My product instincts were shaped in environments where customer needs, commercial pressure, and operational complexity collide. That makes me especially effective in roles where clarity and alignment are prerequisites to progress.</p>
           </div>
-          <div className="principles-grid recruiter-grid">
-            {reasons.map((reason) => (
-              <article key={reason.title} className="principle-card">
-                <h3>{reason.title}</h3>
-                <p>{reason.description}</p>
-              </article>
-            ))}
+          <div className="reasons-accordion">
+            {reasons.map((reason, i) => {
+              const isOpen = openReason === i;
+              return (
+                <div key={reason.title} className="reasons-item">
+                  <button
+                    className="reasons-trigger"
+                    aria-expanded={isOpen}
+                    onClick={() => setOpenReason(isOpen ? null : i)}
+                  >
+                    <span className="reasons-icon" aria-hidden="true" style={{ transform: isOpen ? "rotate(45deg)" : "rotate(0deg)" }}>+</span>
+                    <h3 className={`reasons-title${isOpen ? " open" : ""}`}>{reason.title}</h3>
+                  </button>
+                  <div className={`reasons-body${isOpen ? " open" : ""}`}>
+                    <div className="reasons-content">
+                      <p>{reason.description}</p>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
