@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-import { Search, ListOrdered, Users, TrendingUp } from "lucide-react";
+import { Search, ListOrdered, Users, TrendingUp, Briefcase, Target, Zap, MapPin } from "lucide-react";
 
 const workItems = [
   {
@@ -59,10 +59,10 @@ const workItems = [
 ];
 
 const snapshotItems = [
-  { label: "Experience", value: "10+ years across SaaS, FMCG, and supply chain" },
-  { label: "Current focus", value: "Product Manager opportunities" },
-  { label: "Strengths", value: "Discovery, prioritisation, alignment, measurable outcomes" },
-  { label: "Location", value: "London, UK" },
+  { label: "Experience", value: "10+ years across SaaS, FMCG, and supply chain", icon: Briefcase },
+  { label: "Current focus", value: "Product Manager opportunities", icon: Target },
+  { label: "Strengths", value: "Discovery, prioritisation, alignment, measurable outcomes", icon: Zap },
+  { label: "Location", value: "London, UK", icon: MapPin },
 ];
 
 const impactItems = [
@@ -194,11 +194,14 @@ const Index = () => {
             <h2>AT A GLANCE</h2>
             <p>The essentials, before you read further.</p>
           </div>
-          <div className="snapshot-grid">
+          <div className="framework-steps">
             {snapshotItems.map((item) => (
-              <article key={item.label} className="snapshot-card">
-                <span className="snapshot-label">{item.label}</span>
-                <p>{item.value}</p>
+              <article key={item.label} className="framework-step">
+                <div className="step-icon">
+                  <item.icon size={32} strokeWidth={1.5} />
+                </div>
+                <h3 className="step-title">{item.label}</h3>
+                <p className="step-desc">{item.value}</p>
               </article>
             ))}
           </div>
