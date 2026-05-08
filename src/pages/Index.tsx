@@ -170,10 +170,6 @@ const Index = () => {
                 <a className="hero-cta secondary" href="/Lucas_Daneluz-CV.pdf" target="_blank" rel="noopener noreferrer">Download CV →</a>
                 <Link className="hero-cta secondary" to="/contact">Let&apos;s Talk →</Link>
               </div>
-              <div className="hero-tags hero-trust-strip">
-                <span>Based in London</span>
-                <span>B2B SaaS · Marketplace · Operations</span>
-              </div>
             </div>
           </div>
         </div>
