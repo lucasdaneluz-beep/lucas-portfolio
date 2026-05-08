@@ -14,6 +14,7 @@ import Comingsoon from "./pages/case-studies/Comingsoon";
 import HipenMedia from "./pages/case-studies/HipenMedia";
 import Westpak from "./pages/case-studies/Westpak";
 import About from "./pages/About";
+import Work from "./pages/Work";
 import Contact from "./pages/Contact";
 import PreviewTerracotta from "./pages/PreviewTerracotta";
 import PreviewNewDarkFonts from "./pages/PreviewNewDarkFonts";
@@ -38,6 +39,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
 
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+          <Route path="/work" element={<Work />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/case-studies/moneybox" element={<Moneybox />} />

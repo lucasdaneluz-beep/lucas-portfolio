@@ -1,12 +1,44 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { Search, ListOrdered, Users, TrendingUp } from "lucide-react";
 import profilePhoto from "@/assets/lucas-profile.png";
 
-const values = [
-  { title: "Discovery",        description: "Research before building. User interviews, data analysis, and stakeholder mapping to frame the right problem." },
-  { title: "Outcome-Led",      description: "Metrics defined before shipping. Progress measured against baselines, not gut feel." },
-  { title: "Commercial Lens",  description: "Decisions weighed against business value — close to revenue, cost, and customer impact." },
-  { title: "Cross-functional", description: "Bridging design, engineering, and stakeholders. Alignment is as much a deliverable as the feature." },
+const frameworkSteps = [
+  {
+    title: "Understand",
+    description: "User research, workflow mapping, and problem framing before solutions.",
+    icon: Search,
+  },
+  {
+    title: "Prioritise",
+    description: "Trade-offs, baselines, and scope decisions shaped by value and feasibility.",
+    icon: ListOrdered,
+  },
+  {
+    title: "Align",
+    description: "Shared clarity across stakeholders, engineering, operations, and delivery.",
+    icon: Users,
+  },
+  {
+    title: "Measure",
+    description: "Success metrics defined early so progress is visible after launch.",
+    icon: TrendingUp,
+  },
+];
+
+const reasons = [
+  {
+    title: "Commercially Grounded",
+    description: "I'm comfortable making product decisions close to revenue, cost, and operational reality.",
+  },
+  {
+    title: "Strong In Ambiguity",
+    description: "My best work happens when a team needs structure, not just speed.",
+  },
+  {
+    title: "Built For Cross-Functional Work",
+    description: "I bridge user needs, business constraints, and delivery realities without losing clarity.",
+  },
 ];
 
 const experience = [
@@ -48,7 +80,12 @@ const experience = [
 ];
 
 const About = () => {
-  const [valueTab, setValueTab] = useState(0);
+  const [openReason, setOpenReason] = useState<number | null>(0);
+
+  useEffect(() => {
+    document.title = "About | Lucas Daneluz";
+    return () => { document.title = "Lucas Daneluz – PM Portfolio"; };
+  }, []);
 
   useEffect(() => {
     const els = document.querySelectorAll(".reveal");
@@ -84,27 +121,55 @@ const About = () => {
         </div>
       </section>
 
-      {/* WHAT I BRING */}
+      {/* HOW I WORK */}
       <section className="how-i-work reveal">
         <div className="wrap">
           <div className="hw-head">
-            <h2>WHAT I BRING</h2>
-            <p>Four principles I return to.</p>
+            <h2>HOW I WORK</h2>
+            <p>A practical product rhythm from unclear problems to focused, measurable execution.</p>
           </div>
-          <div className="hw-tabs">
-            {values.map((v, i) => (
-              <button key={v.title} className={`hw-tab${valueTab === i ? " active" : ""}`} onClick={() => setValueTab(i)}>
-                {v.title}
-              </button>
+          <div className="framework-steps">
+            {frameworkSteps.map((step) => (
+              <article key={step.title} className="framework-step">
+                <div className="step-icon">
+                  <step.icon size={32} strokeWidth={1.5} />
+                </div>
+                <h3 className="step-title">{step.title}</h3>
+                <p className="step-desc">{step.description}</p>
+              </article>
             ))}
           </div>
-          <div className="hw-panels">
-            {values.map((v, i) => (
-              <div key={v.title} className={`hw-panel${valueTab === i ? " active" : ""}`}>
-                <h3>{v.title}</h3>
-                <p>{v.description}</p>
-              </div>
-            ))}
+        </div>
+      </section>
+
+      {/* BUILT ACROSS INDUSTRIES */}
+      <section className="manifesto reveal">
+        <div className="wrap">
+          <h2>BUILT ACROSS INDUSTRIES.<br />WIRED FOR <em>PRODUCT</em>.</h2>
+          <div className="mf-body">
+            <p>My product instincts were shaped in environments where customer needs, commercial pressure, and operational complexity collide. That makes me especially effective in roles where clarity and alignment are prerequisites to progress.</p>
+          </div>
+          <div className="reasons-accordion">
+            {reasons.map((reason, i) => {
+              const isOpen = openReason === i;
+              return (
+                <div key={reason.title} className="reasons-item">
+                  <button
+                    className="reasons-trigger"
+                    aria-expanded={isOpen}
+                    onClick={() => setOpenReason(isOpen ? null : i)}
+                  >
+                    <span className="reasons-icon" aria-hidden="true" style={{ transform: isOpen ? "rotate(45deg)" : "rotate(0deg)" }}>+</span>
+                    <h3 className={`reasons-title${isOpen ? " open" : ""}`}>{reason.title}</h3>
+                  </button>
+                  <div className={`reasons-body${isOpen ? " open" : ""}`}>
+                    <div className="reasons-content">
+                      <p>{reason.description}</p>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>

@@ -1,60 +1,5 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-import { Search, ListOrdered, Users, TrendingUp, Briefcase, Target, Zap, MapPin } from "lucide-react";
-
-const workItems = [
-  {
-    id: "walkup",
-    index: "01",
-    title: "WalkUp — Smarter Queues",
-    summary: "Improved trust, queue transparency, and retention in a two-sided marketplace.",
-    metric: "3× loyalty engagement uplift",
-    problem: "Wait times felt unreliable, the app was unstable, and there was no loyalty loop to bring diners back.",
-    tags: ["Marketplace", "Waitlist UX", "Loyalty"],
-    visualLabel: "Marketplace Trust",
-    comingSoon: false,
-  },
-  {
-    id: "hipen-media",
-    index: "02",
-    title: "Hipen Media — User Onboarding",
-    summary: "Reduced onboarding friction across multiple customer segments with a lean MVP.",
-    metric: "40% faster onboarding completion",
-    problem: "A one-size-fits-all onboarding flow and unfiltered dataset slowed time-to-value for every segment.",
-    tags: ["Discovery", "Onboarding", "MVP"],
-    visualLabel: "Segmentation Flow",
-    comingSoon: false,
-  },
-  {
-    id: "westpak",
-    index: "03",
-    title: "Westpak — Cost Optimisation",
-    summary: "Aligned finance and operations around a cost-saving initiative without disrupting supply.",
-    metric: "25% cost reduction delivered",
-    problem: "Costs were inflated across three core categories, with internal resistance to changing suppliers.",
-    tags: ["Stakeholder Management", "Cost Optimisation", "Supply Chain"],
-    visualLabel: "Cost Programme",
-    comingSoon: false,
-  },
-  {
-    id: "moneybox",
-    index: "04",
-    title: "Moneybox Redesigned",
-    summary: "Reimagining the savings & investment journey for clarity and confidence.",
-    metric: "Full UX redesign concept",
-    problem: "Savings and investing felt disconnected, with key rates and allowances buried too deep in the app.",
-    tags: ["UX Strategy", "Fintech", "Navigation"],
-    image: "/moneybox-redesign-comparison.png",
-    comingSoon: false,
-  },
-];
-
-const snapshotItems = [
-  { label: "Experience", value: "10+ years across SaaS, FMCG, and supply chain", icon: Briefcase },
-  { label: "Current focus", value: "Product Manager opportunities", icon: Target },
-  { label: "Strengths", value: "Discovery, prioritisation, alignment, measurable outcomes", icon: Zap },
-  { label: "Location", value: "London, UK", icon: MapPin },
-];
 
 const impactItems = [
   { metric: "3×", label: "Loyalty engagement uplift", detail: "WalkUp" },
@@ -62,47 +7,15 @@ const impactItems = [
   { metric: "25%", label: "Cost reduction delivered", detail: "Westpak" },
 ];
 
-const frameworkSteps = [
-  {
-    title: "Understand",
-    description: "User research, workflow mapping, and problem framing before solutions.",
-    icon: Search,
-  },
-  {
-    title: "Prioritise",
-    description: "Trade-offs, baselines, and scope decisions shaped by value and feasibility.",
-    icon: ListOrdered,
-  },
-  {
-    title: "Align",
-    description: "Shared clarity across stakeholders, engineering, operations, and delivery.",
-    icon: Users,
-  },
-  {
-    title: "Measure",
-    description: "Success metrics defined early so progress is visible after launch.",
-    icon: TrendingUp,
-  },
-];
-
-const reasons = [
-  {
-    title: "Commercially Grounded",
-    description: "I’m comfortable making product decisions close to revenue, cost, and operational reality.",
-  },
-  {
-    title: "Strong In Ambiguity",
-    description: "My best work happens when a team needs structure, not just speed.",
-  },
-  {
-    title: "Built For Cross-Functional Work",
-    description: "I bridge user needs, business constraints, and delivery realities without losing clarity.",
-  },
+const workTeaser = [
+  { id: "walkup", index: "01", title: "WalkUp — Smarter Queues" },
+  { id: "hipen-media", index: "02", title: "Hipen Media — User Onboarding" },
+  { id: "westpak", index: "03", title: "Westpak — Cost Optimisation" },
+  { id: "moneybox", index: "04", title: "Moneybox Redesigned" },
 ];
 
 const Index = () => {
   const heroMainRef = useRef<HTMLDivElement>(null);
-  const [openReason, setOpenReason] = useState<number | null>(0);
 
   // Scroll reveal
   useEffect(() => {
@@ -166,32 +79,11 @@ const Index = () => {
             </div>
             <div className="hero-foot">
               <div className="hero-actions">
-                <Link className="hero-cta" to="/case-studies/walkup">View Case Studies →</Link>
-                <a className="hero-cta secondary" href="/Lucas_Daneluz-CV.pdf" target="_blank" rel="noopener noreferrer">Download CV →</a>
+                <Link className="hero-cta" to="/work">View Case Studies →</Link>
+                <Link className="hero-cta secondary" to="/about">About Me →</Link>
                 <Link className="hero-cta secondary" to="/contact">Let&apos;s Talk →</Link>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* SNAPSHOT */}
-      <section className="snapshot reveal">
-        <div className="wrap">
-          <div className="snapshot-head">
-            <h2>AT A GLANCE</h2>
-            <p>The essentials, before you read further.</p>
-          </div>
-          <div className="framework-steps">
-            {snapshotItems.map((item) => (
-              <article key={item.label} className="framework-step">
-                <div className="step-icon">
-                  <item.icon size={32} strokeWidth={1.5} />
-                </div>
-                <h3 className="step-title">{item.label}</h3>
-                <p className="step-desc">{item.value}</p>
-              </article>
-            ))}
           </div>
         </div>
       </section>
@@ -215,115 +107,21 @@ const Index = () => {
         </div>
       </section>
 
-      {/* WORK */}
-      <section className="work-section reveal" id="work">
+      {/* WORK TEASER */}
+      <section className="work-teaser reveal">
         <div className="wrap">
-          <div className="work-head">
+          <div className="work-teaser-head">
             <h2>FEATURED WORK</h2>
-            <p>Selected case studies showing how I move from ambiguity to focus, alignment, and measurable change.</p>
+            <Link to="/work" className="work-teaser-cta">View all →</Link>
           </div>
-          <div className="work-grid">
-            {workItems.map((w) => {
-              if (w.comingSoon) {
-                return (
-                  <article key={w.id} className="work-card soon">
-                    <div className="work-card-visual work-card-visual-soon">
-                      <span className="work-card-index">{w.index}</span>
-                      <span className="work-card-soon-label">Coming Soon</span>
-                    </div>
-                    <div className="work-card-body">
-                      <div className="work-card-topline">{w.visualLabel ?? "In Progress"}</div>
-                      <h3>{w.title}</h3>
-                      <p>{w.summary}</p>
-                    </div>
-                  </article>
-                );
-              }
-
-              return (
-                <Link key={w.id} to={`/case-studies/${w.id}`} className="work-card">
-                  <div className={`work-card-visual work-card-visual-${w.id}`}>
-                    <span className="work-card-index">{w.index}</span>
-                    {w.image ? (
-                      <img src={w.image} alt={`${w.title} case study preview`} className="work-card-image" />
-                    ) : (
-                      <div className="work-card-visual-inner">
-                        <span className="work-card-visual-label">{w.visualLabel}</span>
-                        <div className="work-card-stat">{w.metric}</div>
-                        <div className="work-card-mini-bars">
-                          <span />
-                          <span />
-                          <span />
-                        </div>
-                      </div>
-                    )}
-                  </div>
-                  <div className="work-card-body">
-                    <div className="work-card-topline">{w.tags.join(" · ")}</div>
-                    <h3>{w.title}</h3>
-                    <p>{w.summary}</p>
-                    <p className="work-card-problem">{w.problem}</p>
-                    <div className="work-card-footer">
-                      <span className="work-card-metric">{w.metric}</span>
-                      <span className="work-card-cta">View Case Study →</span>
-                    </div>
-                  </div>
-                </Link>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* HOW I WORK */}
-      <section className="how-i-work reveal">
-        <div className="wrap">
-          <div className="hw-head">
-            <h2>HOW I WORK</h2>
-            <p>A practical product rhythm from unclear problems to focused, measurable execution.</p>
-          </div>
-          <div className="framework-steps">
-            {frameworkSteps.map((step) => (
-              <article key={step.title} className="framework-step">
-                <div className="step-icon">
-                  <step.icon size={32} strokeWidth={1.5} />
-                </div>
-                <h3 className="step-title">{step.title}</h3>
-                <p className="step-desc">{step.description}</p>
-              </article>
+          <div className="work-teaser-list">
+            {workTeaser.map((w) => (
+              <Link key={w.id} to={`/case-studies/${w.id}`} className="work-teaser-item">
+                <span className="work-teaser-index">{w.index}</span>
+                <span className="work-teaser-title">{w.title}</span>
+                <span className="work-teaser-arrow">→</span>
+              </Link>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* WHY ME */}
-      <section className="manifesto reveal">
-        <div className="wrap">
-          <h2>BUILT ACROSS INDUSTRIES.<br />WIRED FOR <em>PRODUCT</em>.</h2>
-          <div className="mf-body">
-            <p>My product instincts were shaped in environments where customer needs, commercial pressure, and operational complexity collide. That makes me especially effective in roles where clarity and alignment are prerequisites to progress.</p>
-          </div>
-          <div className="reasons-accordion">
-            {reasons.map((reason, i) => {
-              const isOpen = openReason === i;
-              return (
-                <div key={reason.title} className="reasons-item">
-                  <button
-                    className="reasons-trigger"
-                    aria-expanded={isOpen}
-                    onClick={() => setOpenReason(isOpen ? null : i)}
-                  >
-                    <span className="reasons-icon" aria-hidden="true" style={{ transform: isOpen ? "rotate(45deg)" : "rotate(0deg)" }}>+</span>
-                    <h3 className={`reasons-title${isOpen ? " open" : ""}`}>{reason.title}</h3>
-                  </button>
-                  <div className={`reasons-body${isOpen ? " open" : ""}`}>
-                    <div className="reasons-content">
-                      <p>{reason.description}</p>
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
           </div>
         </div>
       </section>
@@ -356,7 +154,6 @@ const Index = () => {
           </div>
         </div>
       </footer>
-
     </>
   );
 };

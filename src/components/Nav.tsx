@@ -7,7 +7,7 @@ const Nav = () => {
   const [open, setOpen] = useState(false);
 
   const isHome = pathname === "/";
-  const isWork = pathname.startsWith("/case-studies");
+  const isWork = pathname === "/work" || pathname.startsWith("/case-studies");
   const isAbout = pathname === "/about";
   const isContact = pathname === "/contact";
 
@@ -20,7 +20,7 @@ const Nav = () => {
         <div className="nav-status" />
         <div className="nav-links">
           <Link to="/" className={isHome ? "active" : ""}>Home</Link>
-          <a href="/#work" className={isWork ? "active" : ""}>Work</a>
+          <Link to="/work" className={isWork ? "active" : ""}>Work</Link>
           <Link to="/about" className={isAbout ? "active" : ""}>About</Link>
           <Link to="/contact" className={isContact ? "active" : ""}>Contact</Link>
           <button
