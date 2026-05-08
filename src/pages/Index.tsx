@@ -130,19 +130,27 @@ const Index = () => {
       {/* CTA */}
       <section className="cta reveal">
         <div className="wrap">
+          <div style={{marginBottom:"32px"}}>
+            <a
+              href="/Lucas_Daneluz-CV.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display:"inline-block",
+                fontFamily:"var(--display)",fontSize:"clamp(13px,1.2vw,16px)",fontWeight:700,
+                letterSpacing:"0.04em",textTransform:"uppercase",
+                color:"var(--ink)",background:"var(--accent)",
+                padding:"10px 20px",borderRadius:"2px",textDecoration:"none",
+                transition:"opacity .2s",
+              }}
+            >
+              Download CV →
+            </a>
+          </div>
           <h2>
             HIRING FOR A <em>PM</em> WHO CAN BRING <em className="hl-yellow">STRUCTURE</em>, <em className="hl-yellow">ALIGNMENT</em>, AND <em className="hl-yellow">MEASURABLE PROGRESS</em>?{" "}
             <Link to="/contact">LET&apos;S TALK →</Link>
           </h2>
-          <p className="cta-copy">
-            Currently open to PM roles in London and remote.
-          </p>
-          <div className="cta-links">
-            <a href="mailto:lucas.daneluz@gmail.com">lucas.daneluz@gmail.com</a>
-            <a href="https://www.linkedin.com/in/lucasdaneluz" target="_blank" rel="noopener noreferrer">/in/lucasdaneluz</a>
-            <a href="/Lucas_Daneluz-CV.pdf" target="_blank" rel="noopener noreferrer">Download CV</a>
-            <span>London, UK</span>
-          </div>
         </div>
       </section>
 
