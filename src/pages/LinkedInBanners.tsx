@@ -7,8 +7,8 @@ const items = [
 ];
 
 function PMWheel({ onYellow = false }: { onYellow?: boolean }) {
-  const cx = 215, cy = 200;
-  const ringR = 105, labelR = 122, nodeR = 5, centerR = 38;
+  const cx = 220, cy = 210;
+  const ringR = 108, labelR = 138, nodeR = 6, centerR = 38;
   const toRad = (d: number) => (d * Math.PI) / 180;
 
   const ringStroke  = onYellow ? "rgba(0,0,0,0.15)" : "#252525";
@@ -23,7 +23,7 @@ function PMWheel({ onYellow = false }: { onYellow?: boolean }) {
     i === 0   ? "#ffcc00" : `rgba(255,255,255,${0.85 - i * 0.1})`;
 
   return (
-    <svg viewBox="0 0 440 400" style={{ width: "100%", height: "100%" }}>
+    <svg viewBox="0 0 500 420" style={{ width: "100%", height: "100%" }}>
       {/* Outer ring */}
       <circle cx={cx} cy={cy} r={ringR} fill="none" stroke={ringStroke} strokeWidth="1.5" />
 
@@ -35,8 +35,8 @@ function PMWheel({ onYellow = false }: { onYellow?: boolean }) {
         const ly  = cy + labelR * Math.sin(rad);
         const cos = Math.cos(rad);
         const anchor = cos > 0.2 ? "start" : cos < -0.2 ? "end" : "middle";
-        const xPad   = cos > 0.2 ? 9 : cos < -0.2 ? -9 : 0;
-        const lh     = 13;
+        const xPad   = cos > 0.2 ? 10 : cos < -0.2 ? -10 : 0;
+        const lh     = 16;
         const nL     = item.label.length;
 
         return (
@@ -59,7 +59,7 @@ function PMWheel({ onYellow = false }: { onYellow?: boolean }) {
                 textAnchor={anchor}
                 dominantBaseline="middle"
                 fill={textColor(i)}
-                fontSize="11"
+                fontSize="14"
                 fontFamily="'Inter Tight','Helvetica Neue',Helvetica,Arial,sans-serif"
                 fontWeight={i === 0 ? "700" : "600"}
                 letterSpacing="-0.01em"
@@ -103,7 +103,7 @@ const LinkedInBanners = () => {
           <div style={{ position: "absolute", left: 0, top: 0, bottom: 0, width: "6px", background: "#ffcc00" }} />
           {/* Name */}
           <div style={{ position: "absolute", left: "22%", top: 0, bottom: 0, display: "flex", flexDirection: "column", justifyContent: "center" }}>
-            <div style={{ fontFamily: "'Inter Tight','Helvetica Neue',Helvetica,Arial,sans-serif", fontWeight: 800, fontSize: "clamp(28px,6.5vw,88px)", color: "#fff", lineHeight: 0.88, letterSpacing: "-0.045em", textTransform: "uppercase" }}>
+            <div style={{ fontFamily: "'Inter Tight','Helvetica Neue',Helvetica,Arial,sans-serif", fontWeight: 800, fontSize: "clamp(22px,5vw,68px)", color: "#fff", lineHeight: 0.88, letterSpacing: "-0.045em", textTransform: "uppercase" }}>
               Lucas<br />Daneluz
             </div>
             <div style={{ width: "clamp(36px,5vw,60px)", height: "3px", background: "#ffcc00", margin: "clamp(8px,1.2vw,16px) 0" }} />
@@ -131,7 +131,7 @@ const LinkedInBanners = () => {
           {/* Dark left */}
           <div style={{ flex: "0 0 65%", display: "flex", flexDirection: "column", justifyContent: "center", paddingLeft: "22%", paddingRight: "3%", zIndex: 2 }}>
             <div style={{ fontFamily: "JetBrains Mono, monospace", fontSize: "clamp(6px,0.78vw,11px)", color: "#555", textTransform: "uppercase", letterSpacing: "0.14em", marginBottom: "clamp(8px,1.2vw,14px)" }}>Product Manager · London, UK</div>
-            <div style={{ fontFamily: "'Inter Tight','Helvetica Neue',Helvetica,Arial,sans-serif", fontWeight: 800, fontSize: "clamp(28px,6vw,84px)", color: "#fff", lineHeight: 0.88, letterSpacing: "-0.045em", textTransform: "uppercase" }}>
+            <div style={{ fontFamily: "'Inter Tight','Helvetica Neue',Helvetica,Arial,sans-serif", fontWeight: 800, fontSize: "clamp(22px,5vw,68px)", color: "#fff", lineHeight: 0.88, letterSpacing: "-0.045em", textTransform: "uppercase" }}>
               Lucas<br />Daneluz
             </div>
             <div style={{ marginTop: "clamp(10px,1.4vw,16px)", fontFamily: "JetBrains Mono, monospace", fontSize: "clamp(6px,0.72vw,10px)", color: "#333", letterSpacing: "0.12em", textTransform: "uppercase" }}>
