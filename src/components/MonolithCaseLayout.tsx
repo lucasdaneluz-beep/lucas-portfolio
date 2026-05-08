@@ -48,7 +48,7 @@ const MonolithCaseLayout = ({
 
     <section className="cta" style={{ paddingTop: "clamp(64px,8vw,96px)", paddingBottom: "clamp(64px,8vw,96px)" }}>
       <div className="wrap">
-        <h2><Link to="/#work">← ALL WORK</Link></h2>
+        <h2><Link to="/work">← ALL WORK</Link></h2>
       </div>
     </section>
 
