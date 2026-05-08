@@ -79,7 +79,7 @@ function PMWheel({ onYellow = false }: { onYellow?: boolean }) {
         fontFamily="'Inter Tight','Helvetica Neue',Helvetica,Arial,sans-serif"
         fontWeight="800" letterSpacing="0.04em" textDecoration="none"
         style={{ textTransform: "uppercase" }}
-      >PRODUCT</text>
+      >product</text>
     </svg>
   );
 }
