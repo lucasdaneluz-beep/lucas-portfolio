@@ -8,7 +8,7 @@ const items = [
 
 function PMWheel({ onYellow = false }: { onYellow?: boolean }) {
   const cx = 215, cy = 200;
-  const ringR = 105, labelR = 122, nodeR = 5, centerR = 30;
+  const ringR = 105, labelR = 122, nodeR = 5, centerR = 38;
   const toRad = (d: number) => (d * Math.PI) / 180;
 
   const ringStroke  = onYellow ? "rgba(0,0,0,0.15)" : "#252525";
@@ -75,10 +75,9 @@ function PMWheel({ onYellow = false }: { onYellow?: boolean }) {
       <circle cx={cx} cy={cy} r={centerR} fill={centerFill} />
       <text
         x={cx} y={cy} textAnchor="middle" dominantBaseline="middle"
-        fill={centerText} fontSize="10"
+        fill={centerText} fontSize="13"
         fontFamily="'Inter Tight','Helvetica Neue',Helvetica,Arial,sans-serif"
-        fontWeight="800" letterSpacing="0.04em" textDecoration="none"
-        style={{ textTransform: "uppercase" }}
+        fontWeight="700" letterSpacing="-0.02em"
       >product</text>
     </svg>
   );
