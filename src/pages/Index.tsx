@@ -82,6 +82,7 @@ const Index = () => {
               <div className="hero-actions">
                 <Link className="hero-cta" to="/work">View Case Studies →</Link>
                 <Link className="hero-cta secondary" to="/about">About Me →</Link>
+                <a className="hero-cta secondary" href="/Lucas_Daneluz-CV.pdf" target="_blank" rel="noopener noreferrer">Download CV →</a>
                 <Link className="hero-cta secondary" to="/contact">Let&apos;s Talk →</Link>
               </div>
             </div>
@@ -134,15 +135,6 @@ const Index = () => {
             HIRING FOR A <em>PM</em> WHO CAN BRING <em className="hl-yellow">STRUCTURE</em>, <em className="hl-yellow">ALIGNMENT</em>, AND <em className="hl-yellow">MEASURABLE PROGRESS</em>?{" "}
             <Link to="/contact">LET&apos;S TALK →</Link>
           </h2>
-          <p className="cta-copy">
-            Currently open to PM roles in London and remote.
-          </p>
-          <div className="cta-links">
-            <a href="mailto:lucas.daneluz@gmail.com">lucas.daneluz@gmail.com</a>
-            <a href="https://www.linkedin.com/in/lucasdaneluz" target="_blank" rel="noopener noreferrer">/in/lucasdaneluz</a>
-            <a href="/Lucas_Daneluz-CV.pdf" target="_blank" rel="noopener noreferrer">Download CV</a>
-            <span>London, UK</span>
-          </div>
         </div>
       </section>
 
