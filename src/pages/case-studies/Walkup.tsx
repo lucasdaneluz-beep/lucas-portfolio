@@ -47,28 +47,28 @@ const CaseStudyWalkup = () => {
           <div style={{fontFamily:"var(--mono)",fontSize:"8px",color:"var(--ink-mute)",textTransform:"uppercase",letterSpacing:"0.08em",marginTop:"8px",textAlign:"right"}}>↑ High impact</div>
         </div>
 
-        {/* SCREEN — Queue transparency + loyalty UI */}
+        {/* SCREEN — Actual designs from presentation */}
         <div className="cs-card" style={{display:"flex",flexDirection:"column",gap:"8px"}}>
           <div className="cs-card-title">Screen</div>
-          <div style={{display:"flex",justifyContent:"center",flex:1,paddingTop:"8px"}}>
-            <div style={{width:"130px",background:"var(--bg-2)",border:"2px solid var(--rule-2)",borderRadius:"16px",padding:"12px 10px",display:"flex",flexDirection:"column",gap:"7px"}}>
-              <div style={{display:"flex",justifyContent:"space-between"}}>
-                <span style={{fontFamily:"var(--mono)",fontSize:"8px",color:"var(--ink-mute)"}}>9:41</span>
-                <span style={{fontFamily:"var(--mono)",fontSize:"8px",color:"var(--ink-mute)"}}>●●●</span>
-              </div>
-              <div style={{fontFamily:"var(--display)",fontSize:"13px",fontWeight:700,color:"var(--ink)",letterSpacing:"-0.02em"}}>WalkUp</div>
-              <div style={{fontFamily:"var(--mono)",fontSize:"8px",color:"var(--ink-mute)",letterSpacing:"0.08em",textTransform:"uppercase"}}>The Ivy Chelsea</div>
-              <div style={{background:"var(--bg)",border:"1px solid var(--rule)",borderRadius:"8px",padding:"10px",textAlign:"center"}}>
-                <div style={{fontFamily:"var(--mono)",fontSize:"7px",color:"var(--ink-mute)",textTransform:"uppercase",letterSpacing:"0.08em",marginBottom:"4px"}}>Queue position</div>
-                <div style={{fontFamily:"var(--display)",fontSize:"30px",fontWeight:800,color:"var(--accent)",letterSpacing:"-0.04em",lineHeight:1}}>#4</div>
-                <div style={{fontFamily:"var(--mono)",fontSize:"8px",color:"var(--ink-dim)",marginTop:"4px"}}>Est. 12 min</div>
-              </div>
-              <div style={{background:"color-mix(in oklab, var(--accent) 10%, var(--bg))",border:"1px solid color-mix(in oklab, var(--accent) 25%, transparent)",borderRadius:"6px",padding:"6px 8px",display:"flex",justifyContent:"space-between",alignItems:"center"}}>
-                <span style={{fontFamily:"var(--mono)",fontSize:"7px",color:"var(--ink-mute)",textTransform:"uppercase",letterSpacing:"0.08em"}}>Points</span>
-                <span style={{fontFamily:"var(--display)",fontSize:"13px",fontWeight:700,color:"var(--accent)"}}>120</span>
-              </div>
+          <div style={{display:"flex",justifyContent:"center",gap:"10px",flex:1,paddingTop:"8px",alignItems:"flex-start"}}>
+            {/* Phone 1 — Loyalty points */}
+            <div style={{width:"90px",background:"#111",borderRadius:"12px",overflow:"hidden",border:"2px solid #222",boxShadow:"0 4px 16px rgba(0,0,0,0.3)",flexShrink:0}}>
+              <img
+                src="/walkup/loyalty-points.jpg"
+                alt="WalkUp loyalty points screen"
+                style={{width:"100%",display:"block"}}
+              />
+            </div>
+            {/* Phone 2 — Restaurant profile + ratings */}
+            <div style={{width:"90px",background:"#111",borderRadius:"12px",overflow:"hidden",border:"2px solid #222",boxShadow:"0 4px 16px rgba(0,0,0,0.3)",flexShrink:0}}>
+              <img
+                src="/walkup/restaurant-profile.jpg"
+                alt="WalkUp restaurant profile and ratings screen"
+                style={{width:"100%",display:"block"}}
+              />
             </div>
           </div>
+          <div style={{fontFamily:"var(--mono)",fontSize:"8px",color:"var(--ink-mute)",textTransform:"uppercase",letterSpacing:"0.08em",textAlign:"center",marginTop:"4px"}}>Loyalty · Restaurant profile</div>
         </div>
 
         {/* RESEARCH ARTIFACT — App store sentiment clusters */}
