@@ -82,6 +82,7 @@ const Index = () => {
               <div className="hero-actions">
                 <Link className="hero-cta" to="/work">View Case Studies →</Link>
                 <Link className="hero-cta secondary" to="/about">About Me →</Link>
+                <a className="hero-cta secondary" href="/Lucas_Daneluz-CV.pdf" target="_blank" rel="noopener noreferrer">Download CV →</a>
                 <Link className="hero-cta secondary" to="/contact">Let&apos;s Talk →</Link>
               </div>
             </div>
@@ -130,23 +131,6 @@ const Index = () => {
       {/* CTA */}
       <section className="cta reveal">
         <div className="wrap">
-          <div style={{marginBottom:"32px"}}>
-            <a
-              href="/Lucas_Daneluz-CV.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                display:"inline-block",
-                fontFamily:"var(--display)",fontSize:"clamp(13px,1.2vw,16px)",fontWeight:700,
-                letterSpacing:"0.04em",textTransform:"uppercase",
-                color:"var(--ink)",background:"var(--accent)",
-                padding:"10px 20px",borderRadius:"2px",textDecoration:"none",
-                transition:"opacity .2s",
-              }}
-            >
-              Download CV →
-            </a>
-          </div>
           <h2>
             HIRING FOR A <em>PM</em> WHO CAN BRING <em className="hl-yellow">STRUCTURE</em>, <em className="hl-yellow">ALIGNMENT</em>, AND <em className="hl-yellow">MEASURABLE PROGRESS</em>?{" "}
             <Link to="/contact">LET&apos;S TALK →</Link>
