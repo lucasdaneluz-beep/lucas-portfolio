@@ -130,7 +130,7 @@ const Index = () => {
       <section className="cta reveal">
         <div className="wrap">
           <h2>
-            HIRING FOR A <em>PM</em> WHO CAN BRING STRUCTURE, ALIGNMENT, AND MEASURABLE PROGRESS?{" "}
+            HIRING FOR A <em>PM</em> WHO CAN BRING <em className="hl-yellow">STRUCTURE</em>, <em className="hl-yellow">ALIGNMENT</em>, AND <em className="hl-yellow">MEASURABLE PROGRESS</em>?{" "}
             <Link to="/contact">LET&apos;S TALK →</Link>
           </h2>
           <p className="cta-copy">
