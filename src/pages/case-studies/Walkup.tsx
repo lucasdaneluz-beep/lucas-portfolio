@@ -1,319 +1,166 @@
-import { useEffect } from "react";
-import { ArrowLeft, ArrowRight } from "lucide-react";
-import { useNavigate } from "react-router-dom";
-import BackButton from "@/components/ui/BackButton";
+import { useEffect, Fragment } from "react";
+import MonolithCaseLayout from "@/components/MonolithCaseLayout";
 
 const CaseStudyWalkup = () => {
-  const navigate = useNavigate();
-
   useEffect(() => {
     document.title = "WalkUp – Smarter Queues | Lucas Daneluz";
     return () => { document.title = "Lucas Daneluz – PM Portfolio"; };
   }, []);
 
   return (
-    <div
-      className="min-h-screen"
-      style={{ background: "linear-gradient(135deg, hsl(210 35% 5%) 0%, hsl(210 28% 8%) 50%, hsl(210 35% 5%) 100%)" }}
+    <MonolithCaseLayout
+      title="WalkUp — Smarter Queues"
+      lede="Queue transparency, loyalty, and growth for a UK restaurant waitlist marketplace used by 400K+ diners and 800+ restaurant partners."
+      focus="Marketplace · Waitlist UX"
+      metric="3× loyalty engagement uplift"
+      tags={["Marketplace", "Waitlist UX", "Loyalty", "Product Strategy"]}
+      disclaimer="This is a product concept for portfolio purposes only. Not affiliated with WalkUp or its parent companies."
     >
-      <div className="max-w-4xl mx-auto px-6 pt-10 pb-20">
+      <h3>Context</h3>
+      <p>WalkUp is a UK restaurant queue management app connecting 400K+ diners with 800+ venue partners. The core problem was trust erosion — wait times were unreliable, the app was crash-prone, and there was no loyalty hook to bring diners back over competitors.</p>
 
-        <BackButton />
+      <h3>Approach</h3>
+      <p>Discovery first: user research across both sides of the marketplace, competitive analysis, and app-store sentiment mapping. Pain points were scored against a value matrix and collapsed into a prioritised Q1 roadmap — six sprints across product, design, engineering, ops, and marketing. Success metrics were defined before any build started so progress could be measured against a baseline rather than retrofitted after the fact.</p>
 
-        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-3" style={{ background: "hsl(174 80% 60% / 0.12)", border: "1px solid hsl(174 80% 60% / 0.25)" }}>
-          <span className="text-[10px] font-bold uppercase tracking-widest" style={{ color: "hsl(174 80% 60%)" }}>Case Study 01 / 04</span>
-        </div>
-        <h1 className="text-3xl md:text-4xl font-black tracking-tight mb-3" style={{ color: "hsl(210 40% 98%)" }}>
-          WalkUp <span style={{ color: "hsl(174 80% 60%)" }}>Smarter Queues</span>
-        </h1>
-        <p className="text-sm md:text-base max-w-4xl mb-8" style={{ color: "hsl(210 20% 65%)" }}>
-          Improving queue transparency, loyalty, and app performance for a UK restaurant waitlist marketplace used by 400K+ diners.
-        </p>
+      <div className="cs-cards three" style={{margin:"40px 0"}}>
 
-        {/* Metrics strip */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-12">
-          {[
-            { value: "400K+", label: "Diners served" },
-            { value: "800+", label: "Restaurant partners" },
-            { value: "6", label: "Sprints · Q1 roadmap" },
-            { value: "~70%", label: "Modelled first-year ROI" },
-          ].map(({ value, label }) => (
-            <div key={label} className="rounded-2xl p-4 text-center" style={{ background: "hsl(210 28% 10%)", border: "1px solid hsl(210 20% 18%)", borderTop: "2px solid hsl(174 80% 60% / 0.4)" }}>
-              <p className="text-2xl font-black mb-1.5" style={{ color: "hsl(174 80% 60%)" }}>{value}</p>
-              <p className="text-xs font-medium" style={{ color: "hsl(210 20% 65%)" }}>{label}</p>
+        {/* PROCESS DIAGRAM — Priority matrix */}
+        <div className="cs-card">
+          <div className="cs-card-title">Process Diagram</div>
+          <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gridTemplateRows:"auto 1fr 1fr",gap:"1px",background:"var(--rule)",width:"100%",marginTop:"8px"}}>
+            <div style={{gridColumn:"1/-1",background:"var(--bg)",padding:"6px 10px",display:"flex",justifyContent:"space-between"}}>
+              <span style={{fontFamily:"var(--mono)",fontSize:"8px",color:"var(--ink-mute)",letterSpacing:"0.08em",textTransform:"uppercase"}}>← Low effort</span>
+              <span style={{fontFamily:"var(--mono)",fontSize:"8px",color:"var(--ink-mute)",letterSpacing:"0.08em",textTransform:"uppercase"}}>High effort →</span>
             </div>
-          ))}
-        </div>
-
-        {/* Overview / About */}
-        <section className="grid md:grid-cols-2 gap-8 mb-12 text-xs md:text-sm" style={{ color: "hsl(210 20% 70%)" }}>
-          <div className="space-y-4">
-            <div>
-              <h2 className="text-[11px] font-bold uppercase tracking-widest mb-2" style={{ color: "hsl(210 15% 45%)" }}>
-                About WalkUp
-              </h2>
-              <p>
-                WalkUp is a restaurant queue management app in the UK, helping diners join virtual waitlists and avoid standing in line. At the time of this project, the product served over 400,000 users and partnered with 800+ restaurants.
-              </p>
-            </div>
-            <div>
-              <h2 className="text-[11px] font-bold uppercase tracking-widest mb-2" style={{ color: "hsl(210 15% 45%)" }}>
-                Mission
-              </h2>
-              <p>
-                Get diners a table anywhere, anytime — while increasing restaurant revenue by reducing no‑shows and making queues more predictable.
-              </p>
-            </div>
-          </div>
-
-          <div className="space-y-4">
-            <div>
-              <h2 className="text-[11px] font-bold uppercase tracking-widest mb-2" style={{ color: "hsl(210 15% 45%)" }}>
-                Role
-              </h2>
-              <p>
-                Product concept and roadmap definition — mapping competitive landscape, user pain points, and restaurant needs into a Q1 feature roadmap focused on wait‑time accuracy, loyalty, and performance.
-              </p>
-            </div>
-            <div className="grid grid-cols-2 gap-4">
-              <div>
-                <h3 className="text-[11px] font-semibold uppercase tracking-widest mb-1.5" style={{ color: "hsl(210 15% 45%)" }}>
-                  Focus
-                </h3>
-                <ul className="space-y-1.5 list-disc pl-4">
-                  <li>Queue transparency</li>
-                  <li>Loyalty model</li>
-                  <li>Restaurant profiles</li>
-                </ul>
-              </div>
-              <div>
-                <h3 className="text-[11px] font-semibold uppercase tracking-widest mb-1.5" style={{ color: "hsl(210 15% 45%)" }}>
-                  Timeline
-                </h3>
-                <p>6 sprints (Q1 2022) across product, design, engineering, marketing, ops, and support.</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Problem / Solution / Impact */}
-        <div className="grid md:grid-cols-3 gap-4 text-xs md:text-sm mb-12">
-          <div className="rounded-2xl p-4" style={{ background: "hsl(0 72% 51% / 0.08)", border: "1px solid hsl(0 72% 51% / 0.2)" }}>
-            <h2 className="flex items-center gap-2 text-sm font-bold mb-2" style={{ color: "hsl(0 72% 60%)" }}>
-              <span>🎯</span> Problem
-            </h2>
-            <ul className="space-y-1.5" style={{ color: "hsl(210 20% 70%)" }}>
-              <li>Unreliable wait times eroded trust and drove users to abandon queues mid-wait.</li>
-              <li>No loyalty mechanic meant little reason to return over competitors.</li>
-              <li>App crashes and battery drain were directly hurting retention and reviews.</li>
-            </ul>
-          </div>
-          <div className="rounded-2xl p-4" style={{ background: "hsl(174 80% 60% / 0.08)", border: "1px solid hsl(174 80% 60% / 0.2)" }}>
-            <h2 className="flex items-center gap-2 text-sm font-bold mb-2" style={{ color: "hsl(174 80% 60%)" }}>
-              <span>💡</span> Solution
-            </h2>
-            <ul className="space-y-1.5" style={{ color: "hsl(210 20% 70%)" }}>
-              <li>Rebuilt wait-time accuracy with SMS alerts and aligned restaurant cut-off rules.</li>
-              <li>Launched a points-based loyalty programme with cash-equivalent rewards.</li>
-              <li>Treated app stability as a prerequisite — fixed crashes and battery drain first.</li>
-            </ul>
-          </div>
-          <div className="rounded-2xl p-4" style={{ background: "hsl(42 90% 58% / 0.08)", border: "1px solid hsl(42 90% 58% / 0.2)" }}>
-            <h2 className="flex items-center gap-2 text-sm font-bold mb-2" style={{ color: "hsl(42 90% 58%)" }}>
-              <span>📊</span> Impact & rationale
-            </h2>
-            <ul className="space-y-1.5" style={{ color: "hsl(210 20% 70%)" }}>
-              <li>Modelled +10% uplift in weekly bookings and returning diners within Q1.</li>
-              <li>Richer restaurant profiles reduce friction in new venue onboarding.</li>
-              <li>~70% first-year ROI on combined product and marketing investment.</li>
-            </ul>
-          </div>
-        </div>
-
-        {/* Personas */}
-        <section className="mb-12 text-xs md:text-sm">
-          <h2 className="text-[11px] font-bold uppercase tracking-widest mb-4" style={{ color: "hsl(210 15% 45%)" }}>
-            Key personas
-          </h2>
-          <div className="grid md:grid-cols-3 gap-4">
-            <div
-              className="rounded-2xl p-4"
-              style={{ background: "hsl(210 28% 10%)", border: "1px solid hsl(210 20% 18%)" }}
-            >
-              <p className="text-[11px] font-semibold uppercase tracking-widest mb-1.5" style={{ color: "hsl(174 80% 60%)" }}>
-                Samantha · Foodie
-              </p>
-              <p className="mb-2" style={{ color: "hsl(210 20% 70%)" }}>
-                Loves exploring busy central London restaurants with friends after work and at weekends.
-              </p>
-              <ul className="space-y-1.5 list-disc pl-4" style={{ color: "hsl(210 20% 70%)" }}>
-                <li>Wants to reduce idle time and maximise time with friends.</li>
-                <li>Needs reliable estimates to plan where to go next.</li>
-                <li>Frustrated by standing in the cold with no back‑up options.</li>
-              </ul>
-            </div>
-            <div
-              className="rounded-2xl p-4"
-              style={{ background: "hsl(210 28% 10%)", border: "1px solid hsl(210 20% 18%)" }}
-            >
-              <p className="text-[11px] font-semibold uppercase tracking-widest mb-1.5" style={{ color: "hsl(174 80% 60%)" }}>
-                Victor · Tourist
-              </p>
-              <p className="mb-2" style={{ color: "hsl(210 20% 70%)" }}>
-                Digital nomad running a food blog across 30+ cities, trying to live like a local during short stays.
-              </p>
-              <ul className="space-y-1.5 list-disc pl-4" style={{ color: "hsl(210 20% 70%)" }}>
-                <li>Needs to discover great spots quickly in unfamiliar neighbourhoods.</li>
-                <li>Wants to see menus, photos, and pricing before committing.</li>
-                <li>Seeks predictable waits to avoid wasting limited exploration time.</li>
-              </ul>
-            </div>
-            <div
-              className="rounded-2xl p-4"
-              style={{ background: "hsl(210 28% 10%)", border: "1px solid hsl(210 20% 18%)" }}
-            >
-              <p className="text-[11px] font-semibold uppercase tracking-widest mb-1.5" style={{ color: "hsl(174 80% 60%)" }}>
-                Tom · Restaurant manager
-              </p>
-              <p className="mb-2" style={{ color: "hsl(210 20% 70%)" }}>
-                Runs a busy London restaurant with limited seating and high demand at peak times.
-              </p>
-              <ul className="space-y-1.5 list-disc pl-4" style={{ color: "hsl(210 20% 70%)" }}>
-                <li>Wants to fill tables efficiently without over‑promising wait times.</li>
-                <li>Needs better visibility into ratings and guest feedback.</li>
-                <li>Is looking for tools to manage queues, not just take bookings.</li>
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        {/* Pain points & value matrix */}
-        <section className="mb-12 text-xs md:text-sm">
-          <h2 className="text-[11px] font-bold uppercase tracking-widest mb-4" style={{ color: "hsl(210 15% 45%)" }}>
-            Pain points & value
-          </h2>
-          <div className="grid md:grid-cols-2 gap-6">
-            <div
-              className="rounded-2xl p-4"
-              style={{ background: "hsl(210 28% 10%)", border: "1px solid hsl(210 20% 18%)" }}
-            >
-              <h3 className="text-[11px] font-semibold uppercase tracking-widest mb-2" style={{ color: "hsl(0 72% 60%)" }}>
-                Customer pain points
-              </h3>
-              <ul className="space-y-1.5 list-disc pl-4" style={{ color: "hsl(210 20% 70%)" }}>
-                <li>Unreliable wait‑time estimates and queues that suddenly drop users.</li>
-                <li>Arbitrary 2km restriction that doesn&apos;t match actual waiting time.</li>
-                <li>App perceived as slow, crash‑prone, and battery‑hungry.</li>
-                <li>Poorly managed expectations at the door, leading to negative reviews.</li>
-              </ul>
-            </div>
-            <div
-              className="rounded-2xl p-4"
-              style={{ background: "hsl(210 28% 10%)", border: "1px solid hsl(210 20% 18%)" }}
-            >
-              <h3 className="text-[11px] font-semibold uppercase tracking-widest mb-2" style={{ color: "hsl(42 90% 58%)" }}>
-                Value matrix highlights
-              </h3>
-              <ul className="space-y-1.5 list-disc pl-4" style={{ color: "hsl(210 20% 70%)" }}>
-                <li>High value: accurate wait times, reliable queues, and loyalty rewards.</li>
-                <li>Quick wins: app stability, loyalty programme, and clearer 2km messaging.</li>
-                <li>Longer‑term &quot;north star&quot;: deeper recommendations and menu‑level ratings.</li>
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        {/* Solution & roadmap */}
-        <section className="mb-12 text-xs md:text-sm">
-          <h2 className="text-[11px] font-bold uppercase tracking-widest mb-4" style={{ color: "hsl(210 15% 45%)" }}>
-            Solution & Q1 roadmap
-          </h2>
-          <div className="grid md:grid-cols-3 gap-4">
-            <div
-              className="rounded-2xl p-4"
-              style={{ background: "hsl(174 80% 60% / 0.08)", border: "1px solid hsl(174 80% 60% / 0.2)" }}
-            >
-              <div className="flex items-center justify-between mb-2">
-                <h3 className="flex items-center gap-2 text-sm font-bold" style={{ color: "hsl(174 80% 60%)" }}>
-                  <span>⏱️</span> Improve wait‑time accuracy
-                </h3>
-                <span className="text-[9px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-full" style={{ background: "hsl(0 72% 51% / 0.12)", color: "hsl(0 72% 60%)", border: "1px solid hsl(0 72% 51% / 0.25)" }}>High</span>
-              </div>
-              <ul className="space-y-1.5 list-disc pl-4" style={{ color: "hsl(210 20% 70%)" }}>
-                <li>Upgrade restaurant platform with SMS alerts for both app users and walk‑ins.</li>
-                <li>Align queue messaging and cut‑off rules with real operations.</li>
-                <li>Set restaurant‑level usage targets (e.g. 20 reservations/week) to track impact.</li>
-              </ul>
-            </div>
-            <div
-              className="rounded-2xl p-4"
-              style={{ background: "hsl(174 80% 60% / 0.08)", border: "1px solid hsl(174 80% 60% / 0.2)" }}
-            >
-              <div className="flex items-center justify-between mb-2">
-                <h3 className="flex items-center gap-2 text-sm font-bold" style={{ color: "hsl(174 80% 60%)" }}>
-                  <span>⭐</span> Loyalty and profiles
-                </h3>
-                <span className="text-[9px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-full" style={{ background: "hsl(0 72% 51% / 0.12)", color: "hsl(0 72% 60%)", border: "1px solid hsl(0 72% 51% / 0.25)" }}>High</span>
-              </div>
-              <ul className="space-y-1.5 list-disc pl-4" style={{ color: "hsl(210 20% 70%)" }}>
-                <li>Launch a clear points‑based loyalty programme with cash‑equivalent rewards.</li>
-                <li>Design richer restaurant profiles: photos, menu highlights, pricing, reviews.</li>
-                <li>Lay groundwork for sponsored placements once UX fundamentals are strong.</li>
-              </ul>
-            </div>
-            <div
-              className="rounded-2xl p-4"
-              style={{ background: "hsl(174 80% 60% / 0.08)", border: "1px solid hsl(174 80% 60% / 0.2)" }}
-            >
-              <div className="flex items-center justify-between mb-2">
-                <h3 className="flex items-center gap-2 text-sm font-bold" style={{ color: "hsl(174 80% 60%)" }}>
-                  <span>⚙️</span> Performance & tech debt
-                </h3>
-                <span className="text-[9px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-full" style={{ background: "hsl(42 90% 58% / 0.12)", color: "hsl(42 90% 58%)", border: "1px solid hsl(42 90% 58% / 0.25)" }}>Medium</span>
-              </div>
-              <ul className="space-y-1.5 list-disc pl-4" style={{ color: "hsl(210 20% 70%)" }}>
-                <li>Stabilise the app to reduce crashes and startup time.</li>
-                <li>Optimise background behaviour to reduce battery drain.</li>
-                <li>Treat performance as a prerequisite for any new feature adoption.</li>
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        <section className="mb-8 text-xs md:text-sm">
-          <h2 className="text-[11px] font-bold uppercase tracking-widest mb-4" style={{ color: "hsl(210 15% 45%)" }}>
-            KPIs & expected impact
-          </h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4">
             {[
-              { value: "+10%", label: "Weekly bookings", sub: "Target uplift across network" },
-              { value: "+10%", label: "Retention", sub: "Returning diners every 2 weeks" },
-              { value: "800+", label: "Restaurants", sub: "Via richer profiles & free trials" },
-              { value: "~70%", label: "First-year ROI", sub: "On product & marketing spend" },
-            ].map(({ value, label, sub }) => (
-              <div key={label} className="rounded-2xl p-4" style={{ background: "hsl(210 28% 10%)", border: "1px solid hsl(210 20% 18%)" }}>
-                <p className="text-2xl font-black mb-0.5" style={{ color: "hsl(174 80% 60%)" }}>{value}</p>
-                <p className="text-xs font-bold mb-0.5" style={{ color: "hsl(210 40% 88%)" }}>{label}</p>
-                <p className="text-[10px]" style={{ color: "hsl(210 15% 50%)" }}>{sub}</p>
+              {label:"Quick Wins",items:["Queue transparency","App stability"],accent:true},
+              {label:"Strategic Bets",items:["Loyalty loop"],accent:false},
+              {label:"Fill-ins",items:["Wait time comms"],accent:false},
+              {label:"Deprioritised",items:["Venue rebrand"],accent:false,dim:true},
+            ].map((q,i) => (
+              <div key={i} style={{background: q.accent ? "color-mix(in oklab, var(--accent) 8%, var(--bg))" : q.dim ? "var(--bg-2)" : "var(--bg)",padding:"12px",minHeight:"80px",display:"flex",flexDirection:"column",gap:"5px"}}>
+                <span style={{fontFamily:"var(--mono)",fontSize:"8px",color: q.accent ? "var(--accent)" : "var(--ink-mute)",letterSpacing:"0.08em",textTransform:"uppercase"}}>{q.label}</span>
+                {q.items.map(item => <span key={item} style={{fontSize:"10px",color:"var(--ink-dim)"}}>{item}</span>)}
               </div>
             ))}
           </div>
-        </section>
-
-        <div className="flex justify-between items-center mt-12 pt-6" style={{ borderTop: "1px solid hsl(210 20% 16%)" }}>
-          <a href="/#case-studies" className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold transition-opacity hover:opacity-75" style={{ background: "hsl(210 28% 11%)", border: "1px solid hsl(210 20% 22%)", color: "hsl(210 20% 65%)" }}>
-            <ArrowLeft size={13} /> All case studies
-          </a>
-          <button onClick={() => navigate("/case-studies/hipen-media")} className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold transition-opacity hover:opacity-75" style={{ background: "hsl(174 80% 60% / 0.1)", border: "1px solid hsl(174 80% 60% / 0.3)", color: "hsl(174 80% 60%)" }}>
-            Next: Hipen Media <ArrowRight size={13} />
-          </button>
+          <div style={{fontFamily:"var(--mono)",fontSize:"8px",color:"var(--ink-mute)",textTransform:"uppercase",letterSpacing:"0.08em",marginTop:"8px",textAlign:"right"}}>↑ High impact</div>
         </div>
 
-        <p className="text-[10px] text-center mt-6" style={{ color: "hsl(210 15% 35%)" }}>
-          This is a product concept for portfolio purposes only. Not affiliated with WalkUp or its parent companies.
-        </p>
+        {/* SCREEN — Redesigned WalkUp UI concepts */}
+        <div className="cs-card" style={{display:"flex",flexDirection:"column",gap:"8px"}}>
+          <div className="cs-card-title">Screen</div>
+          <div style={{display:"flex",justifyContent:"center",gap:"8px",flex:1,paddingTop:"8px",alignItems:"flex-start"}}>
+
+            {/* Phone 1 — Loyalty Points */}
+            <div style={{width:"108px",background:"#0d0d0d",borderRadius:"14px",padding:"10px 9px",display:"flex",flexDirection:"column",gap:"6px",border:"1.5px solid #1f1f1f",boxShadow:"0 6px 24px rgba(0,0,0,0.5)",flexShrink:0}}>
+              <div style={{display:"flex",justifyContent:"space-between",alignItems:"center"}}>
+                <span style={{fontSize:"7px",color:"#555",fontFamily:"var(--mono)"}}>9:41</span>
+                <div style={{display:"flex",alignItems:"center",gap:"3px"}}>
+                  <div style={{width:"10px",height:"5px",borderRadius:"1px",border:"1px solid #555",position:"relative"}}><div style={{width:"60%",height:"100%",background:"#555",borderRadius:"0.5px"}}></div></div>
+                </div>
+              </div>
+              <div style={{display:"flex",alignItems:"center",gap:"5px",paddingBottom:"4px",borderBottom:"1px solid #1a1a1a"}}>
+                <div style={{width:"16px",height:"16px",borderRadius:"4px",background:"#00b8d4",display:"flex",alignItems:"center",justifyContent:"center",flexShrink:0}}>
+                  <span style={{fontSize:"9px",fontWeight:900,color:"#000"}}>W</span>
+                </div>
+                <span style={{fontSize:"11px",fontWeight:700,color:"#fff",letterSpacing:"-0.02em"}}>WalkUp</span>
+              </div>
+              <div style={{lineHeight:1.25}}>
+                <span style={{fontSize:"10px",fontWeight:700,color:"#fff"}}>Earn Points </span>
+                <span style={{fontSize:"10px",fontWeight:700,color:"#00b8d4"}}>While Queuing</span>
+              </div>
+              <div style={{background:"#141414",borderRadius:"9px",padding:"9px 8px",textAlign:"center",border:"1px solid #222"}}>
+                <div style={{fontSize:"6px",color:"#555",textTransform:"uppercase",letterSpacing:"0.1em",marginBottom:"4px",fontFamily:"var(--mono)"}}>Your Points</div>
+                <div style={{fontSize:"28px",fontWeight:800,color:"#fff",lineHeight:1,letterSpacing:"-0.04em"}}>246</div>
+                <div style={{fontSize:"6px",color:"#555",marginTop:"3px",fontFamily:"var(--mono)"}}>754 to next reward</div>
+                <div style={{height:"3px",background:"#222",borderRadius:"2px",marginTop:"7px"}}>
+                  <div style={{width:"24.6%",height:"100%",background:"#00b8d4",borderRadius:"2px"}}></div>
+                </div>
+              </div>
+              <div style={{background:"#00b8d4",borderRadius:"20px",padding:"3px 8px",display:"flex",alignItems:"center",justifyContent:"center"}}>
+                <span style={{fontSize:"7px",fontWeight:700,color:"#000",letterSpacing:"0.04em"}}>Redeem</span>
+              </div>
+              <div style={{display:"flex",flexDirection:"column",gap:"5px",paddingTop:"2px"}}>
+                {[
+                  {dot:"#00b8d4", text:"Queue & arrive → +125 pts"},
+                  {dot:"#555",    text:"1,000 pts = £10 gift card"},
+                  {dot:"#555",    text:"Or 3% off your next bill"},
+                ].map((item,i) => (
+                  <div key={i} style={{display:"flex",gap:"5px",alignItems:"flex-start"}}>
+                    <div style={{width:"4px",height:"4px",borderRadius:"50%",background:item.dot,flexShrink:0,marginTop:"3px"}}></div>
+                    <span style={{fontSize:"7.5px",color:"#888",lineHeight:1.35}}>{item.text}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Phone 2 — Restaurant Profile */}
+            <div style={{width:"108px",background:"#0d0d0d",borderRadius:"14px",overflow:"hidden",border:"1.5px solid #1f1f1f",boxShadow:"0 6px 24px rgba(0,0,0,0.5)",flexShrink:0}}>
+              {/* Header — Padella photo, no overlay */}
+              <div style={{height:"60px",overflow:"hidden"}}>
+                <img src="/walkup/padella.png" alt="Padella restaurant" style={{width:"100%",height:"100%",objectFit:"cover",objectPosition:"center 40%",display:"block"}} />
+              </div>
+              <div style={{padding:"8px 9px",display:"flex",flexDirection:"column",gap:"7px"}}>
+                <div style={{background:"#00b8d4",borderRadius:"20px",padding:"3px 8px",display:"flex",alignItems:"center",justifyContent:"center"}}>
+                  <span style={{fontSize:"7px",fontWeight:700,color:"#000",letterSpacing:"0.02em"}}>#4 in queue · Join →</span>
+                </div>
+                <div style={{display:"flex",justifyContent:"space-between",background:"#141414",borderRadius:"7px",padding:"7px 6px",border:"1px solid #1f1f1f"}}>
+                  {[{val:"12",unit:"min"},{ val:"4.2",unit:"stars"},{val:"££",unit:"price"}].map((s,i) => (
+                    <Fragment key={i}>
+                      <div style={{textAlign:"center"}}>
+                        <div style={{fontSize:"13px",fontWeight:800,color: i===0 ? "#00b8d4":"#fff",lineHeight:1,letterSpacing:"-0.03em"}}>{s.val}</div>
+                        <div style={{fontSize:"6px",color:"#555",textTransform:"uppercase",letterSpacing:"0.07em",marginTop:"2px",fontFamily:"var(--mono)"}}>{s.unit}</div>
+                      </div>
+                      {i < 2 && <div style={{width:"1px",background:"#222"}}></div>}
+                    </Fragment>
+                  ))}
+                </div>
+                <div style={{display:"flex",flexDirection:"column",gap:"4px"}}>
+                  <div style={{fontSize:"6.5px",color:"#555",textTransform:"uppercase",letterSpacing:"0.1em",fontFamily:"var(--mono)"}}>Reviews</div>
+                  {[
+                    {name:"Samantha",stars:5,text:"Great pasta, worth every minute."},
+                    {name:"Victor",stars:4,text:"Brilliant find. Wait time too long."},
+                  ].map((r,i) => (
+                    <div key={i} style={{padding:"5px 6px",background:"#141414",borderRadius:"6px",border:"1px solid #1f1f1f"}}>
+                      <div style={{display:"flex",justifyContent:"space-between",marginBottom:"3px"}}>
+                        <span style={{fontSize:"7px",fontWeight:600,color:"#ccc"}}>{r.name}</span>
+                        <span style={{fontSize:"6.5px",color:"#00b8d4",letterSpacing:"0.5px"}}>{"★".repeat(r.stars)}</span>
+                      </div>
+                      <span style={{fontSize:"7px",color:"#777",lineHeight:1.35}}>{r.text}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div style={{fontFamily:"var(--mono)",fontSize:"8px",color:"var(--ink-mute)",textTransform:"uppercase",letterSpacing:"0.08em",textAlign:"center",marginTop:"4px"}}>Loyalty · Restaurant profile</div>
+        </div>
+
+        {/* RESEARCH ARTIFACT — App store sentiment clusters */}
+        <div className="cs-card">
+          <div className="cs-card-title">Research Artifact</div>
+          <div style={{display:"flex",flexDirection:"column",gap:"14px",marginTop:"8px"}}>
+            {[
+              {label:"Trust",quotes:["\"Wait times are unpredictable\"","\"Never know how long I'll wait\""],color:"var(--accent)"},
+              {label:"Stability",quotes:["\"App keeps crashing\"","\"Logs me out mid-queue\""],color:"var(--ink-mute)"},
+              {label:"Retention",quotes:["\"Nothing to come back for\"","\"No reason to use it again\""],color:"var(--ink-mute)"},
+            ].map(cluster => (
+              <div key={cluster.label} style={{borderLeft:"2px solid "+cluster.color,paddingLeft:"10px"}}>
+                <div style={{fontFamily:"var(--mono)",fontSize:"8px",color:cluster.color,letterSpacing:"0.1em",textTransform:"uppercase",marginBottom:"5px"}}>{cluster.label}</div>
+                {cluster.quotes.map(q => <div key={q} style={{fontSize:"11px",color:"var(--ink-dim)",lineHeight:"1.5",marginBottom:"2px"}}>{q}</div>)}
+              </div>
+            ))}
+            <div style={{fontFamily:"var(--mono)",fontSize:"8px",color:"var(--ink-mute)",textTransform:"uppercase",letterSpacing:"0.08em"}}>Source: App Store reviews · 60 samples</div>
+          </div>
+        </div>
+
       </div>
-    </div>
+
+      <h3>Outcome</h3>
+      <p>Headline outcome: <strong style={{ color: "var(--accent)" }}>3× loyalty engagement uplift</strong>. Full numbers, charts, and reflections on what I'd do differently are in the long-form case study.</p>
+    </MonolithCaseLayout>
   );
 };
 
