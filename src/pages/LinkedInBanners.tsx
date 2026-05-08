@@ -75,10 +75,11 @@ function PMWheel({ onYellow = false }: { onYellow?: boolean }) {
       <circle cx={cx} cy={cy} r={centerR} fill={centerFill} />
       <text
         x={cx} y={cy} textAnchor="middle" dominantBaseline="middle"
-        fill={centerText} fontSize="14"
+        fill={centerText} fontSize="10"
         fontFamily="'Inter Tight','Helvetica Neue',Helvetica,Arial,sans-serif"
-        fontWeight="800" letterSpacing="-0.04em"
-      >PM</text>
+        fontWeight="800" letterSpacing="0.04em" textDecoration="none"
+        style={{ textTransform: "uppercase" }}
+      >PRODUCT</text>
     </svg>
   );
 }
