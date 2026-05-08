@@ -97,15 +97,17 @@ const CaseStudyWalkup = () => {
 
             {/* Phone 2 — Restaurant Profile */}
             <div style={{width:"108px",background:"#0d0d0d",borderRadius:"14px",overflow:"hidden",border:"1.5px solid #1f1f1f",boxShadow:"0 6px 24px rgba(0,0,0,0.5)",flexShrink:0}}>
-              {/* Header */}
-              <div style={{height:"56px",background:"linear-gradient(160deg,#1c2a2a 0%,#0d1a1a 100%)",position:"relative",display:"flex",alignItems:"flex-end",padding:"0 9px 8px"}}>
-                <div style={{position:"absolute",top:"7px",left:"9px",fontSize:"7px",color:"rgba(255,255,255,0.4)",fontFamily:"var(--mono)"}}>9:41</div>
-                <div style={{position:"absolute",top:"6px",right:"9px",background:"rgba(0,184,212,0.15)",border:"1px solid rgba(0,184,212,0.3)",borderRadius:"4px",padding:"2px 5px"}}>
+              {/* Header — Padella photo */}
+              <div style={{height:"64px",position:"relative",overflow:"hidden"}}>
+                <img src="/walkup/padella.png" alt="Padella restaurant" style={{width:"100%",height:"100%",objectFit:"cover",objectPosition:"center 40%",display:"block"}} />
+                <div style={{position:"absolute",inset:0,background:"linear-gradient(to bottom, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.65) 100%)"}} />
+                <div style={{position:"absolute",top:"6px",left:"8px",fontSize:"7px",color:"rgba(255,255,255,0.5)",fontFamily:"var(--mono)"}}>9:41</div>
+                <div style={{position:"absolute",top:"5px",right:"8px",background:"rgba(0,184,212,0.2)",border:"1px solid rgba(0,184,212,0.4)",borderRadius:"3px",padding:"2px 4px"}}>
                   <span style={{fontSize:"6px",color:"#00b8d4",fontWeight:700,fontFamily:"var(--mono)"}}>OPEN</span>
                 </div>
-                <div>
-                  <div style={{fontSize:"12px",fontWeight:700,color:"#fff",lineHeight:1,letterSpacing:"-0.02em"}}>Padella</div>
-                  <div style={{fontSize:"7px",color:"rgba(255,255,255,0.4)",marginTop:"2px",fontFamily:"var(--mono)"}}>Borough Mkt · 0.4 km</div>
+                <div style={{position:"absolute",bottom:"7px",left:"9px"}}>
+                  <div style={{fontSize:"12px",fontWeight:700,color:"#fff",lineHeight:1,letterSpacing:"-0.02em",textShadow:"0 1px 4px rgba(0,0,0,0.6)"}}>Padella</div>
+                  <div style={{fontSize:"7px",color:"rgba(255,255,255,0.6)",marginTop:"2px",fontFamily:"var(--mono)"}}>Borough Mkt · 0.4 km</div>
                 </div>
               </div>
               <div style={{padding:"8px 9px",display:"flex",flexDirection:"column",gap:"7px"}}>
