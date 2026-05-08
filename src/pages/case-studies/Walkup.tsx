@@ -78,8 +78,8 @@ const CaseStudyWalkup = () => {
                   <div style={{width:"24.6%",height:"100%",background:"#00b8d4",borderRadius:"2px"}}></div>
                 </div>
               </div>
-              <div style={{background:"#00b8d4",borderRadius:"20px",padding:"7px",textAlign:"center"}}>
-                <span style={{fontSize:"9px",fontWeight:700,color:"#000",letterSpacing:"0.04em"}}>Redeem</span>
+              <div style={{background:"#00b8d4",borderRadius:"20px",padding:"4px",textAlign:"center"}}>
+                <span style={{fontSize:"8px",fontWeight:700,color:"#000",letterSpacing:"0.04em"}}>Redeem</span>
               </div>
               <div style={{display:"flex",flexDirection:"column",gap:"5px",paddingTop:"2px"}}>
                 {[
@@ -109,8 +109,8 @@ const CaseStudyWalkup = () => {
                 </div>
               </div>
               <div style={{padding:"8px 9px",display:"flex",flexDirection:"column",gap:"7px"}}>
-                <div style={{background:"#00b8d4",borderRadius:"20px",padding:"6px",textAlign:"center"}}>
-                  <span style={{fontSize:"8px",fontWeight:700,color:"#000",letterSpacing:"0.02em"}}>#4 in queue · Join →</span>
+                <div style={{background:"#00b8d4",borderRadius:"20px",padding:"4px",textAlign:"center"}}>
+                  <span style={{fontSize:"7.5px",fontWeight:700,color:"#000",letterSpacing:"0.02em"}}>#4 in queue · Join →</span>
                 </div>
                 <div style={{display:"flex",justifyContent:"space-between",background:"#141414",borderRadius:"7px",padding:"7px 6px",border:"1px solid #1f1f1f"}}>
                   {[{val:"12",unit:"min"},{ val:"4.2",unit:"stars"},{val:"££",unit:"price"}].map((s,i) => (
