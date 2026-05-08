@@ -896,7 +896,7 @@ h1.display .line.in { clip-path: inset(0 0 -10% 0); transform: translateY(0); }
   text-transform: var(--display-case); max-width: 18ch;
 }
 .cta h2 em { font-style: normal; color: var(--accent); }
-.cta h2 em.hl-yellow { color: var(--ink); background: #f5c842; padding: 0 4px; border-radius: 2px; }
+.cta h2 em.hl-yellow { color: #f5c842; }
 .cta h2 a { font-style: normal; color: var(--accent); text-decoration: none; border-bottom: 4px solid var(--accent); transition: opacity .2s; }
 .cta h2 a:hover { opacity: 0.7; }
 .cta-copy {
