@@ -112,7 +112,7 @@ const LinkedInBanners = () => {
             </div>
           </div>
           {/* Wheel right */}
-          <div style={{ position: "absolute", right: "3%", top: 0, bottom: 0, display: "flex", alignItems: "center", justifyContent: "center", width: "32%" }}>
+          <div style={{ position: "absolute", right: "2%", top: 0, bottom: 0, display: "flex", alignItems: "center", justifyContent: "center", width: "38%" }}>
             <PMWheel onYellow={false} />
           </div>
           {/* URL */}
