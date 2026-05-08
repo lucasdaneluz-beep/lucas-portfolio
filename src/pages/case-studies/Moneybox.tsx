@@ -60,15 +60,34 @@ const CaseStudyMoneybox = () => {
           </div>
         </div>
 
-        {/* SCREEN — Redesign comparison image */}
-        <div className="cs-card" style={{display:"flex",flexDirection:"column"}}>
+        {/* SCREEN — Before / After */}
+        <div className="cs-card" style={{display:"flex",flexDirection:"column",gap:"8px"}}>
           <div className="cs-card-title">Screen</div>
-          <div style={{flex:1,display:"flex",alignItems:"center",justifyContent:"center",marginTop:"8px"}}>
-            <img
-              src="/moneybox-redesign-comparison.png"
-              alt="Moneybox redesign comparison"
-              style={{width:"100%",objectFit:"contain",borderRadius:"4px"}}
-            />
+          <div style={{display:"flex",justifyContent:"center",gap:"8px",flex:1,paddingTop:"4px",alignItems:"flex-start"}}>
+            {/* Before */}
+            <div style={{display:"flex",flexDirection:"column",alignItems:"center",gap:"5px",flex:1}}>
+              <div style={{fontFamily:"var(--mono)",fontSize:"7px",color:"var(--ink-mute)",textTransform:"uppercase",letterSpacing:"0.1em"}}>Before</div>
+              <div style={{borderRadius:"10px",overflow:"hidden",border:"1.5px solid var(--rule)",boxShadow:"0 4px 12px rgba(0,0,0,0.15)",width:"100%"}}>
+                <img
+                  src="/moneybox-current.png"
+                  alt="Moneybox current app"
+                  style={{width:"100%",display:"block"}}
+                />
+              </div>
+            </div>
+            {/* Arrow */}
+            <div style={{paddingTop:"40px",color:"var(--ink-mute)",fontSize:"12px",flexShrink:0}}>→</div>
+            {/* After */}
+            <div style={{display:"flex",flexDirection:"column",alignItems:"center",gap:"5px",flex:1}}>
+              <div style={{fontFamily:"var(--mono)",fontSize:"7px",color:"var(--accent)",textTransform:"uppercase",letterSpacing:"0.1em"}}>After</div>
+              <div style={{borderRadius:"10px",overflow:"hidden",border:"1.5px solid color-mix(in oklab, var(--accent) 40%, transparent)",boxShadow:"0 4px 12px rgba(0,0,0,0.15)",width:"100%"}}>
+                <img
+                  src="/moneybox-redesign-comparison.png"
+                  alt="Moneybox redesign"
+                  style={{width:"100%",display:"block"}}
+                />
+              </div>
+            </div>
           </div>
         </div>
 
