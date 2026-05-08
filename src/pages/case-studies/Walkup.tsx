@@ -47,26 +47,100 @@ const CaseStudyWalkup = () => {
           <div style={{fontFamily:"var(--mono)",fontSize:"8px",color:"var(--ink-mute)",textTransform:"uppercase",letterSpacing:"0.08em",marginTop:"8px",textAlign:"right"}}>↑ High impact</div>
         </div>
 
-        {/* SCREEN — Actual designs from presentation */}
+        {/* SCREEN — Redesigned WalkUp UI concepts */}
         <div className="cs-card" style={{display:"flex",flexDirection:"column",gap:"8px"}}>
           <div className="cs-card-title">Screen</div>
-          <div style={{display:"flex",justifyContent:"center",gap:"10px",flex:1,paddingTop:"8px",alignItems:"flex-start"}}>
-            {/* Phone 1 — Loyalty points */}
-            <div style={{width:"90px",background:"#111",borderRadius:"12px",overflow:"hidden",border:"2px solid #222",boxShadow:"0 4px 16px rgba(0,0,0,0.3)",flexShrink:0}}>
-              <img
-                src="/walkup/loyalty-points.jpg"
-                alt="WalkUp loyalty points screen"
-                style={{width:"100%",display:"block"}}
-              />
+          <div style={{display:"flex",justifyContent:"center",gap:"8px",flex:1,paddingTop:"8px",alignItems:"flex-start"}}>
+
+            {/* Phone 1 — Loyalty Points */}
+            <div style={{width:"108px",background:"#0d0d0d",borderRadius:"14px",padding:"10px 9px",display:"flex",flexDirection:"column",gap:"6px",border:"1.5px solid #1f1f1f",boxShadow:"0 6px 24px rgba(0,0,0,0.5)",flexShrink:0}}>
+              <div style={{display:"flex",justifyContent:"space-between",alignItems:"center"}}>
+                <span style={{fontSize:"7px",color:"#555",fontFamily:"var(--mono)"}}>9:41</span>
+                <div style={{display:"flex",alignItems:"center",gap:"3px"}}>
+                  <div style={{width:"10px",height:"5px",borderRadius:"1px",border:"1px solid #555",position:"relative"}}><div style={{width:"60%",height:"100%",background:"#555",borderRadius:"0.5px"}}></div></div>
+                </div>
+              </div>
+              <div style={{display:"flex",alignItems:"center",gap:"5px",paddingBottom:"4px",borderBottom:"1px solid #1a1a1a"}}>
+                <div style={{width:"16px",height:"16px",borderRadius:"4px",background:"#00b8d4",display:"flex",alignItems:"center",justifyContent:"center",flexShrink:0}}>
+                  <span style={{fontSize:"9px",fontWeight:900,color:"#000"}}>W</span>
+                </div>
+                <span style={{fontSize:"11px",fontWeight:700,color:"#fff",letterSpacing:"-0.02em"}}>WalkUp</span>
+              </div>
+              <div style={{lineHeight:1.25}}>
+                <span style={{fontSize:"10px",fontWeight:700,color:"#fff"}}>Earn Points </span>
+                <span style={{fontSize:"10px",fontWeight:700,color:"#00b8d4"}}>While Queuing</span>
+              </div>
+              <div style={{background:"#141414",borderRadius:"9px",padding:"9px 8px",textAlign:"center",border:"1px solid #222"}}>
+                <div style={{fontSize:"6px",color:"#555",textTransform:"uppercase",letterSpacing:"0.1em",marginBottom:"4px",fontFamily:"var(--mono)"}}>Your Points</div>
+                <div style={{fontSize:"28px",fontWeight:800,color:"#fff",lineHeight:1,letterSpacing:"-0.04em"}}>246</div>
+                <div style={{fontSize:"6px",color:"#555",marginTop:"3px",fontFamily:"var(--mono)"}}>754 to next reward</div>
+                <div style={{height:"3px",background:"#222",borderRadius:"2px",marginTop:"7px"}}>
+                  <div style={{width:"24.6%",height:"100%",background:"#00b8d4",borderRadius:"2px"}}></div>
+                </div>
+              </div>
+              <div style={{background:"#00b8d4",borderRadius:"20px",padding:"7px",textAlign:"center"}}>
+                <span style={{fontSize:"9px",fontWeight:700,color:"#000",letterSpacing:"0.04em"}}>Redeem</span>
+              </div>
+              <div style={{display:"flex",flexDirection:"column",gap:"5px",paddingTop:"2px"}}>
+                {[
+                  {dot:"#00b8d4", text:"Queue & arrive → +125 pts"},
+                  {dot:"#555",    text:"1,000 pts = £10 gift card"},
+                  {dot:"#555",    text:"Or 3% off your next bill"},
+                ].map((item,i) => (
+                  <div key={i} style={{display:"flex",gap:"5px",alignItems:"flex-start"}}>
+                    <div style={{width:"4px",height:"4px",borderRadius:"50%",background:item.dot,flexShrink:0,marginTop:"3px"}}></div>
+                    <span style={{fontSize:"7.5px",color:"#888",lineHeight:1.35}}>{item.text}</span>
+                  </div>
+                ))}
+              </div>
             </div>
-            {/* Phone 2 — Restaurant profile + ratings */}
-            <div style={{width:"90px",background:"#111",borderRadius:"12px",overflow:"hidden",border:"2px solid #222",boxShadow:"0 4px 16px rgba(0,0,0,0.3)",flexShrink:0}}>
-              <img
-                src="/walkup/restaurant-profile.jpg"
-                alt="WalkUp restaurant profile and ratings screen"
-                style={{width:"100%",display:"block"}}
-              />
+
+            {/* Phone 2 — Restaurant Profile */}
+            <div style={{width:"108px",background:"#0d0d0d",borderRadius:"14px",overflow:"hidden",border:"1.5px solid #1f1f1f",boxShadow:"0 6px 24px rgba(0,0,0,0.5)",flexShrink:0}}>
+              {/* Header */}
+              <div style={{height:"56px",background:"linear-gradient(160deg,#1c2a2a 0%,#0d1a1a 100%)",position:"relative",display:"flex",alignItems:"flex-end",padding:"0 9px 8px"}}>
+                <div style={{position:"absolute",top:"7px",left:"9px",fontSize:"7px",color:"rgba(255,255,255,0.4)",fontFamily:"var(--mono)"}}>9:41</div>
+                <div style={{position:"absolute",top:"6px",right:"9px",background:"rgba(0,184,212,0.15)",border:"1px solid rgba(0,184,212,0.3)",borderRadius:"4px",padding:"2px 5px"}}>
+                  <span style={{fontSize:"6px",color:"#00b8d4",fontWeight:700,fontFamily:"var(--mono)"}}>OPEN</span>
+                </div>
+                <div>
+                  <div style={{fontSize:"12px",fontWeight:700,color:"#fff",lineHeight:1,letterSpacing:"-0.02em"}}>Padella</div>
+                  <div style={{fontSize:"7px",color:"rgba(255,255,255,0.4)",marginTop:"2px",fontFamily:"var(--mono)"}}>Borough Mkt · 0.4 km</div>
+                </div>
+              </div>
+              <div style={{padding:"8px 9px",display:"flex",flexDirection:"column",gap:"7px"}}>
+                <div style={{background:"#00b8d4",borderRadius:"20px",padding:"6px",textAlign:"center"}}>
+                  <span style={{fontSize:"8px",fontWeight:700,color:"#000",letterSpacing:"0.02em"}}>#4 in queue · Join →</span>
+                </div>
+                <div style={{display:"flex",justifyContent:"space-between",background:"#141414",borderRadius:"7px",padding:"7px 6px",border:"1px solid #1f1f1f"}}>
+                  {[{val:"12",unit:"min"},{ val:"4.2",unit:"stars"},{val:"££",unit:"price"}].map((s,i) => (
+                    <Fragment key={i}>
+                      <div style={{textAlign:"center"}}>
+                        <div style={{fontSize:"13px",fontWeight:800,color: i===0 ? "#00b8d4":"#fff",lineHeight:1,letterSpacing:"-0.03em"}}>{s.val}</div>
+                        <div style={{fontSize:"6px",color:"#555",textTransform:"uppercase",letterSpacing:"0.07em",marginTop:"2px",fontFamily:"var(--mono)"}}>{s.unit}</div>
+                      </div>
+                      {i < 2 && <div style={{width:"1px",background:"#222"}}></div>}
+                    </Fragment>
+                  ))}
+                </div>
+                <div style={{display:"flex",flexDirection:"column",gap:"4px"}}>
+                  <div style={{fontSize:"6.5px",color:"#555",textTransform:"uppercase",letterSpacing:"0.1em",fontFamily:"var(--mono)"}}>Reviews</div>
+                  {[
+                    {name:"Samantha",stars:5,text:"Great pasta, worth every minute."},
+                    {name:"Victor",stars:4,text:"Brilliant find. Wait time too long."},
+                  ].map((r,i) => (
+                    <div key={i} style={{padding:"5px 6px",background:"#141414",borderRadius:"6px",border:"1px solid #1f1f1f"}}>
+                      <div style={{display:"flex",justifyContent:"space-between",marginBottom:"3px"}}>
+                        <span style={{fontSize:"7px",fontWeight:600,color:"#ccc"}}>{r.name}</span>
+                        <span style={{fontSize:"6.5px",color:"#00b8d4",letterSpacing:"0.5px"}}>{"★".repeat(r.stars)}</span>
+                      </div>
+                      <span style={{fontSize:"7px",color:"#777",lineHeight:1.35}}>{r.text}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
+
           </div>
           <div style={{fontFamily:"var(--mono)",fontSize:"8px",color:"var(--ink-mute)",textTransform:"uppercase",letterSpacing:"0.08em",textAlign:"center",marginTop:"4px"}}>Loyalty · Restaurant profile</div>
         </div>
