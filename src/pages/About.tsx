@@ -29,15 +29,15 @@ const frameworkSteps = [
 const reasons = [
   {
     title: "Commercially Grounded",
-    description: "I'm comfortable making product decisions close to revenue, cost, and operational reality.",
+    description: "Having spent years managing supplier relationships, cost programmes, and category P&Ls, I understand the commercial pressures that sit behind every roadmap decision. I don't need to be convinced that business context matters — it's already part of how I frame problems. I'm comfortable making product decisions close to revenue, cost, and operational reality.",
   },
   {
     title: "Strong In Ambiguity",
-    description: "My best work happens when a team needs structure, not just speed.",
+    description: "I'm drawn to the early stages of a problem — when the brief is loose, the data is incomplete, and the right path isn't obvious. That's where I tend to have the most impact: helping a team get aligned on what they're actually solving before they start building. My best work happens when a team needs structure, not just speed.",
   },
   {
     title: "Built For Cross-Functional Work",
-    description: "I bridge user needs, business constraints, and delivery realities without losing clarity.",
+    description: "Working across procurement, operations, finance, and product has taught me to translate between teams who don't share vocabulary. I've learned that alignment isn't a soft skill — it's a delivery prerequisite. I bridge user needs, business constraints, and delivery realities without losing clarity.",
   },
 ];
 
@@ -111,9 +111,7 @@ const About = () => {
             DATA, AND BUSINESS <em>OUTCOMES</em>.
           </h1>
           <p className="bio">
-            A commercially-driven PM with 10+ years across B2B SaaS, FMCG, and supply chain.
-            I care about the parts of product that don't trend — research before building,
-            metrics defined before shipping, alignment treated as a deliverable.
+            I didn't start in product. I spent a decade in commercial and operational roles — category management, procurement, supply chain — before making the transition. That path gives me a different angle: I understand commercial pressure from the inside, I've seen how product decisions ripple through operations and finance, and I know what alignment actually costs when it's missing.
           </p>
         </div>
         <div className="right">
@@ -179,11 +177,11 @@ const About = () => {
         <div className="wrap">
           <h2>OFF THE <em>CLOCK</em>.</h2>
           <div className="mf-body">
-            <p style={{ fontStyle: "italic" }}>
+            <p>
               Outside of product, my favourite people are my wife and our maltipoo,
               who also happen to be my best motivators and harshest critics.
             </p>
-            <p style={{ fontStyle: "italic" }}>
+            <p>
               I produce music and play in an alternative rock band. Working on a track,
               mixing and releasing has a similar feel to shipping a solid product.
             </p>
@@ -193,37 +191,38 @@ const About = () => {
 
       {/* EXPERIENCE */}
       <section className="about-exp reveal">
-        <div className="wrap about-exp-head">
-          <div className="hw-head">
-            <h2>EXPERIENCE</h2>
-            <p>10+ years across B2B SaaS, FMCG, and supply chain.</p>
-          </div>
-        </div>
-        {experience.map((e) => (
-          <div className="exp-row-b" key={`${e.company}-${e.period}`}>
-            <div className="period">{e.period}</div>
-            <div className="company">{e.company}</div>
-            <div>
-              <div style={{ fontWeight: 500, color: "var(--ink)", marginBottom: 8 }}>{e.role}</div>
-              <div style={{ color: "var(--ink-dim)", fontSize: 14 }}>{e.description}</div>
+        <div className="wrap">
+          <div className="about-exp-head">
+            <div className="hw-head">
+              <h2>EXPERIENCE</h2>
             </div>
-            <div className="meta-b">{e.meta}</div>
           </div>
-        ))}
-        <div style={{ padding: "32px var(--pad)" }}>
-          <a
-            href="/Lucas_Daneluz-CV.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              fontFamily: "var(--display)", fontSize: 18, fontWeight: 700,
-              letterSpacing: "0.04em", textTransform: "uppercase",
-              color: "var(--accent)", borderBottom: "2px solid var(--accent)",
-              paddingBottom: 4, textDecoration: "none",
-            }}
-          >
-            DOWNLOAD FULL CV →
-          </a>
+          {experience.map((e) => (
+            <div className="exp-row-b" key={`${e.company}-${e.period}`}>
+              <div className="period">{e.period}</div>
+              <div className="company">{e.company}</div>
+              <div>
+                <div style={{ fontWeight: 500, color: "var(--ink)", marginBottom: 8 }}>{e.role}</div>
+                <div style={{ color: "var(--ink-dim)", fontSize: 14 }}>{e.description}</div>
+              </div>
+              <div className="meta-b">{e.meta}</div>
+            </div>
+          ))}
+          <div style={{ paddingTop: "32px" }}>
+            <a
+              href="/Lucas_Daneluz-CV.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                fontFamily: "var(--display)", fontSize: 18, fontWeight: 700,
+                letterSpacing: "0.04em", textTransform: "uppercase",
+                color: "var(--accent)", borderBottom: "2px solid var(--accent)",
+                paddingBottom: 4, textDecoration: "none",
+              }}
+            >
+              DOWNLOAD FULL CV →
+            </a>
+          </div>
         </div>
       </section>
 
