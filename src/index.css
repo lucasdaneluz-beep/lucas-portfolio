@@ -1031,8 +1031,11 @@ html[data-theme="light"] .about-hero .right img { filter: grayscale(1) contrast(
   .snapshot-grid { grid-template-columns: 1fr; }
   .impact-grid { grid-template-columns: 1fr; }
   .work-grid { grid-template-columns: 1fr; }
-  .framework-step { gap: 20px; }
-  .step-title { min-width: 8ch; }
+  .hw-head p { white-space: normal; }
+  .framework-step { flex-wrap: wrap; gap: 12px 20px; align-items: flex-start; }
+  .step-icon { width: 40px; height: 40px; }
+  .step-title { min-width: 8ch; font-size: 17px; }
+  .step-desc { width: 100%; padding-left: 60px; font-size: 14px; }
   .hw-tab { padding-right: 20px; font-size: 14px; }
   .hw-panels { flex-direction: column; gap: 1.5rem; }
   .hw-panels-img { width: 100%; max-width: 160px; }

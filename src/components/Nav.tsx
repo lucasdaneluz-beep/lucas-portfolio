@@ -35,7 +35,7 @@ const Nav = () => {
       {open && (
         <div className="nav-mobile">
           <Link to="/" onClick={() => setOpen(false)} className={isHome ? "active" : ""}>Home</Link>
-          <a href="/#work" onClick={() => setOpen(false)} className={isWork ? "active" : ""}>Work</a>
+          <Link to="/work" onClick={() => setOpen(false)} className={isWork ? "active" : ""}>Work</Link>
           <Link to="/about" onClick={() => setOpen(false)} className={isAbout ? "active" : ""}>About</Link>
           <Link to="/contact" onClick={() => setOpen(false)} className={isContact ? "active" : ""}>Contact</Link>
         </div>
