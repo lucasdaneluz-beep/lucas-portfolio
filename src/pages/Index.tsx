@@ -63,9 +63,10 @@ const Index = () => {
         <div className="hero-main reveal" ref={heroMainRef}>
           <div className="wrap">
             <h1 className="display">
-              <span className="line">PRODUCT</span>
-              <span className="line">MANAGER</span>
+              <span className="line">LUCAS</span>
+              <span className="line">DANELUZ</span>
             </h1>
+            <p className="hero-role">Product Manager</p>
             <div className="hero-copy">
               <p className="hero-statement">
                 Turning <span className="hero-statement-accent">ambiguous problems</span> into focused roadmaps and <span className="hero-statement-accent">measurable outcomes.</span>
