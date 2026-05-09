@@ -993,12 +993,17 @@ html[data-theme="light"] .about-hero .right img { filter: grayscale(1) contrast(
 .form-b label { display: block; margin-bottom: 32px; }
 .form-b .lbl { font-family: var(--mono); font-size: 10px; color: var(--ink-mute); letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 10px; }
 .form-b input, .form-b textarea {
-  width: 100%; background: transparent; border: none; border-bottom: 1px solid var(--rule-2);
-  color: var(--ink); font-family: var(--display); font-size: 24px; font-weight: 500; padding: 8px 0;
-  outline: none; transition: border-color .2s;
+  width: 100%; background: rgba(255,255,255,0.04); border: 1px solid var(--rule-2);
+  color: var(--ink); font-family: var(--display); font-size: 24px; font-weight: 500;
+  padding: 14px 16px; outline: none;
+  transition: border-color .2s, background .2s;
+  border-radius: 2px;
 }
 .form-b input::placeholder, .form-b textarea::placeholder { color: var(--ink-mute); font-weight: 400; font-size: 18px; }
-.form-b input:focus, .form-b textarea:focus { border-color: var(--accent); }
+.form-b input:focus, .form-b textarea:focus {
+  border-color: var(--accent);
+  background: rgba(255,255,255,0.06);
+}
 .form-b textarea { resize: vertical; font-size: 18px; font-weight: 400; line-height: 1.5; }
 .form-b button {
   background: var(--accent); color: #000; border: none;
