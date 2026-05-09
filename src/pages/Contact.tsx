@@ -119,7 +119,7 @@ const Contact = () => {
             ) : (
               <>
                 <p className="contact-form-label reveal" style={{ transitionDelay: "180ms" }}>
-                  Prefer a form? I'll get back within 48 hours.
+                  Prefer a form? I'll aim to get back within 48 hours.
                 </p>
                 <form className="form-b reveal" style={{ transitionDelay: "240ms" }} onSubmit={handleSubmit(onSubmit)} noValidate>
                   <label>
