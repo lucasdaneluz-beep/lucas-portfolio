@@ -1,4 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <rect width="32" height="32" rx="6" fill="#0f1923"/>
-  <text x="16" y="22" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#3de8cf" text-anchor="middle" letter-spacing="-0.5">LD</text>
+  <!-- Background -->
+  <rect width="32" height="32" rx="4" fill="#0d0d0d"/>
+  <!-- Yellow accent bar at bottom -->
+  <rect x="0" y="29" width="32" height="3" rx="0" fill="#ffcc00"/>
+  <!-- LD monogram -->
+  <text x="16" y="22" font-family="'Inter Tight', Inter, Arial, sans-serif" font-size="15" font-weight="800" fill="#ffcc00" text-anchor="middle" letter-spacing="-1">LD</text>
 </svg>
