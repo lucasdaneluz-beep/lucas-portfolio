@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -113,12 +114,7 @@ const Contact = () => {
                 <div className="contact-success-icon">✓</div>
                 <p className="contact-success-heading">Message sent.</p>
                 <p className="contact-success-sub">I'll get back to you shortly.</p>
-                <button
-                  className="contact-success-reset"
-                  onClick={() => setSent(false)}
-                >
-                  Send another →
-                </button>
+                <Link to="/" className="contact-success-reset">← Back home</Link>
               </div>
             ) : (
               <>
