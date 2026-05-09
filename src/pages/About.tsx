@@ -235,7 +235,7 @@ const About = () => {
 
       <footer className="footer-b">
         <div className="wrap">
-          <span>© 2026 Lucas Daneluz · Product Manager</span>
+          <span>© 2026 Lucas Daneluz</span>
           <div className="socials">
             <a href="mailto:lucas.daneluz@gmail.com">Email</a>
             <a href="https://www.linkedin.com/in/lucasdaneluz" target="_blank" rel="noopener noreferrer">LinkedIn</a>
