@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(/Users/lucasdaneluz/.claude/Lucas_Daneluz_CV.md)"
+    ]
+  }
+}
