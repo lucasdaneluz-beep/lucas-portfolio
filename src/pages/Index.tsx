@@ -11,7 +11,7 @@ const workTeaser = [
   { id: "walkup", index: "01", title: "WalkUp — Smarter Queues" },
   { id: "hipen-media", index: "02", title: "Hipen Media — User Onboarding" },
   { id: "westpak", index: "03", title: "Westpak — Cost Optimisation" },
-  { id: "moneybox", index: "04", title: "Moneybox Redesigned" },
+  { id: "run-your-pace", index: "04", title: "Run Your Pace — Personal Build" },
 ];
 
 const Index = () => {

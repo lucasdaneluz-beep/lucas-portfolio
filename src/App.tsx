@@ -8,7 +8,6 @@ import PageTransition from "./components/PageTransition";
 import Nav from "./components/Nav";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
-import Moneybox from "./pages/case-studies/Moneybox";
 import Walkup from "./pages/case-studies/Walkup";
 import Comingsoon from "./pages/case-studies/Comingsoon"; 
 import HipenMedia from "./pages/case-studies/HipenMedia";
@@ -44,7 +43,6 @@ const App = () => (
           <Route path="/work" element={<Work />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/case-studies/moneybox" element={<Moneybox />} />
           <Route path="/case-studies/walkup" element={<Walkup />} />
           <Route path="/case-studies/hipen-media" element={<HipenMedia />} />
           <Route path="/case-studies/westpak" element={<Westpak />} />

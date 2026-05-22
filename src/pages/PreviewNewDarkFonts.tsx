@@ -38,16 +38,6 @@ const caseStudies = [
     href: "/case-studies/westpak",
   },
   {
-    id: "04",
-    slug: "moneybox",
-    title: "Moneybox Redesigned",
-    description: "Reimagining the savings & investment journey for clarity and confidence.",
-    metric: "Full UX redesign concept",
-    tags: ["UX Strategy", "Fintech", "Navigation"],
-    status: "live",
-    href: "/case-studies/moneybox",
-  },
-  {
     id: "05",
     slug: "Coming Soon",
     title: "Next Case Study",

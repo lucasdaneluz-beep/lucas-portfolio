@@ -74,18 +74,6 @@ const caseStudies = [
     accentBorder: "rgba(45, 122, 80, 0.18)",
   },
   {
-    id: "04",
-    title: "Moneybox Redesigned",
-    description: "Reimagining the savings & investment journey for clarity and confidence.",
-    metric: "Full UX redesign concept",
-    tags: ["UX Strategy", "Fintech", "Navigation"],
-    status: "live",
-    href: "/case-studies/moneybox",
-    accent: c.teal,
-    accentBg: "rgba(42, 122, 110, 0.07)",
-    accentBorder: "rgba(42, 122, 110, 0.18)",
-  },
-  {
     id: "05",
     title: "Next Case Study",
     description: "Something new is in the works. A product concept exploring AI-driven discovery — details coming soon.",
