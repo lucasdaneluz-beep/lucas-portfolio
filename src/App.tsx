@@ -16,12 +16,6 @@ import RunYourPace from "./pages/case-studies/RunYourPace";
 import About from "./pages/About";
 import Work from "./pages/Work";
 import Contact from "./pages/Contact";
-import PreviewTerracotta from "./pages/PreviewTerracotta";
-import PreviewNewDarkFonts from "./pages/PreviewNewDarkFonts";
-import PreviewAmber from "./pages/PreviewAmber";
-import PreviewWarmObsidian from "./pages/PreviewWarmObsidian";
-import PreviewClaudeCream from "./pages/PreviewClaudeCream";
-import Previews from "./pages/Previews";
 import LinkedInBanners from "./pages/LinkedInBanners";
 
 const queryClient = new QueryClient();
@@ -48,13 +42,7 @@ const App = () => (
           <Route path="/case-studies/westpak" element={<Westpak />} />
           <Route path="/case-studies/run-your-pace" element={<RunYourPace />} />
           <Route path="/case-studies/Comingsoon" element={<Comingsoon />} />
-          
-          <Route path="/preview-terracotta" element={<PreviewTerracotta />} />
-          <Route path="/preview-newdarkfonts" element={<PreviewNewDarkFonts />} />
-          <Route path="/preview-amber" element={<PreviewAmber />} />
-          <Route path="/preview-warm-obsidian" element={<PreviewWarmObsidian />} />
-          <Route path="/preview-claude-cream" element={<PreviewClaudeCream />} />
-          <Route path="/previews" element={<Previews />} />
+
           <Route path="/linkedin-banners" element={<LinkedInBanners />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
