@@ -13,6 +13,7 @@ import Walkup from "./pages/case-studies/Walkup";
 import Comingsoon from "./pages/case-studies/Comingsoon"; 
 import HipenMedia from "./pages/case-studies/HipenMedia";
 import Westpak from "./pages/case-studies/Westpak";
+import RunYourPace from "./pages/case-studies/RunYourPace";
 import About from "./pages/About";
 import Work from "./pages/Work";
 import Contact from "./pages/Contact";
@@ -47,6 +48,7 @@ const App = () => (
           <Route path="/case-studies/walkup" element={<Walkup />} />
           <Route path="/case-studies/hipen-media" element={<HipenMedia />} />
           <Route path="/case-studies/westpak" element={<Westpak />} />
+          <Route path="/case-studies/run-your-pace" element={<RunYourPace />} />
           <Route path="/case-studies/Comingsoon" element={<Comingsoon />} />
           
           <Route path="/preview-terracotta" element={<PreviewTerracotta />} />

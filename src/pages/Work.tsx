@@ -43,6 +43,16 @@ const workItems = [
     image: "/moneybox-redesign-comparison.png",
     visualLabel: "UX Redesign",
   },
+  {
+    id: "run-your-pace",
+    index: "05",
+    title: "Run Your Pace — Personal Build",
+    summary: "Shipped a Couch-to-5K PWA because no existing app let me freely scroll interval timings.",
+    metric: "Live PWA · Installable",
+    problem: "Every running app I tried had fixed durations or clunky steppers. One scroll interaction was missing everywhere — so I built the whole app around it.",
+    tags: ["Personal Build", "PWA", "Side Project"],
+    visualLabel: "Run5K App",
+  },
 ];
 
 const Work = () => {
