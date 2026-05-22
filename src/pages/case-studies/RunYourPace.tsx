@@ -31,19 +31,19 @@ const CaseStudyRunYourPace = () => {
       <div className="cs-cards three" style={{ margin: "40px 0" }}>
         <div className="cs-card">
           <div className="cs-card-title">Home · Today</div>
-          <img src="/run5k-home.png" alt="Run5K home screen with today's workout card and plan progress" style={shotStyle} />
+          <img src="/run-your-pace/home.png" alt="Run5K home screen with today's workout card and plan progress" style={shotStyle} />
           <p style={{ fontSize: 11, color: "var(--ink-mute)", marginTop: 12, lineHeight: 1.5 }}>One workout per visit. No noise, no metrics dashboard, no streak guilt-trip. Just: tap when you're laced up.</p>
         </div>
 
         <div className="cs-card">
           <div className="cs-card-title accent">The Scroll Picker</div>
-          <img src="/run5k-builder.png" alt="Custom workout builder showing draggable intervals and the scroll-snap minute picker" style={shotStyle} />
+          <img src="/run-your-pace/builder.png" alt="Custom workout builder showing draggable intervals and the scroll-snap minute picker" style={shotStyle} />
           <p style={{ fontSize: 11, color: "var(--ink-mute)", marginTop: 12, lineHeight: 1.5 }}>The entire reason this app exists. Drag intervals to reorder. Swipe the minute picker at the bottom to set duration. Works with gloves.</p>
         </div>
 
         <div className="cs-card">
           <div className="cs-card-title">Live Timer</div>
-          <img src="/run5k-timer.png" alt="Active workout timer with circular progress, current phase, and voice coaching line" style={shotStyle} />
+          <img src="/run-your-pace/timer.png" alt="Active workout timer with circular progress, current phase, and voice coaching line" style={shotStyle} />
           <p style={{ fontSize: 11, color: "var(--ink-mute)", marginTop: 12, lineHeight: 1.5 }}>Circular progress, current phase, and coach line — readable at arm's length while moving. Voice handles the rest.</p>
         </div>
       </div>
@@ -56,7 +56,7 @@ const CaseStudyRunYourPace = () => {
       <p>The structured Couch-to-5K program is what makes the app sticky — three runs a week, eight weeks, twenty-four sessions. The plan view is a vertical timeline showing where you are and what's next, with each week expandable to show the day-by-day workouts.</p>
 
       <div style={{ margin: "32px 0", maxWidth: 360 }}>
-        <img src="/run5k-plan.png" alt="8-week C25K plan view as a vertical timeline with the current week highlighted" style={shotStyle} />
+        <img src="/run-your-pace/plan.png" alt="8-week C25K plan view as a vertical timeline with the current week highlighted" style={shotStyle} />
       </div>
 
       <h3>Outcome</h3>

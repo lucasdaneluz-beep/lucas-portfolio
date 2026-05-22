@@ -51,7 +51,7 @@ const workItems = [
     metric: "Live PWA · Installable",
     problem: "Every running app I tried had fixed durations or clunky steppers. One scroll interaction was missing everywhere — so I built the whole app around it.",
     tags: ["Personal Build", "PWA", "Side Project"],
-    image: "/run5k-home.png",
+    image: "/run-your-pace/home.png",
     visualLabel: "Run5K App",
   },
 ];
