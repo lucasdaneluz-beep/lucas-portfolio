@@ -18,10 +18,10 @@ const CaseStudyRunYourPace = () => {
   return (
     <MonolithCaseLayout
       title="Run Your Pace — Built to Scratch an Itch"
-      lede="A Couch-to-5K PWA I built and shipped because no existing running app let me freely scroll through interval timings. One missing interaction became a full app."
+      lede="A Couch-to-5K app I built and shipped because no existing running app let me freely scroll through interval timings. One missing interaction became a full app — used weekly."
       focus="Personal Build · Interaction Design"
-      metric="Live PWA · Installable on iOS & Android"
-      tags={["Personal Build", "PWA", "Side Project", "React"]}
+      metric="Live · Used weekly"
+      tags={["Personal Build", "Side Project", "React"]}
     >
       <h3>The itch</h3>
       <p>I use interval training when I run — alternating between running and walking to build endurance. The problem: every app I tried had fixed durations or clunky number steppers. I couldn't naturally scroll to pick my own interval length mid-session. It sounds small. But when you're mid-run with sweaty fingers and gloves on, a stepper that increments by 30 seconds is useless.</p>
@@ -50,7 +50,7 @@ const CaseStudyRunYourPace = () => {
 
       <h3>Key decisions</h3>
       <p>The scroll picker was the entire product thesis — everything else was built around making that interaction feel right. I chose a scroll-snap approach over a native input or a slider because it behaves like a physical drum roll: one finger, any position, instant feedback. Once that worked, I built the rest of the app around it: a structured C25K plan so there was a reason to open it every week, a custom builder so experienced runners weren't locked into the preset program, and voice coaching so you're not watching a screen while running.</p>
-      <p>PWA over native app was a deliberate call. No review process, instant deploy, installable on both platforms. The tradeoff is background audio limitations on iOS — worked around with an audio unlock pattern on first tap. Built with Capacitor as an escape hatch for a future native build if needed.</p>
+      <p>I built it as a mobile web app on Vercel rather than going down the App Store path. The goal was to ship and use the thing as fast as possible — not to learn Xcode submission flows. The browser handles voice playback well enough for my use case, and I can iterate the moment I notice something is off mid-run.</p>
 
       <h3>The 8-week plan</h3>
       <p>The structured Couch-to-5K program is what makes the app sticky — three runs a week, eight weeks, twenty-four sessions. The plan view is a vertical timeline showing where you are and what's next, with each week expandable to show the day-by-day workouts.</p>
