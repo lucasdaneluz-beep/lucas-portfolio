@@ -1,0 +1,37 @@
+# Lucas Daneluz — Product Manager
+
+> Product Manager with 10+ years of experience across B2B SaaS, FMCG, and supply chain. Based in the UK. Open to PM roles.
+
+Lucas transitioned into product from commercial and operational roles — category management, procurement, and supply chain. That path gives him a commercially grounded perspective on product decisions and a strong track record of cross-functional alignment across engineering, finance, and operations.
+
+Core strengths: product discovery, stakeholder alignment, roadmap prioritisation, user research, and working in ambiguity.
+
+## Portfolio & Case Studies
+
+- [Work overview](https://lucasdaneluz.vercel.app/work): All case studies and selected projects
+- [WalkUp — Smarter Queues](https://lucasdaneluz.vercel.app/case-studies/walkup): Improved trust, queue transparency, and retention in a two-sided marketplace. Outcome: 3× loyalty engagement uplift. Tags: Marketplace, Waitlist UX, Loyalty.
+- [Hipen Media — User Onboarding](https://lucasdaneluz.vercel.app/case-studies/hipen-media): Reduced onboarding friction across multiple customer segments with a lean MVP. Outcome: 40% faster onboarding completion. Tags: Discovery, Onboarding, MVP, B2B SaaS.
+- [Westpak — Cost Optimisation](https://lucasdaneluz.vercel.app/case-studies/westpak): Aligned finance and operations around a cost-saving initiative without disrupting supply. Outcome: 25% cost reduction. Tags: Stakeholder Management, Cost Optimisation, Supply Chain.
+- [Run Your Pace — Personal Build](https://lucasdaneluz.vercel.app/case-studies/run-your-pace): Shipped a Couch-to-5K training app from scratch to solve a personal UX problem. Live and used weekly. Tags: Personal Build, React, Side Project.
+
+## About
+
+- [About](https://lucasdaneluz.vercel.app/about): Background, work philosophy, and full experience timeline
+
+## Experience (summary)
+
+- Product Manager — Hipen Media (Nov 2025 – Present) · B2B SaaS, London/Remote
+- Category Manager – Portfolio Prioritisation & Delivery — KP Snacks (Jul–Oct 2025) · FMCG, UK
+- Strategic Sourcing Manager – Product Launch & GTM — Westpak (Jul 2021 – Jul 2025) · FMCG/Supply Chain, UK
+- Procurement Manager — HAVI/TMS (Jul 2017 – Jul 2021) · FMCG/Supply Chain, UK
+- Buying Executive — Arena Online Ltd (Jun 2016 – Jul 2017) · E-commerce/Retail, London
+
+## Contact
+
+- [Contact page](https://lucasdaneluz.vercel.app/contact): Contact form
+- Email: lucas.daneluz@gmail.com
+- LinkedIn: https://www.linkedin.com/in/lucasdaneluz
+
+## CV / Resume
+
+- [CV (PDF)](https://lucasdaneluz.vercel.app/resume.pdf): Full CV as a downloadable PDF
