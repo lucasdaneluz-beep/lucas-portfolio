@@ -1,3 +1,6 @@
 {
+  "redirects": [
+    { "source": "/resume.pdf", "destination": "/Lucas_Daneluz-CV.pdf", "permanent": false }
+  ],
   "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
 }
