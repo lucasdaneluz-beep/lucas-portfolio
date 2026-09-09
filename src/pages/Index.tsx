@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
+import { caseStudies } from "@/data/caseStudies";
 
 const impactItems = [
   { metric: "3×", label: "Loyalty engagement uplift", detail: "WalkUp" },
@@ -7,12 +8,7 @@ const impactItems = [
   { metric: "25%", label: "Cost reduction delivered", detail: "Westpak" },
 ];
 
-const workTeaser = [
-  { id: "walkup", index: "01", title: "WalkUp — Smarter Queues" },
-  { id: "hipen-media", index: "02", title: "Hipen Media — User Onboarding" },
-  { id: "westpak", index: "03", title: "Westpak — Cost Optimisation" },
-  { id: "run-your-pace", index: "04", title: "Run Your Pace — Personal Build" },
-];
+const workTeaser = caseStudies.map(({ id, index, title }) => ({ id, index, title }));
 
 const Index = () => {
   const heroMainRef = useRef<HTMLDivElement>(null);
@@ -66,13 +62,13 @@ const Index = () => {
               <span className="line">LUCAS</span>
               <span className="line">DANELUZ</span>
             </h1>
-            <p className="hero-role">Product Manager</p>
+            <p className="hero-role">Founding Product Manager</p>
             <div className="hero-copy">
               <p className="hero-statement">
                 Turning <span className="hero-statement-accent">ambiguous problems</span> into focused roadmaps and <span className="hero-statement-accent">measurable outcomes.</span>
               </p>
               <p className="hero-intro">
-                10+ years across B2B SaaS, FMCG, and supply chain. Strongest in discovery, prioritisation, stakeholder alignment, and bringing clarity to ambiguous problems.
+                Founding PM at Platter, a B2B SaaS platform for food manufacturers and wholesalers. 10+ years across B2B SaaS, FMCG, and supply chain — strongest in discovery, prioritisation, and bringing clarity to ambiguous problems.
               </p>
               <p className="hero-availability">
                 Open to Product Manager opportunities in London and remote.
