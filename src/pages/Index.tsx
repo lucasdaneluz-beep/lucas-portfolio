@@ -8,10 +8,11 @@ const impactItems = [
 ];
 
 const workTeaser = [
-  { id: "walkup", index: "01", title: "WalkUp — Smarter Queues" },
-  { id: "hipen-media", index: "02", title: "Hipen Media — User Onboarding" },
-  { id: "westpak", index: "03", title: "Westpak — Cost Optimisation" },
-  { id: "run-your-pace", index: "04", title: "Run Your Pace — Personal Build" },
+  { id: "platter-onboarding", index: "01", title: "Platter — Onboarding Automation" },
+  { id: "walkup", index: "02", title: "WalkUp — Smarter Queues" },
+  { id: "hipen-media", index: "03", title: "Hipen Media — User Onboarding" },
+  { id: "westpak", index: "04", title: "Westpak — Cost Optimisation" },
+  { id: "run-your-pace", index: "05", title: "Run Your Pace — Personal Build" },
 ];
 
 const Index = () => {
