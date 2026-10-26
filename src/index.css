@@ -865,6 +865,11 @@ h1.display .line.in { clip-path: inset(0 0 -10% 0); transform: translateY(0); }
 .work-card-visual-moneybox {
   background: #08131a;
 }
+.work-card-visual-platter-onboarding {
+  background:
+    radial-gradient(circle at 82% 18%, rgba(170, 230, 203, 0.3), transparent 34%),
+    linear-gradient(135deg, #102821 0%, #1d4c3c 58%, #142f28 100%);
+}
 .work-card-visual-soon {
   background:
     repeating-linear-gradient(
