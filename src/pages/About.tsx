@@ -43,11 +43,18 @@ const reasons = [
 
 const experience = [
   {
+    role: "Founding Product Manager",
+    company: "Platter",
+    meta: "B2B SaaS · London (Hybrid)",
+    period: "Sep 2026 – Present",
+    description: "Founding PM at an early-stage B2B SaaS platform for food manufacturers and wholesalers (procurement, sales, stock, invoicing, reporting). Own the tiered pricing model, end-to-end customer onboarding, and the product delivery system — taking day-to-day delivery from founder-led to repeatable as the company scales.",
+  },
+  {
     role: "Product Manager",
     company: "Hipen Media",
     meta: "SaaS · London, Remote",
-    period: "Nov 2025 – Present",
-    description: "Owning end-to-end product discovery and early delivery for a B2B SaaS platform enabling independent, Latina-led media organisations. Conducting user research with target publishers, translating insights into problem statements and acceptance criteria, and managing backlog refinement and prioritisation.",
+    period: "Nov 2025 – Mar 2026",
+    description: "Owned end-to-end product discovery and early delivery for a B2B SaaS platform enabling independent, Latina-led media organisations. Conducted user research with target publishers, translated insights into problem statements and acceptance criteria, and managed backlog refinement and prioritisation.",
   },
   {
     role: "Category Manager – Portfolio Prioritisation & Delivery",
