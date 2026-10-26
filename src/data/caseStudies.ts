@@ -14,8 +14,19 @@ export type CaseStudy = {
 // cards) and the homepage work teaser (id / index / title only).
 export const caseStudies: CaseStudy[] = [
   {
-    id: "walkup",
+    id: "platter-onboarding",
     index: "01",
+    title: "Platter — Onboarding Automation",
+    summary: "Turned manual supplier data migration into a guided mapping, review, and validation workflow.",
+    metric: "1–2 weeks → minutes",
+    problem: "Supplier onboarding relied on spreadsheet-heavy data mapping that could take internal teams one to two weeks.",
+    tags: ["B2B SaaS", "Data Migration", "Workflow Automation"],
+    visualLabel: "Supplier Data Onboarding",
+    image: "/platter/onboarding-mapping.svg",
+  },
+  {
+    id: "walkup",
+    index: "02",
     title: "WalkUp — Smarter Queues",
     summary: "Improved trust, queue transparency, and retention in a two-sided marketplace.",
     metric: "3× loyalty engagement uplift",
@@ -25,7 +36,7 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     id: "hipen-media",
-    index: "02",
+    index: "03",
     title: "Hipen Media — User Onboarding",
     summary: "Reduced onboarding friction across multiple customer segments with a lean MVP.",
     metric: "40% faster onboarding completion",
@@ -35,7 +46,7 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     id: "westpak",
-    index: "03",
+    index: "04",
     title: "Westpak — Cost Optimisation",
     summary: "Aligned finance and operations around a cost-saving initiative without disrupting supply.",
     metric: "25% cost reduction delivered",
@@ -45,7 +56,7 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     id: "run-your-pace",
-    index: "04",
+    index: "05",
     title: "Run Your Pace — Personal Build",
     summary: "Shipped a Couch-to-5K app because no existing one let me freely scroll interval timings. I use it weekly.",
     metric: "Live · Used weekly",
