@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 import { caseStudies } from "@/data/caseStudies";
 
 const impactItems = [
-  { metric: "Weeks → minutes", label: "Supplier data mapping", detail: "Platter" },
-  { metric: "3×", label: "Loyalty engagement uplift", detail: "WalkUp" },
-  { metric: "40%", label: "Faster onboarding completion", detail: "Hipen Media" },
+  { metric: "Weeks → minutes", label: "Supplier data mapping", detail: "Platter", id: "platter-onboarding" },
+  { metric: "3×", label: "Loyalty engagement uplift", detail: "WalkUp", id: "walkup" },
+  { metric: "40%", label: "Faster onboarding completion", detail: "Hipen Media", id: "hipen-media" },
 ];
 
 const workTeaser = caseStudies.map(({ id, index, title }) => ({ id, index, title }));
@@ -95,11 +95,11 @@ const Index = () => {
           </div>
           <div className="impact-grid">
             {impactItems.map((item) => (
-              <article key={item.detail} className="impact-card">
+              <Link key={item.detail} to={`/case-studies/${item.id}`} className="impact-card">
                 <span className={`impact-metric${item.metric.length > 6 ? " impact-metric-long" : ""}`}>{item.metric}</span>
                 <h3>{item.label}</h3>
                 <p>{item.detail}</p>
-              </article>
+              </Link>
             ))}
           </div>
         </div>

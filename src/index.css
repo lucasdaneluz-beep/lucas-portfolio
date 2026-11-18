@@ -492,11 +492,39 @@ h1.display .line.in { clip-path: inset(0 0 -10% 0); transform: translateY(0); }
   border: 1px solid var(--rule);
 }
 .impact-card {
+  display: block;
+  position: relative;
+  text-decoration: none;
+  color: inherit;
   background:
     linear-gradient(180deg, color-mix(in oklab, var(--accent) 12%, transparent), transparent 55%),
     var(--bg);
   padding: clamp(28px, 4vw, 38px);
   min-height: 220px;
+  transition: background-color .2s;
+}
+.impact-card:hover {
+  background:
+    linear-gradient(180deg, color-mix(in oklab, var(--accent) 20%, transparent), transparent 55%),
+    var(--bg-2);
+}
+.impact-card:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: -2px;
+}
+.impact-card::after {
+  content: "→";
+  position: absolute;
+  right: clamp(20px, 3vw, 30px);
+  bottom: clamp(20px, 3vw, 30px);
+  font-family: var(--mono);
+  font-size: 14px;
+  color: var(--ink-mute);
+  transition: transform .2s, color .2s;
+}
+.impact-card:hover::after {
+  color: var(--accent);
+  transform: translateX(3px);
 }
 .impact-metric {
   display: inline-block;
