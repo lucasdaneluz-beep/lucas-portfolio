@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { caseStudies } from "@/data/caseStudies";
 
 const impactItems = [
-  { metric: "1–2 weeks → minutes", label: "Internal data mapping time", detail: "Platter" },
+  { metric: "Weeks → minutes", label: "Supplier data mapping", detail: "Platter" },
   { metric: "3×", label: "Loyalty engagement uplift", detail: "WalkUp" },
   { metric: "40%", label: "Faster onboarding completion", detail: "Hipen Media" },
 ];
