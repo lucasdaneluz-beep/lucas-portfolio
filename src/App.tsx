@@ -9,7 +9,6 @@ import Nav from "./components/Nav";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import Walkup from "./pages/case-studies/Walkup";
-import Comingsoon from "./pages/case-studies/Comingsoon"; 
 import HipenMedia from "./pages/case-studies/HipenMedia";
 import Westpak from "./pages/case-studies/Westpak";
 import RunYourPace from "./pages/case-studies/RunYourPace";
@@ -43,7 +42,6 @@ const App = () => (
           <Route path="/case-studies/westpak" element={<Westpak />} />
           <Route path="/case-studies/run-your-pace" element={<RunYourPace />} />
           <Route path="/case-studies/platter-onboarding" element={<PlatterOnboarding />} />
-          <Route path="/case-studies/Comingsoon" element={<Comingsoon />} />
 
           <Route path="/linkedin-banners" element={<LinkedInBanners />} />
           <Route path="*" element={<NotFound />} />

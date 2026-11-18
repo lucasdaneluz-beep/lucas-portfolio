@@ -1,18 +1,19 @@
 # Lucas Daneluz — Product Manager
 
-> Product Manager with 10+ years of experience across B2B SaaS, FMCG, and supply chain. Based in the UK. Open to PM roles.
+> Product Manager with 10+ years of experience across B2B SaaS, FMCG and supply chain. Based in London. Open to PM roles.
 
-Lucas transitioned into product from commercial and operational roles — category management, procurement, and supply chain. That path gives him a commercially grounded perspective on product decisions and a strong track record of cross-functional alignment across engineering, finance, and operations.
+Lucas moved into Product from commercial and operational roles in category management, Procurement and supply chain. That background is why he reads a Product decision commercially: what it costs, who has to change what they do, and what would show it worked. He has worked across engineering, finance and operations.
 
-Core strengths: product discovery, stakeholder alignment, roadmap prioritisation, user research, and working in ambiguity.
+Core strengths: Product discovery, stakeholder alignment, roadmap prioritisation, user research, and working in ambiguity.
 
 ## Portfolio & Case Studies
 
 - [Work overview](https://lucasdaneluz.vercel.app/work): All case studies and selected projects
-- [WalkUp — Smarter Queues](https://lucasdaneluz.vercel.app/case-studies/walkup): Improved trust, queue transparency, and retention in a two-sided marketplace. Outcome: 3× loyalty engagement uplift. Tags: Marketplace, Waitlist UX, Loyalty.
-- [Hipen Media — User Onboarding](https://lucasdaneluz.vercel.app/case-studies/hipen-media): Reduced onboarding friction across multiple customer segments with a lean MVP. Outcome: 40% faster onboarding completion. Tags: Discovery, Onboarding, MVP, B2B SaaS.
-- [Westpak — Cost Optimisation](https://lucasdaneluz.vercel.app/case-studies/westpak): Aligned finance and operations around a cost-saving initiative without disrupting supply. Outcome: 25% cost reduction. Tags: Stakeholder Management, Cost Optimisation, Supply Chain.
-- [Run Your Pace — Personal Build](https://lucasdaneluz.vercel.app/case-studies/run-your-pace): Shipped a Couch-to-5K training app from scratch to solve a personal UX problem. Live and used weekly. Tags: Personal Build, React, Side Project.
+- [Platter — Onboarding Automation](https://lucasdaneluz.vercel.app/case-studies/platter-onboarding): Turned manual supplier data migration into a guided mapping, review and validation workflow. Outcome: internal data mapping reduced from 1–2 weeks to minutes. Tags: B2B SaaS, Data Migration, Workflow Automation.
+- [WalkUp — Smarter Queues](https://lucasdaneluz.vercel.app/case-studies/walkup): Rebuilt a waitlist around telling diners the truth about their wait, then gave them a reason to come back. Outcome: 3× loyalty engagement uplift. Tags: Marketplace, Waitlist UX, Loyalty.
+- [Hipen Media — User Onboarding](https://lucasdaneluz.vercel.app/case-studies/hipen-media): Found why four different publisher types were all being asked the same twelve questions, then cut the flow to what each one actually needed. Outcome: 40% faster onboarding completion. Tags: Discovery, Onboarding, MVP, B2B SaaS.
+- [Westpak — Cost Optimisation](https://lucasdaneluz.vercel.app/case-studies/westpak): Ran a six vendor tender without breaking supply, by letting Operations keep their old suppliers running until the new ones had proved themselves. Outcome: 25% cost reduction. Tags: Stakeholder Management, Cost Optimisation, Supply Chain.
+- [Run Your Pace — Personal Build](https://lucasdaneluz.vercel.app/case-studies/run-your-pace): A Couch-to-5K app built because no running app let him scroll through interval timings. Live and used weekly. Tags: Personal Build, React, Side Project.
 
 ## About
 
@@ -20,7 +21,8 @@ Core strengths: product discovery, stakeholder alignment, roadmap prioritisation
 
 ## Experience (summary)
 
-- Product Manager — Hipen Media (Nov 2025 – Present) · B2B SaaS, London/Remote
+- Founding Product Manager — Platter (Sep–Nov 2026) · B2B SaaS, London. The company restructured and cut the role.
+- Product Manager — Hipen Media (Nov 2025 – Mar 2026) · B2B SaaS, London/Remote
 - Category Manager – Portfolio Prioritisation & Delivery — KP Snacks (Jul–Oct 2025) · FMCG, UK
 - Strategic Sourcing Manager – Product Launch & GTM — Westpak (Jul 2021 – Jul 2025) · FMCG/Supply Chain, UK
 - Procurement Manager — HAVI/TMS (Jul 2017 – Jul 2021) · FMCG/Supply Chain, UK
@@ -34,4 +36,4 @@ Core strengths: product discovery, stakeholder alignment, roadmap prioritisation
 
 ## CV / Resume
 
-- [CV (PDF)](https://lucasdaneluz.vercel.app/resume.pdf): Full CV as a downloadable PDF
+- [CV (PDF)](https://lucasdaneluz.vercel.app/Lucas_Daneluz-CV.pdf): Full CV as a downloadable PDF

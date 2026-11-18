@@ -10,17 +10,17 @@ const CaseStudyWalkup = () => {
   return (
     <MonolithCaseLayout
       title="WalkUp — Smarter Queues"
-      lede="Queue transparency, loyalty, and growth for a UK restaurant waitlist marketplace used by 400K+ diners and 800+ restaurant partners."
+      lede="Queue transparency, loyalty and growth for a UK restaurant waitlist marketplace used by 400K+ diners and 800+ restaurant partners."
       focus="Marketplace · Waitlist UX"
       metric="3× loyalty engagement uplift"
       tags={["Marketplace", "Waitlist UX", "Loyalty", "Product Strategy"]}
       disclaimer="This is a product concept for portfolio purposes only. Not affiliated with WalkUp or its parent companies."
     >
       <h3>Context</h3>
-      <p>WalkUp is a UK restaurant queue management app connecting 400K+ diners with 800+ venue partners. The core problem was trust erosion — wait times were unreliable, the app was crash-prone, and there was no loyalty hook to bring diners back over competitors.</p>
+      <p>WalkUp is a UK restaurant queue management app connecting 400K+ diners with 800+ venue partners. Diners didn't trust the wait times, the app crashed often enough that people stopped relying on it, and nothing brought them back once they'd eaten.</p>
 
       <h3>Approach</h3>
-      <p>Discovery first: user research across both sides of the marketplace, competitive analysis, and app-store sentiment mapping. Pain points were scored against a value matrix and collapsed into a prioritised Q1 roadmap — six sprints across product, design, engineering, ops, and marketing. Success metrics were defined before any build started so progress could be measured against a baseline rather than retrofitted after the fact.</p>
+      <p>I started with research on both sides of the marketplace, looked at what competitors did, and read through 60 app store reviews. That gave me a list of complaints I could score on impact against effort, which became a six sprint roadmap across Product, design, engineering, ops and marketing. I set the success metrics before anyone built anything, so we'd have a baseline to compare against rather than one we invented afterwards.</p>
 
       <div className="cs-cards three" style={{margin:"40px 0"}}>
 
@@ -159,7 +159,7 @@ const CaseStudyWalkup = () => {
       </div>
 
       <h3>Outcome</h3>
-      <p>Headline outcome: <strong style={{ color: "var(--accent)" }}>3× loyalty engagement uplift</strong>. Full numbers, charts, and reflections on what I'd do differently are in the long-form case study.</p>
+      <p>Headline outcome: <strong style={{ color: "var(--accent)" }}>3× loyalty engagement uplift</strong>. The numbers behind it, and what I would do differently next time, are in the case study below.</p>
     </MonolithCaseLayout>
   );
 };

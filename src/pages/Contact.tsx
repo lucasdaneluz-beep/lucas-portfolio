@@ -80,7 +80,7 @@ const Contact = () => {
               <span className="line">TOUCH.</span>
             </h1>
             <p className="contact-tagline">
-              Whether you'd like to discuss a role, collaborate on something, or just say hello.
+              I'm happy to talk about a role, a problem you're stuck on, or anything else.
             </p>
           </div>
         </div>

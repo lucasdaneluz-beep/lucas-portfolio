@@ -29,15 +29,15 @@ const frameworkSteps = [
 const reasons = [
   {
     title: "Commercially Grounded",
-    description: "Having spent years managing supplier relationships, cost programmes, and category P&Ls, I understand the commercial pressures that sit behind every roadmap decision. I don't need to be convinced that business context matters — it's already part of how I frame problems. I'm comfortable making product decisions close to revenue, cost, and operational reality.",
+    description: "I spent years managing supplier relationships, cost programmes and category P&Ls, so the commercial pressure behind a roadmap decision isn't abstract to me. I'm comfortable making Product decisions close to revenue and cost, because I've had to live with the consequences of getting that wrong.",
   },
   {
     title: "Strong In Ambiguity",
-    description: "I'm drawn to the early stages of a problem — when the brief is loose, the data is incomplete, and the right path isn't obvious. That's where I tend to have the most impact: helping a team get aligned on what they're actually solving before they start building. My best work happens when a team needs structure, not just speed.",
+    description: "I'm drawn to the early stages of a problem, when the brief is loose, the data is incomplete and the right path isn't obvious. That's where I tend to have the most impact: helping a team agree what they're actually solving before they start building. It's slower at the start and faster afterwards.",
   },
   {
     title: "Built For Cross-Functional Work",
-    description: "Working across procurement, operations, finance, and product has taught me to translate between teams who don't share vocabulary. I've learned that alignment isn't a soft skill — it's a delivery prerequisite. I bridge user needs, business constraints, and delivery realities without losing clarity.",
+    description: "I've worked across Procurement, operations, finance and Product, which mostly means translating between teams who don't share vocabulary. Alignment is a delivery prerequisite, not a soft skill. Without it you ship the wrong thing on time.",
   },
 ];
 
@@ -46,8 +46,8 @@ const experience = [
     role: "Founding Product Manager",
     company: "Platter",
     meta: "B2B SaaS · London (Hybrid)",
-    period: "Sep 2026 – Present",
-    description: "Founding PM at an early-stage B2B SaaS platform for food manufacturers and wholesalers (procurement, sales, stock, invoicing, reporting). Own the tiered pricing model, end-to-end customer onboarding, and the product delivery system — taking day-to-day delivery from founder-led to repeatable as the company scales.",
+    period: "Sep 2026 – Nov 2026 · The company restructured and cut the role.",
+    description: "Founding PM at an early-stage B2B SaaS platform for food manufacturers and wholesalers (procurement, sales, stock, invoicing, reporting). Owned the tiered pricing model, end-to-end customer onboarding, and the product delivery system, taking day-to-day delivery from founder-led to repeatable as the company scaled.",
   },
   {
     role: "Product Manager",
@@ -118,7 +118,7 @@ const About = () => {
             DATA, AND BUSINESS <em>OUTCOMES</em>.
           </h1>
           <p className="bio">
-            I didn't start in product. I spent a decade in commercial and operational roles — category management, procurement, supply chain — before making the transition. That path gives me a different angle: I understand commercial pressure from the inside, I've seen how product decisions ripple through operations and finance, and I know what alignment actually costs when it's missing.
+            I didn't start in Product. I spent a decade in commercial and operational roles, in category management, Procurement and supply chain, before making the transition. That path gives me a different angle: I understand commercial pressure from the inside, I've seen how Product decisions ripple through operations and finance, and I know what alignment actually costs when it's missing.
           </p>
         </div>
         <div className="right">
@@ -152,7 +152,7 @@ const About = () => {
         <div className="wrap">
           <h2>BUILT ACROSS INDUSTRIES.<br />WIRED FOR <em>PRODUCT</em>.</h2>
           <div className="mf-body">
-            <p>My product instincts were shaped in environments where customer needs, commercial pressure, and operational complexity collide. That makes me especially effective in roles where clarity and alignment are prerequisites to progress.</p>
+            <p>My Product instincts were shaped where customer needs, commercial pressure and operational complexity all had to be satisfied at once. I'm at my best in roles where clarity is a prerequisite to progress rather than a nice extra.</p>
           </div>
           <div className="reasons-accordion">
             {reasons.map((reason, i) => {
@@ -185,12 +185,10 @@ const About = () => {
           <h2>OFF THE <em>CLOCK</em>.</h2>
           <div className="mf-body">
             <p>
-              Outside of product, my favourite people are my wife and our maltipoo,
-              who also happen to be my best motivators and harshest critics.
+              Outside of Product, my favourite people are my wife and our maltipoo.
             </p>
             <p>
-              I produce music and play in an alternative rock band. Working on a track,
-              mixing and releasing has a similar feel to shipping a solid product.
+              I produce music and play in an alternative rock band.
             </p>
           </div>
         </div>

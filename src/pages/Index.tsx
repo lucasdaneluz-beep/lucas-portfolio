@@ -65,13 +65,13 @@ const Index = () => {
             <p className="hero-role">Founding Product Manager</p>
             <div className="hero-copy">
               <p className="hero-statement">
-                Turning <span className="hero-statement-accent">ambiguous problems</span> into focused roadmaps and <span className="hero-statement-accent">measurable outcomes.</span>
+                Most of my work starts before anyone agrees <span className="hero-statement-accent">what the problem is</span>. I try to get a team to one clear version of it, then keep the roadmap small enough to <span className="hero-statement-accent">actually ship</span>.
               </p>
               <p className="hero-intro">
-                Founding PM at Platter, a B2B SaaS platform for food manufacturers and wholesalers. 10+ years across B2B SaaS, FMCG, and supply chain — strongest in discovery, prioritisation, and bringing clarity to ambiguous problems.
+                I was the Founding PM at Platter, a B2B SaaS platform for food manufacturers and wholesalers, until a restructure closed the role in November. Before Product I spent ten years in Procurement and supply chain, and that's still how I read a problem: what does it cost, who has to change what they do, and what would we see if it worked.
               </p>
               <p className="hero-availability">
-                Open to Product Manager opportunities in London and remote.
+                I'm looking for a Product Manager role in London or remote.
               </p>
             </div>
             <div className="hero-foot">
@@ -128,8 +128,8 @@ const Index = () => {
       <section className="cta reveal">
         <div className="wrap">
           <h2>
-            HIRING FOR A <em>PM</em> WHO CAN BRING <em className="hl-yellow">STRUCTURE</em>, <em className="hl-yellow">ALIGNMENT</em>, AND <em className="hl-yellow">MEASURABLE PROGRESS</em>?{" "}
-            <Link to="/contact">LET&apos;S TALK →</Link>
+            If you&apos;re hiring a <em>Product Manager</em>, I&apos;d like to hear about the problem you&apos;re stuck on.{" "}
+            <Link to="/contact">GET IN TOUCH →</Link>
           </h2>
         </div>
       </section>

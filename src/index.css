@@ -908,7 +908,7 @@ h1.display .line.in { clip-path: inset(0 0 -10% 0); transform: translateY(0); }
   font-family: var(--display); font-weight: var(--display-weight);
   font-size: clamp(36px, 4.5vw, 72px);
   line-height: 0.95; letter-spacing: -0.03em;
-  text-transform: var(--display-case); max-width: 18ch;
+  text-transform: var(--display-case); max-width: 24ch;
 }
 .cta h2 em { font-style: normal; color: var(--accent); }
 .cta h2 em.hl-yellow { color: var(--accent); }

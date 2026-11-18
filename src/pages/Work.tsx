@@ -28,7 +28,7 @@ const Work = () => {
         <div className="wrap">
           <div className="work-head">
             <h2>FEATURED WORK</h2>
-            <p>Selected case studies showing how I move from ambiguity to focus, alignment, and measurable change.</p>
+            <p>Four case studies and one app I built for myself. Each one shows the problem as I found it, what I changed, and what actually moved.</p>
           </div>
           <div className="work-grid">
             {workItems.map((w) => (

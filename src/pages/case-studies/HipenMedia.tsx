@@ -10,16 +10,16 @@ const CaseStudyHipenMedia = () => {
   return (
     <MonolithCaseLayout
       title="Hipen Media — User Onboarding"
-      lede="Bringing structure to a complex, multi-segment onboarding flow through qualitative research, dataset filtering, and a lean MVP — reducing onboarding time by 40%."
+      lede="Bringing structure to a multi segment onboarding flow through qualitative research, dataset filtering and a lean MVP, which cut onboarding time by 40%."
       focus="Discovery · Onboarding"
       metric="40% faster onboarding completion"
       tags={["Discovery", "Onboarding", "MVP", "Research"]}
     >
       <h3>Context</h3>
-      <p>Hipen Media operates a user onboarding platform serving diverse media clients — digital publishers, print magazines, and newspapers — each with distinct workflows and go-to-market channels. The core problem: one-size-fits-all onboarding backed by a massive, unfiltered dataset, creating friction and slowing time-to-value for every new user regardless of their segment.</p>
+      <p>Hipen Media's platform served digital publishers, print magazines and newspapers. Each one had a different workflow, but all of them got the same onboarding form, and behind that form sat an unfiltered dataset. Nobody reached value quickly, and the print magazines were being asked for information they'd never use.</p>
 
       <h3>Approach</h3>
-      <p>Discovery first. Qualitative research across user segments to surface common friction points, followed by end-to-end workflow mapping to pinpoint where the dataset was creating bottlenecks. Partnered with engineering to apply logical filters — removing the core blocker without a full data architecture overhaul. MVP scope was defined before any build started: a lean form collecting only segment-relevant information, paired with a simple dashboard surfacing actionable insights.</p>
+      <p>I started with research across the segments and mapped the end to end workflow, which showed where the dataset was actually blocking people. Then I worked with engineering to filter it down, which removed the main blocker without rebuilding the data architecture. I set the MVP scope before anything was built: a form that only asked each segment what applied to them, plus a dashboard that showed them what to do next.</p>
 
       <div className="cs-cards three" style={{margin:"40px 0"}}>
 
@@ -101,7 +101,7 @@ const CaseStudyHipenMedia = () => {
       </div>
 
       <h3>Outcome</h3>
-      <p>Headline outcome: <strong style={{ color: "var(--accent)" }}>40% faster onboarding completion</strong>. A leaner, more relevant flow serving 4+ user segments from a single streamlined experience — and a repeatable research-to-MVP pattern established for future product work.</p>
+      <p>Headline outcome: <strong style={{ color: "var(--accent)" }}>40% faster onboarding completion</strong>. A leaner, more relevant flow serving 4+ user segments from a single streamlined experience, and a research to MVP pattern I could repeat on the next product.</p>
     </MonolithCaseLayout>
   );
 };

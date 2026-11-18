@@ -10,16 +10,16 @@ const CaseStudyWestpak = () => {
   return (
     <MonolithCaseLayout
       title="Westpak — Cost Optimisation"
-      lede="Leading a cross-functional cost optimisation project across three core categories — navigating Finance and Operations, running a 6-vendor tender, and delivering a 25% cost reduction."
+      lede="A cross functional cost programme across three packaging categories. Finance were mid close and Operations didn't want new suppliers, and I still got to 25%."
       focus="Stakeholder Management"
       metric="25% cost reduction delivered"
       tags={["Stakeholder Management", "Cost Optimisation", "Supply Chain"]}
     >
       <h3>Context</h3>
-      <p>Three core packaging categories carrying avoidable cost due to vendor relationships that hadn't been competitively reviewed. Finance was mid month-end close, making data access a significant early blocker. Operations were resistant to vendor switching due to supply chain reliability concerns — valid pushback that needed to be addressed structurally, not overridden.</p>
+      <p>Three core packaging categories carrying avoidable cost due to vendor relationships that hadn't been competitively reviewed. Finance was mid month-end close, making data access a significant early blocker. Operations were resistant to vendor switching over supply chain reliability, which was valid pushback and needed to be addressed structurally rather than overridden.</p>
 
       <h3>Approach</h3>
-      <p>Reframed the Finance conversation around long-term margin impact rather than a data request, which unlocked buy-in and access. Ran a structured 6-vendor tender across all three categories, evaluating on price, reliability, and lead times. Then proposed a parallel trial strategy — running new and existing vendors simultaneously, with tracking systems updated to support dual-sourcing — giving Operations a visible safety net before any full transition.</p>
+      <p>I reframed the Finance conversation around long term margin rather than a data request, which got me access. Then I ran a six vendor tender across all three categories, scored on price, reliability and lead times. The parallel trial came last: new and existing vendors running side by side, with tracking updated to support both, so Operations had something to fall back on before any full switch.</p>
 
       <div className="cs-cards three" style={{margin:"40px 0"}}>
 
@@ -93,7 +93,7 @@ const CaseStudyWestpak = () => {
           <div className="cs-card-title">Research Artifact</div>
           <div style={{display:"flex",flexDirection:"column",gap:"10px",marginTop:"8px"}}>
             {[
-              {name:"Finance",block:"Mid month-end close — data access blocked",resolution:"Reframed as long-term margin impact"},
+              {name:"Finance",block:"Mid month-end close, data access blocked",resolution:"Reframed as long-term margin impact"},
               {name:"Operations",block:"Supply chain reliability concerns",resolution:"Parallel trial: safety net before full switch"},
             ].map(s => (
               <div key={s.name} style={{border:"1px solid var(--rule)",padding:"12px",display:"flex",flexDirection:"column",gap:"8px"}}>
@@ -108,7 +108,7 @@ const CaseStudyWestpak = () => {
       </div>
 
       <h3>Outcome</h3>
-      <p>Headline outcome: <strong style={{ color: "var(--accent)" }}>25% cost reduction delivered</strong> across three categories, with zero supply disruptions throughout the transition. The parallel trial approach validated new vendors before full commitment and established a reusable fail-safe framework for future vendor and tooling changes.</p>
+      <p>Headline outcome: <strong style={{ color: "var(--accent)" }}>25% cost reduction delivered</strong> across three categories, with zero supply disruptions throughout the transition. The parallel trial approach validated new vendors before full commitment, and it is the approach I would use again for any vendor or tooling change.</p>
     </MonolithCaseLayout>
   );
 };
