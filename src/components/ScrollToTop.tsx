@@ -7,11 +7,11 @@ const ScrollToTop = () => {
     if (hash) {
       const el = document.querySelector(hash);
       if (el) {
-        el.scrollIntoView({ behavior: "instant" });
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
         return;
       }
     }
-    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+    window.scrollTo(0, 0);
   }, [pathname, hash]);
   return null;
 };
