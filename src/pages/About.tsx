@@ -1,30 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { Search, ListOrdered, Users, TrendingUp } from "lucide-react";
 import profilePhoto from "@/assets/lucas-profile.png";
-
-const frameworkSteps = [
-  {
-    title: "Understand",
-    description: "User research, workflow mapping, and problem framing before solutions.",
-    icon: Search,
-  },
-  {
-    title: "Prioritise",
-    description: "Trade-offs, baselines, and scope decisions shaped by value and feasibility.",
-    icon: ListOrdered,
-  },
-  {
-    title: "Align",
-    description: "Shared clarity across stakeholders, engineering, operations, and delivery.",
-    icon: Users,
-  },
-  {
-    title: "Measure",
-    description: "Success metrics defined early so progress is visible after launch.",
-    icon: TrendingUp,
-  },
-];
 
 const reasons = [
   {
@@ -126,27 +102,6 @@ const About = () => {
         </div>
       </section>
 
-      {/* HOW I WORK */}
-      <section className="how-i-work reveal">
-        <div className="wrap">
-          <div className="hw-head">
-            <h2>HOW I WORK</h2>
-            <p>A practical product rhythm from unclear problems to focused, measurable execution.</p>
-          </div>
-          <div className="framework-steps">
-            {frameworkSteps.map((step) => (
-              <article key={step.title} className="framework-step">
-                <div className="step-icon">
-                  <step.icon size={32} strokeWidth={1.5} />
-                </div>
-                <h3 className="step-title">{step.title}</h3>
-                <p className="step-desc">{step.description}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* BUILT ACROSS INDUSTRIES */}
       <section className="manifesto reveal">
         <div className="wrap">
@@ -242,6 +197,7 @@ const About = () => {
         <div className="wrap">
           <span>© 2026 Lucas Daneluz</span>
           <div className="socials">
+            <a href="/Lucas_Daneluz-CV.pdf" target="_blank" rel="noopener noreferrer">CV</a>
             <a href="mailto:lucas.daneluz@gmail.com">Email</a>
             <a href="https://www.linkedin.com/in/lucasdaneluz" target="_blank" rel="noopener noreferrer">LinkedIn</a>
           </div>

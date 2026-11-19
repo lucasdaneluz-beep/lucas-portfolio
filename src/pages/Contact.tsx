@@ -110,6 +110,8 @@ const Contact = () => {
                 className="contact-success reveal in"
                 ref={successRef}
                 tabIndex={-1}
+                role="status"
+                aria-live="polite"
               >
                 <div className="contact-success-icon">✓</div>
                 <p className="contact-success-heading">Message sent.</p>
@@ -123,25 +125,25 @@ const Contact = () => {
                 </p>
                 <form className="form-b reveal" style={{ transitionDelay: "240ms" }} onSubmit={handleSubmit(onSubmit)} noValidate>
                   <label>
-                    <div className="lbl">NAME</div>
-                    <input type="text" {...register("name")} placeholder="Your name" />
-                    {errors.name && <div className="field-error">{errors.name.message}</div>}
+                    <div className="lbl" id="name-label">NAME</div>
+                    <input id="name" type="text" aria-labelledby="name-label" aria-invalid={Boolean(errors.name)} aria-describedby={errors.name ? "name-error" : undefined} {...register("name")} placeholder="Your name" />
+                    {errors.name && <div className="field-error" id="name-error" role="alert">{errors.name.message}</div>}
                   </label>
                   <label>
-                    <div className="lbl">EMAIL</div>
-                    <input type="email" {...register("email")} placeholder="your@email.com" />
-                    {errors.email && <div className="field-error">{errors.email.message}</div>}
+                    <div className="lbl" id="email-label">EMAIL</div>
+                    <input id="email" type="email" aria-labelledby="email-label" aria-invalid={Boolean(errors.email)} aria-describedby={errors.email ? "email-error" : undefined} {...register("email")} placeholder="your@email.com" />
+                    {errors.email && <div className="field-error" id="email-error" role="alert">{errors.email.message}</div>}
                   </label>
                   <label>
-                    <div className="lbl">MESSAGE</div>
-                    <textarea {...register("message")} rows={5} placeholder="What's on your mind?" />
-                    {errors.message && <div className="field-error">{errors.message.message}</div>}
+                    <div className="lbl" id="message-label">MESSAGE</div>
+                    <textarea id="message" aria-labelledby="message-label" aria-invalid={Boolean(errors.message)} aria-describedby={errors.message ? "message-error" : undefined} {...register("message")} rows={5} placeholder="What's on your mind?" />
+                    {errors.message && <div className="field-error" id="message-error" role="alert">{errors.message.message}</div>}
                   </label>
-                  <button type="submit" disabled={isSubmitting}>
+                  <button type="submit" disabled={isSubmitting} aria-busy={isSubmitting}>
                     {isSubmitting ? "SENDING…" : "SEND MESSAGE →"}
                   </button>
                   {sendError && (
-                    <p className="status" style={{ color: "#ff6a6a" }}>
+                    <p className="status" role="alert" style={{ color: "#ff6a6a" }}>
                       ● Something went wrong. Email me directly.
                     </p>
                   )}
@@ -156,6 +158,7 @@ const Contact = () => {
         <div className="wrap">
           <span>© 2026 Lucas Daneluz</span>
           <div className="socials">
+            <a href="/Lucas_Daneluz-CV.pdf" target="_blank" rel="noopener noreferrer">CV</a>
             <a href="mailto:lucas.daneluz@gmail.com">Email</a>
             <a href="https://www.linkedin.com/in/lucasdaneluz" target="_blank" rel="noopener noreferrer">LinkedIn</a>
           </div>

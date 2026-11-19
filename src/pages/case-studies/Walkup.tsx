@@ -99,7 +99,7 @@ const CaseStudyWalkup = () => {
             <div style={{width:"108px",background:"#0d0d0d",borderRadius:"14px",overflow:"hidden",border:"1.5px solid #1f1f1f",boxShadow:"0 6px 24px rgba(0,0,0,0.5)",flexShrink:0}}>
               {/* Header — Padella photo, no overlay */}
               <div style={{height:"60px",overflow:"hidden"}}>
-                <img src="/walkup/padella.png" alt="Padella restaurant" style={{width:"100%",height:"100%",objectFit:"cover",objectPosition:"center 40%",display:"block"}} />
+                <img src="/walkup/padella.png" alt="Padella restaurant" loading="lazy" decoding="async" style={{width:"100%",height:"100%",objectFit:"cover",objectPosition:"center 40%",display:"block"}} />
               </div>
               <div style={{padding:"8px 9px",display:"flex",flexDirection:"column",gap:"7px"}}>
                 <div style={{background:"#00b8d4",borderRadius:"20px",padding:"3px 8px",display:"flex",alignItems:"center",justifyContent:"center"}}>
