@@ -36,7 +36,7 @@ const Work = () => {
                 <div className={`work-card-visual work-card-visual-${w.id}`}>
                   <span className="work-card-index">{w.index}</span>
                   {w.image ? (
-                    <img src={w.image} alt={`${w.title} case study preview`} className="work-card-image" />
+                    <img src={w.image} alt={`${w.title} case study preview`} className="work-card-image" loading="lazy" decoding="async" />
                   ) : (
                     <div className="work-card-visual-inner">
                       <span className="work-card-visual-label">{w.visualLabel}</span>
@@ -69,6 +69,7 @@ const Work = () => {
         <div className="wrap">
           <span>© 2026 Lucas Daneluz</span>
           <div className="socials">
+            <a href="/Lucas_Daneluz-CV.pdf" target="_blank" rel="noopener noreferrer">CV</a>
             <a href="mailto:lucas.daneluz@gmail.com">Email</a>
             <a href="https://www.linkedin.com/in/lucasdaneluz" target="_blank" rel="noopener noreferrer">LinkedIn</a>
           </div>
