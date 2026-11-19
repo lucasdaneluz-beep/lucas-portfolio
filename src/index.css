@@ -712,6 +712,7 @@ h1.display .line.in { clip-path: inset(0 0 -10% 0); transform: translateY(0); }
   letter-spacing: 0.02em;
   text-transform: uppercase;
   flex-shrink: 0;
+  transition: opacity .2s;
 }
 .work-teaser-cta:hover { opacity: 0.75; }
 .work-teaser-list {
@@ -1277,7 +1278,7 @@ body { background: var(--bg); }
   border: 1px solid var(--rule);
   opacity: 0;
   transform: translateY(10px);
-  transition: transform .2s ease, border-color .2s ease, background-color .2s ease;
+  transition: border-color .2s ease, background-color .2s ease;
 }
 .strengths-strip.in .strength-card {
   animation: strength-card-in .5s cubic-bezier(.2,.7,.3,1) forwards;
@@ -1298,7 +1299,6 @@ body { background: var(--bg); }
 .strength-card:hover {
   background: var(--bg-2);
   border-color: var(--accent);
-  transform: translateY(-3px);
 }
 .strength-card:hover::before { width: 56px; }
 .strength-card:hover .strength-number {
@@ -1470,4 +1470,22 @@ body { background: var(--bg); }
   .form-b textarea { font-size: 18px; }
   .form-b input::placeholder,
   .form-b textarea::placeholder { font-size: 16px; }
+}
+
+/* Shared interaction utility for subtle CTA/card lift. */
+.hover-lift {
+  transition: transform .2s ease, box-shadow .2s ease, background .2s ease, border-color .2s ease, opacity .2s ease;
+}
+.hover-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hover-lift,
+  .hover-lift:hover {
+    transition: none;
+    transform: none;
+    box-shadow: none;
+  }
 }

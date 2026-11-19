@@ -108,7 +108,7 @@ const Index = () => {
           </div>
           <div className="strengths-grid">
             {strengths.map((strength) => (
-              <article key={strength.number} className="strength-card">
+              <article key={strength.number} className="strength-card hover-lift">
                 <span className="strength-number">{strength.number}</span>
                 <h3>{strength.title}</h3>
                 <p>{strength.detail}</p>
@@ -127,7 +127,7 @@ const Index = () => {
           </div>
           <div className="impact-grid">
             {impactItems.map((item) => (
-              <Link key={item.detail} to={`/case-studies/${item.id}`} className="impact-card">
+              <Link key={item.detail} to={`/case-studies/${item.id}`} className="impact-card hover-lift">
                 <span className={`impact-metric${item.metric.length > 6 ? " impact-metric-long" : ""}`}>{item.metric}</span>
                 <h3>{item.label}</h3>
                 <p>{item.detail}</p>
@@ -142,11 +142,11 @@ const Index = () => {
         <div className="wrap">
           <div className="work-teaser-head">
             <h2>FEATURED WORK</h2>
-            <Link to="/work" className="work-teaser-cta">View all →</Link>
+            <Link to="/work" className="work-teaser-cta hover-lift">View all →</Link>
           </div>
           <div className="work-teaser-list">
             {workTeaser.map((w) => (
-              <Link key={w.id} to={`/case-studies/${w.id}`} className="work-teaser-item">
+              <Link key={w.id} to={`/case-studies/${w.id}`} className="work-teaser-item hover-lift">
                 <span className="work-teaser-index">{w.index}</span>
                 <span className="work-teaser-title">{w.title}</span>
                 <span className="work-teaser-arrow">→</span>
