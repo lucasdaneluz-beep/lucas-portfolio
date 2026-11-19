@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { caseStudies } from "@/data/caseStudies";
+import HoverLiftLink from "@/components/HoverLiftLink";
 
 const impactItems = [
   { metric: "Weeks → minutes", label: "Supplier data mapping", detail: "Platter", id: "platter-onboarding" },
@@ -127,11 +128,11 @@ const Index = () => {
           </div>
           <div className="impact-grid">
             {impactItems.map((item) => (
-              <Link key={item.detail} to={`/case-studies/${item.id}`} className="impact-card hover-lift">
+              <HoverLiftLink key={item.detail} to={`/case-studies/${item.id}`} className="impact-card">
                 <span className={`impact-metric${item.metric.length > 6 ? " impact-metric-long" : ""}`}>{item.metric}</span>
                 <h3>{item.label}</h3>
                 <p>{item.detail}</p>
-              </Link>
+              </HoverLiftLink>
             ))}
           </div>
         </div>
@@ -142,15 +143,15 @@ const Index = () => {
         <div className="wrap">
           <div className="work-teaser-head">
             <h2>FEATURED WORK</h2>
-            <Link to="/work" className="work-teaser-cta hover-lift">View all →</Link>
+            <HoverLiftLink to="/work" className="work-teaser-cta">View all →</HoverLiftLink>
           </div>
           <div className="work-teaser-list">
             {workTeaser.map((w) => (
-              <Link key={w.id} to={`/case-studies/${w.id}`} className="work-teaser-item hover-lift">
+              <HoverLiftLink key={w.id} to={`/case-studies/${w.id}`} className="work-teaser-item">
                 <span className="work-teaser-index">{w.index}</span>
                 <span className="work-teaser-title">{w.title}</span>
                 <span className="work-teaser-arrow">→</span>
-              </Link>
+              </HoverLiftLink>
             ))}
           </div>
         </div>
